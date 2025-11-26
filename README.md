@@ -6,7 +6,7 @@ This repository contains my professional portfolio showcasing:
 - Graphics Design  
 - Content Writing  
 
-I help individuals and businesses build a complete digital presence through clean websites, creative brand graphics, and high-quality content.
+I help individuals and businesses build a complete digital presence through clean websites, creative brand graphics, and high quality content.
 
 ## What You Will Find Here
 - Live website demos  
