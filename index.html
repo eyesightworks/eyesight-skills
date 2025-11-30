@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of Alawode Adewale — Web Developer, AI Enthusiast & Brand Identity Designer." />
+  <meta name="description" content="Portfolio of Alawode Adewale — Web Developer, AI & Graphics Designer, Content Creator." />
   <title>Eyesightworks | Alawode Adewale</title>
 
   <!-- Fonts -->
@@ -25,11 +25,11 @@
 
       <!-- NAVIGATION -->
       <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
+        <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
+        <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
+        <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
+        <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
         <button id="lang-switcher" class="lang-switcher-button">EN</button>
       </nav>
 
@@ -41,14 +41,18 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="intro container">
-      <h1>Hi, I'm <span style="font-weight:800">Alawode Adewale</span></h1>
-      <p class="tagline">Web Developer · AI Enthusiast · Brand Identity Designer</p>
+      <h1 data-en="Hi, I'm Alawode Adewale" data-fr="Bonjour, je suis Alawode Adewale" data-es="Hola, soy Alawode Adewale" data-ar="مرحباً، أنا Alawode Adewale">
+        Hi, I'm <span style="font-weight:800">Alawode Adewale</span>
+      </h1>
+      <p class="tagline" data-en="Web Developer · AI & Graphics Designer · Content Creator" data-fr="Développeur Web · Designer Graphique & IA · Créateur de contenu" data-es="Desarrollador Web · Diseñador Gráfico & IA · Creador de Contenido" data-ar="مطور ويب · مصمم جرافيك وذكاء اصطناعي · منشئ محتوى">
+        Web Developer · AI & Graphics Designer · Content Creator
+      </p>
 
       <!-- ACTION BUTTONS -->
       <div class="actions">
-        <a href="resume.html" class="btn" data-en="View Resume">View Resume</a>
-        <a href="resume.pdf" class="btn" download data-en="Download PDF Resume">Download PDF</a>
-        <button id="hire-me-btn" class="btn" data-en="Hire Me">Hire Me</button>
+        <a href="resume.html" class="btn" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</a>
+        <a href="resume.pdf" class="btn" download data-en="Download PDF Resume" data-fr="Télécharger CV" data-es="Descargar PDF CV" data-ar="تحميل السيرة الذاتية">Download PDF</a>
+        <button id="hire-me-btn" class="btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
         <a class="btn ghost" href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -57,9 +61,8 @@
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
         <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
           <div style="font-weight:800">Available for Hire</div>
-          <div style="opacity:0.85;font-size:0.95rem">Open to frontend roles, AI projects, and freelance work.</div>
+          <div style="opacity:0.85;font-size:0.95rem">Open to frontend roles, AI projects, graphics & content creation, freelance work.</div>
         </div>
-
         <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
           <div style="font-weight:800">Languages</div>
           <div style="opacity:0.85;font-size:0.95rem">English · French · Spanish · Arabic</div>
@@ -72,15 +75,15 @@
       <img class="avatar" src="https://drive.google.com/uc?export=view&id=1DmvSc3J-cllk6dTn-5AqkzjtMQzg0EJ8" alt="Alawode Adewale">
       <div style="text-align:center;margin-top:8px">
         <strong style="font-size:1.2rem">Alawode Adewale</strong>
-        <div style="opacity:0.95;font-size:0.95rem">Web Developer | AI & Python | Brand Identity</div>
+        <div style="opacity:0.95;font-size:0.95rem">Web Developer | AI & Graphics Designer | Content Creator</div>
       </div>
 
       <div class="skills-list" style="margin-top:12px">
         <div class="skill-pill">HTML / CSS / JavaScript</div>
         <div class="skill-pill">Python (AI & ML)</div>
         <div class="skill-pill">React / Frontend</div>
-        <div class="skill-pill">Voice & Image (Pixverse)</div>
-        <div class="skill-pill">Brand Identity</div>
+        <div class="skill-pill">Graphics & Design</div>
+        <div class="skill-pill">Content Writing</div>
       </div>
     </aside>
   </section>
@@ -111,12 +114,12 @@
       <h2 style="margin-bottom:12px;font-family:Montserrat">Skills & Tools</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
         <div class="card">
-          <h4>Frontend Development</h4>
-          <p>HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub</p>
+          <h4>Web & Frontend</h4>
+          <p>HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub · Content Writing · Graphics</p>
         </div>
         <div class="card">
-          <h4>Python & AI</h4>
-          <p>Python · NumPy · Pandas · Flask · ML basics · Media processing</p>
+          <h4>AI & Python</h4>
+          <p>Python · NumPy · Pandas · Flask · AI/ML Basics · Voice/Image Processing</p>
         </div>
       </div>
     </div>
