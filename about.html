@@ -1,53 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="About Alawode Adewale – Eyesightworks Web Developer & Brand Identity Expert">
-<title>About | Eyesightworks</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About – Eyesightworks</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- Header -->
 <header class="header">
-  <div class="container nav-container">
-    <div class="logo">Eyesightworks</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="logo">Eyesightworks</div>
+      <div style="color:#fff;opacity:.8">Alawode Adewale</div>
+    </div>
+
     <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
-      <a href="about.html" class="active" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
-      <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
-      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
-      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
-      <button id="lang-switcher" class="lang-switcher-button">FR</button>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <button id="lang-switcher" class="lang-switcher-button">EN</button>
     </nav>
+
+    <button class="hamburger" id="hamburger">&#9776;</button>
   </div>
 </header>
 
 <!-- About Section -->
-<section class="page-section about-section">
-  <div class="container">
-    <h1 data-en="About Me" data-fr="À propos de moi" data-es="Sobre mí" data-ar="عنّي">About Me</h1>
-    <p data-en="Eyesightworks is a creative web development and brand identity agency helping clients around the world launch beautiful, effective digital experiences."
-       data-fr="Eyesightworks est une agence de développement web et d'identité de marque qui aide les clients du monde entier à lancer des expériences numériques efficaces."
-       data-es="Eyesightworks es una agencia de desarrollo web e identidad de marca que ayuda a los clientes de todo el mundo a lanzar experiencias digitales efectivas."
-       data-ar="Eyesightworks هي وكالة لتطوير الويب وهوية العلامة التجارية تساعد العملاء حول العالم على إطلاق تجارب رقمية فعالة.">
-      Eyesightworks is a creative web development and brand identity agency helping clients around the world launch beautiful, effective digital experiences.
+<section class="section container">
+  <h1>About Me</h1>
+
+  <div class="card" style="padding:20px">
+    <p>
+      I am <strong>Alawode Adewale</strong>, a passionate Web Developer with interest in  
+      <strong>Frontend Development, Python AI, Voice & Image Projects, and Brand Identity.</strong>
     </p>
-    <p data-en="With a passion for design, code, and storytelling, I combine strategy and creativity to build strong personal and business brands online."
-       data-fr="Avec une passion pour le design, le code et la narration, je combine stratégie et créativité pour construire des marques solides en ligne."
-       data-es="Con pasión por el diseño, el código y la narración, combino estrategia y creatividad para construir marcas personales y empresariales sólidas."
-       data-ar="بشغف بالتصميم والبرمجة وسرد القصص، أدمج الاستراتيجية والإبداع لبناء علامات تجارية قوية على الإنترنت.">
-      With a passion for design, code, and storytelling, I combine strategy and creativity to build strong personal and business brands online.
+
+    <p>
+      I build fast, modern, responsive websites — and I am open to junior roles, freelance projects,  
+      and long-term collaborations.
     </p>
+
+    <h2 style="margin-top:20px">What I Do</h2>
+    <ul>
+      <li>Frontend web development (HTML, CSS, JS, React)</li>
+      <li>Python AI & automation</li>
+      <li>Voice & Image AI integrations</li>
+      <li>Brand identity and UI styling</li>
+    </ul>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 Eyesightworks. All rights reserved.</p>
+<footer>
+  <div class="container">&copy; 2025 Eyesightworks — Alawode Adewale.</div>
 </footer>
 
 <script src="script.js"></script>
