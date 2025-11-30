@@ -7,6 +7,59 @@
 <title>Eyesightworks | Alawode Adewale Portfolio</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+/* Modal CSS */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  position: relative;
+}
+.modal .close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+/* Skills Section */
+.skills-section {
+  padding: 3rem 2rem;
+  background-color: #f5f5f5;
+}
+.skills-section h2 {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1.5rem;
+}
+.skills-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.skills-list li {
+  background: #0a2540;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+</style>
 </head>
 <body>
 
@@ -16,11 +69,11 @@
     <div class="logo">Eyesightworks</div>
     <button class="hamburger" id="hamburger">&#9776;</button>
     <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية" class="active">Home</a>
+      <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
+      <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
+      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
+      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
       <button id="lang-switcher" class="lang-switcher-button">FR</button>
     </nav>
   </div>
@@ -28,16 +81,16 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Hi, I'm Alawode Adewale</h1>
-  <p class="tagline">Web Developer | AI Enthusiast | Brand Identity</p>
-  <a href="resume.pdf" class="download-btn" download>Download Resume</a>
-  <button class="download-btn" id="hire-me-btn">Hire Me</button>
+  <h1 data-en="Hi, I'm Alawode Adewale" data-fr="Bonjour, je suis Alawode Adewale" data-es="Hola, soy Alawode Adewale" data-ar="مرحباً، أنا Alawode Adewale">Hi, I'm Alawode Adewale</h1>
+  <p class="tagline" data-en="Web Developer | AI Enthusiast | Brand Identity" data-fr="Développeur Web | Passionné d'IA | Identité de marque" data-es="Desarrollador Web | Entusiasta de IA | Identidad de marca" data-ar="مطور ويب | مهتم بالذكاء الاصطناعي | هوية العلامة التجارية">Web Developer | AI Enthusiast | Brand Identity</p>
+  <a href="resume.pdf" class="download-btn" download data-en="Download Resume" data-fr="Télécharger CV" data-es="Descargar CV" data-ar="تحميل السيرة الذاتية">Download Resume</a>
+  <button class="download-btn" id="hire-me-btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
 </section>
 
 <!-- Skills Section -->
 <section class="page-section skills-section">
   <div class="container">
-    <h2>My Skills</h2>
+    <h2 data-en="My Skills" data-fr="Mes Compétences" data-es="Mis Habilidades" data-ar="مهاراتي">My Skills</h2>
     <ul class="skills-list">
       <li>HTML / CSS / JavaScript</li>
       <li>Python (AI & Machine Learning)</li>
@@ -51,7 +104,7 @@
 <!-- Portfolio Section -->
 <section class="page-section portfolio-section">
   <div class="container">
-    <h2>Featured Projects</h2>
+    <h2 data-en="Featured Projects" data-fr="Projets phares" data-es="Proyectos Destacados" data-ar="أبرز المشاريع">Featured Projects</h2>
     <div class="portfolio-grid">
       <div class="portfolio-item">
         <h3>E-commerce Website</h3>
@@ -78,7 +131,7 @@
 <div id="hire-modal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Hire Me</h2>
+    <h2 data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</h2>
     <form action="mailto:eyesightconcept@gmail.com" method="POST" enctype="text/plain">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -89,5 +142,54 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+// Hamburger toggle
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+hamburger.addEventListener("click", () => {
+  navMenu.classList.toggle("show");
+});
+
+// Language switcher
+const langSwitcher = document.getElementById("lang-switcher");
+const html = document.documentElement;
+const languages = ["en","fr","es","ar"];
+let currentLangIndex = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("preferredLang");
+  if(savedLang && languages.includes(savedLang)){
+    currentLangIndex = languages.indexOf(savedLang);
+    switchLanguage(savedLang);
+  }
+});
+langSwitcher.addEventListener("click", () => {
+  currentLangIndex = (currentLangIndex+1) % languages.length;
+  const lang = languages[currentLangIndex];
+  switchLanguage(lang);
+  localStorage.setItem("preferredLang", lang);
+});
+function switchLanguage(lang){
+  html.lang = lang;
+  html.dir = lang==="ar"?"rtl":"ltr";
+  langSwitcher.textContent = lang.toUpperCase();
+  document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
+    if(el.placeholder){
+      el.placeholder = el.getAttribute("data-"+lang);
+    }else{
+      el.textContent = el.getAttribute("data-"+lang);
+    }
+  });
+}
+
+// Hire Me modal
+const hireBtn = document.getElementById("hire-me-btn");
+const modal = document.getElementById("hire-modal");
+const closeModal = document.querySelector(".modal .close");
+if(hireBtn && modal){
+  hireBtn.addEventListener("click", () => { modal.style.display="block"; });
+  closeModal.addEventListener("click", ()=>{ modal.style.display="none"; });
+  window.addEventListener("click",(e)=>{ if(e.target===modal){ modal.style.display="none"; }});
+}
+</script>
 </body>
 </html>
