@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Alawode Adewale – Eyesightworks">
+<title>Contact | Eyesightworks</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container nav-container">
+    <div class="logo">Eyesightworks</div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
+      <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
+      <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
+      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
+      <a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
+      <button id="lang-switcher" class="lang-switcher-button">FR</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Contact Section -->
+<section class="page-section contact-section">
+  <div class="container">
+    <h1 data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="اتصل بي">Contact Me</h1>
+    <form action="thank-you.html" method="GET">
+      <label for="name" data-en="Name" data-fr="Nom" data-es="Nombre" data-ar="الاسم">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+      <label for="email" data-en="Email" data-fr="Email" data-es="Correo" data-ar="البريد الإلكتروني">Email</label>
+      <input type="email" id="email" name="email" placeholder="eyesightconcept@gmail.com" required>
+
+      <label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="رسالة">Message</label>
+      <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Eyesightworks. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
