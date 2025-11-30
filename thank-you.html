@@ -7,40 +7,50 @@
 <title>Thank You | Eyesightworks</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  .thank-you {
+    text-align: center;
+    padding: 4rem 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .thank-you h1 {font-size:2rem; margin-bottom:1rem;}
+  .thank-you p {font-size:1.1rem; margin-bottom:2rem;}
+  .thank-you a {
+    display:inline-block;
+    padding:0.8rem 1.5rem;
+    background-color:#2a2a2a;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+  }
+  .thank-you a:hover {background-color:#444;}
+</style>
 </head>
 <body>
 
-<!-- Header -->
 <header class="header">
   <div class="container nav-container">
     <div class="logo">Eyesightworks</div>
     <button class="hamburger" id="hamburger">&#9776;</button>
     <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
-      <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
-      <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
-      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
-      <a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
       <button id="lang-switcher" class="lang-switcher-button">FR</button>
     </nav>
   </div>
 </header>
 
-<!-- Thank You Section -->
-<section class="thank-you">
-  <div class="container">
-    <h1 data-en="Thank You!" data-fr="Merci !" data-es="¡Gracias!" data-ar="شكراً لك!">Thank You!</h1>
-    <p data-en="Your message has been sent successfully."
-       data-fr="Votre message a été envoyé avec succès."
-       data-es="Tu mensaje ha sido enviado con éxito."
-       data-ar="تم إرسال رسالتك بنجاح.">
-       Your message has been sent successfully.
-    </p>
-    <a href="index.html" data-en="Back to Home" data-fr="Retour à l'accueil" data-es="Volver al inicio" data-ar="العودة إلى الصفحة الرئيسية">Back to Home</a>
-  </div>
-</section>
+<main class="thank-you">
+  <h1>Thank You!</h1>
+  <p>Your message has been sent successfully.</p>
+  <a href="index.html">Back to Home</a>
+</main>
 
-<!-- Footer -->
 <footer class="footer">
   <p>&copy; 2025 Eyesightworks. All rights reserved.</p>
 </footer>
