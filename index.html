@@ -1,194 +1,72 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Portfolio of Alawode Adewale — Web Developer, AI Enthusiast & Brand Identity Designer." />
-  <title>Eyesightworks | Alawode Adewale</title>
+<!-- ==========================
+     HERO SECTION
+=========================== -->
+<section class="hero">
+  <div class="intro container">
+    
+    <h1>Hi, I'm <span style="font-weight:800">Alawode Adewale</span></h1>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <p class="tagline">
+      Web Developer · AI Enthusiast · Brand Identity Designer
+    </p>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <!-- ACTION BUTTONS -->
+    <div class="actions">
+      <!-- View Resume (HTML) -->
+      <a href="resume.html" class="btn" data-en="View Resume">View Resume</a>
 
-<body>
+      <!-- Download Resume PDF -->
+      <a href="resume.pdf" class="btn" download data-en="Download PDF Resume">Download PDF</a>
 
-  <!-- ==========================
-       HEADER
-  =========================== -->
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
-      
-      <!-- LOGO + NAME -->
-      <div style="display:flex;align-items:center;gap:12px">
-        <div class="logo">Eyesightworks</div>
-        <span style="color:#ddd;font-size:0.95rem;font-weight:600">Alawode Adewale</span>
-      </div>
+      <!-- Hire Me Modal -->
+      <button id="hire-me-btn" class="btn" data-en="Hire Me">Hire Me</button>
 
-      <!-- NAVIGATION -->
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
-
-        <!-- LANGUAGE SWITCHER -->
-        <button id="lang-switcher" class="lang-switcher-button">EN</button>
-      </nav>
-
-      <!-- MOBILE BUTTON -->
-      <button id="hamburger" class="hamburger">&#9776;</button>
-    </div>
-  </header>
-
-  <!-- ==========================
-       HERO SECTION
-  =========================== -->
-  <section class="hero">
-    <div class="intro container">
-      
-      <h1>Hi, I'm <span style="font-weight:800">Alawode Adewale</span></h1>
-
-      <p class="tagline">
-        Web Developer · AI Enthusiast · Brand Identity Designer
-      </p>
-
-      <!-- ACTION BUTTONS -->
-      <div class="actions">
-        <a href="resume.pdf" class="download-btn" download>Download Resume</a>
-        <button id="hire-me-btn" class="download-btn">Hire Me</button>
-        <a class="download-btn" style="background:transparent;border:1px solid #fff" href="https://github.com/alawode-adewale" target="_blank">GitHub</a>
-        <a class="download-btn" style="background:transparent;border:1px solid #fff" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
-      </div>
-
-      <!-- TWO SMALL INFO CARDS -->
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
-        <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
-          <div style="font-weight:800">Available for Hire</div>
-          <div style="opacity:0.85;font-size:0.95rem">
-            Open to frontend roles, AI projects, and freelance work.
-          </div>
-        </div>
-
-        <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
-          <div style="font-weight:800">Languages</div>
-          <div style="opacity:0.85;font-size:0.95rem">
-            English · French · Spanish · Arabic
-          </div>
-        </div>
-      </div>
+      <!-- External Links -->
+      <a class="btn ghost" href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
     </div>
 
-    <!-- PHOTO + SKILLS -->
-    <aside class="profile-card container" style="justify-self:center">
-      
-      <!-- YOUR PHOTO -->
-      <img 
-        class="avatar" 
-        src="https://drive.google.com/uc?export=view&id=1DmvSc3J-cllk6dTn-5AqkzjtMQzg0EJ8" 
-        alt="Alawode Adewale"
-      >
-
-      <div style="text-align:center">
-        <strong style="font-size:1.2rem">Alawode Adewale</strong>
-        <div style="opacity:0.95;font-size:0.95rem">
-          Web Developer | AI & Python | Brand Identity
+    <!-- TWO SMALL INFO CARDS -->
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
+      <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
+        <div style="font-weight:800">Available for Hire</div>
+        <div style="opacity:0.85;font-size:0.95rem">
+          Open to frontend roles, AI projects, and freelance work.
         </div>
       </div>
 
-      <div class="skills-list">
-        <div class="skill-pill">HTML / CSS / JavaScript</div>
-        <div class="skill-pill">Python (AI & ML)</div>
-        <div class="skill-pill">React / Frontend</div>
-        <div class="skill-pill">Voice & Image (Pixverse)</div>
-        <div class="skill-pill">Brand Identity</div>
-      </div>
-
-    </aside>
-  </section>
-
-  <!-- ==========================
-       FEATURED PROJECTS
-  =========================== -->
-  <section class="page-section container">
-    <h2 style="margin-bottom:16px;font-family:Montserrat">Featured Projects</h2>
-
-    <div class="portfolio-grid">
-
-      <article class="portfolio-item">
-        <h3>E-commerce Website</h3>
-        <p>Modern store with responsive UI, product management & checkout flow.</p>
-        <a href="https://github.com/alawode-adewale" target="_blank">View Source</a>
-      </article>
-
-      <article class="portfolio-item">
-        <h3>Brand Identity Package</h3>
-        <p>Logo, color system & visual guide for a wellness lifestyle brand.</p>
-      </article>
-
-      <article class="portfolio-item">
-        <h3>AI Voice & Image Demo</h3>
-        <p>Python voice transcription + AI image generation (Flask deployable).</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ==========================
-       SKILLS SECTION
-  =========================== -->
-  <section class="page-section" style="background:#f8fafb">
-    <div class="container">
-      <h2 style="margin-bottom:12px;font-family:Montserrat">Skills & Tools</h2>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-
-        <div class="card">
-          <h4>Frontend Development</h4>
-          <p>
-            HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub
-          </p>
+      <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
+        <div style="font-weight:800">Languages</div>
+        <div style="opacity:0.85;font-size:0.95rem">
+          English · French · Spanish · Arabic
         </div>
-
-        <div class="card">
-          <h4>Python & AI</h4>
-          <p>
-            Python · NumPy · Pandas · Flask · ML basics · Media processing
-          </p>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- ==========================
-       FOOTER
-  =========================== -->
-  <footer>
-    <p>&copy; 2025 Eyesightworks — Alawode Adewale</p>
-  </footer>
-
-  <!-- ==========================
-       HIRE-ME MODAL
-  =========================== -->
-  <div id="hire-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-
-      <h2>Hire Me</h2>
-      <form action="thank-you.html" method="GET">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <textarea name="message" rows="5" placeholder="Tell me about the project" required></textarea>
-        <button type="submit" class="download-btn" style="width:100%">Send</button>
-      </form>
     </div>
   </div>
 
-  <!-- MAIN SCRIPT -->
-  <script src="script.js"></script>
-</body>
-</html>
+  <!-- PHOTO + SKILLS -->
+  <aside class="profile-card container" style="justify-self:center">
+    
+    <!-- YOUR PHOTO -->
+    <img 
+      class="avatar" 
+      src="https://drive.google.com/uc?export=view&id=1DmvSc3J-cllk6dTn-5AqkzjtMQzg0EJ8" 
+      alt="Alawode Adewale"
+    >
+
+    <div style="text-align:center;margin-top:8px">
+      <strong style="font-size:1.2rem">Alawode Adewale</strong>
+      <div style="opacity:0.95;font-size:0.95rem">
+        Web Developer | AI & Python | Brand Identity
+      </div>
+    </div>
+
+    <div class="skills-list" style="margin-top:12px">
+      <div class="skill-pill">HTML / CSS / JavaScript</div>
+      <div class="skill-pill">Python (AI & ML)</div>
+      <div class="skill-pill">React / Frontend</div>
+      <div class="skill-pill">Voice & Image (Pixverse)</div>
+      <div class="skill-pill">Brand Identity</div>
+    </div>
+  </aside>
+</section>
