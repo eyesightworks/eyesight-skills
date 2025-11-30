@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Alawode Adewale – Eyesightworks Projects & Skills">
+<title>Eyesightworks | Alawode Adewale Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="container nav-container">
+    <div class="logo">Eyesightworks</div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية" class="active">Home</a>
+      <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
+      <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
+      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
+      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
+      <button id="lang-switcher" class="lang-switcher-button">FR</button>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1 data-en="Hi, I'm Alawode Adewale" data-fr="Bonjour, je suis Alawode Adewale" data-es="Hola, soy Alawode Adewale" data-ar="مرحباً، أنا Alawode Adewale">Hi, I'm Alawode Adewale</h1>
+  <p class="tagline" data-en="Web Developer | AI Enthusiast | Brand Identity" data-fr="Développeur Web | Passionné d'IA | Identité de marque" data-es="Desarrollador Web | Entusiasta de IA | Identidad de marca" data-ar="مطور ويب | مهتم بالذكاء الاصطناعي | هوية العلامة التجارية">Web Developer | AI Enthusiast | Brand Identity</p>
+  <a href="resume.pdf" class="download-btn" download data-en="Download Resume" data-fr="Télécharger CV" data-es="Descargar CV" data-ar="تحميل السيرة الذاتية">Download Resume</a>
+  <button class="download-btn" id="hire-me-btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
+</section>
+
+<!-- Skills Section -->
+<section class="page-section skills-section">
+  <div class="container">
+    <h2 data-en="My Skills" data-fr="Mes Compétences" data-es="Mis Habilidades" data-ar="مهاراتي">My Skills</h2>
+    <ul class="skills-list">
+      <li>HTML / CSS / JavaScript</li>
+      <li>Python (AI & Machine Learning)</li>
+      <li>React / Frontend Development</li>
+      <li>Voice & Image Projects (Pixverse-style)</li>
+      <li>Brand Identity & Design</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="page-section portfolio-section">
+  <div class="container">
+    <h2 data-en="Featured Projects" data-fr="Projets phares" data-es="Proyectos Destacados" data-ar="أبرز المشاريع">Featured Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <h3>E-commerce Website</h3>
+        <p>Full e-commerce platform with responsive design and payment integration.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>Brand Identity Package</h3>
+        <p>Logo, color palette, and visual guidelines for a startup.</p>
+      </div>
+      <div class="portfolio-item">
+        <h3>AI Project Demo</h3>
+        <p>Python & AI voice/image integration for creative applications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Eyesightworks. All rights reserved.</p>
+</footer>
+
+<!-- Hire Me Modal -->
+<div id="hire-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</h2>
+    <form action="mailto:eyesightconcept@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="download-btn">Send</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
