@@ -1,64 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio Projects – Eyesightworks">
-<title>Portfolio | Eyesightworks</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portfolio – Eyesightworks</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- Header -->
 <header class="header">
-  <div class="container nav-container">
-    <div class="logo">Eyesightworks</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+    <div style="display:flex;align-items:center;gap:12px">
+      <div class="logo">Eyesightworks</div>
+      <div style="color:#fff;opacity:.8">Alawode Adewale</div>
+    </div>
+
     <nav class="nav-menu" id="nav-menu">
-      <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
-      <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
-      <a href="portfolio.html" class="active" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
-      <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
-      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
-      <button id="lang-switcher" class="lang-switcher-button">FR</button>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <button id="lang-switcher" class="lang-switcher-button">EN</button>
     </nav>
+
+    <button class="hamburger" id="hamburger">&#9776;</button>
   </div>
 </header>
 
-<!-- Portfolio Section -->
-<section class="page-section portfolio-section">
-  <div class="container">
-    <h1 data-en="My Work" data-fr="Mes Réalisations" data-es="Mi Trabajo" data-ar="أعمالي">My Work</h1>
-    <div class="portfolio-grid">
-      
-      <div class="portfolio-item">
-        <h3>E-commerce Website</h3>
-        <p>Built a full e-commerce platform for a fashion brand with payment integration and responsive design.</p>
-      </div>
+<section class="section container">
+  <h1>Portfolio</h1>
 
-      <div class="portfolio-item">
-        <h3>Brand Identity Package</h3>
-        <p>Developed logo, color palette, and visual guidelines for a wellness startup.</p>
-      </div>
+  <div class="portfolio-grid">
+    <div class="card">
+      <h3>E-commerce Website</h3>
+      <p>Full e-commerce platform with product system and payment gateway.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
 
-      <div class="portfolio-item">
-        <h3>Multilingual Website</h3>
-        <p>Created a site in English, French, Spanish, and Arabic for a global NGO.</p>
-      </div>
+    <div class="card">
+      <h3>Brand Identity Pack</h3>
+      <p>Logo + colors + design system for a wellness brand.</p>
+    </div>
 
-      <div class="portfolio-item">
-        <h3>AI Voice/Image Project</h3>
-        <p>Python-based AI project for voice and image generation (Pixverse-style demo).</p>
-      </div>
+    <div class="card">
+      <h3>AI Voice & Image Demo</h3>
+      <p>Python-based voice → text and image filter demo.</p>
+    </div>
 
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Your current professional responsive website.</p>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <p>&copy; 2025 Eyesightworks. All rights reserved.</p>
+<footer>
+  <div class="container">&copy; 2025 Eyesightworks — Alawode Adewale.</div>
 </footer>
 
 <script src="script.js"></script>
