@@ -1,49 +1,73 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Alawode Adewale Afeez — Web Developer, AI & Graphics Designer, Content Creator." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio of Alawode Adewale Afeez — Web Developer, AI & Graphics Designer, Content Creator.">
   <title>Eyesightworks | Alawode Adewale Afeez</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
-
   <style>
-    body {font-family: 'Inter', sans-serif; margin:0; padding:0; line-height:1.6; background:#f8fafb; color:#333;}
-    .container {max-width:1000px; margin:0 auto; padding:1rem;}
-    header .logo {font-weight:800; font-size:1.4rem;}
-    nav a {margin-left:12px; text-decoration:none; color:#fff; font-weight:600;}
-    .hero {padding:2rem 1rem; display:flex; flex-direction:column; align-items:center; text-align:center;}
-    .hero .intro h1 {font-size:2.2rem; margin-bottom:0.5rem;}
-    .hero .intro .tagline {font-size:1.1rem; margin-bottom:1.5rem;}
-    .actions-card {display:flex; flex-wrap:wrap; gap:12px; padding:1.5rem; border-radius:12px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1); justify-content:center; margin-bottom:2rem;}
-    .actions-card .btn {flex:1 1 120px; text-align:center; padding:0.6rem 1rem; font-weight:600; border:none; border-radius:6px; cursor:pointer; text-decoration:none; color:#fff; background:#0a2540;}
-    .actions-card .btn.ghost {background:transparent; border:1px solid #0a2540; color:#0a2540;}
-    .profile-card {text-align:center; margin-bottom:3rem;}
-    .profile-card img.avatar {width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:12px;}
-    .skills-list {display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;}
-    .skills-list .skill-pill {background:#0a2540; color:#fff; padding:6px 12px; border-radius:6px; font-weight:600;}
-    .portfolio-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
-    .portfolio-item {background:#fff; padding:1rem; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);}
-    footer {text-align:center; padding:1rem 0; background:#0a2540; color:#fff; margin-top:2rem;}
-    @media(max-width:600px){.hero .intro h1{font-size:1.8rem;}.actions-card .btn{flex:1 1 100%;}}
+    /* ===== Global Reset ===== */
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {font-family:'Inter',sans-serif; line-height:1.6; background:#f8fafb; color:#333;}
+    .container {width:90%;max-width:1100px;margin:auto;padding:1rem;}
+
+    /* ===== Header ===== */
+    header {background:#0a2540;color:#fff;padding:1rem 0;}
+    .header-flex {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo {font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.6rem;}
+    nav a {margin-left:15px;color:#fff;text-decoration:none;font-weight:600;}
+    nav a.active, nav a:hover {color:#00c9a7;}
+    .lang-switcher-button {margin-left:15px;background:#fff;color:#0a2540;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;font-weight:bold;}
+    .lang-switcher-button:hover {background:#00c9a7;color:#0a2540;}
+    @media(max-width:768px){nav {flex-basis:100%;margin-top:0.5rem;display:flex;flex-wrap:wrap;justify-content:center;}}
+
+    /* ===== Hero ===== */
+    .hero {text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,#008080,#90ee90);color:#fff;}
+    .hero h1 {font-family:'Montserrat',sans-serif;font-size:2.8rem;margin-bottom:0.8rem;}
+    .hero p.tagline {font-size:1.2rem;margin-bottom:2rem;font-style:italic;}
+
+    /* Action Buttons Card */
+    .actions-card {display:flex;flex-wrap:wrap;justify-content:center;gap:12px;background:#fff;color:#0a2540;padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:2rem;}
+    .actions-card a, .actions-card button {flex:1 1 120px;text-align:center;padding:0.6rem 1rem;font-weight:600;border-radius:6px;text-decoration:none;cursor:pointer;border:none;}
+    .actions-card a.btn, .actions-card button.btn {background:#0a2540;color:#fff;}
+    .actions-card a.btn.ghost {background:transparent;border:1px solid #0a2540;color:#0a2540;}
+    .actions-card a.btn:hover, .actions-card button.btn:hover {background:#00c9a7;color:#0a2540;}
+
+    /* ===== Profile Card ===== */
+    .profile-card {text-align:center;margin-bottom:3rem;}
+    .profile-card img.avatar {width:180px;height:180px;border-radius:50%;object-fit:cover;margin-bottom:12px;}
+    .skills-list {display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px;}
+    .skill-pill {background:#0a2540;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;}
+
+    /* ===== Portfolio ===== */
+    .portfolio-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .portfolio-item {background:#fff;padding:1rem;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;}
+    .portfolio-item:hover {transform:translateY(-5px);}
+
+    /* ===== Skills Section ===== */
+    .skills-section {padding:2rem 1rem;background:#f5f5f5;}
+    .skills-section h2 {text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:2rem;}
+    .skills-section .card {padding:1rem;background:#fff;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.05);}
+
+    /* ===== Footer ===== */
+    footer {background:#0a2540;color:#fff;text-align:center;padding:1.5rem 0;margin-top:2rem;font-size:0.95rem;}
+
+    /* ===== Responsive ===== */
+    @media(max-width:600px){.hero h1{font-size:1.8rem;}.actions-card a,.actions-card button{flex:1 1 100%;}}
   </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
-  <header class="header" style="background:#0a2540; color:#fff; padding:1rem 0;">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between; flex-wrap:wrap;">
-      <div style="display:flex;align-items:center;gap:12px;">
-        <div class="logo">Eyesightworks</div>
-        <span style="font-size:0.95rem;">Alawode Adewale Afeez</span>
-      </div>
-      <nav class="nav-menu" style="margin-top:0.5rem;">
+  <header>
+    <div class="container header-flex">
+      <div class="logo">Eyesightworks</div>
+      <nav>
         <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
         <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
         <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
@@ -56,42 +80,42 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="intro container">
+    <div class="container">
       <h1 data-en="Welcome, I'm Alawode Adewale Afeez" data-fr="Bienvenue, je suis Alawode Adewale Afeez" data-es="Bienvenido, soy Alawode Adewale Afeez" data-ar="مرحباً، أنا Alawode Adewale Afeez">
-        Welcome, I'm <span style="font-weight:800">Alawode Adewale Afeez</span>
+        Welcome, I'm <strong>Alawode Adewale Afeez</strong>
       </h1>
       <p class="tagline" data-en="Web Developer · AI & Graphics Designer · Content Creator" data-fr="Développeur Web · Designer Graphique & IA · Créateur de contenu" data-es="Desarrollador Web · Diseñador Gráfico & IA · Creador de Contenido" data-ar="مطور ويب · مصمم جرافيك وذكاء اصطناعي · منشئ محتوى">
         Web Developer · AI & Graphics Designer · Content Creator
       </p>
 
-      <!-- ACTION BUTTONS IN CARD -->
+      <!-- ACTION BUTTONS -->
       <div class="actions-card">
         <a href="resume.html" class="btn" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</a>
         <a href="resume.pdf" class="btn" download data-en="Download PDF" data-fr="Télécharger CV" data-es="Descargar PDF" data-ar="تحميل السيرة الذاتية">Download PDF</a>
         <button id="hire-me-btn" class="btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
-        <a class="btn ghost" href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/alawode-adewale" class="btn ghost" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn ghost" target="_blank">LinkedIn</a>
       </div>
-    </div>
 
-    <!-- PROFILE PHOTO + SKILLS -->
-    <aside class="profile-card container">
-      <img class="avatar" src="images/pics.jpg" alt="Alawode Adewale Afeez">
-      <strong style="font-size:1.2rem">Alawode Adewale Afeez</strong>
-      <div style="opacity:0.95;font-size:0.95rem; margin-bottom:12px;">Web Developer | AI & Graphics Designer | Content Creator</div>
-      <div class="skills-list">
-        <div class="skill-pill">HTML / CSS / JavaScript</div>
-        <div class="skill-pill">Python (AI & ML)</div>
-        <div class="skill-pill">React / Frontend</div>
-        <div class="skill-pill">Graphics & Design</div>
-        <div class="skill-pill">Content Writing</div>
-      </div>
-    </aside>
+      <!-- PROFILE PHOTO -->
+      <aside class="profile-card">
+        <img src="images/pics.jpg" alt="Alawode Adewale Afeez" class="avatar">
+        <strong>Alawode Adewale Afeez</strong>
+        <div style="opacity:0.95;font-size:0.95rem;margin-bottom:12px;">Web Developer | AI & Graphics Designer | Content Creator</div>
+        <div class="skills-list">
+          <div class="skill-pill">HTML / CSS / JavaScript</div>
+          <div class="skill-pill">Python (AI & ML)</div>
+          <div class="skill-pill">React / Frontend</div>
+          <div class="skill-pill">Graphics & Design</div>
+          <div class="skill-pill">Content Writing</div>
+        </div>
+      </aside>
+    </div>
   </section>
 
   <!-- FEATURED PROJECTS -->
   <section class="page-section container">
-    <h2 style="margin-bottom:16px;font-family:Montserrat">Featured Projects</h2>
+    <h2 style="font-family:Montserrat;margin-bottom:16px;">Featured Projects</h2>
     <div class="portfolio-grid">
       <article class="portfolio-item">
         <h3>E-commerce Website</h3>
@@ -109,26 +133,24 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <section class="page-section" style="background:#f8fafb; padding:2rem 0;">
-    <div class="container">
-      <h2 style="margin-bottom:12px;font-family:Montserrat">Skills & Tools</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-        <div class="card" style="padding:1rem; border-radius:8px; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.05);">
-          <h4>Web & Frontend</h4>
-          <p>HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub · Content Writing · Graphics</p>
-        </div>
-        <div class="card" style="padding:1rem; border-radius:8px; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.05);">
-          <h4>AI & Python</h4>
-          <p>Python · NumPy · Pandas · Flask · AI/ML Basics · Voice/Image Processing</p>
-        </div>
+  <!-- SKILLS SECTION -->
+  <section class="skills-section">
+    <h2>Skills & Tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+      <div class="card">
+        <h4>Web & Frontend</h4>
+        <p>HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub · Content Writing · Graphics</p>
+      </div>
+      <div class="card">
+        <h4>AI & Python</h4>
+        <p>Python · NumPy · Pandas · Flask · AI/ML Basics · Voice/Image Processing</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Eyesightworks — Alawode Adewale Afeez</p>
+    &copy; 2025 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
   <script>
@@ -138,9 +160,7 @@
     let currentLang = localStorage.getItem('lang') || 'en';
 
     function setLanguage(lang){
-      elements.forEach(el => {
-        el.innerText = el.getAttribute('data-' + lang);
-      });
+      elements.forEach(el => {el.innerText = el.getAttribute('data-'+lang);});
       langSwitcher.innerText = lang.toUpperCase();
       localStorage.setItem('lang', lang);
       currentLang = lang;
@@ -149,8 +169,8 @@
     setLanguage(currentLang);
 
     langSwitcher.addEventListener('click', ()=>{
-      const langs = ['en','fr','es','ar'];
-      let nextIndex = (langs.indexOf(currentLang)+1)%langs.length;
+      const langs=['en','fr','es','ar'];
+      let nextIndex=(langs.indexOf(currentLang)+1)%langs.length;
       setLanguage(langs[nextIndex]);
     });
   </script>
