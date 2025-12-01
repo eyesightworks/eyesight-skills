@@ -11,50 +11,50 @@
 
   <style>
     /* ===== Global Reset ===== */
-    * {margin:0;padding:0;box-sizing:border-box;}
-    body {font-family:'Inter',sans-serif; line-height:1.6; background:#f8fafb; color:#333;}
-    .container {width:90%;max-width:1100px;margin:auto;padding:1rem;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;line-height:1.6;background:#f8fafb;color:#333;}
+    .container{width:90%;max-width:1100px;margin:auto;padding:1rem;}
 
     /* ===== Header ===== */
-    header {background:#0a2540;color:#fff;padding:1rem 0;}
-    .header-flex {display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
-    .logo {font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.6rem;}
-    nav a {margin-left:15px;color:#fff;text-decoration:none;font-weight:600;}
-    nav a.active, nav a:hover {color:#00c9a7;}
-    .lang-switcher-button {margin-left:15px;background:#fff;color:#0a2540;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;font-weight:bold;}
-    .lang-switcher-button:hover {background:#00c9a7;color:#0a2540;}
-    @media(max-width:768px){nav {flex-basis:100%;margin-top:0.5rem;display:flex;flex-wrap:wrap;justify-content:center;}}
+    header{background:#0a2540;color:#fff;padding:1rem 0;}
+    .header-flex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.6rem;}
+    nav a{margin-left:15px;color:#fff;text-decoration:none;font-weight:600;}
+    nav a.active, nav a:hover{color:#00c9a7;}
+    .lang-switcher-button{margin-left:15px;background:#fff;color:#0a2540;border:none;padding:0.3rem 0.6rem;border-radius:5px;cursor:pointer;font-weight:bold;}
+    .lang-switcher-button:hover{background:#00c9a7;color:#0a2540;}
+    @media(max-width:768px){nav{flex-basis:100%;margin-top:0.5rem;display:flex;flex-wrap:wrap;justify-content:center;}}
 
-    /* ===== Hero ===== */
-    .hero {text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,#008080,#90ee90);color:#fff;}
-    .hero h1 {font-family:'Montserrat',sans-serif;font-size:2.8rem;margin-bottom:0.8rem;}
-    .hero p.tagline {font-size:1.2rem;margin-bottom:2rem;font-style:italic;}
+    /* ===== Hero Section ===== */
+    .hero{text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,#008080,#90ee90);color:#fff;}
+    .hero h1{font-family:'Montserrat',sans-serif;font-size:2.8rem;margin-bottom:0.8rem;}
+    .hero p.tagline{font-size:1.2rem;margin-bottom:2rem;font-style:italic;}
 
-    /* Action Buttons Card */
-    .actions-card {display:flex;flex-wrap:wrap;justify-content:center;gap:12px;background:#fff;color:#0a2540;padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:2rem;}
-    .actions-card a, .actions-card button {flex:1 1 120px;text-align:center;padding:0.6rem 1rem;font-weight:600;border-radius:6px;text-decoration:none;cursor:pointer;border:none;}
-    .actions-card a.btn, .actions-card button.btn {background:#0a2540;color:#fff;}
-    .actions-card a.btn.ghost {background:transparent;border:1px solid #0a2540;color:#0a2540;}
-    .actions-card a.btn:hover, .actions-card button.btn:hover {background:#00c9a7;color:#0a2540;}
+    /* ===== Action Buttons ===== */
+    .actions-card{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;background:#fff;color:#0a2540;padding:1.5rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:2rem;}
+    .actions-card a,.actions-card button{flex:1 1 120px;text-align:center;padding:0.6rem 1rem;font-weight:600;border-radius:6px;text-decoration:none;cursor:pointer;border:none;}
+    .actions-card a.btn,.actions-card button.btn{background:#0a2540;color:#fff;}
+    .actions-card a.btn.ghost{background:transparent;border:1px solid #0a2540;color:#0a2540;}
+    .actions-card a.btn:hover,.actions-card button.btn:hover{background:#00c9a7;color:#0a2540;}
 
     /* ===== Profile Card ===== */
-    .profile-card {text-align:center;margin-bottom:3rem;}
-    .profile-card img.avatar {width:180px;height:180px;border-radius:50%;object-fit:cover;margin-bottom:12px;}
-    .skills-list {display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px;}
-    .skill-pill {background:#0a2540;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;}
+    .profile-card{text-align:center;margin-bottom:3rem;}
+    .profile-card img.avatar{width:180px;height:180px;border-radius:50%;object-fit:cover;margin-bottom:12px;}
+    .skills-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:12px;}
+    .skill-pill{background:#0a2540;color:#fff;padding:6px 12px;border-radius:6px;font-weight:600;}
 
     /* ===== Portfolio ===== */
-    .portfolio-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-    .portfolio-item {background:#fff;padding:1rem;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;}
-    .portfolio-item:hover {transform:translateY(-5px);}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+    .portfolio-item{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.1);transition:0.3s;}
+    .portfolio-item:hover{transform:translateY(-5px);}
 
     /* ===== Skills Section ===== */
-    .skills-section {padding:2rem 1rem;background:#f5f5f5;}
-    .skills-section h2 {text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:2rem;}
-    .skills-section .card {padding:1rem;background:#fff;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.05);}
+    .skills-section{padding:2rem 1rem;background:#f5f5f5;}
+    .skills-section h2{text-align:center;font-family:'Montserrat',sans-serif;font-size:2rem;margin-bottom:2rem;}
+    .skills-section .card{padding:1rem;background:#fff;border-radius:8px;box-shadow:0 3px 8px rgba(0,0,0,0.05);}
 
     /* ===== Footer ===== */
-    footer {background:#0a2540;color:#fff;text-align:center;padding:1.5rem 0;margin-top:2rem;font-size:0.95rem;}
+    footer{background:#0a2540;color:#fff;text-align:center;padding:1.5rem 0;margin-top:2rem;font-size:0.95rem;}
 
     /* ===== Responsive ===== */
     @media(max-width:600px){.hero h1{font-size:1.8rem;}.actions-card a,.actions-card button{flex:1 1 100%;}}
@@ -153,22 +153,22 @@
     &copy; 2025 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
+  <!-- Language Switcher Script -->
   <script>
-    // Language Switcher
-    const langSwitcher = document.getElementById('lang-switcher');
-    const elements = document.querySelectorAll('[data-en]');
-    let currentLang = localStorage.getItem('lang') || 'en';
+    const langSwitcher=document.getElementById('lang-switcher');
+    const elements=document.querySelectorAll('[data-en]');
+    let currentLang=localStorage.getItem('lang')||'en';
 
     function setLanguage(lang){
-      elements.forEach(el => {el.innerText = el.getAttribute('data-'+lang);});
-      langSwitcher.innerText = lang.toUpperCase();
-      localStorage.setItem('lang', lang);
-      currentLang = lang;
+      elements.forEach(el=>{el.innerText=el.getAttribute('data-'+lang);});
+      langSwitcher.innerText=lang.toUpperCase();
+      localStorage.setItem('lang',lang);
+      currentLang=lang;
     }
 
     setLanguage(currentLang);
 
-    langSwitcher.addEventListener('click', ()=>{
+    langSwitcher.addEventListener('click',()=>{
       const langs=['en','fr','es','ar'];
       let nextIndex=(langs.indexOf(currentLang)+1)%langs.length;
       setLanguage(langs[nextIndex]);
