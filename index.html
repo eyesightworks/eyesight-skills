@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Alawode Adewale — Web Developer, AI & Graphics Designer, Content Creator." />
-  <title>Eyesightworks | Alawode Adewale</title>
+  <meta name="description" content="Portfolio of Alawode Adewale Afeez — Web Developer, AI & Graphics Designer, Content Creator." />
+  <title>Eyesightworks | Alawode Adewale Afeez</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
@@ -41,14 +41,15 @@
     <div class="container" style="display:flex;align-items:center;justify-content:space-between; flex-wrap:wrap;">
       <div style="display:flex;align-items:center;gap:12px;">
         <div class="logo">Eyesightworks</div>
-        <span style="font-size:0.95rem;">Alawode Adewale</span>
+        <span style="font-size:0.95rem;">Alawode Adewale Afeez</span>
       </div>
       <nav class="nav-menu" style="margin-top:0.5rem;">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
+        <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
+        <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
+        <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
+        <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
+        <button id="lang-switcher" class="lang-switcher-button">EN</button>
       </nav>
     </div>
   </header>
@@ -56,14 +57,18 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="intro container">
-      <h1>Hi, I'm <span style="font-weight:800">Alawode Adewale</span></h1>
-      <p class="tagline">Web Developer · AI & Graphics Designer · Content Creator</p>
+      <h1 data-en="Welcome, I'm Alawode Adewale Afeez" data-fr="Bienvenue, je suis Alawode Adewale Afeez" data-es="Bienvenido, soy Alawode Adewale Afeez" data-ar="مرحباً، أنا Alawode Adewale Afeez">
+        Welcome, I'm <span style="font-weight:800">Alawode Adewale Afeez</span>
+      </h1>
+      <p class="tagline" data-en="Web Developer · AI & Graphics Designer · Content Creator" data-fr="Développeur Web · Designer Graphique & IA · Créateur de contenu" data-es="Desarrollador Web · Diseñador Gráfico & IA · Creador de Contenido" data-ar="مطور ويب · مصمم جرافيك وذكاء اصطناعي · منشئ محتوى">
+        Web Developer · AI & Graphics Designer · Content Creator
+      </p>
 
       <!-- ACTION BUTTONS IN CARD -->
       <div class="actions-card">
-        <a href="resume.html" class="btn">View Resume</a>
-        <a href="resume.pdf" class="btn" download>Download PDF</a>
-        <button id="hire-me-btn" class="btn">Hire Me</button>
+        <a href="resume.html" class="btn" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</a>
+        <a href="resume.pdf" class="btn" download data-en="Download PDF" data-fr="Télécharger CV" data-es="Descargar PDF" data-ar="تحميل السيرة الذاتية">Download PDF</a>
+        <button id="hire-me-btn" class="btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
         <a class="btn ghost" href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
       </div>
@@ -71,8 +76,8 @@
 
     <!-- PROFILE PHOTO + SKILLS -->
     <aside class="profile-card container">
-      <img class="avatar" src="images/pics.jpg" alt="Alawode Adewale">
-      <strong style="font-size:1.2rem">Alawode Adewale</strong>
+      <img class="avatar" src="images/pics.jpg" alt="Alawode Adewale Afeez">
+      <strong style="font-size:1.2rem">Alawode Adewale Afeez</strong>
       <div style="opacity:0.95;font-size:0.95rem; margin-bottom:12px;">Web Developer | AI & Graphics Designer | Content Creator</div>
       <div class="skills-list">
         <div class="skill-pill">HTML / CSS / JavaScript</div>
@@ -123,9 +128,31 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Eyesightworks — Alawode Adewale</p>
+    <p>&copy; 2025 Eyesightworks — Alawode Adewale Afeez</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Language Switcher
+    const langSwitcher = document.getElementById('lang-switcher');
+    const elements = document.querySelectorAll('[data-en]');
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function setLanguage(lang){
+      elements.forEach(el => {
+        el.innerText = el.getAttribute('data-' + lang);
+      });
+      langSwitcher.innerText = lang.toUpperCase();
+      localStorage.setItem('lang', lang);
+      currentLang = lang;
+    }
+
+    setLanguage(currentLang);
+
+    langSwitcher.addEventListener('click', ()=>{
+      const langs = ['en','fr','es','ar'];
+      let nextIndex = (langs.indexOf(currentLang)+1)%langs.length;
+      setLanguage(langs[nextIndex]);
+    });
+  </script>
 </body>
 </html>
