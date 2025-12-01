@@ -27,31 +27,32 @@ body {
 .header {
   background-color: #0a2540;
   color: #fff;
-  padding: 1.2rem 2rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  flex-wrap: wrap;
 }
 
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 
 /* Navigation */
 .nav-menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-menu a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .nav-menu a:hover,
@@ -59,24 +60,7 @@ body {
   color: #00c9a7;
 }
 
-/* Language Switcher — WHITE BUTTON */
-.lang-switcher-button {
-  background: #fff;
-  color: #0a2540;
-  border: none;
-  padding: 0.4em 0.8em;
-  cursor: pointer;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: 0.3s ease;
-}
-
-.lang-switcher-button:hover {
-  background: #00c9a7;
-  color: #0a2540;
-}
-
-/* Hamburger (Mobile) */
+/* Hamburger */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -86,7 +70,7 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media(max-width:768px) {
   .hamburger {
     display: block;
   }
@@ -94,12 +78,8 @@ body {
   .nav-menu {
     display: none;
     flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #0a2540;
     width: 100%;
-    padding: 1rem;
+    margin-top: 1rem;
   }
 
   .nav-menu.show {
@@ -112,80 +92,99 @@ body {
 ========================================= */
 .hero {
   text-align: center;
-  padding: 5rem 2rem;
-  background: linear-gradient(to right, #008080, #90ee90);
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #008080, #90ee90);
   color: #fff;
 }
 
 .hero h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
 }
 
 .tagline {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
   font-style: italic;
 }
 
-/* Buttons (Resume + Hire Me) */
-.download-btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #0a2540;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s ease;
-  margin: 0.3rem;
+/* ACTION BUTTONS */
+.actions-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.download-btn:hover {
+.actions-card .btn {
+  flex: 1 1 120px;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background-color: #0a2540;
+  transition: 0.3s;
+}
+
+.actions-card .btn:hover {
   background-color: #00c9a7;
   color: #0a2540;
 }
 
-/* =========================================
-   PAGE SECTIONS
-========================================= */
-.page-section {
-  padding: 3rem 2rem;
+.actions-card .btn.ghost {
+  background: transparent;
+  border: 1px solid #0a2540;
+  color: #0a2540;
 }
 
 /* =========================================
-   SKILLS SECTION
+   PROFILE PHOTO + SKILLS
 ========================================= */
-.skills-section {
-  background: #f5f5f5;
-}
-
-.skills-section h2 {
+.profile-card {
   text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem;
-  margin-bottom: 2rem;
+  margin: 3rem 0;
+}
+
+.profile-card img.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover; /* ensures perfect circular crop */
+  margin-bottom: 12px;
+}
+
+/* reduce image size for smaller devices */
+@media(max-width:600px){
+  .profile-card img.avatar {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 .skills-list {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.2rem;
-  padding: 0;
-  max-width: 900px;
-  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-.skills-list li {
+.skill-pill {
   background: #0a2540;
   color: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
+  padding: 6px 12px;
+  border-radius: 6px;
   font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 0.9rem;
 }
 
 /* =========================================
@@ -194,15 +193,16 @@ body {
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .portfolio-item {
-  padding: 1.3rem;
   background: #fff;
+  padding: 1rem;
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .portfolio-item:hover {
@@ -213,35 +213,33 @@ body {
    FOOTER
 ========================================= */
 footer {
-  background-color: #0a2540;
+  background: #0a2540;
   color: #fff;
   text-align: center;
-  padding: 1.8rem 0;
-  margin-top: 2rem;
+  padding: 1.5rem 0;
   font-size: 0.95rem;
 }
 
 /* =========================================
-   MODAL (Hire Me)
+   MODAL
 ========================================= */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0; 
-  top: 0;
-  width: 100%; 
+  top: 0; left: 0;
+  width: 100%;
   height: 100%;
   background-color: rgba(0,0,0,0.6);
+  z-index: 1000;
 }
 
 .modal-content {
   background: #fff;
+  width: 90%;
+  max-width: 500px;
   margin: 10% auto;
   padding: 2rem;
   border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
   position: relative;
 }
 
@@ -262,10 +260,9 @@ footer {
   width: 100%;
 }
 
-/* Close Button */
 .close {
   position: absolute;
-  top: 10px; 
+  top: 10px;
   right: 20px;
   font-size: 2rem;
   cursor: pointer;
