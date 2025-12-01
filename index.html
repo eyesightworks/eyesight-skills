@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Alawode Adewale — Web Developer, AI & Graphics Designer, Content Creator." />
   <title>Eyesightworks | Alawode Adewale</title>
 
@@ -11,76 +11,70 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    body {font-family: 'Inter', sans-serif; margin:0; padding:0; line-height:1.6; background:#f8fafb; color:#333;}
+    .container {max-width:1000px; margin:0 auto; padding:1rem;}
+    header .logo {font-weight:800; font-size:1.4rem;}
+    nav a {margin-left:12px; text-decoration:none; color:#fff; font-weight:600;}
+    .hero {padding:2rem 1rem; display:flex; flex-direction:column; align-items:center; text-align:center;}
+    .hero .intro h1 {font-size:2.2rem; margin-bottom:0.5rem;}
+    .hero .intro .tagline {font-size:1.1rem; margin-bottom:1.5rem;}
+    .actions-card {display:flex; flex-wrap:wrap; gap:12px; padding:1.5rem; border-radius:12px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.1); justify-content:center; margin-bottom:2rem;}
+    .actions-card .btn {flex:1 1 120px; text-align:center; padding:0.6rem 1rem; font-weight:600; border:none; border-radius:6px; cursor:pointer; text-decoration:none; color:#fff; background:#0a2540;}
+    .actions-card .btn.ghost {background:transparent; border:1px solid #0a2540; color:#0a2540;}
+    .profile-card {text-align:center; margin-bottom:3rem;}
+    .profile-card img.avatar {width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:12px;}
+    .skills-list {display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;}
+    .skills-list .skill-pill {background:#0a2540; color:#fff; padding:6px 12px; border-radius:6px; font-weight:600;}
+    .portfolio-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;}
+    .portfolio-item {background:#fff; padding:1rem; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+    footer {text-align:center; padding:1rem 0; background:#0a2540; color:#fff; margin-top:2rem;}
+    @media(max-width:600px){.hero .intro h1{font-size:1.8rem;}.actions-card .btn{flex:1 1 100%;}}
+  </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
-  <header class="header">
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between">
-      <div style="display:flex;align-items:center;gap:12px">
+  <header class="header" style="background:#0a2540; color:#fff; padding:1rem 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between; flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:12px;">
         <div class="logo">Eyesightworks</div>
-        <span style="color:#ddd;font-size:0.95rem;font-weight:600">Alawode Adewale</span>
+        <span style="font-size:0.95rem;">Alawode Adewale</span>
       </div>
-
-      <!-- NAVIGATION -->
-      <nav class="nav-menu" id="nav-menu">
-        <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
-        <a href="about.html" data-en="About" data-fr="À propos" data-es="Sobre" data-ar="من نحن">About</a>
-        <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a>
-        <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
-        <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a>
-        <button id="lang-switcher" class="lang-switcher-button">EN</button>
+      <nav class="nav-menu" style="margin-top:0.5rem;">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact</a>
       </nav>
-
-      <!-- MOBILE BUTTON -->
-      <button id="hamburger" class="hamburger">&#9776;</button>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="intro container">
-      <h1 data-en="Hi, I'm Alawode Adewale" data-fr="Bonjour, je suis Alawode Adewale" data-es="Hola, soy Alawode Adewale" data-ar="مرحباً، أنا Alawode Adewale">
-        Hi, I'm <span style="font-weight:800">Alawode Adewale</span>
-      </h1>
+      <h1>Hi, I'm <span style="font-weight:800">Alawode Adewale</span></h1>
+      <p class="tagline">Web Developer · AI & Graphics Designer · Content Creator</p>
 
-      <p class="tagline" data-en="Web Developer · AI & Graphics Designer · Content Creator" data-fr="Développeur Web · Designer Graphique & IA · Créateur de contenu" data-es="Desarrollador Web · Diseñador Gráfico & IA · Creador de Contenido" data-ar="مطور ويب · مصمم جرافيك وذكاء اصطناعي · منشئ محتوى">
-        Web Developer · AI & Graphics Designer · Content Creator
-      </p>
-
-      <!-- ACTION BUTTONS -->
-      <div class="actions">
-        <a href="resume.html" class="btn" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</a>
-        <a href="resume.pdf" class="btn" download data-en="Download PDF Resume" data-fr="Télécharger CV" data-es="Descargar PDF CV" data-ar="تحميل السيرة الذاتية">Download PDF</a>
-        <button id="hire-me-btn" class="btn" data-en="Hire Me" data-fr="Embauchez-moi" data-es="Contrátame" data-ar="وظفني">Hire Me</button>
+      <!-- ACTION BUTTONS IN CARD -->
+      <div class="actions-card">
+        <a href="resume.html" class="btn">View Resume</a>
+        <a href="resume.pdf" class="btn" download>Download PDF</a>
+        <button id="hire-me-btn" class="btn">Hire Me</button>
         <a class="btn ghost" href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-
-      <!-- INFO CARDS -->
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px">
-        <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
-          <div style="font-weight:800">Available for Hire</div>
-          <div style="opacity:0.85;font-size:0.95rem">Open to frontend roles, AI projects, graphics & content creation, freelance work.</div>
-        </div>
-        <div class="card" style="background:rgba(255,255,255,0.06);color:#fff">
-          <div style="font-weight:800">Languages</div>
-          <div style="opacity:0.85;font-size:0.95rem">English · French · Spanish · Arabic</div>
-        </div>
       </div>
     </div>
 
     <!-- PROFILE PHOTO + SKILLS -->
     <aside class="profile-card container">
       <img class="avatar" src="images/pics.jpg" alt="Alawode Adewale">
-
-      <div style="text-align:center;margin-top:8px">
-        <strong style="font-size:1.2rem">Alawode Adewale</strong>
-        <div style="opacity:0.95;font-size:0.95rem">Web Developer | AI & Graphics Designer | Content Creator</div>
-      </div>
-
-      <div class="skills-list" style="margin-top:12px">
+      <strong style="font-size:1.2rem">Alawode Adewale</strong>
+      <div style="opacity:0.95;font-size:0.95rem; margin-bottom:12px;">Web Developer | AI & Graphics Designer | Content Creator</div>
+      <div class="skills-list">
         <div class="skill-pill">HTML / CSS / JavaScript</div>
         <div class="skill-pill">Python (AI & ML)</div>
         <div class="skill-pill">React / Frontend</div>
@@ -99,12 +93,10 @@
         <p>Modern store with responsive UI, product management & checkout flow.</p>
         <a href="https://github.com/alawode-adewale" target="_blank">View Source</a>
       </article>
-
       <article class="portfolio-item">
         <h3>Brand Identity Package</h3>
         <p>Logo, color system & visual guide for a wellness lifestyle brand.</p>
       </article>
-
       <article class="portfolio-item">
         <h3>AI Voice & Image Demo</h3>
         <p>Python voice transcription + AI image generation (Flask deployable).</p>
@@ -113,16 +105,15 @@
   </section>
 
   <!-- SKILLS -->
-  <section class="page-section" style="background:#f8fafb">
+  <section class="page-section" style="background:#f8fafb; padding:2rem 0;">
     <div class="container">
       <h2 style="margin-bottom:12px;font-family:Montserrat">Skills & Tools</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
-        <div class="card">
+        <div class="card" style="padding:1rem; border-radius:8px; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.05);">
           <h4>Web & Frontend</h4>
           <p>HTML5 · CSS3 · JavaScript · Responsive UI · React · Git & GitHub · Content Writing · Graphics</p>
         </div>
-
-        <div class="card">
+        <div class="card" style="padding:1rem; border-radius:8px; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.05);">
           <h4>AI & Python</h4>
           <p>Python · NumPy · Pandas · Flask · AI/ML Basics · Voice/Image Processing</p>
         </div>
@@ -134,20 +125,6 @@
   <footer>
     <p>&copy; 2025 Eyesightworks — Alawode Adewale</p>
   </footer>
-
-  <!-- HIRE-ME MODAL -->
-  <div id="hire-modal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Hire Me</h2>
-      <form action="thank-you.html" method="GET">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <textarea name="message" rows="5" placeholder="Tell me about the project" required></textarea>
-        <button type="submit" class="download-btn" style="width:100%">Send</button>
-      </form>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
