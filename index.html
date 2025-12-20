@@ -52,15 +52,13 @@
       gap: 1rem;
       align-items: center;
     }
-    nav ul li {
-      /* no extra margin here because gap on ul handles spacing */
-    }
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       padding: 0.3rem 0.5rem;
       display: inline-block;
+      user-select: none;
     }
     nav a.active,
     nav a:hover {
@@ -77,10 +75,13 @@
       font-size: 0.9rem;
       margin-left: 1rem;
       transition: background-color 0.3s ease;
+      user-select: none;
     }
-    .lang-switcher-button:hover {
+    .lang-switcher-button:hover,
+    .lang-switcher-button:focus {
       background: #00c9a7;
       color: #fff;
+      outline: none;
     }
 
     /* Hero Section */
@@ -130,26 +131,30 @@
       cursor: pointer;
       border: none;
       user-select: none;
+      transition: background-color 0.3s ease;
     }
     .actions-card a.btn,
     .actions-card button.btn {
       background: #0a2540;
       color: #fff;
-      transition: background-color 0.3s ease;
     }
     .actions-card a.btn:hover,
-    .actions-card button.btn:hover {
+    .actions-card button.btn:hover,
+    .actions-card a.btn:focus,
+    .actions-card button.btn:focus {
       background: #004d40;
+      outline: none;
     }
     .actions-card a.btn.ghost {
       background: transparent;
       border: 1px solid #0a2540;
       color: #0a2540;
-      transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .actions-card a.btn.ghost:hover {
+    .actions-card a.btn.ghost:hover,
+    .actions-card a.btn.ghost:focus {
       background: #0a2540;
       color: #fff;
+      outline: none;
     }
 
     /* Profile Card */
