@@ -15,7 +15,6 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
   });
 });
 
-
 // ===============================
 // Language Switcher
 // ===============================
@@ -43,8 +42,14 @@ function switchLanguage(lang) {
   html.lang = lang;
   html.dir = lang === "ar" ? "rtl" : "ltr";
   langSwitcher.textContent = lang.toUpperCase();
-}
 
+  // Update all elements with data-lang attributes
+  const elements = document.querySelectorAll("[data-en]");
+  elements.forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
+}
 
 // ===============================
 // Hire Me Modal
@@ -68,7 +73,6 @@ if (hireBtn && modal) {
     }
   });
 }
-
 
 // ===============================
 // Hire Me Form (Email Sender)
