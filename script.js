@@ -43,7 +43,7 @@ function switchLanguage(lang) {
   html.dir = lang === "ar" ? "rtl" : "ltr";
   langSwitcher.textContent = lang.toUpperCase();
 
-  // Update all elements with data-lang attributes
+  // Update all elements with data attributes for each language
   const elements = document.querySelectorAll("[data-en]");
   elements.forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
