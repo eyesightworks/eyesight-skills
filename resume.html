@@ -12,12 +12,12 @@
       color: #333;
       line-height: 1.6;
       margin: 0;
-      padding: 0;
+      padding: 0 1rem;
     }
     .container {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 1.5rem 2rem;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
@@ -95,6 +95,11 @@
       color: #005f4a;
       border-radius: 6px;
     }
+    @media (max-width: 600px) {
+      .skills-list, .tools-list, .languages-list {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -119,14 +124,14 @@
 
       <!-- Custom Resume Note -->
       <div class="customize-note">
-        For specific roles or opportunities, I customize my resume to better fit the job requirements. Please <a href="contact.html">contact me</a> to request a tailored version.
+        For specific roles or opportunities, I customize my resume to better fit the job requirements. Please <a href="contact.html">contact me</a> to request a tailored version optimized for junior, mid-level, AI, Python, or any specific role.
       </div>
     </section>
 
     <!-- Core Skills -->
     <section>
       <h2>Core Skills</h2>
-      <ul class="skills-list">
+      <ul class="skills-list" aria-label="Core Skills">
         <li>Frontend Development</li>
         <li>AI & Python Programming</li>
         <li>Responsive UI/UX Design</li>
@@ -140,7 +145,7 @@
     <!-- Tools & Technologies -->
     <section>
       <h2>Tools & Technologies</h2>
-      <ul class="tools-list">
+      <ul class="tools-list" aria-label="Tools and Technologies">
         <li>HTML5 / CSS3 / JavaScript</li>
         <li>React / Frontend Frameworks</li>
         <li>Python / NumPy / Pandas</li>
@@ -209,7 +214,7 @@
     <!-- Languages -->
     <section>
       <h2>Languages</h2>
-      <ul class="languages-list">
+      <ul class="languages-list" aria-label="Languages">
         <li>English (Fluent)</li>
         <li>Yoruba (Native)</li>
         <li>Arabic (Basic)</li>
