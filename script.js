@@ -123,3 +123,32 @@ document.addEventListener("DOMContentLoaded", () => {
     submittedAt.value = new Date().toISOString();
   }
 });
+
+// =====================================
+// PORTFOLIO FILTERING
+// =====================================
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".portfolio-filters button");
+  const portfolioItems = document.querySelectorAll(".portfolio-grid .card");
+
+  if (!filterButtons.length || !portfolioItems.length) return;
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Remove 'active' from all buttons
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      // Add 'active' to clicked button
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      portfolioItems.forEach(item => {
+        if (filter === "all" || item.classList.contains(filter)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+});
