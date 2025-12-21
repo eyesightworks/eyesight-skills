@@ -2,85 +2,148 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Testimonials – Eyesightworks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Testimonials | Alawode Adewale Afeez</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Client testimonials and feedback for Alawode Adewale Afeez, frontend developer and web designer.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-    <div style="display:flex;align-items:center;gap:12px">
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav>
       <div class="logo">Eyesightworks</div>
-      <div style="color:#fff;opacity:.8">Alawode Adewale</div>
-    </div>
 
-    <nav class="nav-menu" id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="testimonials.html" class="active">Testimonials</a>
-      <a href="contact.html">Contact</a>
-      <button id="lang-switcher" class="lang-switcher-button">EN</button>
+      <button id="hamburger" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+        <li><a href="testimonials.html" class="active" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+        <li>
+          <button id="lang-switcher" class="lang-switcher-button" aria-label="Switch language">EN</button>
+        </li>
+      </ul>
     </nav>
-
-    <button class="hamburger" id="hamburger">&#9776;</button>
   </div>
 </header>
 
-<section class="section container">
-  <h1>Testimonials</h1>
+<!-- ================= TESTIMONIALS ================= -->
+<main>
 
-  <p style="max-width:720px;margin-bottom:30px;">
-    Below are selected comments from clients and collaborators I’ve worked with on web development,
-    design, and digital projects. Feedback highlights my approach to communication, reliability,
-    and delivering practical solutions that meet project requirements.
-  </p>
+  <section class="section">
+    <div class="container">
 
-  <div class="card" style="margin-bottom:18px;">
-    <p>
-      “Adewale delivered a responsive and well-structured website that met our project needs.
-      He communicated clearly throughout the process and was open to feedback during revisions.”
-    </p>
-    <strong>— Small Business Client (Website Project)</strong>
-  </div>
+      <h1
+        data-en="Testimonials"
+        data-fr="Témoignages"
+        data-es="Testimonios"
+        data-ar="آراء العملاء">
+        Testimonials
+      </h1>
 
-  <div class="card" style="margin-bottom:18px;">
-    <p>
-      “He has a solid understanding of frontend development and layout structure.
-      His ability to translate ideas into functional pages made collaboration straightforward.”
-    </p>
-    <strong>— Creative Team Collaborator</strong>
-  </div>
+      <p class="section-intro"
+        data-en="Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery."
+        data-fr="Voici des retours de clients et collaborateurs mettant en avant la communication et la fiabilité."
+        data-es="A continuación se muestran comentarios de clientes y colaboradores sobre mi trabajo."
+        data-ar="فيما يلي آراء مختارة من عملاء ومتعاونين حول جودة العمل والتواصل.">
+        Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery.
+      </p>
 
-  <div class="card" style="margin-bottom:18px;">
-    <p>
-      “Reliable and consistent. Tasks were delivered on time, and attention was paid to detail,
-      especially in styling and responsiveness.”
-    </p>
-    <strong>— Remote Contract Client</strong>
-  </div>
+      <!-- Testimonial 1 -->
+      <div class="card testimonial">
+        <p
+          data-en="Adewale delivered a responsive and well-structured website that met our project needs. Communication was clear throughout."
+          data-fr="Adewale a livré un site web responsive et bien structuré répondant à nos besoins."
+          data-es="Adewale entregó un sitio web responsivo y bien estructurado."
+          data-ar="قدّم أديوالي موقعًا متجاوبًا ومنظمًا بشكل جيد يلبي احتياجات المشروع.">
+          Adewale delivered a responsive and well-structured website that met our project needs.
+        </p>
+        <strong
+          data-en="— Small Business Client"
+          data-fr="— Client PME"
+          data-es="— Cliente de pequeña empresa"
+          data-ar="— عميل شركة صغيرة">
+          — Small Business Client
+        </strong>
+      </div>
 
-  <div class="card">
-    <p>
-      “Easy to work with and technically sound. I would recommend him for frontend development
-      and web design support.”
-    </p>
-    <strong>— Independent Project Client</strong>
-  </div>
+      <!-- Testimonial 2 -->
+      <div class="card testimonial">
+        <p
+          data-en="He has a solid understanding of frontend development and translates ideas into functional layouts."
+          data-fr="Il possède une solide compréhension du développement frontend."
+          data-es="Tiene una sólida comprensión del desarrollo frontend."
+          data-ar="يمتلك فهمًا قويًا لتطوير الواجهات الأمامية.">
+          He has a solid understanding of frontend development and translates ideas into functional layouts.
+        </p>
+        <strong
+          data-en="— Creative Team Collaborator"
+          data-fr="— Collaborateur créatif"
+          data-es="— Colaborador creativo"
+          data-ar="— متعاون إبداعي">
+          — Creative Team Collaborator
+        </strong>
+      </div>
 
-  <div style="margin-top:35px;">
-    <p>
-      Looking to collaborate or need support on a web or frontend project?
-      <a href="contact.html"><strong>Get in touch to discuss your needs.</strong></a>
-    </p>
-  </div>
+      <!-- Testimonial 3 -->
+      <div class="card testimonial">
+        <p
+          data-en="Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling."
+          data-fr="Fiable et constant. Les tâches ont été livrées dans les délais."
+          data-es="Confiable y constante. Las tareas se entregaron a tiempo."
+          data-ar="موثوق ومتسق، تم تسليم المهام في الوقت المحدد.">
+          Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling.
+        </p>
+        <strong
+          data-en="— Remote Contract Client"
+          data-fr="— Client à distance"
+          data-es="— Cliente remoto"
+          data-ar="— عميل عن بُعد">
+          — Remote Contract Client
+        </strong>
+      </div>
 
-</section>
+      <!-- CTA -->
+      <div class="cta-box">
+        <p
+          data-en="Interested in working together?"
+          data-fr="Intéressé par une collaboration ?"
+          data-es="¿Interesado en trabajar juntos?"
+          data-ar="هل ترغب في العمل معي؟">
+          Interested in working together?
+        </p>
+        <a href="contact.html" class="btn"
+          data-en="Contact Me"
+          data-fr="Me contacter"
+          data-es="Contáctame"
+          data-ar="تواصل معي">
+          Contact Me
+        </a>
+      </div>
 
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="container">&copy; 2025 Eyesightworks — Alawode Adewale.</div>
+  © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script src="script.js"></script>
