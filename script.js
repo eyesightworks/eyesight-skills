@@ -1,103 +1,125 @@
-// ===============================
-// Hamburger Menu Toggle
-// ===============================
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
+// =====================================
+// SAFE DOM HELPER
+// =====================================
+function $(id) {
+  return document.getElementById(id);
+}
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-});
-
-// Close menu on link click (mobile fix)
-document.querySelectorAll(".nav-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("show");
-  });
-});
-
-// ===============================
-// Language Switcher
-// ===============================
-const langSwitcher = document.getElementById("lang-switcher");
-const html = document.documentElement;
-const languages = ["en", "fr", "es", "ar"];
-let currentLangIndex = 0;
-
+// =====================================
+// MOBILE HAMBURGER MENU
+// =====================================
 document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("preferredLang");
-  if (savedLang && languages.includes(savedLang)) {
-    currentLangIndex = languages.indexOf(savedLang);
-    switchLanguage(savedLang);
+  const hamburger = $("hamburger");
+  const navMenu = $("nav-menu");
+
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+
+    // Close menu when link is clicked (mobile UX fix)
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("show");
+      });
+    });
   }
 });
 
-langSwitcher.addEventListener("click", () => {
-  currentLangIndex = (currentLangIndex + 1) % languages.length;
-  const lang = languages[currentLangIndex];
-  switchLanguage(lang);
-  localStorage.setItem("preferredLang", lang);
-});
+// =====================================
+// MULTI-LANGUAGE SYSTEM (EN / FR / ES / AR)
+// =====================================
+const html = document.documentElement;
+const supportedLangs = ["en", "fr", "es", "ar"];
+const defaultLang = "en";
 
 function switchLanguage(lang) {
+  if (!supportedLangs.includes(lang)) lang = defaultLang;
+
   html.lang = lang;
   html.dir = lang === "ar" ? "rtl" : "ltr";
-  langSwitcher.textContent = lang.toUpperCase();
 
-  // Update all elements with data attributes for each language
-  const elements = document.querySelectorAll("[data-en]");
-  elements.forEach(el => {
-    const text = el.getAttribute(`data-${lang}`);
+  // Update text content
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const text = el.dataset[lang];
     if (text) el.textContent = text;
   });
+
+  // Update language button / selector
+  const langBtn = $("lang-switcher");
+  const langSelect = $("langSelect");
+
+  if (langBtn) langBtn.textContent = lang.toUpperCase();
+  if (langSelect) langSelect.value = lang;
+
+  localStorage.setItem("preferredLang", lang);
 }
 
-// ===============================
-// Hire Me Modal
-// ===============================
-const hireBtn = document.getElementById("hire-me-btn");
-const modal = document.getElementById("hire-modal");
-const closeModal = document.querySelector(".modal .close");
+// Auto-detect saved or browser language
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("preferredLang");
+  const browserLang = navigator.language.slice(0, 2);
 
-if (hireBtn && modal) {
-  hireBtn.addEventListener("click", () => {
-    modal.style.display = "block";
+  const lang =
+    savedLang && supportedLangs.includes(savedLang)
+      ? savedLang
+      : supportedLangs.includes(browserLang)
+      ? browserLang
+      : defaultLang;
+
+  switchLanguage(lang);
+});
+
+// Button-based language switcher (cycle)
+const langSwitcher = $("lang-switcher");
+if (langSwitcher) {
+  langSwitcher.addEventListener("click", () => {
+    const current = html.lang || defaultLang;
+    const index = supportedLangs.indexOf(current);
+    const nextLang = supportedLangs[(index + 1) % supportedLangs.length];
+    switchLanguage(nextLang);
   });
+}
 
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
+// Dropdown-based language selector
+const langSelect = $("langSelect");
+if (langSelect) {
+  langSelect.addEventListener("change", e => {
+    switchLanguage(e.target.value);
   });
 }
 
-// ===============================
-// Hire Me Form (Email Sender)
-// ===============================
-const hireForm = document.getElementById("hire-form");
+// =====================================
+// CONTACT FORM – RESUME AUTO SELECTOR
+// =====================================
+document.addEventListener("DOMContentLoaded", () => {
+  const roleSelect = $("role");
+  const resumeField = $("resume_used") || $("resume_link");
 
-if (hireForm) {
-  hireForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  if (!roleSelect || !resumeField) return;
 
-    const name = document.getElementById("hire-name").value.trim();
-    const email = document.getElementById("hire-email").value.trim();
-    const message = document.getElementById("hire-message").value.trim();
+  const resumeMap = {
+    "Frontend Developer":
+      "https://eyesightworks.com/recruiter/resume-frontend.pdf",
+    "Junior Backend Developer":
+      "https://eyesightworks.com/recruiter/resume-backend.pdf",
+    "Python / AI Junior":
+      "https://eyesightworks.com/recruiter/resume-ai.pdf",
+    "Freelance Project":
+      "https://eyesightworks.com/recruiter/resume-general.pdf"
+  };
 
-    const mailtoLink =
-      `mailto:eyesightconcept@gmail.com` +
-      `?subject=Hire Me – Message from ${encodeURIComponent(name)}` +
-      `&body=${encodeURIComponent(
-        "Name: " + name +
-        "\nEmail: " + email +
-        "\n\nMessage:\n" + message
-      )}`;
-
-    window.location.href = mailtoLink;
-
-    modal.style.display = "none";
+  roleSelect.addEventListener("change", e => {
+    resumeField.value = resumeMap[e.target.value] || "";
   });
-}
+});
+
+// =====================================
+// CONTACT FORM – TIMESTAMP (ATS TRACKING)
+// =====================================
+document.addEventListener("DOMContentLoaded", () => {
+  const submittedAt = $("submitted_at");
+  if (submittedAt) {
+    submittedAt.value = new Date().toISOString();
+  }
+});
