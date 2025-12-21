@@ -2,151 +2,112 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Contact | Alawode Adewale Afeez – Frontend Developer</title>
+  <title>Contact | Alawode Adewale Afeez – Frontend & AI Developer</title>
 
   <!-- SEO + ATS -->
-  <meta name="description" content="Contact Alawode Adewale Afeez for frontend developer roles, junior backend positions, freelance web projects, or remote opportunities.">
-  <meta name="keywords" content="Frontend Developer, Web Developer, HTML, CSS, JavaScript, React, Junior Backend Developer, Freelance Developer, Remote Jobs">
+  <meta name="description" content="Contact Alawode Adewale Afeez for frontend developer roles, junior backend or AI positions, freelance projects, and remote opportunities.">
+  <meta name="keywords" content="Frontend Developer, Junior Backend Developer, AI Developer, Web Developer, HTML, CSS, JavaScript, Python, Remote Jobs, Freelance">
   <meta name="robots" content="index, follow">
 
-  <!-- Google Analytics (replace ID later) -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-  -->
-
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f8fafb;
-      color: #333;
-      line-height: 1.6;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,sans-serif;
+      background:#f8fafb;
+      color:#333;
+      line-height:1.6
     }
-
-    header, footer {
-      background: #0a2540;
-      color: #fff;
+    header,footer{
+      background:#0a2540;
+      color:#fff
     }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:1rem
     }
-
-    /* Navigation */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:1rem
     }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 1rem;
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600
     }
-
-    nav a.active {
-      color: #00c9a7;
+    nav a.active{
+      color:#00c9a7
     }
-
-    .lang-btn {
-      background: #fff;
-      color: #0a2540;
-      border: none;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
+    .lang-select{
+      padding:.35rem;
+      border-radius:6px;
+      font-weight:600
     }
-
-    h1 {
-      text-align: center;
-      margin: 2rem 0 1rem;
+    h1{
+      text-align:center;
+      margin:2rem 0 1rem
     }
-
-    .intro {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      text-align: center;
-      font-size: 1.05rem;
+    .intro{
+      text-align:center;
+      max-width:720px;
+      margin:0 auto 2rem
     }
-
-    /* Form */
-    form {
-      background: #fff;
-      max-width: 620px;
-      margin: auto;
-      padding: 1.8rem;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    form{
+      background:#fff;
+      max-width:600px;
+      margin:auto;
+      padding:1.6rem;
+      border-radius:14px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08)
     }
-
-    label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
+    label{
+      display:block;
+      margin-top:1rem;
+      font-weight:600
     }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 0.65rem;
-      margin-top: 0.3rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
+    input,select,textarea{
+      width:100%;
+      padding:.6rem;
+      margin-top:.3rem;
+      border-radius:6px;
+      border:1px solid #ccc;
+      font-size:1rem
     }
-
-    textarea {
-      resize: vertical;
+    textarea{resize:vertical}
+    button{
+      margin-top:1.5rem;
+      width:100%;
+      background:#0a2540;
+      color:#fff;
+      border:none;
+      padding:.8rem;
+      border-radius:8px;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer
     }
-
-    button {
-      margin-top: 1.6rem;
-      width: 100%;
-      background: #0a2540;
-      color: #fff;
-      border: none;
-      padding: 0.85rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
+    button:hover{
+      background:#004d40
     }
-
-    button:hover {
-      background: #004d40;
+    .whatsapp{
+      text-align:center;
+      margin-top:1.5rem
     }
-
-    .whatsapp {
-      text-align: center;
-      margin-top: 2rem;
-      font-weight: 600;
+    .whatsapp a{
+      color:#25D366;
+      font-weight:700;
+      text-decoration:none
     }
-
-    .whatsapp a {
-      color: #25D366;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
+    footer{
+      text-align:center;
+      padding:1rem;
+      margin-top:3rem;
+      font-size:.9rem
     }
   </style>
 </head>
@@ -157,29 +118,39 @@
   <nav class="container">
     <strong>Eyesightworks</strong>
     <div>
-      <!-- Pages can be empty for now -->
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="testimonials.html">Testimonials</a>
       <a href="contact.html" class="active">Contact</a>
-      <button id="langToggle" class="lang-btn">EN</button>
+
+      <!-- Language Selector -->
+      <select id="langSelect" class="lang-select">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <option value="ar">AR</option>
+      </select>
     </div>
   </nav>
 </header>
 
 <main class="container">
 
-  <h1 data-en="Get in Touch" data-fr="Contactez-moi">
+  <h1
+    data-en="Get in Touch"
+    data-fr="Contactez-moi"
+    data-es="Contáctame"
+    data-ar="تواصل معي">
     Get in Touch
   </h1>
 
   <p class="intro"
-     data-en="I am open to frontend developer roles, junior backend opportunities, freelance web projects, and remote collaborations. Recruiters and hiring managers are welcome to reach out."
-     data-fr="Je suis ouvert aux postes frontend, backend junior, aux projets freelance et aux collaborations à distance.">
-    I am open to frontend developer roles, junior backend opportunities, freelance web projects, and remote collaborations. Recruiters and hiring managers are welcome to reach out.
+     data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
+     data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
+     data-es="Estoy disponible para roles frontend, backend junior o IA, proyectos freelance y trabajo remoto."
+     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد.">
+    I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations.
   </p>
 
-  <!-- NETLIFY CONTACT FORM -->
+  <!-- NETLIFY FORM -->
   <form
     name="job-contact"
     method="POST"
@@ -187,42 +158,52 @@
     data-netlify-honeypot="bot-field"
     action="success.html">
 
-    <!-- Required hidden fields -->
     <input type="hidden" name="form-name" value="job-contact">
     <input type="hidden" name="bot-field">
-
-    <!-- Tracking -->
     <input type="hidden" name="submitted_at" id="submitted_at">
-    <input type="hidden" name="resume_reference" id="resume_reference">
+    <input type="hidden" name="resume_used" id="resume_used">
 
-    <label data-en="Full Name" data-fr="Nom complet">Full Name</label>
-    <input type="text" name="name" placeholder="Your full name" required>
+    <label
+      data-en="Full Name"
+      data-fr="Nom complet"
+      data-es="Nombre completo"
+      data-ar="الاسم الكامل">
+      Full Name
+    </label>
+    <input type="text" name="name" required>
 
     <label>Email</label>
-    <input type="email" name="email" placeholder="Your email address" required>
+    <input type="email" name="email" required>
 
-    <label data-en="Position or Inquiry Type" data-fr="Poste ou type de demande">
-      Position or Inquiry Type
+    <label
+      data-en="Position / Reason"
+      data-fr="Poste / Objet"
+      data-es="Puesto / Motivo"
+      data-ar="الوظيفة / الغرض">
+      Position / Reason
     </label>
     <select name="role" id="role" required>
-      <option value="">Select one</option>
+      <option value="">Select</option>
       <option>Frontend Developer</option>
       <option>Junior Backend Developer</option>
       <option>Python / AI Junior</option>
-      <option>Freelance Web Project</option>
-      <option>General Inquiry</option>
+      <option>Freelance Project</option>
     </select>
 
-    <label data-en="Message" data-fr="Message">Message</label>
-    <textarea
-      name="message"
-      rows="5"
-      placeholder="Briefly describe the role, project, or reason for contacting me"
-      required></textarea>
+    <label
+      data-en="Message"
+      data-fr="Message"
+      data-es="Mensaje"
+      data-ar="الرسالة">
+      Message
+    </label>
+    <textarea name="message" rows="5" required></textarea>
 
     <button type="submit"
       data-en="Send Message"
-      data-fr="Envoyer le message">
+      data-fr="Envoyer le message"
+      data-es="Enviar mensaje"
+      data-ar="إرسال الرسالة">
       Send Message
     </button>
 
@@ -230,10 +211,14 @@
 
   <!-- WhatsApp fallback -->
   <div class="whatsapp">
-    <p data-en="Prefer WhatsApp?" data-fr="Vous préférez WhatsApp ?">
+    <p
+      data-en="Prefer WhatsApp?"
+      data-fr="Préférez WhatsApp ?"
+      data-es="¿Prefieres WhatsApp?"
+      data-ar="تفضل واتساب؟">
       Prefer WhatsApp?
     </p>
-    <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener">
+    <a href="https://wa.me/234XXXXXXXXXX" target="_blank">
       Chat on WhatsApp
     </a>
   </div>
@@ -245,34 +230,36 @@
 </footer>
 
 <script>
-  // Timestamp for submissions
+  // Timestamp
   document.getElementById("submitted_at").value = new Date().toISOString();
 
-  // Resume reference tracking (for recruiters)
+  // Resume selector
   const resumeMap = {
-    "Frontend Developer": "Master Resume – Frontend Focus",
-    "Junior Backend Developer": "Master Resume – Backend Focus",
-    "Python / AI Junior": "Master Resume – AI / Python Focus",
-    "Freelance Web Project": "Master Resume – Freelance",
-    "General Inquiry": "Master Resume – General"
+    "Frontend Developer":"https://eyesightworks.com/recruiter/resume-frontend.pdf",
+    "Junior Backend Developer":"https://eyesightworks.com/recruiter/resume-backend.pdf",
+    "Python / AI Junior":"https://eyesightworks.com/recruiter/resume-ai.pdf",
+    "Freelance Project":"https://eyesightworks.com/recruiter/resume-general.pdf"
   };
 
-  document.getElementById("role").addEventListener("change", e => {
-    document.getElementById("resume_reference").value =
-      resumeMap[e.target.value] || "Master Resume";
+  document.getElementById("role").addEventListener("change", e=>{
+    document.getElementById("resume_used").value = resumeMap[e.target.value] || "";
   });
 
-  // Language toggle (EN / FR)
-  const toggle = document.getElementById("langToggle");
-  let lang = "en";
+  // Language system
+  const langSelect = document.getElementById("langSelect");
 
-  toggle.onclick = () => {
-    lang = lang === "en" ? "fr" : "en";
-    toggle.textContent = lang.toUpperCase();
-    document.querySelectorAll("[data-en]").forEach(el => {
+  function switchLanguage(lang){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-en]").forEach(el=>{
       el.textContent = el.dataset[lang];
     });
-  };
+  }
+
+  langSelect.addEventListener("change", e=>{
+    switchLanguage(e.target.value);
+  });
 </script>
 
 </body>
