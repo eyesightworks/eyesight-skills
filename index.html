@@ -1,294 +1,148 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Alawode Adewale Afeez — Frontend Developer & Web Designer." />
-  <title>Eyesightworks | Alawode Adewale Afeez</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Alawode Adewale Afeez | Frontend Developer</title>
+
+  <!-- SEO + ATS -->
+  <meta name="description" content="Alawode Adewale Afeez is a Frontend Developer specializing in HTML, CSS, JavaScript, responsive design, and modern web development. Open to remote roles and freelance projects.">
+  <meta name="keywords" content="Frontend Developer, Web Developer, HTML, CSS, JavaScript, React, Responsive Design, Junior Backend, Freelance Developer">
+  <meta name="robots" content="index, follow">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
-  <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      background: #f8fafb;
-      color: #333;
-    }
-    .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    /* Header */
-    header {
-      background: #0a2540;
-      color: #fff;
-      padding: 1rem 0;
-    }
-    .header-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800;
-      font-size: 1.6rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.3rem 0.5rem;
-      display: inline-block;
-      user-select: none;
-    }
-    nav a.active,
-    nav a:hover {
-      color: #00c9a7;
-    }
-    .lang-switcher-button {
-      background: #fff;
-      color: #0a2540;
-      border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 0.9rem;
-      margin-left: 1rem;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-    .lang-switcher-button:hover,
-    .lang-switcher-button:focus {
-      background: #00c9a7;
-      color: #fff;
-      outline: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem;
-      background: linear-gradient(135deg, #008080, #90ee90);
-      color: #fff;
-    }
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 0.8rem;
-    }
-    .hero p.tagline {
-      font-size: 1.15rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero p.description {
-      max-width: 780px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
-
-    /* Action Buttons */
-    .actions-card {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      background: #fff;
-      color: #0a2540;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-    }
-    .actions-card a,
-    .actions-card button {
-      flex: 1 1 120px;
-      text-align: center;
-      padding: 0.6rem 1rem;
-      font-weight: 600;
-      border-radius: 6px;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
-    .actions-card a.btn,
-    .actions-card button.btn {
-      background: #0a2540;
-      color: #fff;
-    }
-    .actions-card a.btn:hover,
-    .actions-card button.btn:hover,
-    .actions-card a.btn:focus,
-    .actions-card button.btn:focus {
-      background: #004d40;
-      outline: none;
-    }
-    .actions-card a.btn.ghost {
-      background: transparent;
-      border: 1px solid #0a2540;
-      color: #0a2540;
-    }
-    .actions-card a.btn.ghost:hover,
-    .actions-card a.btn.ghost:focus {
-      background: #0a2540;
-      color: #fff;
-      outline: none;
-    }
-
-    /* Profile Card */
-    .profile-card {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .profile-card img.avatar {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 12px;
-      border: 4px solid #0a2540;
-    }
-    .profile-card strong {
-      font-size: 1.25rem;
-      display: block;
-      margin-bottom: 6px;
-    }
-    .profile-card div.subtitle {
-      opacity: 0.95;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 12px;
-    }
-    .skill-pill {
-      background: #0a2540;
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-
-    /* Footer */
-    footer {
-      background: #0a2540;
-      color: #fff;
-      text-align: center;
-      padding: 1.5rem 0;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .header-flex {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .actions-card {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header>
-    <div class="container header-flex">
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav>
       <div class="logo">Eyesightworks</div>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="testimonials.html">Testimonials</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><button id="lang-switcher" class="lang-switcher-button" aria-label="Switch Language">EN</button></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <!-- HERO SECTION -->
+      <button id="hamburger" aria-label="Toggle navigation">☰</button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+        <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+        <li>
+          <button id="lang-switcher" class="lang-switcher-button" aria-label="Switch language">
+            EN
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<main>
+
   <section class="hero">
     <div class="container">
-      <h1>Alawode Adewale Afeez — Frontend Developer & Web Designer</h1>
-      <p class="tagline">
-        Frontend Developer specializing in responsive websites, modern UI development,
-        and performance-focused web solutions using HTML, CSS, JavaScript, React, and WordPress.
-      </p>
-      <p class="description">
-        I design and develop clean, accessible, and user-centered web experiences for businesses,
-        startups, and digital products. My work focuses on translating ideas into maintainable,
-        scalable code with strong attention to usability, performance, and cross-browser compatibility.
-        <br /><br />
-        Open to frontend developer roles, junior backend opportunities, freelance projects,
-        and remote collaborations worldwide.
+
+      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Frontend Developer">
+
+      <h1
+        data-en="Frontend Developer & Web Designer"
+        data-fr="Développeur Frontend & Web Designer"
+        data-es="Desarrollador Frontend y Diseñador Web"
+        data-ar="مطور واجهات أمامية ومصمم ويب">
+        Frontend Developer & Web Designer
+      </h1>
+
+      <p
+        data-en="I build responsive, accessible, and performance-focused websites using modern frontend technologies."
+        data-fr="Je crée des sites web responsives, accessibles et performants avec des technologies modernes."
+        data-es="Desarrollo sitios web responsivos, accesibles y optimizados en rendimiento."
+        data-ar="أقوم ببناء مواقع ويب سريعة، متجاوبة، وسهلة الاستخدام باستخدام تقنيات حديثة.">
+        I build responsive, accessible, and performance-focused websites using modern frontend technologies.
       </p>
 
-      <div class="actions-card">
-        <a href="resume.html" class="btn">View Resume</a>
-        <a href="resume.pdf" class="btn" download>Download PDF</a>
-        <button id="hire-me-btn" class="btn">Hire Me</button>
-        <a href="https://github.com/eyesightworks" class="btn ghost" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn ghost" target="_blank" rel="noopener">LinkedIn</a>
+      <p
+        data-en="Open to frontend roles, junior backend opportunities, freelance projects, and remote collaborations worldwide."
+        data-fr="Ouvert aux postes frontend, backend junior, projets freelance et collaborations à distance."
+        data-es="Disponible para roles frontend, backend junior, proyectos freelance y trabajo remoto."
+        data-ar="متاح لوظائف الواجهة الأمامية، فرص خلفية للمبتدئين، أعمال حرة، وتعاون عن بُعد.">
+        Open to frontend roles, junior backend opportunities, freelance projects, and remote collaborations worldwide.
+      </p>
+
+      <!-- ACTION BUTTONS -->
+      <div class="btn-box">
+        <a href="resume.html" class="btn"
+           data-en="View Resume"
+           data-fr="Voir le CV"
+           data-es="Ver CV"
+           data-ar="عرض السيرة الذاتية">
+          View Resume
+        </a>
+
+        <a href="resume.pdf" class="btn"
+           data-en="Download PDF"
+           data-fr="Télécharger PDF"
+           data-es="Descargar PDF"
+           data-ar="تحميل PDF"
+           download>
+          Download PDF
+        </a>
+
+        <a href="contact.html" class="btn"
+           data-en="Hire Me"
+           data-fr="Me recruter"
+           data-es="Contrátame"
+           data-ar="وظفني">
+          Hire Me
+        </a>
       </div>
 
-      <aside class="profile-card">
-        <img src="images/pics.jpg" alt="Alawode Adewale Afeez" class="avatar" />
-        <strong>Alawode Adewale Afeez</strong>
-        <div class="subtitle">
-          Frontend Developer | Web Designer | Junior Backend & AI (Learning)
-        </div>
-
-        <div class="skills-list">
-          <div class="skill-pill">HTML / CSS / JavaScript</div>
-          <div class="skill-pill">React & Frontend Development</div>
-          <div class="skill-pill">WordPress Development</div>
-          <div class="skill-pill">Responsive & Mobile-First Design</div>
-          <div class="skill-pill">Cross-Browser Compatibility</div>
-        </div>
-      </aside>
     </div>
   </section>
 
-  <footer>
-    &copy; 2025 Eyesightworks — Alawode Adewale Afeez
-  </footer>
+  <!-- ================= SKILLS ================= -->
+  <section class="section">
+    <div class="container text-center">
+
+      <h2
+        data-en="Core Skills"
+        data-fr="Compétences principales"
+        data-es="Habilidades principales"
+        data-ar="المهارات الأساسية">
+        Core Skills
+      </h2>
+
+      <div class="skills-list">
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">Accessibility (a11y)</span>
+        <span class="skill-pill">Git & GitHub</span>
+        <span class="skill-pill">WordPress</span>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2025 Eyesightworks — Alawode Adewale Afeez
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
 
 </body>
 </html>
