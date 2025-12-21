@@ -2,103 +2,278 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Contact – Eyesightworks</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact | Alawode Adewale Afeez – Frontend Developer</title>
+
+  <!-- SEO + ATS -->
+  <meta name="description" content="Contact Alawode Adewale Afeez for frontend developer roles, junior backend positions, freelance web projects, or remote opportunities.">
+  <meta name="keywords" content="Frontend Developer, Web Developer, HTML, CSS, JavaScript, React, Junior Backend Developer, Freelance Developer, Remote Jobs">
+  <meta name="robots" content="index, follow">
+
+  <!-- Google Analytics (replace ID later) -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  -->
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header, footer {
+      background: #0a2540;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 1rem;
+    }
+
+    nav a.active {
+      color: #00c9a7;
+    }
+
+    .lang-btn {
+      background: #fff;
+      color: #0a2540;
+      border: none;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      text-align: center;
+      font-size: 1.05rem;
+    }
+
+    /* Form */
+    form {
+      background: #fff;
+      max-width: 620px;
+      margin: auto;
+      padding: 1.8rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.65rem;
+      margin-top: 0.3rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 1.6rem;
+      width: 100%;
+      background: #0a2540;
+      color: #fff;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #004d40;
+    }
+
+    .whatsapp {
+      text-align: center;
+      margin-top: 2rem;
+      font-weight: 600;
+    }
+
+    .whatsapp a {
+      color: #25D366;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 <body>
 
-<header class="header">
-  <div class="container" style="display:flex;justify-content:space-between;align-items:center">
-    <div style="display:flex;align-items:center;gap:12px">
-      <div class="logo">Eyesightworks</div>
-      <div style="color:#fff;opacity:.8">Alawode Adewale</div>
-    </div>
-
-    <nav class="nav-menu" id="nav-menu">
+<header>
+  <nav class="container">
+    <strong>Eyesightworks</strong>
+    <div>
+      <!-- Pages can be empty for now -->
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="portfolio.html">Portfolio</a>
       <a href="testimonials.html">Testimonials</a>
       <a href="contact.html" class="active">Contact</a>
-      <button id="lang-switcher" class="lang-switcher-button">EN</button>
-    </nav>
-
-    <button class="hamburger" id="hamburger">&#9776;</button>
-  </div>
+      <button id="langToggle" class="lang-btn">EN</button>
+    </div>
+  </nav>
 </header>
 
-<section class="section container">
-  <h1>Get in Touch</h1>
+<main class="container">
 
-  <p style="max-width:720px;margin:0 auto 25px;">
-    If you’re looking to discuss a frontend development role, junior backend or Python opportunity,
-    freelance project, or collaboration, feel free to reach out using the form below.
-    I’m open to remote roles, contract work, and project-based engagements.
+  <h1 data-en="Get in Touch" data-fr="Contactez-moi">
+    Get in Touch
+  </h1>
+
+  <p class="intro"
+     data-en="I am open to frontend developer roles, junior backend opportunities, freelance web projects, and remote collaborations. Recruiters and hiring managers are welcome to reach out."
+     data-fr="Je suis ouvert aux postes frontend, backend junior, aux projets freelance et aux collaborations à distance.">
+    I am open to frontend developer roles, junior backend opportunities, freelance web projects, and remote collaborations. Recruiters and hiring managers are welcome to reach out.
   </p>
 
-  <p style="max-width:720px;margin:0 auto 30px;">
-    I aim to respond to all professional inquiries within one business day.
-  </p>
+  <!-- NETLIFY CONTACT FORM -->
+  <form
+    name="job-contact"
+    method="POST"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    action="success.html">
 
-  <div class="card" style="padding:20px;max-width:600px;margin:auto">
-    <form action="thank-you.html" method="GET">
+    <!-- Required hidden fields -->
+    <input type="hidden" name="form-name" value="job-contact">
+    <input type="hidden" name="bot-field">
 
-      <label for="name">Full Name</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Your full name"
-        required
-      >
+    <!-- Tracking -->
+    <input type="hidden" name="submitted_at" id="submitted_at">
+    <input type="hidden" name="resume_reference" id="resume_reference">
 
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Your email address"
-        required
-      >
+    <label data-en="Full Name" data-fr="Nom complet">Full Name</label>
+    <input type="text" name="name" placeholder="Your full name" required>
 
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="6"
-        placeholder="Briefly describe your project, role, or reason for reaching out"
-        required
-      ></textarea>
+    <label>Email</label>
+    <input type="email" name="email" placeholder="Your email address" required>
 
-      <button class="btn" type="submit" style="margin-top:12px">
-        Send Message
-      </button>
+    <label data-en="Position or Inquiry Type" data-fr="Poste ou type de demande">
+      Position or Inquiry Type
+    </label>
+    <select name="role" id="role" required>
+      <option value="">Select one</option>
+      <option>Frontend Developer</option>
+      <option>Junior Backend Developer</option>
+      <option>Python / AI Junior</option>
+      <option>Freelance Web Project</option>
+      <option>General Inquiry</option>
+    </select>
 
-    </form>
+    <label data-en="Message" data-fr="Message">Message</label>
+    <textarea
+      name="message"
+      rows="5"
+      placeholder="Briefly describe the role, project, or reason for contacting me"
+      required></textarea>
+
+    <button type="submit"
+      data-en="Send Message"
+      data-fr="Envoyer le message">
+      Send Message
+    </button>
+
+  </form>
+
+  <!-- WhatsApp fallback -->
+  <div class="whatsapp">
+    <p data-en="Prefer WhatsApp?" data-fr="Vous préférez WhatsApp ?">
+      Prefer WhatsApp?
+    </p>
+    <a href="https://wa.me/234XXXXXXXXXX" target="_blank" rel="noopener">
+      Chat on WhatsApp
+    </a>
   </div>
 
-  <div style="margin-top:35px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto;">
-    <p>
-      For direct or professional contact, you may also reach me using the details below:
-    </p>
-
-    <p>
-      <strong>Email:</strong> eyesightconcept@gmail.com<br>
-      <strong>LinkedIn:</strong>
-      <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">
-        linkedin.com/in/alawode-adewale-3a033239a
-      </a>
-    </p>
-  </div>
-
-</section>
+</main>
 
 <footer>
-  <div class="container">&copy; 2025 Eyesightworks — Alawode Adewale.</div>
+  © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js"></script>
+<script>
+  // Timestamp for submissions
+  document.getElementById("submitted_at").value = new Date().toISOString();
+
+  // Resume reference tracking (for recruiters)
+  const resumeMap = {
+    "Frontend Developer": "Master Resume – Frontend Focus",
+    "Junior Backend Developer": "Master Resume – Backend Focus",
+    "Python / AI Junior": "Master Resume – AI / Python Focus",
+    "Freelance Web Project": "Master Resume – Freelance",
+    "General Inquiry": "Master Resume – General"
+  };
+
+  document.getElementById("role").addEventListener("change", e => {
+    document.getElementById("resume_reference").value =
+      resumeMap[e.target.value] || "Master Resume";
+  });
+
+  // Language toggle (EN / FR)
+  const toggle = document.getElementById("langToggle");
+  let lang = "en";
+
+  toggle.onclick = () => {
+    lang = lang === "en" ? "fr" : "en";
+    toggle.textContent = lang.toUpperCase();
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+  };
+</script>
+
 </body>
 </html>
