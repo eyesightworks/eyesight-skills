@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thank You | Eyesightworks</title>
-<link rel="stylesheet" href="style.css"> <!-- Your main CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You – Eyesightworks</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,13 +12,13 @@
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
-      ☰
-    </button>
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
     <ul id="nav-menu" class="nav-menu">
-      <li><a href="index.html" tabindex="0">Home</a></li>
-      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li>
         <select id="langSelect" class="lang-select" aria-label="Select language">
           <option value="en" selected>EN</option>
@@ -31,24 +31,16 @@
   </nav>
 </header>
 
-<main class="container section hero" role="main" aria-live="polite">
-  <div class="success-icon" aria-hidden="true"></div>
+<main class="container text-center">
+  <div class="success-icon"></div>
 
   <h1 data-en="Thank You!" data-fr="Merci!" data-es="¡Gracias!" data-ar="شكراً!">Thank You!</h1>
-
-  <p data-en="Your message has been sent successfully."
-     data-fr="Votre message a été envoyé avec succès."
-     data-es="Tu mensaje ha sido enviado con éxito."
-     data-ar="تم إرسال رسالتك بنجاح.">
-     Your message has been sent successfully.
+  <p data-en="Your message has been sent successfully." data-fr="Votre message a été envoyé avec succès." data-es="Tu mensaje ha sido enviado con éxito." data-ar="تم إرسال رسالتك بنجاح.">
+    Your message has been sent successfully.
   </p>
 
-  <a href="index.html" class="btn"
-     data-en="Back to Home"
-     data-fr="Retour à l’accueil"
-     data-es="Volver al inicio"
-     data-ar="العودة للرئيسية">
-     Back to Home
+  <a href="index.html" class="btn" data-en="Back to Home" data-fr="Retour à l’accueil" data-es="Volver al inicio" data-ar="العودة للرئيسية">
+    Back to Home
   </a>
 
   <div id="whatsappContainer" style="margin-top:1rem;">
@@ -63,25 +55,5 @@
 </footer>
 
 <script src="script.js"></script>
-<script>
-  // ================== THANK YOU PAGE SPECIFIC ==================
-  document.addEventListener('DOMContentLoaded', () => {
-    const whatsappLink = document.getElementById('whatsappLink');
-    const userName = localStorage.getItem('contact_name') || "";
-    const userRole = localStorage.getItem('contact_role') || "";
-
-    // Build WhatsApp URL
-    const phone = "2348083869454";
-    const message = encodeURIComponent(`Hi, my name is ${userName}. I am contacting you regarding the position: ${userRole}.`);
-    const waURL = `https://wa.me/${phone}?text=${message}`;
-    whatsappLink.href = waURL;
-
-    // Open WhatsApp automatically after 3 seconds
-    setTimeout(() => {
-      window.open(waURL, "_blank");
-    }, 3000);
-  });
-</script>
-
 </body>
 </html>
