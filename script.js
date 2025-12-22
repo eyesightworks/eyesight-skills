@@ -15,12 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
       navMenu.classList.toggle("show");
+      document.body.classList.toggle("menu-open"); // Prevent background scroll when menu open
     });
 
-    // Close menu when link is clicked (mobile UX fix)
+    // Close menu when any link is clicked (mobile UX fix)
     navMenu.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         navMenu.classList.remove("show");
+        document.body.classList.remove("menu-open");
       });
     });
   }
@@ -39,13 +41,13 @@ function switchLanguage(lang) {
   html.lang = lang;
   html.dir = lang === "ar" ? "rtl" : "ltr";
 
-  // Update text content
+  // Update text content for elements with data attributes
   document.querySelectorAll("[data-en]").forEach(el => {
     const text = el.dataset[lang];
     if (text) el.textContent = text;
   });
 
-  // Update language button / selector
+  // Update language switcher button and dropdown
   const langBtn = $("lang-switcher");
   const langSelect = $("langSelect");
 
@@ -55,7 +57,7 @@ function switchLanguage(lang) {
   localStorage.setItem("preferredLang", lang);
 }
 
-// Auto-detect saved or browser language
+// Auto-detect saved language or browser default on page load
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("preferredLang");
   const browserLang = navigator.language.slice(0, 2);
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   switchLanguage(lang);
 });
 
-// Button-based language switcher (cycle)
+// Language switcher button (cycles through supported languages)
 const langSwitcher = $("lang-switcher");
 if (langSwitcher) {
   langSwitcher.addEventListener("click", () => {
@@ -81,7 +83,7 @@ if (langSwitcher) {
   });
 }
 
-// Dropdown-based language selector
+// Language dropdown selector
 const langSelect = $("langSelect");
 if (langSelect) {
   langSelect.addEventListener("change", e => {
@@ -99,14 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!roleSelect || !resumeField) return;
 
   const resumeMap = {
-    "Frontend Developer":
-      "https://eyesightworks.com/recruiter/resume-frontend.pdf",
-    "Junior Backend Developer":
-      "https://eyesightworks.com/recruiter/resume-backend.pdf",
-    "Python / AI Junior":
-      "https://eyesightworks.com/recruiter/resume-ai.pdf",
-    "Freelance Project":
-      "https://eyesightworks.com/recruiter/resume-general.pdf"
+    "Frontend Developer": "https://eyesightworks.com/recruiter/resume-frontend.pdf",
+    "Junior Backend Developer": "https://eyesightworks.com/recruiter/resume-backend.pdf",
+    "Python / AI Junior": "https://eyesightworks.com/recruiter/resume-ai.pdf",
+    "Freelance Project": "https://eyesightworks.com/recruiter/resume-general.pdf"
   };
 
   roleSelect.addEventListener("change", e => {
@@ -135,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   filterButtons.forEach(button => {
     button.addEventListener("click", () => {
-      // Remove 'active' from all buttons
+      // Remove 'active' class from all buttons
       filterButtons.forEach(btn => btn.classList.remove("active"));
       // Add 'active' to clicked button
       button.classList.add("active");
