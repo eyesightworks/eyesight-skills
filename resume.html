@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alawode Adewale Afeez | Dynamic Master Resume</title>
+  <title>Alawode Adewale Afeez | Master Dynamic Resume</title>
 
   <style>
     body {
@@ -23,7 +23,7 @@
     .role { font-weight: bold; margin-top: 8px; }
     .date { font-style: italic; font-size: 0.9rem; color: #555; margin-bottom: 4px; }
     a { color: #0a2540; text-decoration: none; font-weight: 600; }
-    .btn-box { display: flex; gap: 12px; margin-top: 1rem; }
+    .btn-box { display: flex; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
     .btn { background: #0a2540; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
     .btn:hover { background: #004d40; }
     .highlight { background-color: #e0f7f4; border-left: 4px solid #00c9a7; padding-left: 6px; }
@@ -50,25 +50,13 @@
   </p>
 
   <h2>Technical Skills</h2>
-  <ul id="skills">
-    <li>HTML5, CSS3, JavaScript (ES6+)</li>
-    <li>Responsive Web Design, Mobile-First Development</li>
-    <li>UI/UX Implementation & Semantic HTML</li>
-    <li>Frontend Performance Optimization</li>
-    <li>React.js (Foundational)</li>
-    <li>Python & AI Development</li>
-    <li>Git & GitHub</li>
-  </ul>
+  <ul id="skills"></ul>
 
   <h2>Professional Experience</h2>
-  <div id="experience">
-    <!-- Experiences will be dynamically injected -->
-  </div>
+  <div id="experience"></div>
 
   <h2>Projects</h2>
-  <ul id="projects">
-    <!-- Projects will be dynamically injected -->
-  </ul>
+  <ul id="projects"></ul>
 
   <h2>Certifications</h2>
   <ul id="certifications">
@@ -93,42 +81,66 @@
   const viewResumeBtn = document.getElementById('viewResumeBtn');
   const downloadCVBtn = document.getElementById('downloadCVBtn');
   const experienceDiv = document.getElementById('experience');
+  const skillsUl = document.getElementById('skills');
   const projectsList = document.getElementById('projects');
 
-  // Role-specific data
+  const allExperiences = [
+    {
+      role: 'Frontend Web Developer & UI Designer — Freelance',
+      date: '2019 – Present',
+      tasks: [
+        'Developed responsive, mobile-first websites using HTML, CSS, and JavaScript.',
+        'Translated UI/UX designs into clean, accessible frontend code.',
+        'Optimized websites for performance, usability, and cross-browser compatibility.',
+        'Collaborated with clients to gather requirements and deliver solutions.'
+      ],
+      type: 'Frontend Developer'
+    },
+    {
+      role: 'Junior Web Developer — Startup Projects',
+      date: '2019 – 2020',
+      tasks: [
+        'Assisted with frontend development, bug fixes, and testing in agile teams.',
+        'Gained experience with collaborative workflows and version control.',
+        'Assisted in backend development and API integration.',
+        'Performed database operations and basic server-side scripting.'
+      ],
+      type: 'Junior Backend Developer'
+    },
+    {
+      role: 'AI & Python Developer — Freelance Projects',
+      date: '2021 – Present',
+      tasks: [
+        'Developed AI tools for transcription, text processing, and automation.',
+        'Built Python scripts for data processing and backend logic.',
+        'Created lightweight Flask applications for internal tools and demos.'
+      ],
+      type: 'Python / AI Junior'
+    },
+    {
+      role: 'Graphic Designer & Content Creator — Freelance',
+      date: '2019 – 2023',
+      tasks: [
+        'Designed logos, brand identities, and digital marketing materials.',
+        'Produced visual content to support online presence and product promotion.'
+      ],
+      type: 'Freelance Project'
+    }
+  ];
+
   const rolesData = {
     'Frontend Developer': {
       resume: 'frontend-resume.html',
       pdf: 'frontend-cv.pdf',
       summary: 'Frontend Web Developer with strong experience in building responsive, accessible, and performant web apps.',
       skills: ['HTML5, CSS3, JavaScript (ES6+)', 'Responsive Web Design', 'UI/UX Implementation', 'React.js', 'Frontend Performance Optimization'],
-      experience: [
-        { role: 'Frontend Web Developer & UI Designer — Freelance', date: '2019 – Present', tasks: [
-          'Developed responsive, mobile-first websites using HTML, CSS, and JavaScript.',
-          'Translated UI/UX designs into clean, accessible frontend code.',
-          'Optimized websites for performance, usability, and cross-browser compatibility.',
-          'Collaborated with clients to gather requirements and deliver solutions.'
-        ]},
-        { role: 'Junior Web Developer — Startup Projects', date: '2019 – 2020', tasks: [
-          'Assisted with frontend development, bug fixes, and testing in agile teams.',
-          'Gained experience with collaborative workflows and version control.'
-        ]}
-      ],
-      projects: [
-        'Developed responsive business websites emphasizing mobile-first layouts and cross-browser compatibility.'
-      ]
+      projects: ['Developed responsive business websites emphasizing mobile-first layouts and cross-browser compatibility.']
     },
     'Junior Backend Developer': {
       resume: 'junior-resume.html',
       pdf: 'junior-cv.pdf',
       summary: 'Junior Backend Developer with experience building server-side applications and APIs using Python and Flask.',
       skills: ['Python', 'Flask', 'API Development', 'Backend Logic', 'Database Integration'],
-      experience: [
-        { role: 'Junior Web Developer — Startup Projects', date: '2019 – 2020', tasks: [
-          'Assisted in backend development and API integration.',
-          'Performed database operations and basic server-side scripting.'
-        ]}
-      ],
       projects: ['Built backend functionality for web apps using Flask and Python.']
     },
     'Python / AI Junior': {
@@ -136,13 +148,6 @@
       pdf: 'ai-cv.pdf',
       summary: 'Python & AI Developer skilled in building automation tools, AI-powered scripts, and lightweight Flask apps.',
       skills: ['Python', 'AI & Automation Tools', 'Flask', 'Data Processing', 'Scripting'],
-      experience: [
-        { role: 'AI & Python Developer — Freelance Projects', date: '2021 – Present', tasks: [
-          'Developed AI tools for transcription, text processing, and automation.',
-          'Built Python scripts for data processing and backend logic.',
-          'Created lightweight Flask applications for internal tools and demos.'
-        ]}
-      ],
       projects: ['Built AI-powered transcription and automation tools using Python.']
     },
     'Freelance Project': {
@@ -150,12 +155,6 @@
       pdf: 'freelance-cv.pdf',
       summary: 'Freelance developer and designer delivering client projects across web, UI, and graphics.',
       skills: ['Frontend Development', 'Graphic Design', 'Content Creation', 'UI/UX', 'Client Collaboration'],
-      experience: [
-        { role: 'Graphic Designer & Content Creator — Freelance', date: '2019 – 2023', tasks: [
-          'Designed logos, brand identities, and digital marketing materials.',
-          'Produced visual content to support online presence and product promotion.'
-        ]}
-      ],
       projects: ['Delivered client projects in web, graphics, and branding.']
     }
   };
@@ -171,7 +170,6 @@
     document.getElementById('summary').textContent = roleData.summary;
 
     // Update skills
-    const skillsUl = document.getElementById('skills');
     skillsUl.innerHTML = '';
     roleData.skills.forEach(skill => {
       const li = document.createElement('li');
@@ -179,21 +177,25 @@
       skillsUl.appendChild(li);
     });
 
-    // Update experience
+    // Update experiences (all but highlight selected role)
     experienceDiv.innerHTML = '';
-    roleData.experience.forEach(exp => {
+    allExperiences.forEach(exp => {
       const pRole = document.createElement('p');
       pRole.className = 'role';
       pRole.textContent = exp.role;
+      if (exp.type === roleName) pRole.classList.add('highlight');
+
       const pDate = document.createElement('p');
       pDate.className = 'date';
       pDate.textContent = exp.date;
+
       const ul = document.createElement('ul');
       exp.tasks.forEach(task => {
         const li = document.createElement('li');
         li.textContent = task;
         ul.appendChild(li);
       });
+
       experienceDiv.appendChild(pRole);
       experienceDiv.appendChild(pDate);
       experienceDiv.appendChild(ul);
