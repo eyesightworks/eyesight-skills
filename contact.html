@@ -1,27 +1,28 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Alawode Adewale Afeez – Frontend & AI Developer</title>
-<link rel="stylesheet" href="style.css"> <!-- Your existing CSS -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact – Eyesightworks</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <header>
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
-      ☰
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">☰</button>
 
-    <ul id="nav-menu" class="nav-menu">
-      <li><a href="index.html" tabindex="0">Home</a></li>
-      <li><a href="contact.html" class="active" tabindex="0">Contact</a></li>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+      <li><a href="#testimonials" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="الشهادات">Testimonials</a></li>
+      <li><a href="#portfolio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمال">Portfolio</a></li>
+      <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a></li>
       <li>
         <select id="langSelect" class="lang-select" aria-label="Select language">
-          <option value="en" selected>EN</option>
+          <option value="en">EN</option>
           <option value="fr">FR</option>
           <option value="es">ES</option>
           <option value="ar">AR</option>
@@ -31,44 +32,37 @@
   </nav>
 </header>
 
-<main class="container section hero">
-  <h1 data-en="Get in Touch" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Get in Touch</h1>
-  <p data-en="I am open to frontend, junior backend, senior, AI roles, freelance projects, and remote collaborations."
-     data-fr="Je suis ouvert aux postes frontend, backend junior, senior, IA, projets freelance et collaborations à distance."
-     data-es="Estoy disponible para roles frontend, backend junior, senior, IA, proyectos freelance y trabajo remoto."
-     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، الخلفية المبتدئة أو المتقدمة، الذكاء الاصطناعي، المشاريع الحرة والعمل عن بُعد.">
-     I am open to frontend, junior backend, senior, AI roles, freelance projects, and remote collaborations.
-  </p>
+<main class="container" role="main">
+  <section class="section">
+    <h1 data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="اتصل بي">Contact Me</h1>
+    <p data-en="Fill out the form below to get in touch." data-fr="Remplissez le formulaire ci-dessous pour me contacter." data-es="Complete el formulario para ponerse en contacto." data-ar="املأ النموذج أدناه للتواصل معي.">
+      Fill out the form below to get in touch.
+    </p>
 
-  <!-- Resume Buttons -->
-  <div class="btn-box">
-    <button id="viewResumeBtn" class="btn" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</button>
-    <button id="downloadCVBtn" class="btn" data-en="Download CV (PDF)" data-fr="Télécharger le CV (PDF)" data-es="Descargar CV (PDF)" data-ar="تحميل السيرة الذاتية (PDF)">Download CV</button>
-  </div>
+    <form name="job-contact" autocomplete="off">
+      <label for="name" data-en="Your Name" data-fr="Votre nom" data-es="Tu nombre" data-ar="اسمك">Your Name</label>
+      <input type="text" id="name" name="name" required placeholder="John Doe" />
 
-  <!-- Contact Form -->
-  <form name="job-contact" aria-label="Contact form">
-    <label for="name" data-en="Full Name" data-fr="Nom complet" data-es="Nombre completo" data-ar="الاسم الكامل">Full Name</label>
-    <input type="text" name="name" id="name" required autocomplete="name">
+      <label for="email" data-en="Your Email" data-fr="Votre email" data-es="Tu correo" data-ar="بريدك الإلكتروني">Your Email</label>
+      <input type="email" id="email" name="email" required placeholder="email@example.com" />
 
-    <label for="email" data-en="Email" data-fr="Email" data-es="Correo electrónico" data-ar="البريد الإلكتروني">Email</label>
-    <input type="email" name="email" id="email" required autocomplete="email">
+      <label for="role" data-en="Position Interested In" data-fr="Poste souhaité" data-es="Posición deseada" data-ar="الوظيفة المطلوبة">Position Interested In</label>
+      <select id="role" name="role" required>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Junior Backend Developer">Junior Backend Developer</option>
+        <option value="Python / AI Junior">Python / AI Junior</option>
+        <option value="Senior Developer">Senior Developer</option>
+        <option value="Freelance Project">Freelance Project</option>
+      </select>
 
-    <label for="role" data-en="Position / Reason" data-fr="Poste / Objet" data-es="Puesto / Motivo" data-ar="الوظيفة / الغرض">Position / Reason</label>
-    <select name="role" id="role" required>
-      <option value="">Select</option>
-      <option value="Frontend Developer">Frontend Developer</option>
-      <option value="Junior Backend Developer">Junior Backend Developer</option>
-      <option value="Python / AI Junior">Python / AI Junior</option>
-      <option value="Senior Developer">Senior Developer</option>
-      <option value="Freelance Project">Freelance Project</option>
-    </select>
+      <label for="message" data-en="Your Message" data-fr="Votre message" data-es="Tu mensaje" data-ar="رسالتك">Your Message</label>
+      <textarea id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
 
-    <label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
-    <textarea name="message" id="message" rows="5" required></textarea>
-
-    <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer le message" data-es="Enviar mensaje" data-ar="إرسال الرسالة">Send Message</button>
-  </form>
+      <div class="btn-box">
+        <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
+      </div>
+    </form>
+  </section>
 </main>
 
 <footer>
