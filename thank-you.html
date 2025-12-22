@@ -1,297 +1,54 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Thank You – Eyesightworks</title>
-
-  <style>
-    /* Basic Reset & Styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #f8fafb;
-      color: #333;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 1rem;
-    }
-    html[dir="rtl"] {
-      direction: rtl;
-    }
-
-    /* HEADER & NAV */
-    header {
-      background-color: #0a2540;
-      color: #fff;
-      width: 100%;
-      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.3);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav.container {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.25rem;
-      user-select: none;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      transition: color 0.3s ease, background-color 0.3s ease;
-    }
-    .nav-links a.active,
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: #00c9a7;
-      background-color: rgba(0, 201, 167, 0.2);
-      outline: none;
-      box-shadow: 0 0 8px #00c9a7aa;
-      cursor: pointer;
-    }
-    select.lang-select {
-      background: #fff;
-      color: #0a2540;
-      border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    select.lang-select:hover,
-    select.lang-select:focus {
-      background-color: #00c9a7;
-      color: #fff;
-      outline: none;
-    }
-    button.hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.8rem;
-      color: #fff;
-      padding: 0.25rem;
-      border-radius: 6px;
-      transition: color 0.3s ease;
-    }
-    button.hamburger:hover,
-    button.hamburger:focus {
-      color: #00c9a7;
-      outline: none;
-    }
-    button.hamburger:focus-visible {
-      outline: 2px solid #00c9a7;
-      outline-offset: 2px;
-    }
-
-    /* Show hamburger and hide nav-links on small */
-    @media (max-width: 768px) {
-      button.hamburger {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        background: #0a2540;
-        padding: 1rem;
-        border-radius: 10px;
-        width: 100%;
-      }
-      .nav-links.show {
-        display: flex;
-      }
-      .nav-links a {
-        font-size: 1.1rem;
-        padding: 0.6rem 0;
-      }
-      select.lang-select {
-        width: 100%;
-        margin-top: 0.75rem;
-      }
-    }
-
-    /* MAIN CONTAINER */
-    main.container {
-      max-width: 600px;
-      width: 100%;
-      background: #fff;
-      border-radius: 14px;
-      padding: 2rem;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      margin-top: 2rem;
-      text-align: center;
-      flex-grow: 1;
-    }
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 700;
-      font-size: 2.4rem;
-      margin-bottom: 0.5rem;
-      color: #0a2540;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    .btn {
-      background: #0a2540;
-      color: #fff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-block;
-      margin: 0.5rem;
-      user-select: none;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
-    }
-    .btn:hover,
-    .btn:focus {
-      background: #004d40;
-      outline: none;
-    }
-    select.lang-select {
-      margin-top: 1rem;
-      padding: 0.35rem 0.5rem;
-      border-radius: 6px;
-      font-weight: 600;
-      border: 1px solid #ccc;
-      cursor: pointer;
-      font-size: 1rem;
-      user-select: none;
-    }
-    /* Animated checkmark */
-    .success-icon {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1.5rem;
-      border-radius: 50%;
-      background: #00c9a7;
-      position: relative;
-      animation: popIn 0.5s ease forwards;
-    }
-    .success-icon::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: 18px;
-      width: 20px;
-      height: 40px;
-      border-right: 4px solid #fff;
-      border-bottom: 4px solid #fff;
-      transform: rotate(45deg);
-      animation: drawCheck 0.5s ease forwards 0.5s;
-      opacity: 0;
-    }
-    @keyframes popIn {
-      0% {transform: scale(0);}
-      100% {transform: scale(1);}
-    }
-    @keyframes drawCheck {
-      0% {
-        width: 0;
-        height: 0;
-        opacity: 0;
-      }
-      100% {
-        width: 20px;
-        height: 40px;
-        opacity: 1;
-      }
-    }
-
-    footer {
-      margin-top: 2rem;
-      padding: 1rem 0;
-      color: #777;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You | Eyesightworks</title>
+<link rel="stylesheet" href="style.css"> <!-- Your main CSS -->
 </head>
-
 <body>
 
 <header>
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <button 
-      class="hamburger" 
-      id="hamburger" 
-      aria-label="Toggle menu" 
-      aria-expanded="false" 
-      type="button"
-    >
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">
       ☰
     </button>
 
-    <div class="nav-links" id="nav-links">
-      <a href="index.html" tabindex="0">Home</a>
-      <a href="contact.html" tabindex="0">Contact</a>
-      <select id="langSelect" class="lang-select" aria-label="Select language">
-        <option value="en" selected>EN</option>
-        <option value="fr">FR</option>
-        <option value="es">ES</option>
-        <option value="ar">AR</option>
-      </select>
-    </div>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="index.html" tabindex="0">Home</a></li>
+      <li><a href="contact.html" tabindex="0">Contact</a></li>
+      <li>
+        <select id="langSelect" class="lang-select" aria-label="Select language">
+          <option value="en" selected>EN</option>
+          <option value="fr">FR</option>
+          <option value="es">ES</option>
+          <option value="ar">AR</option>
+        </select>
+      </li>
+    </ul>
   </nav>
 </header>
 
-<main class="container" role="main" aria-live="polite" aria-label="Thank you message">
+<main class="container section hero" role="main" aria-live="polite">
   <div class="success-icon" aria-hidden="true"></div>
 
-  <h1
-    data-en="Thank You!"
-    data-fr="Merci!"
-    data-es="¡Gracias!"
-    data-ar="شكراً!">
-    Thank You!
-  </h1>
+  <h1 data-en="Thank You!" data-fr="Merci!" data-es="¡Gracias!" data-ar="شكراً!">Thank You!</h1>
 
-  <p
-    data-en="Your message has been sent successfully."
-    data-fr="Votre message a été envoyé avec succès."
-    data-es="Tu mensaje ha sido enviado con éxito."
-    data-ar="تم إرسال رسالتك بنجاح.">
-    Your message has been sent successfully.
+  <p data-en="Your message has been sent successfully."
+     data-fr="Votre message a été envoyé avec succès."
+     data-es="Tu mensaje ha sido enviado con éxito."
+     data-ar="تم إرسال رسالتك بنجاح.">
+     Your message has been sent successfully.
   </p>
 
   <a href="index.html" class="btn"
-    data-en="Back to Home"
-    data-fr="Retour à l’accueil"
-    data-es="Volver al inicio"
-    data-ar="العودة للرئيسية">
-    Back to Home
+     data-en="Back to Home"
+     data-fr="Retour à l’accueil"
+     data-es="Volver al inicio"
+     data-ar="العودة للرئيسية">
+     Back to Home
   </a>
 
   <div id="whatsappContainer" style="margin-top:1rem;">
@@ -305,98 +62,25 @@
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
+<script src="script.js"></script>
 <script>
-  // Hamburger menu toggle
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
+  // ================== THANK YOU PAGE SPECIFIC ==================
+  document.addEventListener('DOMContentLoaded', () => {
+    const whatsappLink = document.getElementById('whatsappLink');
+    const userName = localStorage.getItem('contact_name') || "";
+    const userRole = localStorage.getItem('contact_role') || "";
 
-  hamburger.addEventListener('click', () => {
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', String(!expanded));
-    navLinks.classList.toggle('show');
+    // Build WhatsApp URL
+    const phone = "2348083869454";
+    const message = encodeURIComponent(`Hi, my name is ${userName}. I am contacting you regarding the position: ${userRole}.`);
+    const waURL = `https://wa.me/${phone}?text=${message}`;
+    whatsappLink.href = waURL;
+
+    // Open WhatsApp automatically after 3 seconds
+    setTimeout(() => {
+      window.open(waURL, "_blank");
+    }, 3000);
   });
-
-  hamburger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      hamburger.click();
-    }
-  });
-
-  // Language dictionary
-  const dict = {
-    en: {
-      thankYou: "Thank You!",
-      messageSent: "Your message has been sent successfully.",
-      backHome: "Back to Home",
-      whatsappChat: "Chat on WhatsApp",
-    },
-    fr: {
-      thankYou: "Merci!",
-      messageSent: "Votre message a été envoyé avec succès.",
-      backHome: "Retour à l’accueil",
-      whatsappChat: "Discuter sur WhatsApp",
-    },
-    es: {
-      thankYou: "¡Gracias!",
-      messageSent: "Tu mensaje ha sido enviado con éxito.",
-      backHome: "Volver al inicio",
-      whatsappChat: "Chatear en WhatsApp",
-    },
-    ar: {
-      thankYou: "شكراً!",
-      messageSent: "تم إرسال رسالتك بنجاح.",
-      backHome: "العودة للرئيسية",
-      whatsappChat: "الدردشة عبر واتساب",
-    }
-  };
-
-  const langSelect = document.getElementById("langSelect");
-  const container = document.querySelector("main.container");
-  const whatsappLink = document.getElementById("whatsappLink");
-
-  // Retrieve saved language or default to English
-  const savedLang = localStorage.getItem("preferredLang") || "en";
-
-  // Retrieve stored contact name and role from localStorage
-  const userName = localStorage.getItem("contact_name") || "";
-  const userRole = localStorage.getItem("contact_role") || "";
-
-  // Prepare WhatsApp link with pre-filled message
-  const phone = "2348083869454"; // Your full international number without +
-  const message = encodeURIComponent(
-    `Hi, my name is ${userName}. I am contacting you regarding the position: ${userRole}.`
-  );
-  const waURL = `https://wa.me/${phone}?text=${message}`;
-
-  whatsappLink.href = waURL;
-  whatsappLink.setAttribute("aria-label", dict[savedLang].whatsappChat);
-
-  // Switch language function
-  function switchLanguage(lang) {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-
-    container.querySelector("h1").textContent = dict[lang].thankYou;
-    container.querySelector("p").textContent = dict[lang].messageSent;
-    container.querySelector("a.btn").textContent = dict[lang].backHome;
-    whatsappLink.textContent = dict[lang].whatsappChat;
-  }
-
-  // Initialize language UI
-  switchLanguage(savedLang);
-  langSelect.value = savedLang;
-
-  langSelect.addEventListener("change", e => {
-    const lang = e.target.value;
-    switchLanguage(lang);
-    localStorage.setItem("preferredLang", lang);
-  });
-
-  // Automatically open WhatsApp after 3 seconds
-  setTimeout(() => {
-    window.open(waURL, "_blank");
-  }, 3000);
 </script>
 
 </body>
