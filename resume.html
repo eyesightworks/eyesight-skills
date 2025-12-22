@@ -1,123 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alawode Adewale Afeez | Resume</title>
 
   <style>
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      margin: 0;
-      padding: 20px;
-      background: #ffffff;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafb;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 1rem;
     }
+    html[dir="rtl"] { direction: rtl; }
+
     .container {
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin-inline: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
-    h1 { font-size: 24px; margin-bottom: 4px; }
-    h2 { font-size: 16px; margin-top: 16px; border-bottom: 1px solid #000; padding-bottom: 3px; }
-    p, li { font-size: 12.5px; line-height: 1.4; }
-    ul { padding-left: 18px; }
-    .role { font-weight: bold; margin-top: 8px; }
-    .date { font-style: italic; font-size: 11.5px; color: #555; margin-bottom: 4px; }
-    a { color: #000; text-decoration: none; }
+
+    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.25rem; margin-top: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: 0.25rem; }
+    p, li { font-size: 1rem; line-height: 1.5; }
+    ul { padding-left: 1.25rem; margin-top: 0.5rem; }
+    .role { font-weight: 600; margin-top: 0.75rem; }
+    .date { font-style: italic; font-size: 0.9rem; color: #555; margin-bottom: 0.25rem; }
+    a { color: #0a2540; text-decoration: none; }
+    a:hover, a:focus { text-decoration: underline; }
+
     .hidden { display: none; }
   </style>
 </head>
-
 <body>
-  <div class="container">
 
-    <h1>Alawode Adewale Afeez</h1>
-    <p><strong id="main-role">Frontend Web Developer</strong></p>
-    <p>
-      Email: eyesightconcept@gmail.com |
-      LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">Profile</a> |
-      GitHub: <a href="https://github.com/alawode-adewale" target="_blank">Profile</a>
-    </p>
+<div class="container">
+  <h1 id="main-role">Frontend Web Developer</h1>
+  <p>
+    Email: <a href="mailto:eyesightconcept@gmail.com">eyesightconcept@gmail.com</a> | 
+    LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">Profile</a> | 
+    GitHub: <a href="https://github.com/alawode-adewale" target="_blank">Profile</a>
+  </p>
 
-    <h2>Professional Summary</h2>
-    <p id="summary">
-      Frontend Web Developer with 5 years of hands-on experience designing,
-      developing, and maintaining responsive and accessible websites using
-      HTML5, CSS3, and JavaScript (ES6+). Strong background in semantic HTML,
-      responsive UI development, cross-browser compatibility, and frontend
-      performance optimization. Experienced in freelance, startup, and
-      project-based environments, collaborating with clients and small teams
-      to deliver reliable, user-centered web solutions.
-    </p>
+  <h2>Professional Summary</h2>
+  <p id="summary">
+    Frontend Web Developer with experience designing, developing, and maintaining responsive and accessible websites.
+  </p>
 
-    <h2>Professional Experience</h2>
+  <h2>Professional Experience</h2>
 
-    <div class="experience" data-role="frontend">
-      <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
-      <p class="date">2019 – Present</p>
-      <ul>
-        <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
-        <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
-      </ul>
-    </div>
-
-    <div class="experience" data-role="junior">
-      <p class="role">Junior Web Developer — Startup Projects</p>
-      <p class="date">2019 – 2020</p>
-      <ul>
-        <li>Contributed to frontend development tasks within small agile teams.</li>
-        <li>Assisted with UI implementation, bug fixes, testing, and ongoing maintenance.</li>
-      </ul>
-    </div>
-
-    <div class="experience" data-role="ai">
-      <p class="role">AI & Python Developer — Freelance Projects</p>
-      <p class="date">2021 – Present</p>
-      <ul>
-        <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
-        <li>Create Python scripts for data processing, automation, and backend logic.</li>
-      </ul>
-    </div>
-
-    <div class="experience" data-role="senior">
-      <p class="role">Senior Frontend Developer — Contract Projects</p>
-      <p class="date">2022 – Present</p>
-      <ul>
-        <li>Lead frontend development for large-scale web applications.</li>
-        <li>Mentor junior developers and ensure code quality standards.</li>
-      </ul>
-    </div>
-
+  <div class="experience" data-role="frontend">
+    <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
+    <p class="date">2019 – Present</p>
+    <ul>
+      <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
+      <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
+      <li>Ensure cross-browser compatibility and optimize websites for performance, usability, and accessibility.</li>
+    </ul>
   </div>
 
-  <script>
-    // Get query parameter
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
+  <div class="experience" data-role="junior">
+    <p class="role">Junior Web Developer — Startup Projects</p>
+    <p class="date">2019 – 2020</p>
+    <ul>
+      <li>Contributed to frontend development tasks within small agile teams.</li>
+      <li>Assisted with UI implementation, bug fixes, testing, and ongoing maintenance.</li>
+    </ul>
+  </div>
 
-    const role = getQueryParam('role') || 'frontend';
+  <div class="experience" data-role="ai">
+    <p class="role">AI & Python Developer — Freelance Projects</p>
+    <p class="date">2021 – Present</p>
+    <ul>
+      <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
+      <li>Create Python scripts for data processing, automation, and backend logic.</li>
+    </ul>
+  </div>
 
-    // Update visible experience
-    document.querySelectorAll('.experience').forEach(exp => {
-      if (exp.dataset.role === role) {
-        exp.classList.remove('hidden');
-      } else {
-        exp.classList.add('hidden');
-      }
-    });
+  <div class="experience" data-role="senior">
+    <p class="role">Senior Frontend Developer — Contract Projects</p>
+    <p class="date">2022 – Present</p>
+    <ul>
+      <li>Lead frontend development for large-scale web applications.</li>
+      <li>Mentor junior developers and ensure code quality standards.</li>
+    </ul>
+  </div>
 
-    // Update main role title
-    const mainRoleMap = {
-      frontend: 'Frontend Web Developer',
-      junior: 'Junior Web Developer',
-      ai: 'Python / AI Developer',
-      senior: 'Senior Frontend Developer'
-    };
+</div>
 
-    const mainRoleEl = document.getElementById('main-role');
-    mainRoleEl.textContent = mainRoleMap[role] || mainRoleMap['frontend'];
-  </script>
+<script>
+  // Function to get query parameters
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  const role = getQueryParam('role') || 'frontend';
+
+  // Show only selected role experience
+  document.querySelectorAll('.experience').forEach(exp => {
+    if(exp.dataset.role === role) exp.classList.remove('hidden');
+    else exp.classList.add('hidden');
+  });
+
+  // Update main role heading
+  const mainRoleMap = {
+    frontend: 'Frontend Web Developer',
+    junior: 'Junior Web Developer',
+    ai: 'Python / AI Developer',
+    senior: 'Senior Frontend Developer'
+  };
+  document.getElementById('main-role').textContent = mainRoleMap[role] || mainRoleMap['frontend'];
+</script>
+
 </body>
 </html>
