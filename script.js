@@ -4,8 +4,12 @@ const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
   const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
+  const newExpanded = !expanded;
+  hamburger.setAttribute('aria-expanded', String(newExpanded));
   navLinks.classList.toggle('show');
+  
+  // Prevent background scroll on mobile when menu is open
+  document.body.classList.toggle('menu-open', newExpanded);
 });
 
 // Keyboard accessible toggle (Enter or Space)
