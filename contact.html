@@ -1,64 +1,65 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact | Alawode Adewale Afeez – Frontend & AI Developer</title>
 
 <style>
-/* ===== RESET & BASE ===== */
-*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #f8fafb; color: #333; line-height:1.6; min-height:100vh;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-}
-html[dir="rtl"] { direction: rtl; }
+/* RESET & BASE */
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif; background:#f8fafb; color:#222; line-height:1.6; min-height:100vh; }
+html[dir="rtl"]{ direction:rtl; }
 
-/* ===== LAYOUT ===== */
-.container { max-width:1100px; margin-inline:auto; padding:1rem; }
-header { background-color:#0a2540; color:#fff; box-shadow:0 2px 8px rgba(10,37,64,0.3); position:sticky; top:0; z-index:999; }
-nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding:0.75rem 1rem; }
-.logo { font-weight:800; font-size:1.25rem; user-select:none; }
+/* CONTAINER */
+.container{ max-width:1100px; margin:auto; padding:1rem; }
 
-/* NAV LINKS */
-.nav-links { display:flex; align-items:center; gap:1.5rem; }
-.nav-links a { color:#fff; text-decoration:none; font-weight:600; padding:0.4rem 0.6rem; border-radius:6px; transition: color 0.3s ease, background-color 0.3s ease; }
-.nav-links a.active, .nav-links a:hover, .nav-links a:focus { color:#00c9a7; background-color: rgba(0,201,167,0.2); outline:none; box-shadow:0 0 8px #00c9a7aa; cursor:pointer; }
+/* HEADER */
+header{ background:#0a2540; color:#fff; box-shadow:0 2px 8px rgba(10,37,64,0.3); position:sticky; top:0; z-index:999; }
+nav{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; padding:0.75rem 1rem; }
+.logo{ font-weight:800; font-size:1.25rem; }
+.nav-links{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.nav-links a{ color:#fff; text-decoration:none; font-weight:600; padding:0.4rem 0.6rem; border-radius:6px; transition:0.3s; }
+.nav-links a:hover, .nav-links a:focus, .nav-links a.active{ color:#00c9a7; background:rgba(0,201,167,0.2); box-shadow:0 0 8px #00c9a7aa; }
+select.lang-select{ background:#fff; color:#0a2540; border:none; padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; cursor:pointer; transition:0.3s; }
+select.lang-select:hover, select.lang-select:focus{ background:#00c9a7; color:#fff; outline:none; }
 
-/* LANGUAGE SELECT */
-select.lang-select { background:#fff; color:#0a2540; border:none; padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; cursor:pointer; transition: background-color 0.3s ease; }
-select.lang-select:hover, select.lang-select:focus { background-color:#00c9a7; color:#fff; outline:none; }
-
-/* HAMBURGER BUTTON */
-button.hamburger { display:none; background:none; border:none; cursor:pointer; font-size:1.8rem; color:#fff; padding:0.25rem; border-radius:6px; transition: color 0.3s ease; }
-button.hamburger:hover, button.hamburger:focus { color:#00c9a7; outline:none; }
-button.hamburger:focus-visible { outline:2px solid #00c9a7; outline-offset:2px; }
+/* HAMBURGER */
+button.hamburger{ display:none; background:none; border:none; font-size:1.8rem; color:#fff; cursor:pointer; padding:0.25rem; border-radius:6px; transition:0.3s; }
+button.hamburger:hover, button.hamburger:focus{ color:#00c9a7; outline:none; }
 
 /* FORM */
-form { max-width:600px; margin:2rem auto; background:#fff; padding:1.5rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
-label { display:block; margin-top:1rem; margin-bottom:0.4rem; font-weight:600; color:#222; }
-input, select, textarea { width:100%; padding:0.65rem; border-radius:6px; border:1px solid #ccc; font-size:1rem; font-family:inherit; transition:border-color 0.3s ease; }
-input:focus, select:focus, textarea:focus { outline:none; border-color:#00c9a7; box-shadow:0 0 6px #00c9a7aa; }
-textarea { resize:vertical; }
-button[type="submit"] { margin-top:1.5rem; background-color:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; border:none; cursor:pointer; font-weight:600; transition: background-color 0.3s ease; width:100%; }
-button[type="submit"]:hover, button[type="submit"]:focus { background-color:#004d40; outline:none; }
+form{ max-width:600px; margin:2rem auto; background:#fff; padding:1.5rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+label{ display:block; margin-top:1rem; margin-bottom:0.4rem; font-weight:600; color:#222; }
+input, select, textarea{ width:100%; padding:0.65rem; border-radius:6px; border:1px solid #ccc; font-size:1rem; font-family:inherit; transition:0.3s; }
+input:focus, select:focus, textarea:focus{ border-color:#00c9a7; box-shadow:0 0 6px #00c9a7aa; outline:none; }
+textarea{ resize:vertical; }
+button[type="submit"]{ width:100%; margin-top:1.5rem; background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; border:none; cursor:pointer; font-weight:600; transition:0.3s; }
+button[type="submit"]:hover, button[type="submit"]:focus{ background:#004d40; outline:none; }
 
 /* RESUME BUTTONS */
-.resume-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:1.5rem 0; }
-.resume-buttons a, .resume-buttons button { background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:600; cursor:pointer; transition:background-color 0.3s ease; }
-.resume-buttons a:hover, .resume-buttons button:hover, .resume-buttons a:focus, .resume-buttons button:focus { background-color:#004d40; outline:none; }
+.resume-buttons{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:1.5rem 0; }
+.resume-buttons a, .resume-buttons button{ background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:600; cursor:pointer; transition:0.3s; }
+.resume-buttons a:hover, .resume-buttons button:hover, .resume-buttons a:focus, .resume-buttons button:focus{ background:#004d40; outline:none; }
 
-/* WHATSAPP */
-.whatsapp { text-align:center; margin-top:1.5rem; font-size:1rem; }
-.whatsapp a { color:#25d366; font-weight:700; text-decoration:none; transition: color 0.3s ease; }
-.whatsapp a:hover, .whatsapp a:focus { color:#128c4a; outline:none; }
+/* WHATSAPP & CONTACT INFO */
+.contact-info{ text-align:center; margin-top:1rem; }
+.contact-info a{ color:#25d366; font-weight:700; text-decoration:none; transition:0.3s; }
+.contact-info a:hover, .contact-info a:focus{ color:#128c4a; outline:none; }
 
 /* FOOTER */
-footer { background-color:#0a2540; color:#fff; text-align:center; padding:1rem; font-size:0.9rem; user-select:none; box-shadow:inset 0 1px 0 rgba(255,255,255,0.1); margin-top:3rem; }
+footer{ background:#0a2540; color:#fff; text-align:center; padding:1rem; font-size:0.9rem; margin-top:3rem; box-shadow:inset 0 1px 0 rgba(255,255,255,0.1); }
 
-/* MOBILE RESPONSIVE */
-@media(max-width:768px){ button.hamburger{ display:block;} .nav-links{ display:none; flex-direction:column; gap:1rem; background:#0a2540; padding:1rem; border-radius:10px; width:100%; } .nav-links.show{ display:flex; } .nav-links a{ font-size:1.1rem; padding:0.6rem 0; } select.lang-select{ width:100%; margin-top:0.75rem; } form{ margin:1rem; padding:1rem; } button[type="submit"]{ width:100%; } }
+/* MOBILE */
+@media(max-width:768px){
+  button.hamburger{ display:block; }
+  .nav-links{ display:none; flex-direction:column; gap:1rem; background:#0a2540; padding:1rem; border-radius:10px; width:100%; }
+  .nav-links.show{ display:flex; }
+  .nav-links a{ font-size:1.1rem; padding:0.6rem 0; }
+  select.lang-select{ width:100%; margin-top:0.75rem; }
+  form{ margin:1rem; padding:1rem; }
+  button[type="submit"]{ width:100%; }
+}
 </style>
 </head>
 
@@ -66,11 +67,15 @@ footer { background-color:#0a2540; color:#fff; text-align:center; padding:1rem; 
 <header>
 <nav class="container" role="navigation" aria-label="Primary Navigation">
   <div class="logo">Eyesightworks</div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">☰</button>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
   <div class="nav-links" id="nav-links">
-    <a href="index.html" aria-current="false" tabindex="0">Home</a>
-    <a href="contact.html" class="active" aria-current="page" tabindex="0">Contact</a>
-    <select id="langSelect" class="lang-select" aria-label="Select language">
+    <a href="index.html">Home</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="frontend-cv.html">Frontend CV</a>
+    <a href="junior-cv.html">Junior CV</a>
+    <a href="ai-cv.html">AI CV</a>
+    <a href="freelance-cv.html">Freelance CV</a>
+    <select id="langSelect" class="lang-select">
       <option value="en" selected>EN</option>
       <option value="fr">FR</option>
       <option value="es">ES</option>
@@ -80,7 +85,7 @@ footer { background-color:#0a2540; color:#fff; text-align:center; padding:1rem; 
 </nav>
 </header>
 
-<main class="container" role="main">
+<main class="container">
 <h1 data-en="Get in Touch" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Get in Touch</h1>
 <p class="intro" data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
 data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
@@ -90,18 +95,16 @@ I am open to frontend developer roles, junior backend or AI positions, freelance
 
 <!-- Resume Buttons -->
 <div class="resume-buttons">
-  <a id="viewResumeBtn" href="frontend-cv.html" target="_blank" data-en="View Resume" data-fr="Voir le CV" data-es="Ver CV" data-ar="عرض السيرة الذاتية">View Resume</a>
-  <button id="downloadCVBtn" data-en="Download CV (PDF)" data-fr="Télécharger le CV (PDF)" data-es="Descargar CV (PDF)" data-ar="تحميل السيرة الذاتية (PDF)">Download CV</button>
+  <a id="viewResumeBtn" href="frontend-cv.html" target="_blank">View Resume</a>
+  <button id="downloadCVBtn">Download CV</button>
 </div>
 
-<form name="job-contact" aria-label="Contact form">
-<label for="name" data-en="Full Name" data-fr="Nom complet" data-es="Nombre completo" data-ar="الاسم الكامل">Full Name</label>
-<input type="text" name="name" id="name" required autocomplete="name" />
-
-<label for="email" data-en="Email" data-fr="Email" data-es="Correo electrónico" data-ar="البريد الإلكتروني">Email</label>
-<input type="email" name="email" id="email" required autocomplete="email" />
-
-<label for="role" data-en="Position / Reason" data-fr="Poste / Objet" data-es="Puesto / Motivo" data-ar="الوظيفة / الغرض">Position / Reason</label>
+<form name="job-contact">
+<label for="name">Full Name</label>
+<input type="text" name="name" id="name" required autocomplete="name">
+<label for="email">Email</label>
+<input type="email" name="email" id="email" required autocomplete="email">
+<label for="role">Position / Reason</label>
 <select name="role" id="role" required>
   <option value="">Select</option>
   <option value="frontend">Frontend Developer</option>
@@ -109,16 +112,15 @@ I am open to frontend developer roles, junior backend or AI positions, freelance
   <option value="ai">Python / AI Junior</option>
   <option value="freelance">Freelance Project</option>
 </select>
-
-<label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
+<label for="message">Message</label>
 <textarea name="message" id="message" rows="5" required></textarea>
-
-<button type="submit" data-en="Send Message" data-fr="Envoyer le message" data-es="Enviar mensaje" data-ar="إرسال الرسالة">Send Message</button>
+<button type="submit">Send Message</button>
 </form>
 
-<div class="whatsapp" role="contentinfo" aria-label="WhatsApp contact">
-<p data-en="Prefer WhatsApp?" data-fr="Préférez WhatsApp ?" data-es="¿Prefieres WhatsApp?" data-ar="تفضل واتساب؟">Prefer WhatsApp?</p>
-<a href="https://wa.me/2348083869454" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" id="whatsappLinkStatic">Chat on WhatsApp</a>
+<div class="contact-info">
+<p>Prefer WhatsApp? <a href="https://wa.me/2348083869454" target="_blank">Chat on WhatsApp</a></p>
+<p>Email: <a href="mailto:eyesightconcept@gmail.com">eyesightconcept@gmail.com</a></p>
+<p>Website: <a href="https://eyesightworks.github.io/eyesight-skills/index.html" target="_blank">eyesightworks.github.io</a></p>
 </div>
 </main>
 
@@ -127,25 +129,17 @@ I am open to frontend developer roles, junior backend or AI positions, freelance
 </footer>
 
 <script>
+// Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', ()=>{ 
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
+hamburger.addEventListener('click', ()=>{
   navLinks.classList.toggle('show');
 });
-hamburger.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); hamburger.click(); }});
 
-// LANGUAGE SWITCHING
-const langSelect = document.getElementById("langSelect");
-const supportedLangs = ['en','fr','es','ar'];
+// Language switching
+const langSelect = document.getElementById('langSelect');
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const downloadCVBtn = document.getElementById('downloadCVBtn');
-
-const btnText = {
-  viewResume:{en:"View Resume",fr:"Voir le CV",es:"Ver CV",ar:"عرض السيرة الذاتية"},
-  downloadCV:{en:"Download CV (PDF)",fr:"Télécharger le CV (PDF)",es:"Descargar CV (PDF)",ar:"تحميل السيرة الذاتية (PDF)"}
-};
 
 const pdfMap = { frontend:'frontend-cv.pdf', junior:'junior-cv.pdf', ai:'ai-cv.pdf', freelance:'freelance-cv.pdf' };
 const pageMap = { frontend:'frontend-cv.html', junior:'junior-cv.html', ai:'ai-cv.html', freelance:'freelance-cv.html' };
@@ -158,36 +152,17 @@ function updateButtons(role){
   };
 }
 
-function switchLanguage(lang){
-  if(!supportedLangs.includes(lang)) return;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang==='ar'?'rtl':'ltr';
-  document.querySelectorAll('[data-en]').forEach(el=>{ if(el.dataset[lang]) el.textContent=el.dataset[lang]; });
-  viewResumeBtn.textContent=btnText.viewResume[lang];
-  downloadCVBtn.textContent=btnText.downloadCV[lang];
-  localStorage.setItem('preferredLang',lang);
-}
-langSelect.addEventListener('change',e=>{ switchLanguage(e.target.value); });
+document.getElementById('role').addEventListener('change', e=>{ updateButtons(e.target.value); });
 document.addEventListener('DOMContentLoaded',()=>{
-  const savedLang = localStorage.getItem('preferredLang')||'en';
-  langSelect.value=savedLang;
-  switchLanguage(savedLang);
-  // initialize buttons based on default role
-  const roleSelect = document.getElementById('role');
-  updateButtons(roleSelect.value);
+  const savedRole = localStorage.getItem('contact_role') || 'frontend';
+  updateButtons(savedRole);
 });
 
-// ROLE SELECTION
-document.getElementById('role').addEventListener('change', e=>{ updateButtons(e.target.value); });
-
-// FORM SUBMISSION
+// Form submission (CSV download)
 const form = document.querySelector('form[name="job-contact"]');
 form.addEventListener('submit', e=>{
   e.preventDefault();
-  const name=form.name.value.trim();
-  const email=form.email.value.trim();
-  const role=form.role.value.trim();
-  const message=form.message.value.trim();
+  const name=form.name.value.trim(), email=form.email.value.trim(), role=form.role.value.trim(), message=form.message.value.trim();
   const date=new Date().toISOString();
   const csvHeaders=['Date','Name','Email','Role','Message'];
   const csvRows=[ csvHeaders.join(','), `"${date}","${name}","${email}","${role}","${message.replace(/"/g,'""')}"`];
@@ -199,6 +174,5 @@ form.addEventListener('submit', e=>{
   window.location.href='thank-you.html';
 });
 </script>
-
 </body>
 </html>
