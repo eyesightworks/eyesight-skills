@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alawode Adewale Afeez | Frontend Web Developer</title>
+  <title>Alawode Adewale Afeez | Resume</title>
 
   <style>
     body {
@@ -17,55 +17,30 @@
       max-width: 800px;
       margin: auto;
     }
-    h1 {
-      font-size: 24px;
-      margin-bottom: 4px;
-    }
-    h2 {
-      font-size: 16px;
-      margin-top: 16px;
-      border-bottom: 1px solid #000;
-      padding-bottom: 3px;
-    }
-    p, li {
-      font-size: 12.5px;
-      line-height: 1.4;
-    }
-    ul {
-      padding-left: 18px;
-    }
-    .role {
-      font-weight: bold;
-      margin-top: 8px;
-    }
-    .date {
-      font-style: italic;
-      font-size: 11.5px;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    a {
-      color: #000;
-      text-decoration: none;
-    }
+    h1 { font-size: 24px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 16px; border-bottom: 1px solid #000; padding-bottom: 3px; }
+    p, li { font-size: 12.5px; line-height: 1.4; }
+    ul { padding-left: 18px; }
+    .role { font-weight: bold; margin-top: 8px; }
+    .date { font-style: italic; font-size: 11.5px; color: #555; margin-bottom: 4px; }
+    a { color: #000; text-decoration: none; }
+    .hidden { display: none; }
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <!-- HEADER -->
     <h1>Alawode Adewale Afeez</h1>
-    <p><strong>Frontend Web Developer</strong></p>
+    <p><strong id="main-role">Frontend Web Developer</strong></p>
     <p>
       Email: eyesightconcept@gmail.com |
-      LinkedIn: linkedin.com/in/alawode-adewale-3a033239a |
-      GitHub: github.com/alawode-adewale
+      LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">Profile</a> |
+      GitHub: <a href="https://github.com/alawode-adewale" target="_blank">Profile</a>
     </p>
 
-    <!-- SUMMARY -->
     <h2>Professional Summary</h2>
-    <p>
+    <p id="summary">
       Frontend Web Developer with 5 years of hands-on experience designing,
       developing, and maintaining responsive and accessible websites using
       HTML5, CSS3, and JavaScript (ES6+). Strong background in semantic HTML,
@@ -75,98 +50,74 @@
       to deliver reliable, user-centered web solutions.
     </p>
 
-    <!-- SKILLS -->
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>HTML5, CSS3, JavaScript (ES6+)</li>
-      <li>Responsive Web Design, Mobile-First Development</li>
-      <li>Web Accessibility (WCAG), Semantic HTML</li>
-      <li>User Interface (UI) Development</li>
-      <li>Cross-Browser Compatibility</li>
-      <li>Frontend Performance Optimization</li>
-      <li>Version Control: Git, GitHub</li>
-      <li>Basic React.js</li>
-    </ul>
-
-    <!-- TOOLS -->
-    <h2>Tools & Technologies</h2>
-    <ul>
-      <li>React (Foundational)</li>
-      <li>Python, Flask</li>
-      <li>WordPress</li>
-      <li>Figma, Adobe Photoshop</li>
-      <li>AI & Automation Tools (Basic)</li>
-    </ul>
-
-    <!-- EXPERIENCE -->
     <h2>Professional Experience</h2>
 
-    <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
-    <p class="date">2019 – Present</p>
-    <ul>
-      <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
-      <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
-      <li>Ensure cross-browser compatibility and optimize websites for performance, usability, and accessibility.</li>
-      <li>Collaborate directly with clients to gather requirements and deliver user-focused digital solutions.</li>
-    </ul>
+    <div class="experience" data-role="frontend">
+      <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
+      <p class="date">2019 – Present</p>
+      <ul>
+        <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
+        <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
+      </ul>
+    </div>
 
-    <p class="role">AI & Python Developer — Freelance Projects</p>
-    <p class="date">2021 – Present</p>
-    <ul>
-      <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
-      <li>Create Python scripts for data processing, automation, and backend logic.</li>
-      <li>Build lightweight Flask applications for internal tools and proof-of-concept demonstrations.</li>
-    </ul>
+    <div class="experience" data-role="junior">
+      <p class="role">Junior Web Developer — Startup Projects</p>
+      <p class="date">2019 – 2020</p>
+      <ul>
+        <li>Contributed to frontend development tasks within small agile teams.</li>
+        <li>Assisted with UI implementation, bug fixes, testing, and ongoing maintenance.</li>
+      </ul>
+    </div>
 
-    <p class="role">Graphic Designer & Content Creator — Freelance</p>
-    <p class="date">2019 – 2023</p>
-    <ul>
-      <li>Designed logos, brand identity systems, and digital marketing materials.</li>
-      <li>Produced visual content to support online presence and product promotion.</li>
-    </ul>
+    <div class="experience" data-role="ai">
+      <p class="role">AI & Python Developer — Freelance Projects</p>
+      <p class="date">2021 – Present</p>
+      <ul>
+        <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
+        <li>Create Python scripts for data processing, automation, and backend logic.</li>
+      </ul>
+    </div>
 
-    <p class="role">Junior Web Developer — Startup Projects</p>
-    <p class="date">2019 – 2020</p>
-    <ul>
-      <li>Contributed to frontend development tasks within small agile teams.</li>
-      <li>Assisted with UI implementation, bug fixes, testing, and ongoing maintenance.</li>
-      <li>Gained hands-on experience with collaborative development workflows and version control systems.</li>
-    </ul>
-
-    <!-- PROJECTS -->
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        Designed and developed responsive business websites using HTML5, CSS3,
-        and JavaScript, emphasizing mobile-first layouts, usability, and
-        cross-browser compatibility.
-      </li>
-      <li>
-        Built AI-powered transcription and automation tools using Python,
-        including scripts for text processing, workflow automation, and
-        productivity enhancement.
-      </li>
-    </ul>
-
-    <!-- CERTIFICATIONS -->
-    <h2>Certifications</h2>
-    <ul>
-      <li>Responsive Web Design Certification – freeCodeCamp</li>
-    </ul>
-
-    <!-- EDUCATION -->
-    <h2>Education</h2>
-    <p><strong>MSc in Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2015 – 2018)</p>
-    <p><strong>BSc in Computer Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2006 – 2010)</p>
-
-    <!-- LANGUAGES -->
-    <h2>Languages</h2>
-    <ul>
-      <li>English (Fluent)</li>
-      <li>Yoruba (Native)</li>
-      <li>Arabic (Basic)</li>
-    </ul>
+    <div class="experience" data-role="senior">
+      <p class="role">Senior Frontend Developer — Contract Projects</p>
+      <p class="date">2022 – Present</p>
+      <ul>
+        <li>Lead frontend development for large-scale web applications.</li>
+        <li>Mentor junior developers and ensure code quality standards.</li>
+      </ul>
+    </div>
 
   </div>
+
+  <script>
+    // Get query parameter
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const role = getQueryParam('role') || 'frontend';
+
+    // Update visible experience
+    document.querySelectorAll('.experience').forEach(exp => {
+      if (exp.dataset.role === role) {
+        exp.classList.remove('hidden');
+      } else {
+        exp.classList.add('hidden');
+      }
+    });
+
+    // Update main role title
+    const mainRoleMap = {
+      frontend: 'Frontend Web Developer',
+      junior: 'Junior Web Developer',
+      ai: 'Python / AI Developer',
+      senior: 'Senior Frontend Developer'
+    };
+
+    const mainRoleEl = document.getElementById('main-role');
+    mainRoleEl.textContent = mainRoleMap[role] || mainRoleMap['frontend'];
+  </script>
 </body>
 </html>
