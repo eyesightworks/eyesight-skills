@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alawode Adewale Afeez | Master Dynamic Resume</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alawode Adewale Afeez | Master CV</title>
+<style>
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0; padding: 0;
+    background: #f8fafb; color: #222; line-height: 1.5;
+  }
+  html[dir="rtl"] { direction: rtl; }
 
-  <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: #222;
-      margin: 0;
-      padding: 20px;
-      background: #f8fafb;
-      line-height: 1.6;
-    }
-    html[dir="rtl"] { direction: rtl; }
-    .container { max-width: 900px; margin: auto; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    h2 { font-size: 1.25rem; margin-top: 1.5rem; border-bottom: 2px solid #0a2540; padding-bottom: 4px; }
-    p, li { font-size: 1rem; }
-    ul { padding-left: 20px; }
-    .role { font-weight: bold; margin-top: 8px; }
-    .date { font-style: italic; font-size: 0.9rem; color: #555; margin-bottom: 4px; }
-    a { color: #0a2540; text-decoration: none; font-weight: 600; }
-    .btn-box { display: flex; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
-    .btn { background: #0a2540; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
-    .btn:hover { background: #004d40; }
-    .highlight { background-color: #e0f7f4; border-left: 4px solid #00c9a7; padding-left: 6px; }
-  </style>
+  .container { max-width: 900px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+  h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  h2 { font-size: 1.3rem; margin-top: 1.5rem; border-bottom: 2px solid #0a2540; padding-bottom: 6px; }
+  p, li { font-size: 1rem; margin-bottom: 6px; }
+  ul { padding-left: 20px; }
+
+  .role { font-weight: bold; margin-top: 10px; font-size: 1.05rem; }
+  .date { font-style: italic; color: #555; font-size: 0.9rem; margin-bottom: 4px; }
+  .highlight { background-color: #e0f7f4; border-left: 4px solid #00c9a7; padding-left: 6px; }
+
+  a { color: #0a2540; text-decoration: none; font-weight: 600; }
+  .btn-box { display: flex; gap: 12px; margin-top: 1rem; flex-wrap: wrap; }
+  .btn { background: #0a2540; color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
+  .btn:hover { background: #004d40; }
+
+  .row { display: flex; flex-wrap: wrap; margin-top: 20px; }
+  .col-left { flex: 1; min-width: 220px; padding-right: 20px; }
+  .col-right { flex: 2; min-width: 400px; }
+
+  @media print {
+    body { background: #fff; }
+    .container { box-shadow: none; border-radius: 0; padding: 10px; }
+    .highlight { background: none; border-left: 4px solid #0a2540; padding-left: 6px; }
+    .btn-box, a { display: none; }
+  }
+  @media (max-width: 768px) {
+    .row { flex-direction: column; }
+    .col-left { padding-right: 0; margin-bottom: 20px; }
+  }
+</style>
 </head>
 <body>
 <div class="container">
@@ -35,6 +49,8 @@
   <p><strong>Frontend Web Developer & AI Developer</strong></p>
   <p>
     Email: eyesightconcept@gmail.com | 
+    WhatsApp: <a href="https://wa.me/2348083869454" target="_blank">08083869454</a> | 
+    Website: <a href="https://eyesightworks.github.io/eyesight-skills/index.html" target="_blank">eyesight-skills</a> | 
     LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">linkedin.com/in/alawode-adewale-3a033239a</a> | 
     GitHub: <a href="https://github.com/alawode-adewale" target="_blank">github.com/alawode-adewale</a>
   </p>
@@ -44,37 +60,39 @@
     <a href="#" id="downloadCVBtn" class="btn" download>Download CV (PDF)</a>
   </div>
 
-  <h2>Professional Summary</h2>
-  <p id="summary">
-    Experienced Frontend Web Developer and AI Developer with expertise in HTML5, CSS3, JavaScript (ES6+), responsive UI, and web accessibility. Skilled in collaborating with clients and teams to deliver high-quality, user-centered web solutions.
-  </p>
+  <div class="row">
+    <div class="col-left">
+      <h2>Technical Skills</h2>
+      <ul id="skills"></ul>
 
-  <h2>Technical Skills</h2>
-  <ul id="skills"></ul>
+      <h2>Education</h2>
+      <p><strong>MSc in Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2015 – 2018)</p>
+      <p><strong>BSc in Computer Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2006 – 2010)</p>
 
-  <h2>Professional Experience</h2>
-  <div id="experience"></div>
+      <h2>Languages</h2>
+      <ul>
+        <li>English (Fluent)</li>
+        <li>Yoruba (Native)</li>
+        <li>Arabic (Basic)</li>
+      </ul>
 
-  <h2>Projects</h2>
-  <ul id="projects"></ul>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Responsive Web Design Certification – freeCodeCamp</li>
+      </ul>
+    </div>
 
-  <h2>Certifications</h2>
-  <ul id="certifications">
-    <li>Responsive Web Design Certification – freeCodeCamp</li>
-  </ul>
+    <div class="col-right">
+      <h2>Professional Summary</h2>
+      <p id="summary"></p>
 
-  <h2>Education</h2>
-  <div id="education">
-    <p><strong>MSc in Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2015 – 2018)</p>
-    <p><strong>BSc in Computer Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2006 – 2010)</p>
+      <h2>Professional Experience</h2>
+      <div id="experience"></div>
+
+      <h2>Projects</h2>
+      <ul id="projects"></ul>
+    </div>
   </div>
-
-  <h2>Languages</h2>
-  <ul>
-    <li>English (Fluent)</li>
-    <li>Yoruba (Native)</li>
-    <li>Arabic (Basic)</li>
-  </ul>
 </div>
 
 <script>
@@ -85,128 +103,37 @@
   const projectsList = document.getElementById('projects');
 
   const allExperiences = [
-    {
-      role: 'Frontend Web Developer & UI Designer — Freelance',
-      date: '2019 – Present',
-      tasks: [
-        'Developed responsive, mobile-first websites using HTML, CSS, and JavaScript.',
-        'Translated UI/UX designs into clean, accessible frontend code.',
-        'Optimized websites for performance, usability, and cross-browser compatibility.',
-        'Collaborated with clients to gather requirements and deliver solutions.'
-      ],
-      type: 'Frontend Developer'
-    },
-    {
-      role: 'Junior Web Developer — Startup Projects',
-      date: '2019 – 2020',
-      tasks: [
-        'Assisted with frontend development, bug fixes, and testing in agile teams.',
-        'Gained experience with collaborative workflows and version control.',
-        'Assisted in backend development and API integration.',
-        'Performed database operations and basic server-side scripting.'
-      ],
-      type: 'Junior Backend Developer'
-    },
-    {
-      role: 'AI & Python Developer — Freelance Projects',
-      date: '2021 – Present',
-      tasks: [
-        'Developed AI tools for transcription, text processing, and automation.',
-        'Built Python scripts for data processing and backend logic.',
-        'Created lightweight Flask applications for internal tools and demos.'
-      ],
-      type: 'Python / AI Junior'
-    },
-    {
-      role: 'Graphic Designer & Content Creator — Freelance',
-      date: '2019 – 2023',
-      tasks: [
-        'Designed logos, brand identities, and digital marketing materials.',
-        'Produced visual content to support online presence and product promotion.'
-      ],
-      type: 'Freelance Project'
-    }
+    { role: 'Frontend Web Developer & UI Designer — Freelance', date: '2019 – Present', tasks: ['Developed responsive, mobile-first websites using HTML, CSS, and JavaScript.', 'Translated UI/UX designs into clean, accessible frontend code.', 'Optimized websites for performance, usability, and cross-browser compatibility.', 'Collaborated with clients to gather requirements and deliver solutions.'], type: 'Frontend Developer' },
+    { role: 'Junior Web Developer — Startup Projects', date: '2019 – 2020', tasks: ['Assisted with frontend development, bug fixes, and testing in agile teams.', 'Gained experience with collaborative workflows and version control.', 'Assisted in backend development and API integration.', 'Performed database operations and basic server-side scripting.'], type: 'Junior Backend Developer' },
+    { role: 'AI & Python Developer — Freelance Projects', date: '2021 – Present', tasks: ['Developed AI tools for transcription, text processing, and automation.', 'Built Python scripts for data processing and backend logic.', 'Created lightweight Flask applications for internal tools and demos.'], type: 'Python / AI Junior' },
+    { role: 'Graphic Designer & Content Creator — Freelance', date: '2019 – 2023', tasks: ['Designed logos, brand identities, and digital marketing materials.', 'Produced visual content to support online presence and product promotion.'], type: 'Freelance Project' }
   ];
 
   const rolesData = {
-    'Frontend Developer': {
-      resume: 'frontend-resume.html',
-      pdf: 'frontend-cv.pdf',
-      summary: 'Frontend Web Developer with strong experience in building responsive, accessible, and performant web apps.',
-      skills: ['HTML5, CSS3, JavaScript (ES6+)', 'Responsive Web Design', 'UI/UX Implementation', 'React.js', 'Frontend Performance Optimization'],
-      projects: ['Developed responsive business websites emphasizing mobile-first layouts and cross-browser compatibility.']
-    },
-    'Junior Backend Developer': {
-      resume: 'junior-resume.html',
-      pdf: 'junior-cv.pdf',
-      summary: 'Junior Backend Developer with experience building server-side applications and APIs using Python and Flask.',
-      skills: ['Python', 'Flask', 'API Development', 'Backend Logic', 'Database Integration'],
-      projects: ['Built backend functionality for web apps using Flask and Python.']
-    },
-    'Python / AI Junior': {
-      resume: 'ai-resume.html',
-      pdf: 'ai-cv.pdf',
-      summary: 'Python & AI Developer skilled in building automation tools, AI-powered scripts, and lightweight Flask apps.',
-      skills: ['Python', 'AI & Automation Tools', 'Flask', 'Data Processing', 'Scripting'],
-      projects: ['Built AI-powered transcription and automation tools using Python.']
-    },
-    'Freelance Project': {
-      resume: 'freelance-resume.html',
-      pdf: 'freelance-cv.pdf',
-      summary: 'Freelance developer and designer delivering client projects across web, UI, and graphics.',
-      skills: ['Frontend Development', 'Graphic Design', 'Content Creation', 'UI/UX', 'Client Collaboration'],
-      projects: ['Delivered client projects in web, graphics, and branding.']
-    }
+    'Frontend Developer': { resume: 'frontend-resume.html', pdf: 'frontend-cv.pdf', summary: 'Frontend Web Developer with strong experience in building responsive, accessible, and performant web apps.', skills: ['HTML5, CSS3, JavaScript (ES6+)', 'Responsive Web Design', 'UI/UX Implementation', 'React.js', 'Frontend Performance Optimization'], projects: ['Developed responsive business websites emphasizing mobile-first layouts and cross-browser compatibility.'] },
+    'Junior Backend Developer': { resume: 'junior-resume.html', pdf: 'junior-cv.pdf', summary: 'Junior Backend Developer with experience building server-side applications and APIs using Python and Flask.', skills: ['Python', 'Flask', 'API Development', 'Backend Logic', 'Database Integration'], projects: ['Built backend functionality for web apps using Flask and Python.'] },
+    'Python / AI Junior': { resume: 'ai-resume.html', pdf: 'ai-cv.pdf', summary: 'Python & AI Developer skilled in building automation tools, AI-powered scripts, and lightweight Flask apps.', skills: ['Python', 'AI & Automation Tools', 'Flask', 'Data Processing', 'Scripting'], projects: ['Built AI-powered transcription and automation tools using Python.'] },
+    'Freelance Project': { resume: 'freelance-resume.html', pdf: 'freelance-cv.pdf', summary: 'Freelance developer and designer delivering client projects across web, UI, and graphics.', skills: ['Frontend Development', 'Graphic Design', 'Content Creation', 'UI/UX', 'Client Collaboration'], projects: ['Delivered client projects in web, graphics, and branding.'] }
   };
 
   function populateResume(roleName) {
     const roleData = rolesData[roleName] || rolesData['Frontend Developer'];
-
-    // Update buttons
     viewResumeBtn.href = roleData.resume;
     downloadCVBtn.href = roleData.pdf;
-
-    // Update summary
     document.getElementById('summary').textContent = roleData.summary;
 
-    // Update skills
     skillsUl.innerHTML = '';
-    roleData.skills.forEach(skill => {
-      const li = document.createElement('li');
-      li.textContent = skill;
-      skillsUl.appendChild(li);
-    });
+    roleData.skills.forEach(skill => { const li = document.createElement('li'); li.textContent = skill; skillsUl.appendChild(li); });
 
-    // Update experiences (all but highlight selected role)
+    projectsList.innerHTML = '';
+    roleData.projects.forEach(proj => { const li = document.createElement('li'); li.textContent = proj; projectsList.appendChild(li); });
+
     experienceDiv.innerHTML = '';
     allExperiences.forEach(exp => {
-      const pRole = document.createElement('p');
-      pRole.className = 'role';
-      pRole.textContent = exp.role;
-      if (exp.type === roleName) pRole.classList.add('highlight');
-
-      const pDate = document.createElement('p');
-      pDate.className = 'date';
-      pDate.textContent = exp.date;
-
-      const ul = document.createElement('ul');
-      exp.tasks.forEach(task => {
-        const li = document.createElement('li');
-        li.textContent = task;
-        ul.appendChild(li);
-      });
-
-      experienceDiv.appendChild(pRole);
-      experienceDiv.appendChild(pDate);
-      experienceDiv.appendChild(ul);
-    });
-
-    // Update projects
-    projectsList.innerHTML = '';
-    roleData.projects.forEach(proj => {
-      const li = document.createElement('li');
-      li.textContent = proj;
-      projectsList.appendChild(li);
+      const pRole = document.createElement('p'); pRole.className = 'role'; pRole.textContent = exp.role; if (exp.type === roleName) pRole.classList.add('highlight');
+      const pDate = document.createElement('p'); pDate.className = 'date'; pDate.textContent = exp.date;
+      const ul = document.createElement('ul'); exp.tasks.forEach(task => { const li = document.createElement('li'); li.textContent = task; ul.appendChild(li); });
+      experienceDiv.appendChild(pRole); experienceDiv.appendChild(pDate); experienceDiv.appendChild(ul);
     });
   }
 
