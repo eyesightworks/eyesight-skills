@@ -23,10 +23,17 @@
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <nav>
+    <nav role="navigation">
       <div class="logo">Eyesightworks</div>
 
-      <button id="hamburger" aria-label="Toggle navigation">☰</button>
+      <button
+        id="hamburger"
+        aria-label="Toggle navigation"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
 
       <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
@@ -35,7 +42,13 @@
         <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
         <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
-          <button id="lang-switcher" class="lang-switcher-button" aria-label="Switch language">EN</button>
+          <button
+            id="lang-switcher"
+            class="lang-switcher-button"
+            aria-label="Switch language"
+          >
+            EN
+          </button>
         </li>
       </ul>
     </nav>
@@ -51,15 +64,17 @@
         data-en="Portfolio"
         data-fr="Portfolio"
         data-es="Portafolio"
-        data-ar="معرض الأعمال">
+        data-ar="معرض الأعمال"
+      >
         Portfolio
       </h1>
 
       <p class="section-intro"
-        data-en="A selection of projects demonstrating my experience in frontend development, web design, Python experimentation, and applied AI learning."
-        data-fr="Une sélection de projets illustrant mon expérience en développement frontend, design web et Python."
-        data-es="Una selección de proyectos que muestran mi experiencia en desarrollo frontend y Python."
-        data-ar="مجموعة من المشاريع التي توضح خبرتي في تطوير الواجهات الأمامية وتجارب بايثون والذكاء الاصطناعي.">
+         data-en="A selection of projects demonstrating my experience in frontend development, web design, Python experimentation, and applied AI learning."
+         data-fr="Une sélection de projets illustrant mon expérience en développement frontend, design web et Python."
+         data-es="Una selección de proyectos que muestran mi experiencia en desarrollo frontend y Python."
+         data-ar="مجموعة من المشاريع التي توضح خبرتي في تطوير الواجهات الأمامية وتجارب بايثون والذكاء الاصطناعي."
+      >
         A selection of projects demonstrating my experience in frontend development, web design, Python experimentation, and applied AI learning.
       </p>
 
@@ -79,7 +94,8 @@
             data-en="E-Commerce Website (Frontend Development)"
             data-fr="Site e-commerce (Frontend)"
             data-es="Sitio e-commerce (Frontend)"
-            data-ar="موقع تجارة إلكترونية (واجهة أمامية)">
+            data-ar="موقع تجارة إلكترونية (واجهة أمامية)"
+          >
             E-Commerce Website (Frontend Development)
           </h3>
 
@@ -87,12 +103,13 @@
             data-en="Responsive e-commerce interface featuring product listings, cart UI, and checkout flow with strong focus on usability and mobile performance."
             data-fr="Interface e-commerce responsive avec catalogue produits et interface panier."
             data-es="Interfaz e-commerce adaptable con catálogo y flujo de compra."
-            data-ar="واجهة تجارة إلكترونية متجاوبة مع عرض المنتجات وسلة التسوق.">
+            data-ar="واجهة تجارة إلكترونية متجاوبة مع عرض المنتجات وسلة التسوق."
+          >
             Responsive e-commerce interface featuring product listings, cart UI, and checkout flow.
           </p>
 
           <p><strong>Tech:</strong> HTML, CSS, JavaScript, React</p>
-          <a href="https://github.com/eyesightworks" target="_blank" rel="noopener">View Code</a>
+          <a href="https://github.com/eyesightworks" target="_blank" rel="noopener noreferrer">View Code</a>
         </div>
 
         <!-- Project 2 -->
@@ -101,7 +118,8 @@
             data-en="AI Voice & Image Processing Demo"
             data-fr="Démo IA voix & image"
             data-es="Demo de IA de voz e imagen"
-            data-ar="تجربة معالجة الصوت والصورة بالذكاء الاصطناعي">
+            data-ar="تجربة معالجة الصوت والصورة بالذكاء الاصطناعي"
+          >
             AI Voice & Image Processing Demo
           </h3>
 
@@ -109,7 +127,8 @@
             data-en="Python learning project exploring speech-to-text, basic image processing, and automation workflows."
             data-fr="Projet Python explorant la reconnaissance vocale et le traitement d’images."
             data-es="Proyecto Python que explora reconocimiento de voz y procesamiento de imágenes."
-            data-ar="مشروع بايثون تعليمي لاستكشاف التعرف على الصوت ومعالجة الصور.">
+            data-ar="مشروع بايثون تعليمي لاستكشاف التعرف على الصوت ومعالجة الصور."
+          >
             Python learning project exploring speech-to-text and image processing.
           </p>
 
@@ -122,7 +141,8 @@
             data-en="Personal Portfolio Website"
             data-fr="Site portfolio personnel"
             data-es="Sitio web de portafolio personal"
-            data-ar="موقع السيرة الذاتية الشخصي">
+            data-ar="موقع السيرة الذاتية الشخصي"
+          >
             Personal Portfolio Website
           </h3>
 
@@ -130,12 +150,13 @@
             data-en="Fully responsive personal website designed to present skills, projects, and professional background."
             data-fr="Site personnel responsive pour présenter compétences et projets."
             data-es="Sitio personal adaptable para mostrar habilidades y proyectos."
-            data-ar="موقع شخصي متجاوب لعرض المهارات والمشاريع.">
+            data-ar="موقع شخصي متجاوب لعرض المهارات والمشاريع."
+          >
             Fully responsive personal website designed to present skills and projects.
           </p>
 
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank" rel="noopener">Live Demo</a>
+          <a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
 
         <!-- Project 4 -->
@@ -144,7 +165,8 @@
             data-en="Brand Identity & Visual Design"
             data-fr="Identité visuelle et branding"
             data-es="Identidad visual y branding"
-            data-ar="الهوية البصرية والتصميم">
+            data-ar="الهوية البصرية والتصميم"
+          >
             Brand Identity & Visual Design
           </h3>
 
@@ -152,7 +174,8 @@
             data-en="Brand identity work including logo design, color systems, and visual consistency for small businesses."
             data-fr="Travaux de branding incluant logo et identité visuelle."
             data-es="Trabajo de identidad visual para pequeñas empresas."
-            data-ar="تصميم الهوية البصرية والشعارات للشركات الصغيرة.">
+            data-ar="تصميم الهوية البصرية والشعارات للشركات الصغيرة."
+          >
             Brand identity work including logo design and visual systems.
           </p>
 
@@ -165,7 +188,8 @@
             data-en="Python & AI Learning Projects"
             data-fr="Projets Python & IA"
             data-es="Proyectos de Python e IA"
-            data-ar="مشاريع تعلم بايثون والذكاء الاصطناعي">
+            data-ar="مشاريع تعلم بايثون والذكاء الاصطناعي"
+          >
             Python & AI Learning Projects
           </h3>
 
@@ -173,7 +197,8 @@
             data-en="Small experimental projects focused on automation, data handling, and introductory AI concepts."
             data-fr="Projets expérimentaux axés sur l’automatisation et l’IA."
             data-es="Proyectos experimentales de automatización e IA."
-            data-ar="مشاريع تجريبية في الأتمتة والذكاء الاصطناعي.">
+            data-ar="مشاريع تجريبية في الأتمتة والذكاء الاصطناعي."
+          >
             Small experimental projects focused on automation and AI basics.
           </p>
 
@@ -186,7 +211,8 @@
             data-en="Business Landing Pages"
             data-fr="Pages d’atterrissage business"
             data-es="Landing pages para negocios"
-            data-ar="صفحات هبوط للأعمال">
+            data-ar="صفحات هبوط للأعمال"
+          >
             Business Landing Pages
           </h3>
 
@@ -194,7 +220,8 @@
             data-en="High-conversion landing pages optimized for speed, clarity, and mobile-first experience."
             data-fr="Pages optimisées pour la conversion et la performance mobile."
             data-es="Landing pages optimizadas para conversión y móviles."
-            data-ar="صفحات هبوط عالية التحويل وسريعة التحميل.">
+            data-ar="صفحات هبوط عالية التحويل وسريعة التحميل."
+          >
             High-conversion landing pages optimized for speed and mobile usability.
           </p>
 
