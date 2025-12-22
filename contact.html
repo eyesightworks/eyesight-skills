@@ -1,178 +1,163 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Alawode Adewale Afeez – Frontend & AI Developer</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact | Alawode Adewale Afeez – Eyesightworks</title>
 
 <style>
-/* RESET & BASE */
-*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-body { font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif; background:#f8fafb; color:#222; line-height:1.6; min-height:100vh; }
-html[dir="rtl"]{ direction:rtl; }
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Inter', system-ui, sans-serif; background: #f8fafb; color: #333; min-height:100vh; line-height:1.6; }
+html[dir="rtl"] { direction: rtl; }
 
-/* CONTAINER */
-.container{ max-width:1100px; margin:auto; padding:1rem; }
+/* ===== HEADER & NAV ===== */
+header { background:#0a2540; color:#fff; box-shadow:0 2px 8px rgba(10,37,64,0.3); position:sticky; top:0; z-index:999; }
+nav.container { max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; padding:0.75rem 1rem; }
+.logo { font-weight:800; font-size:1.25rem; user-select:none; }
+.nav-links { display:flex; gap:1.5rem; align-items:center; }
+.nav-links a { color:#fff; text-decoration:none; font-weight:600; padding:0.4rem 0.6rem; border-radius:6px; transition:0.3s; }
+.nav-links a.active, .nav-links a:hover, .nav-links a:focus { color:#00c9a7; background: rgba(0,201,167,0.2); box-shadow:0 0 8px #00c9a7aa; outline:none; cursor:pointer; }
+select.lang-select { background:#fff; color:#0a2540; border:none; padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; cursor:pointer; transition:0.3s; }
+select.lang-select:hover, select.lang-select:focus { background:#00c9a7; color:#fff; outline:none; }
+button.hamburger { display:none; background:none; border:none; font-size:1.8rem; color:#fff; cursor:pointer; padding:0.25rem; border-radius:6px; transition:0.3s; }
+button.hamburger:hover, button.hamburger:focus { color:#00c9a7; outline:none; }
+button.hamburger:focus-visible { outline:2px solid #00c9a7; outline-offset:2px; }
 
-/* HEADER */
-header{ background:#0a2540; color:#fff; box-shadow:0 2px 8px rgba(10,37,64,0.3); position:sticky; top:0; z-index:999; }
-nav{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; padding:0.75rem 1rem; }
-.logo{ font-weight:800; font-size:1.25rem; }
-.nav-links{ display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
-.nav-links a{ color:#fff; text-decoration:none; font-weight:600; padding:0.4rem 0.6rem; border-radius:6px; transition:0.3s; }
-.nav-links a:hover, .nav-links a:focus, .nav-links a.active{ color:#00c9a7; background:rgba(0,201,167,0.2); box-shadow:0 0 8px #00c9a7aa; }
-select.lang-select{ background:#fff; color:#0a2540; border:none; padding:0.4rem 0.8rem; border-radius:6px; font-weight:700; cursor:pointer; transition:0.3s; }
-select.lang-select:hover, select.lang-select:focus{ background:#00c9a7; color:#fff; outline:none; }
-
-/* HAMBURGER */
-button.hamburger{ display:none; background:none; border:none; font-size:1.8rem; color:#fff; cursor:pointer; padding:0.25rem; border-radius:6px; transition:0.3s; }
-button.hamburger:hover, button.hamburger:focus{ color:#00c9a7; outline:none; }
-
-/* FORM */
-form{ max-width:600px; margin:2rem auto; background:#fff; padding:1.5rem; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
-label{ display:block; margin-top:1rem; margin-bottom:0.4rem; font-weight:600; color:#222; }
-input, select, textarea{ width:100%; padding:0.65rem; border-radius:6px; border:1px solid #ccc; font-size:1rem; font-family:inherit; transition:0.3s; }
-input:focus, select:focus, textarea:focus{ border-color:#00c9a7; box-shadow:0 0 6px #00c9a7aa; outline:none; }
-textarea{ resize:vertical; }
-button[type="submit"]{ width:100%; margin-top:1.5rem; background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; border:none; cursor:pointer; font-weight:600; transition:0.3s; }
-button[type="submit"]:hover, button[type="submit"]:focus{ background:#004d40; outline:none; }
-
-/* RESUME BUTTONS */
-.resume-buttons{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:1.5rem 0; }
-.resume-buttons a, .resume-buttons button{ background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:600; cursor:pointer; transition:0.3s; }
-.resume-buttons a:hover, .resume-buttons button:hover, .resume-buttons a:focus, .resume-buttons button:focus{ background:#004d40; outline:none; }
-
-/* WHATSAPP & CONTACT INFO */
-.contact-info{ text-align:center; margin-top:1rem; }
-.contact-info a{ color:#25d366; font-weight:700; text-decoration:none; transition:0.3s; }
-.contact-info a:hover, .contact-info a:focus{ color:#128c4a; outline:none; }
-
-/* FOOTER */
-footer{ background:#0a2540; color:#fff; text-align:center; padding:1rem; font-size:0.9rem; margin-top:3rem; box-shadow:inset 0 1px 0 rgba(255,255,255,0.1); }
-
-/* MOBILE */
-@media(max-width:768px){
-  button.hamburger{ display:block; }
+/* ===== MOBILE ===== */
+@media(max-width:768px){ 
+  button.hamburger{display:block;}
   .nav-links{ display:none; flex-direction:column; gap:1rem; background:#0a2540; padding:1rem; border-radius:10px; width:100%; }
   .nav-links.show{ display:flex; }
   .nav-links a{ font-size:1.1rem; padding:0.6rem 0; }
   select.lang-select{ width:100%; margin-top:0.75rem; }
-  form{ margin:1rem; padding:1rem; }
-  button[type="submit"]{ width:100%; }
 }
+
+/* ===== MAIN ===== */
+main.container { max-width:600px; width:100%; margin:2rem auto; background:#fff; border-radius:14px; padding:2rem; box-shadow:0 6px 18px rgba(0,0,0,0.08); }
+h1 { font-size:2rem; font-weight:700; color:#0a2540; margin-bottom:0.75rem; }
+p { font-size:1rem; margin-bottom:1.25rem; }
+form { display:flex; flex-direction:column; gap:1rem; }
+label { font-weight:600; }
+input, select, textarea, button { font-family:inherit; font-size:1rem; border-radius:6px; padding:0.65rem; border:1px solid #ccc; transition:0.3s; }
+input:focus, select:focus, textarea:focus { outline:none; border-color:#00c9a7; box-shadow:0 0 6px #00c9a7aa; }
+textarea { resize:vertical; }
+button[type="submit"] { background:#0a2540; color:#fff; border:none; cursor:pointer; font-weight:600; transition:0.3s; }
+button[type="submit"]:hover, button[type="submit"]:focus { background:#004d40; outline:none; }
+
+/* ===== RESUME BUTTONS ===== */
+.resume-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:1rem; }
+.resume-buttons a, .resume-buttons button { background:#0a2540; color:#fff; padding:0.75rem 1.25rem; border-radius:6px; text-decoration:none; font-weight:600; cursor:pointer; transition:0.3s; }
+.resume-buttons a:hover, .resume-buttons button:hover, .resume-buttons a:focus, .resume-buttons button:focus { background:#004d40; outline:none; }
+
+/* ===== FOOTER ===== */
+footer { margin-top:2rem; text-align:center; color:#777; font-size:0.9rem; user-select:none; padding:1rem; }
 </style>
 </head>
 
 <body>
 <header>
-<nav class="container" role="navigation" aria-label="Primary Navigation">
-  <div class="logo">Eyesightworks</div>
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="contact.html" class="active">Contact</a>
-    <a href="frontend-cv.html">Frontend CV</a>
-    <a href="junior-cv.html">Junior CV</a>
-    <a href="ai-cv.html">AI CV</a>
-    <a href="freelance-cv.html">Freelance CV</a>
-    <select id="langSelect" class="lang-select">
-      <option value="en" selected>EN</option>
-      <option value="fr">FR</option>
-      <option value="es">ES</option>
-      <option value="ar">AR</option>
-    </select>
-  </div>
-</nav>
+  <nav class="container" role="navigation">
+    <div class="logo">Eyesightworks</div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+      <a href="contact.html" class="active" tabindex="0">Contact</a>
+      <select id="langSelect" class="lang-select" aria-label="Select language">
+        <option value="en" selected>EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <option value="ar">AR</option>
+      </select>
+    </div>
+  </nav>
 </header>
 
 <main class="container">
-<h1 data-en="Get in Touch" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Get in Touch</h1>
-<p class="intro" data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
-data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
-data-es="Estoy disponible para roles frontend, backend junior o IA, proyectos freelance y trabajo remoto."
-data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد.">
-I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations.</p>
+  <h1 data-en="Get in Touch" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Get in Touch</h1>
+  <p data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
+     data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
+     data-es="Estoy disponible para roles frontend, backend junior o IA, proyectos freelance y trabajo remoto."
+     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد.">
+    I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations.
+  </p>
 
-<!-- Resume Buttons -->
-<div class="resume-buttons">
-  <a id="viewResumeBtn" href="frontend-cv.html" target="_blank">View Resume</a>
-  <button id="downloadCVBtn">Download CV</button>
-</div>
+  <form name="job-contact" aria-label="Contact form">
+    <label for="name" data-en="Full Name" data-fr="Nom complet" data-es="Nombre completo" data-ar="الاسم الكامل">Full Name</label>
+    <input type="text" name="name" id="name" required autocomplete="name" />
 
-<form name="job-contact">
-<label for="name">Full Name</label>
-<input type="text" name="name" id="name" required autocomplete="name">
-<label for="email">Email</label>
-<input type="email" name="email" id="email" required autocomplete="email">
-<label for="role">Position / Reason</label>
-<select name="role" id="role" required>
-  <option value="">Select</option>
-  <option value="frontend">Frontend Developer</option>
-  <option value="junior">Junior Backend Developer</option>
-  <option value="ai">Python / AI Junior</option>
-  <option value="freelance">Freelance Project</option>
-</select>
-<label for="message">Message</label>
-<textarea name="message" id="message" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
+    <label for="email" data-en="Email" data-fr="Email" data-es="Correo electrónico" data-ar="البريد الإلكتروني">Email</label>
+    <input type="email" name="email" id="email" required autocomplete="email" />
 
-<div class="contact-info">
-<p>Prefer WhatsApp? <a href="https://wa.me/2348083869454" target="_blank">Chat on WhatsApp</a></p>
-<p>Email: <a href="mailto:eyesightconcept@gmail.com">eyesightconcept@gmail.com</a></p>
-<p>Website: <a href="https://eyesightworks.github.io/eyesight-skills/index.html" target="_blank">eyesightworks.github.io</a></p>
-</div>
+    <label for="role" data-en="Position / Reason" data-fr="Poste / Objet" data-es="Puesto / Motivo" data-ar="الوظيفة / الغرض">Position / Reason</label>
+    <select name="role" id="role" required>
+      <option value="">Select</option>
+      <option value="frontend">Frontend Developer</option>
+      <option value="junior">Junior Backend Developer</option>
+      <option value="ai">Python / AI Junior</option>
+      <option value="freelance">Freelance Project</option>
+      <option value="senior">Senior Developer</option>
+    </select>
+
+    <label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
+    <textarea name="message" id="message" rows="5" required></textarea>
+
+    <button type="submit" data-en="Send Message" data-fr="Envoyer le message" data-es="Enviar mensaje" data-ar="إرسال الرسالة">Send Message</button>
+  </form>
 </main>
 
 <footer>
-© 2025 Eyesightworks — Alawode Adewale Afeez
+  © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script>
-// Hamburger menu
+// Hamburger
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
-hamburger.addEventListener('click', ()=>{
+hamburger.addEventListener('click', ()=>{ 
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+  hamburger.setAttribute('aria-expanded', String(!expanded));
   navLinks.classList.toggle('show');
 });
 
-// Language switching
-const langSelect = document.getElementById('langSelect');
-const viewResumeBtn = document.getElementById('viewResumeBtn');
-const downloadCVBtn = document.getElementById('downloadCVBtn');
-
-const pdfMap = { frontend:'frontend-cv.pdf', junior:'junior-cv.pdf', ai:'ai-cv.pdf', freelance:'freelance-cv.pdf' };
-const pageMap = { frontend:'frontend-cv.html', junior:'junior-cv.html', ai:'ai-cv.html', freelance:'freelance-cv.html' };
-
-function updateButtons(role){
-  if(!role) return;
-  viewResumeBtn.href = pageMap[role]||'frontend-cv.html';
-  downloadCVBtn.onclick = ()=>{ 
-    const a=document.createElement('a'); a.href=pdfMap[role]||'frontend-cv.pdf'; a.download=`${role}-cv.pdf`; document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  };
-}
-
-document.getElementById('role').addEventListener('change', e=>{ updateButtons(e.target.value); });
-document.addEventListener('DOMContentLoaded',()=>{
-  const savedRole = localStorage.getItem('contact_role') || 'frontend';
-  updateButtons(savedRole);
+// Language
+const langSelect = document.getElementById("langSelect");
+const supportedLangs = ['en','fr','es','ar'];
+const savedLang = localStorage.getItem('preferredLang') || 'en';
+langSelect.value = savedLang;
+langSelect.addEventListener("change", e=>{
+  const lang = e.target.value;
+  localStorage.setItem('preferredLang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang==='ar')?'rtl':'ltr';
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.textContent = el.dataset[lang] || el.dataset.en;
+  });
 });
 
-// Form submission (CSV download)
+// Form submission
 const form = document.querySelector('form[name="job-contact"]');
 form.addEventListener('submit', e=>{
   e.preventDefault();
-  const name=form.name.value.trim(), email=form.email.value.trim(), role=form.role.value.trim(), message=form.message.value.trim();
+  const name=form.name.value.trim();
+  const email=form.email.value.trim();
+  const role=form.role.value.trim();
+  const message=form.message.value.trim();
   const date=new Date().toISOString();
   const csvHeaders=['Date','Name','Email','Role','Message'];
   const csvRows=[ csvHeaders.join(','), `"${date}","${name}","${email}","${role}","${message.replace(/"/g,'""')}"`];
   const blob=new Blob([csvRows.join('\n')],{type:'text/csv'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a'); a.href=url; a.download=`contact_submission_${Date.now()}.csv`; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url);
-  localStorage.setItem("contact_name",name);
-  localStorage.setItem("contact_role",role);
+  const a=document.createElement('a'); 
+  a.href=URL.createObjectURL(blob); 
+  a.download=`contact_submission_${Date.now()}.csv`; 
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  localStorage.setItem("contact_name", name);
+  localStorage.setItem("contact_role", role);
+
+  // Redirect to thank-you page
   window.location.href='thank-you.html';
 });
 </script>
+
 </body>
 </html>
