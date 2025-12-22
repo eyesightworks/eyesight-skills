@@ -29,6 +29,11 @@ html[dir="rtl"] {
   direction: rtl;
 }
 
+/* Prevent background scroll when mobile menu open */
+body.menu-open {
+  overflow: hidden;
+}
+
 /* ======================================
    LAYOUT UTILITIES
 ====================================== */
@@ -93,7 +98,7 @@ nav {
 .nav-menu a:focus,
 .nav-menu a.active {
   color: #00c9a7;
-  background-color: rgba(0, 201, 167, 0.1);
+  background-color: rgba(0, 201, 167, 0.2);
   outline: none;
   box-shadow: 0 0 8px #00c9a7aa;
   cursor: pointer;
@@ -136,6 +141,14 @@ select.lang-select:focus {
 #hamburger:focus {
   color: #00c9a7;
   outline: none;
+}
+
+/* Accessible focus outline */
+#hamburger:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #00c9a7;
+  outline-offset: 2px;
 }
 
 /* ======================================
@@ -231,6 +244,7 @@ form {
 label {
   display: block;
   margin-top: 1rem;
+  margin-bottom: 0.4rem; /* added for better spacing */
   font-weight: 600;
   color: #222;
 }
