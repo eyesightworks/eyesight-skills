@@ -12,8 +12,231 @@
   <meta name="robots" content="index, follow" />
 
   <style>
-    /* Your existing styles here (same as you gave me, for brevity) */
-    /* ... keep the styles you already had ... */
+    /* RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f8fafb;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    html[dir="rtl"] {
+      direction: rtl;
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding: 1rem;
+    }
+
+    header {
+      background-color: #0a2540;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.75rem 1rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      user-select: none;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+    .nav-links a.active,
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #00c9a7;
+      background-color: rgba(0, 201, 167, 0.2);
+      outline: none;
+      box-shadow: 0 0 8px #00c9a7aa;
+      cursor: pointer;
+    }
+
+    /* LANGUAGE SELECT */
+    select.lang-select {
+      background: #fff;
+      color: #0a2540;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    select.lang-select:hover,
+    select.lang-select:focus {
+      background-color: #00c9a7;
+      color: #fff;
+      outline: none;
+    }
+
+    /* HAMBURGER BUTTON */
+    button.hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.8rem;
+      color: #fff;
+      padding: 0.25rem;
+      border-radius: 6px;
+      transition: color 0.3s ease;
+    }
+    button.hamburger:hover,
+    button.hamburger:focus {
+      color: #00c9a7;
+      outline: none;
+    }
+    button.hamburger:focus-visible {
+      outline: 2px solid #00c9a7;
+      outline-offset: 2px;
+    }
+
+    /* FORM */
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      color: #222;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.65rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #00c9a7;
+      box-shadow: 0 0 6px #00c9a7aa;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button[type="submit"] {
+      margin-top: 1.5rem;
+      background-color: #0a2540;
+      color: #fff;
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button[type="submit"]:hover,
+    button[type="submit"]:focus {
+      background-color: #004d40;
+      outline: none;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+    }
+    .whatsapp a {
+      color: #25d366;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .whatsapp a:hover,
+    .whatsapp a:focus {
+      color: #128c4a;
+      outline: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #0a2540;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      user-select: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      margin-top: 3rem;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      button.hamburger {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        background: #0a2540;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 100%;
+      }
+      .nav-links.show {
+        display: flex;
+      }
+      .nav-links a {
+        font-size: 1.1rem;
+        padding: 0.6rem 0;
+      }
+      select.lang-select {
+        width: 100%;
+        margin-top: 0.75rem;
+      }
+      form {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      button[type="submit"] {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
@@ -23,15 +246,19 @@
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <button 
+      class="hamburger" 
+      id="hamburger" 
+      aria-label="Toggle menu" 
+      aria-expanded="false" 
+      type="button"
+    >
+      ☰
+    </button>
 
     <div class="nav-links" id="nav-links">
-      <a href="index.html" aria-current="false">Home</a>
-      <a href="contact.html" class="active" aria-current="page">Contact</a>
+      <a href="index.html" aria-current="false" tabindex="0">Home</a>
+      <a href="contact.html" class="active" aria-current="page" tabindex="0">Contact</a>
       <select id="langSelect" class="lang-select" aria-label="Select language">
         <option value="en" selected>EN</option>
         <option value="fr">FR</option>
@@ -43,12 +270,12 @@
 </header>
 
 <main class="container" role="main">
-
   <h1
     data-en="Get in Touch"
     data-fr="Contactez-moi"
     data-es="Contáctame"
-    data-ar="تواصل معي">
+    data-ar="تواصل معي"
+  >
     Get in Touch
   </h1>
 
@@ -56,31 +283,41 @@
      data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
      data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
      data-es="Estoy disponible para roles frontend, backend junior o IA, proyectos freelance y trabajo remoto."
-     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد.">
+     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد."
+  >
     I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations.
   </p>
 
   <form
     name="job-contact"
-    aria-label="Contact form">
-
+    aria-label="Contact form"
+  >
     <label for="name"
       data-en="Full Name"
       data-fr="Nom complet"
       data-es="Nombre completo"
-      data-ar="الاسم الكامل">
+      data-ar="الاسم الكامل"
+    >
       Full Name
     </label>
     <input type="text" name="name" id="name" required autocomplete="name" />
 
-    <label for="email">Email</label>
+    <label for="email"
+      data-en="Email"
+      data-fr="Email"
+      data-es="Correo electrónico"
+      data-ar="البريد الإلكتروني"
+    >
+      Email
+    </label>
     <input type="email" name="email" id="email" required autocomplete="email" />
 
     <label for="role"
       data-en="Position / Reason"
       data-fr="Poste / Objet"
       data-es="Puesto / Motivo"
-      data-ar="الوظيفة / الغرض">
+      data-ar="الوظيفة / الغرض"
+    >
       Position / Reason
     </label>
     <select name="role" id="role" required>
@@ -95,7 +332,8 @@
       data-en="Message"
       data-fr="Message"
       data-es="Mensaje"
-      data-ar="الرسالة">
+      data-ar="الرسالة"
+    >
       Message
     </label>
     <textarea name="message" id="message" rows="5" required></textarea>
@@ -104,24 +342,25 @@
       data-en="Send Message"
       data-fr="Envoyer le message"
       data-es="Enviar mensaje"
-      data-ar="إرسال الرسالة">
+      data-ar="إرسال الرسالة"
+    >
       Send Message
     </button>
   </form>
 
-  <div class="whatsapp" role="contentinfo" aria-label="WhatsApp contact" style="text-align:center; margin-top:1.5rem; font-size:1rem;">
+  <div class="whatsapp" role="contentinfo" aria-label="WhatsApp contact">
     <p
       data-en="Prefer WhatsApp?"
       data-fr="Préférez WhatsApp ?"
       data-es="¿Prefieres WhatsApp?"
-      data-ar="تفضل واتساب؟">
+      data-ar="تفضل واتساب؟"
+    >
       Prefer WhatsApp?
     </p>
     <a href="https://wa.me/2348083869454" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" id="whatsappLinkStatic">
       Chat on WhatsApp
     </a>
   </div>
-
 </main>
 
 <footer>
@@ -134,11 +373,12 @@
   const navLinks = document.getElementById('nav-links');
 
   hamburger.addEventListener('click', () => {
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
-    hamburger.setAttribute('aria-expanded', !expanded);
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
     navLinks.classList.toggle('show');
   });
 
+  // Keyboard accessible toggle
   hamburger.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -154,7 +394,7 @@
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
     document.querySelectorAll("[data-en]").forEach(el => {
-      el.textContent = el.dataset[lang];
+      if(el.dataset[lang]) el.textContent = el.dataset[lang];
     });
   }
 
@@ -171,7 +411,7 @@
     localStorage.setItem("preferredLang", lang);
   });
 
-  // CSV Download & form submit handling
+  // Form submission CSV download & redirect
   const form = document.querySelector('form[name="job-contact"]');
 
   form.addEventListener('submit', e => {
