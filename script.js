@@ -4,7 +4,7 @@ const navMenu = document.getElementById('nav-menu');
 const body = document.body;
 const langSelect = document.getElementById('langSelect');
 
-// Buttons
+// CV Buttons
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const downloadCVBtn = document.getElementById('downloadCVBtn');
 const linkedinBtn = document.getElementById('linkedinBtn');
@@ -13,6 +13,9 @@ const linkedinBtn = document.getElementById('linkedinBtn');
 const contactForm = document.querySelector('form[name="job-contact"]');
 const roleSelect = contactForm ? contactForm.role : null;
 
+// Sections that can have multilingual content
+const translatableElements = document.querySelectorAll('[data-en]');
+
 // Supported languages
 const supportedLangs = ['en', 'fr', 'es', 'ar'];
 
@@ -20,7 +23,8 @@ const supportedLangs = ['en', 'fr', 'es', 'ar'];
 const btnText = {
   viewResume: { en: "View Resume", fr: "Voir le CV", es: "Ver CV", ar: "عرض السيرة الذاتية" },
   downloadCV: { en: "Download CV (PDF)", fr: "Télécharger le CV (PDF)", es: "Descargar CV (PDF)", ar: "تحميل السيرة الذاتية (PDF)" },
-  linkedin: { en: "LinkedIn Profile", fr: "Profil LinkedIn", es: "Perfil de LinkedIn", ar: "حساب لينكدإن" }
+  linkedin: { en: "LinkedIn Profile", fr: "Profil LinkedIn", es: "Perfil de LinkedIn", ar: "حساب لينكدإن" },
+  whatsappChat: { en: "Chat on WhatsApp", fr: "Discuter sur WhatsApp", es: "Chatear en WhatsApp", ar: "الدردشة عبر واتساب" }
 };
 
 // ================== MOBILE MENU ==================
@@ -31,51 +35,52 @@ function toggleMenu() {
   body.classList.toggle('menu-open');
 }
 
-hamburger.addEventListener('click', toggleMenu);
-hamburger.addEventListener('keydown', e => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    toggleMenu();
-  }
-});
-
-navMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (navMenu.classList.contains('show')) toggleMenu();
+if (hamburger) {
+  hamburger.addEventListener('click', toggleMenu);
+  hamburger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
   });
-});
-
-// ================== LANGUAGE SWITCHING ==================
-function updateButtons(lang) {
-  if (viewResumeBtn) viewResumeBtn.textContent = btnText.viewResume[lang];
-  if (downloadCVBtn) downloadCVBtn.textContent = btnText.downloadCV[lang];
-  if (linkedinBtn) linkedinBtn.textContent = btnText.linkedin[lang];
 }
 
+if (navMenu) {
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navMenu.classList.contains('show')) toggleMenu();
+    });
+  });
+}
+
+// ================== LANGUAGE SWITCHING ==================
 function switchLanguage(lang) {
   if (!supportedLangs.includes(lang)) return;
 
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-  document.querySelectorAll('[data-en]').forEach(el => {
+  translatableElements.forEach(el => {
     const translation = el.dataset[lang];
     if (translation) el.textContent = translation;
   });
 
-  updateButtons(lang);
+  if (viewResumeBtn) viewResumeBtn.textContent = btnText.viewResume[lang];
+  if (downloadCVBtn) downloadCVBtn.textContent = btnText.downloadCV[lang];
+  if (linkedinBtn) linkedinBtn.textContent = btnText.linkedin[lang];
+
+  const whatsappLink = document.getElementById('whatsappLink');
+  if (whatsappLink) whatsappLink.textContent = btnText.whatsappChat[lang];
 
   if (langSelect) langSelect.value = lang;
   localStorage.setItem('preferredLang', lang);
 }
 
 if (langSelect) {
-  langSelect.addEventListener('change', e => {
-    switchLanguage(e.target.value);
-  });
+  langSelect.addEventListener('change', e => switchLanguage(e.target.value));
 }
 
-// ================== ROLE-SPECIFIC CV MAP ==================
+// ================== CV BUTTONS ==================
 const pdfMap = {
   'Frontend Developer': 'frontend-cv.pdf',
   'Junior Backend Developer': 'junior-cv.pdf',
@@ -84,7 +89,6 @@ const pdfMap = {
   'Freelance Project': 'freelance-cv.pdf'
 };
 
-// ================== CV BUTTONS ==================
 function downloadPDF(role) {
   const pdfUrl = pdfMap[role] || 'resume.pdf';
   const a = document.createElement('a');
@@ -100,25 +104,18 @@ function viewPDF(role) {
   window.open(pdfUrl, '_blank');
 }
 
-// Update CV buttons dynamically based on selected role
 function updateCVButtons() {
   const selectedRole = roleSelect?.value || 'Frontend Developer';
-
-  if (downloadCVBtn) {
-    downloadCVBtn.onclick = () => downloadPDF(selectedRole);
-  }
-  if (viewResumeBtn) {
-    viewResumeBtn.onclick = () => viewPDF(selectedRole);
-  }
+  if (downloadCVBtn) downloadCVBtn.onclick = () => downloadPDF(selectedRole);
+  if (viewResumeBtn) viewResumeBtn.onclick = () => viewPDF(selectedRole);
 }
 
-// Update buttons initially and whenever role changes
 if (roleSelect) {
   updateCVButtons();
   roleSelect.addEventListener('change', updateCVButtons);
 }
 
-// ================== CONTACT FORM SUBMISSION ==================
+// ================== CONTACT FORM ==================
 if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -137,7 +134,6 @@ if (contactForm) {
 
     const blob = new Blob([csvRows.join('\n')], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
-
     const a = document.createElement('a');
     a.href = url;
     a.download = `contact_submission_${Date.now()}.csv`;
@@ -146,6 +142,7 @@ if (contactForm) {
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
+    // Save for WhatsApp redirect
     localStorage.setItem('contact_name', name);
     localStorage.setItem('contact_role', role);
 
@@ -153,9 +150,29 @@ if (contactForm) {
   });
 }
 
+// ================== THANK YOU PAGE WHATSAPP ==================
+function setupWhatsAppRedirect() {
+  const whatsappLink = document.getElementById('whatsappLink');
+  const userName = localStorage.getItem('contact_name') || '';
+  const userRole = localStorage.getItem('contact_role') || '';
+  const phone = '2348083869454'; // replace with your number
+  const message = encodeURIComponent(
+    `Hi, my name is ${userName}. I am contacting you regarding the position: ${userRole}.`
+  );
+  const waURL = `https://wa.me/${phone}?text=${message}`;
+
+  if (whatsappLink) whatsappLink.href = waURL;
+
+  // Auto open WhatsApp after 3 seconds
+  if (window.location.pathname.includes('thank-you')) {
+    setTimeout(() => window.open(waURL, '_blank'), 3000);
+  }
+}
+
 // ================== INIT ==================
 document.addEventListener('DOMContentLoaded', () => {
   const savedLang = localStorage.getItem('preferredLang') || 'en';
   switchLanguage(savedLang);
   updateCVButtons();
+  setupWhatsAppRedirect();
 });
