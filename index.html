@@ -6,14 +6,14 @@
 <title>Alawode Adewale Afeez | Frontend & AI Developer</title>
 
 <style>
-  /* ================= RESET & BASE ================= */
+  /* BASE & RESET */
   *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior: smooth; font-size:16px; }
   body { font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f8fafb; color:#222; line-height:1.5; min-height:100vh; }
   html[dir="rtl"] { direction:rtl; }
   .container { max-width:1100px; margin:auto; padding:1rem; }
-  body.menu-open { overflow:hidden; }
 
-  /* ================= HEADER & NAV ================= */
+  /* HEADER */
   header { background:#0a2540; color:#fff; position:sticky; top:0; z-index:999; box-shadow:0 2px 8px rgba(10,37,64,0.3); }
   nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; padding:0.75rem 1rem; }
   .logo { font-weight:800; font-size:1.25rem; user-select:none; }
@@ -24,7 +24,7 @@
   select.lang-select:hover, select.lang-select:focus { background-color:#00c9a7; color:#fff; outline:none; }
   button.hamburger { display:none; font-size:1.8rem; background:none; border:none; color:#fff; cursor:pointer; padding:0.25rem; border-radius:6px; transition:color 0.3s; }
 
-  /* ================= HERO ================= */
+  /* HERO */
   .hero { background:#e6f7ff; text-align:center; padding:40px 20px; border-radius:8px; margin:20px 0; }
   .hero img { max-width:150px; border-radius:50%; margin-bottom:20px; }
   .hero h1 { font-size:22px; margin-bottom:12px; font-weight:700; }
@@ -33,14 +33,16 @@
   .btn { display:inline-block; padding:8px 16px; background:#0a2540; color:#fff; border-radius:4px; font-weight:600; font-size:13px; cursor:pointer; border:none; }
   .btn:hover { background:#004d40; }
 
-  /* ================= ROLE CV ================= */
-  .role-section { margin:20px 0; text-align:center; }
-  h2.section-title { font-size:18px; border-bottom:2px solid #000; padding-bottom:4px; margin-top:28px; margin-bottom:8px; }
+  /* SECTIONS */
+  section { padding:60px 0; }
+  h2.section-title { font-size:18px; border-bottom:2px solid #000; padding-bottom:4px; margin-bottom:20px; text-align:center; }
 
-  /* ================= FOOTER ================= */
+  /* SKILLS / PORTFOLIO / TESTIMONIALS */
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; text-align:center; }
+
+  /* FOOTER */
   footer { text-align:center; padding:12px 0; font-size:12px; color:#fff; background:#0a2540; margin-top:40px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.1); }
 
-  /* ================= MOBILE ================= */
   @media(max-width:768px){
     button.hamburger{display:block;}
     .nav-links{display:none; flex-direction:column; gap:1rem; background:#0a2540; padding:1rem; border-radius:10px; width:100%;}
@@ -52,15 +54,16 @@
 </head>
 
 <body>
+
 <header>
   <nav class="container">
     <div class="logo">Eyesightworks</div>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
     <div class="nav-links" id="nav-links">
-      <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
-      <a href="#portfolio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="المشاريع">Portfolio</a>
-      <a href="#testimonials" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="آراء العملاء">Testimonials</a>
-      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a>
+      <a href="#home" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
+      <a href="#portfolio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="المحفظة">Portfolio</a>
+      <a href="#testimonials" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="الشهادات">Testimonials</a>
+      <a href="#contact" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a>
       <select id="langSelect" class="lang-select" aria-label="Select language">
         <option value="en" selected>EN</option>
         <option value="fr">FR</option>
@@ -71,26 +74,53 @@
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
   <img src="images/pics.jpg" alt="" id="heroImg">
   <h1 data-en="Frontend & AI Developer (Junior – Senior)" data-fr="Développeur Frontend & IA (Junior – Senior)" data-es="Desarrollador Frontend & IA (Junior – Senior)" data-ar="مطور الواجهات الأمامية والذكاء الاصطناعي (مبتدئ – متقدم)">Frontend & AI Developer (Junior – Senior)</h1>
   <p data-en="I build responsive, accessible, and performance-focused web applications using modern frontend and AI technologies." data-fr="Je crée des applications web responsives, accessibles et performantes utilisant des technologies frontend et IA modernes." data-es="Desarrollo aplicaciones web responsivas, accesibles y optimizadas utilizando tecnologías frontend y de IA modernas." data-ar="أقوم ببناء تطبيقات ويب سريعة، متجاوبة وسهلة الاستخدام باستخدام تقنيات الواجهة الأمامية والذكاء الاصطناعي الحديثة.">I build responsive, accessible, and performance-focused web applications using modern frontend and AI technologies.</p>
   <div class="btn-box">
-    <button class="btn" id="viewResumeBtn">View Resume</button>
-    <button class="btn" id="downloadCVBtn">Download CV (PDF)</button>
-    <button class="btn" id="linkedinBtn">LinkedIn Profile</button>
+    <button class="btn" id="viewResumeBtn" onclick="window.location.href='resume.html'">View Resume</button>
+    <button class="btn" id="downloadCVBtn" onclick="downloadPDF('default')">Download CV (PDF)</button>
+    <button class="btn" id="linkedinBtn" onclick="window.open('https://www.linkedin.com/in/alawode-adewale-3a033239a','_blank')">LinkedIn Profile</button>
   </div>
 </section>
 
-<section class="role-section container">
-  <h2 class="section-title" data-en="Download CV by Role" data-fr="Télécharger le CV par rôle" data-es="Descargar CV por rol" data-ar="تحميل السيرة الذاتية حسب الدور">Download CV by Role</h2>
-  <div class="btn-box">
-    <button class="btn" data-en="Frontend Developer" data-fr="Développeur Frontend" data-es="Desarrollador Frontend" data-ar="مطور الواجهات الأمامية" onclick="downloadPDF('frontend')">Frontend Developer</button>
-    <button class="btn" data-en="Junior Backend Developer" data-fr="Développeur Backend Junior" data-es="Desarrollador Backend Junior" data-ar="مطور خلفية مبتدئ" onclick="downloadPDF('junior')">Junior Backend Developer</button>
-    <button class="btn" data-en="Python / AI Junior" data-fr="Python / IA Junior" data-es="Python / IA Junior" data-ar="Python / الذكاء الاصطناعي مبتدئ" onclick="downloadPDF('ai')">Python / AI Junior</button>
-    <button class="btn" data-en="Senior Developer" data-fr="Développeur Senior" data-es="Desarrollador Senior" data-ar="مطور متقدم" onclick="downloadPDF('senior')">Senior Developer</button>
-    <button class="btn" data-en="Freelance Project" data-fr="Projet Freelance" data-es="Proyecto Freelance" data-ar="مشروع حر" onclick="downloadPDF('freelance')">Freelance Project</button>
+<!-- PORTFOLIO -->
+<section id="portfolio" class="container">
+  <h2 class="section-title" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="المحفظة">Portfolio</h2>
+  <div class="grid">
+    <div>Project 1</div>
+    <div>Project 2</div>
+    <div>Project 3</div>
   </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="container">
+  <h2 class="section-title" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="الشهادات">Testimonials</h2>
+  <div class="grid">
+    <div>Client 1: Excellent work!</div>
+    <div>Client 2: Very professional.</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="container">
+  <h2 class="section-title" data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Contact Me</h2>
+  <form name="job-contact">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <select name="role">
+      <option value="Frontend Developer">Frontend Developer</option>
+      <option value="Junior Backend Developer">Junior Backend Developer</option>
+      <option value="Python / AI Junior">Python / AI Junior</option>
+      <option value="Senior Developer">Senior Developer</option>
+      <option value="Freelance Project">Freelance Project</option>
+    </select>
+    <textarea name="message" placeholder="Your message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
 </section>
 
 <footer>
@@ -103,7 +133,7 @@
   const navLinks = document.getElementById('nav-links');
   hamburger.addEventListener('click', ()=>navLinks.classList.toggle('show'));
 
-  // Language switching
+  // Language switcher
   const langSelect = document.getElementById('langSelect');
   const heroImg = document.getElementById('heroImg');
   const viewResumeBtn = document.getElementById('viewResumeBtn');
@@ -116,19 +146,17 @@
     document.querySelectorAll('[data-en]').forEach(el=>{
       el.textContent = el.dataset[lang] || el.dataset.en;
     });
-
     const altText = {
-      en:"Alawode Adewale Afeez – Frontend & AI Developer",
-      fr:"Alawode Adewale Afeez – Développeur Frontend & IA",
-      es:"Alawode Adewale Afeez – Desarrollador Frontend & IA",
-      ar:"ألاوود أديوا لي أفييز – مطور الواجهات الأمامية والذكاء الاصطناعي"
+      en: "Alawode Adewale Afeez – Frontend & AI Developer",
+      fr: "Alawode Adewale Afeez – Développeur Frontend & IA",
+      es: "Alawode Adewale Afeez – Desarrollador Frontend & IA",
+      ar: "ألاوود أديوا لي أفييز – مطور الواجهات الأمامية والذكاء الاصطناعي"
     };
     heroImg.alt = altText[lang] || altText.en;
-
     const btnText = {
-      viewResume:{en:"View Resume", fr:"Voir le CV", es:"Ver CV", ar:"عرض السيرة الذاتية"},
-      downloadCV:{en:"Download CV (PDF)", fr:"Télécharger le CV (PDF)", es:"Descargar CV (PDF)", ar:"تحميل السيرة الذاتية (PDF)"},
-      linkedin:{en:"LinkedIn Profile", fr:"Profil LinkedIn", es:"Perfil de LinkedIn", ar:"حساب لينكدإن"}
+      viewResume: { en:"View Resume", fr:"Voir le CV", es:"Ver CV", ar:"عرض السيرة الذاتية" },
+      downloadCV: { en:"Download CV (PDF)", fr:"Télécharger le CV (PDF)", es:"Descargar CV (PDF)", ar:"تحميل السيرة الذاتية (PDF)" },
+      linkedin: { en:"LinkedIn Profile", fr:"Profil LinkedIn", es:"Perfil de LinkedIn", ar:"حساب لينكدإن" }
     };
     viewResumeBtn.textContent = btnText.viewResume[lang];
     downloadCVBtn.textContent = btnText.downloadCV[lang];
@@ -146,19 +174,19 @@
     switchLanguage(savedLang);
   });
 
-  // Role-specific CV download
+  // Role-specific PDF download
   function downloadPDF(role){
-    const pdfMap = {
-      frontend:'frontend-cv.pdf',
-      junior:'junior-cv.pdf',
-      ai:'ai-cv.pdf',
-      senior:'senior-cv.pdf',
-      freelance:'freelance-cv.pdf',
-      default:'resume.pdf'
-    };
-    const pdfUrl = pdfMap[role] || pdfMap.default;
-    const a = document.createElement('a');
-    a.href = pdfUrl;
+    let pdfUrl='';
+    switch(role){
+      case 'frontend': pdfUrl='frontend-cv.pdf'; break;
+      case 'junior': pdfUrl='junior-cv.pdf'; break;
+      case 'ai': pdfUrl='ai-cv.pdf'; break;
+      case 'senior': pdfUrl='senior-cv.pdf'; break;
+      case 'freelance': pdfUrl='freelance-cv.pdf'; break;
+      default: pdfUrl='resume.pdf';
+    }
+    const a=document.createElement('a');
+    a.href=pdfUrl;
     a.download=`${role}-cv.pdf`;
     document.body.appendChild(a);
     a.click();
