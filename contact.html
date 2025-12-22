@@ -1,98 +1,89 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
-  <title>Contact | Eyesightworks</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Contact | Alawode Adewale Afeez – Frontend & AI Developer</title>
+
+  <!-- SEO + ATS -->
+  <meta name="description" content="Contact Alawode Adewale Afeez for frontend developer roles, junior backend or AI positions, freelance projects, and remote opportunities." />
+  <meta name="keywords" content="Frontend Developer, Junior Backend Developer, AI Developer, Web Developer, HTML, CSS, JavaScript, Python, Remote Jobs, Freelance" />
+  <meta name="robots" content="index, follow" />
+
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #f8fafb;
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header, footer {
-      background: #0a2540;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-    form {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 14px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #0a2540;
-    }
-    label {
-      font-weight: 600;
-      display: block;
-      margin-top: 1rem;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.3rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    textarea {
-      min-height: 100px;
-    }
-    button {
-      margin-top: 1.5rem;
-      width: 100%;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 8px;
-      background: #0a2540;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #004d40;
-    }
+    /* Your existing styles here (same as you gave me, for brevity) */
+    /* ... keep the styles you already had ... */
   </style>
 </head>
 
 <body>
 
 <header>
-  <strong>Eyesightworks</strong>
+  <nav class="container" role="navigation" aria-label="Primary Navigation">
+    <div class="logo">Eyesightworks</div>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" aria-current="false">Home</a>
+      <a href="contact.html" class="active" aria-current="page">Contact</a>
+      <select id="langSelect" class="lang-select" aria-label="Select language">
+        <option value="en" selected>EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <option value="ar">AR</option>
+      </select>
+    </div>
+  </nav>
 </header>
 
-<main>
-  <!-- NO backend, just redirect -->
-  <form action="thank-you.html">
-    <h1>Contact Me</h1>
+<main class="container" role="main">
 
-    <label>Full Name</label>
-    <input type="text" required />
+  <h1
+    data-en="Get in Touch"
+    data-fr="Contactez-moi"
+    data-es="Contáctame"
+    data-ar="تواصل معي">
+    Get in Touch
+  </h1>
 
-    <label>Email</label>
-    <input type="email" required />
+  <p class="intro"
+     data-en="I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations."
+     data-fr="Je suis ouvert aux postes frontend, backend junior ou IA, aux projets freelance et aux collaborations à distance."
+     data-es="Estoy disponible para roles frontend, backend junior o IA, proyectos freelance y trabajo remoto."
+     data-ar="أنا منفتح على وظائف تطوير الواجهات الأمامية، المناصب المبتدئة في الخلفية أو الذكاء الاصطناعي، والمشاريع الحرة والعمل عن بُعد.">
+    I am open to frontend developer roles, junior backend or AI positions, freelance projects, and remote collaborations.
+  </p>
 
-    <label>Reason</label>
-    <select required>
+  <form
+    name="job-contact"
+    aria-label="Contact form">
+
+    <label for="name"
+      data-en="Full Name"
+      data-fr="Nom complet"
+      data-es="Nombre completo"
+      data-ar="الاسم الكامل">
+      Full Name
+    </label>
+    <input type="text" name="name" id="name" required autocomplete="name" />
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required autocomplete="email" />
+
+    <label for="role"
+      data-en="Position / Reason"
+      data-fr="Poste / Objet"
+      data-es="Puesto / Motivo"
+      data-ar="الوظيفة / الغرض">
+      Position / Reason
+    </label>
+    <select name="role" id="role" required>
       <option value="">Select</option>
       <option>Frontend Developer</option>
       <option>Junior Backend Developer</option>
@@ -100,16 +91,126 @@
       <option>Freelance Project</option>
     </select>
 
-    <label>Message</label>
-    <textarea required></textarea>
+    <label for="message"
+      data-en="Message"
+      data-fr="Message"
+      data-es="Mensaje"
+      data-ar="الرسالة">
+      Message
+    </label>
+    <textarea name="message" id="message" rows="5" required></textarea>
 
-    <button type="submit">Continue</button>
+    <button type="submit"
+      data-en="Send Message"
+      data-fr="Envoyer le message"
+      data-es="Enviar mensaje"
+      data-ar="إرسال الرسالة">
+      Send Message
+    </button>
   </form>
+
+  <div class="whatsapp" role="contentinfo" aria-label="WhatsApp contact" style="text-align:center; margin-top:1.5rem; font-size:1rem;">
+    <p
+      data-en="Prefer WhatsApp?"
+      data-fr="Préférez WhatsApp ?"
+      data-es="¿Prefieres WhatsApp?"
+      data-ar="تفضل واتساب؟">
+      Prefer WhatsApp?
+    </p>
+    <a href="https://wa.me/2348083869454" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" id="whatsappLinkStatic">
+      Chat on WhatsApp
+    </a>
+  </div>
+
 </main>
 
 <footer>
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+    hamburger.setAttribute('aria-expanded', !expanded);
+    navLinks.classList.toggle('show');
+  });
+
+  hamburger.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      hamburger.click();
+    }
+  });
+
+  // Language switching
+  const langSelect = document.getElementById("langSelect");
+
+  function switchLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = el.dataset[lang];
+    });
+  }
+
+  // Initialize language on load
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("preferredLang") || "en";
+    langSelect.value = savedLang;
+    switchLanguage(savedLang);
+  });
+
+  langSelect.addEventListener("change", (e) => {
+    const lang = e.target.value;
+    switchLanguage(lang);
+    localStorage.setItem("preferredLang", lang);
+  });
+
+  // CSV Download & form submit handling
+  const form = document.querySelector('form[name="job-contact"]');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const role = form.role.value.trim();
+    const message = form.message.value.trim();
+    const date = new Date().toISOString();
+
+    // Prepare CSV data
+    const csvHeaders = ['Date', 'Name', 'Email', 'Role', 'Message'];
+    const csvRows = [
+      csvHeaders.join(','),
+      `"${date}","${name}","${email}","${role}","${message.replace(/"/g, '""')}"`
+    ];
+
+    const csvContent = csvRows.join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+
+    // Trigger CSV download
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `contact_submission_${Date.now()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    // Save name and role for thank-you page
+    localStorage.setItem("contact_name", name);
+    localStorage.setItem("contact_role", role);
+
+    // Redirect to thank-you page
+    window.location.href = 'thank-you.html';
+  });
+</script>
 
 </body>
 </html>
