@@ -8,7 +8,7 @@ function $(id) {
 document.addEventListener("DOMContentLoaded", () => {
   // === MOBILE HAMBURGER MENU ===
   const hamburger = $("hamburger");
-  const navMenu = $("nav-menu");
+  const navMenu = $("nav-links");  // Changed from "nav-menu" to "nav-links"
 
   if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
