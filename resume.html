@@ -1,129 +1,215 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alawode Adewale Afeez | Resume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alawode Adewale Afeez | Full Resume</title>
 
   <style>
-    /* RESET & BASE */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
     body {
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f8fafb;
-      color: #333;
+      color: #222;
+      margin: 0;
+      padding: 20px;
+      background: #f8fafb;
       line-height: 1.6;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      padding: 1rem;
     }
-    html[dir="rtl"] { direction: rtl; }
-
+    html[dir="rtl"] {
+      direction: rtl;
+    }
     .container {
       max-width: 900px;
-      margin-inline: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin: auto;
     }
-
-    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-    h2 { font-size: 1.25rem; margin-top: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: 0.25rem; }
-    p, li { font-size: 1rem; line-height: 1.5; }
-    ul { padding-left: 1.25rem; margin-top: 0.5rem; }
-    .role { font-weight: 600; margin-top: 0.75rem; }
-    .date { font-style: italic; font-size: 0.9rem; color: #555; margin-bottom: 0.25rem; }
-    a { color: #0a2540; text-decoration: none; }
-    a:hover, a:focus { text-decoration: underline; }
-
-    .hidden { display: none; }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      border-bottom: 2px solid #0a2540;
+      padding-bottom: 4px;
+    }
+    p, li {
+      font-size: 1rem;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .role {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .date {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 4px;
+    }
+    a {
+      color: #0a2540;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-box {
+      display: flex;
+      gap: 12px;
+      margin-top: 1rem;
+    }
+    .btn {
+      background: #0a2540;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #004d40;
+    }
+    .highlight {
+      background-color: #e0f7f4;
+      border-left: 4px solid #00c9a7;
+      padding-left: 6px;
+    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Alawode Adewale Afeez</h1>
+    <p><strong>Frontend Web Developer & AI Developer</strong></p>
+    <p>
+      Email: eyesightconcept@gmail.com | 
+      LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">linkedin.com/in/alawode-adewale-3a033239a</a> | 
+      GitHub: <a href="https://github.com/alawode-adewale" target="_blank">github.com/alawode-adewale</a>
+    </p>
 
-<div class="container">
-  <h1 id="main-role">Frontend Web Developer</h1>
-  <p>
-    Email: <a href="mailto:eyesightconcept@gmail.com">eyesightconcept@gmail.com</a> | 
-    LinkedIn: <a href="https://linkedin.com/in/alawode-adewale-3a033239a" target="_blank">Profile</a> | 
-    GitHub: <a href="https://github.com/alawode-adewale" target="_blank">Profile</a>
-  </p>
+    <div class="btn-box">
+      <a href="#" id="viewResumeBtn" class="btn" target="_blank">View Resume</a>
+      <a href="#" id="downloadCVBtn" class="btn" download>Download CV (PDF)</a>
+    </div>
 
-  <h2>Professional Summary</h2>
-  <p id="summary">
-    Frontend Web Developer with experience designing, developing, and maintaining responsive and accessible websites.
-  </p>
+    <!-- PROFESSIONAL SUMMARY -->
+    <h2>Professional Summary</h2>
+    <p>
+      Experienced Frontend Web Developer and AI Developer with expertise in HTML5, CSS3, JavaScript (ES6+), responsive UI, and web accessibility. Skilled in collaborating with clients and teams to deliver high-quality, user-centered web solutions.
+    </p>
 
-  <h2>Professional Experience</h2>
+    <!-- TECHNICAL SKILLS -->
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>HTML5, CSS3, JavaScript (ES6+)</li>
+      <li>Responsive Web Design, Mobile-First Development</li>
+      <li>UI/UX Implementation & Semantic HTML</li>
+      <li>Frontend Performance Optimization</li>
+      <li>React.js (Foundational)</li>
+      <li>Python & AI Development</li>
+      <li>Git & GitHub</li>
+    </ul>
 
-  <div class="experience" data-role="frontend">
-    <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
+    <!-- EXPERIENCE -->
+    <h2>Professional Experience</h2>
+
+    <p class="role" data-role="frontend">Frontend Web Developer & UI Designer — Freelance</p>
     <p class="date">2019 – Present</p>
     <ul>
-      <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
-      <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
-      <li>Ensure cross-browser compatibility and optimize websites for performance, usability, and accessibility.</li>
+      <li>Developed responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
+      <li>Translated UI/UX designs into clean, accessible frontend code.</li>
+      <li>Optimized websites for performance, usability, and cross-browser compatibility.</li>
+      <li>Collaborated with clients to gather requirements and deliver solutions.</li>
     </ul>
-  </div>
 
-  <div class="experience" data-role="junior">
-    <p class="role">Junior Web Developer — Startup Projects</p>
-    <p class="date">2019 – 2020</p>
-    <ul>
-      <li>Contributed to frontend development tasks within small agile teams.</li>
-      <li>Assisted with UI implementation, bug fixes, testing, and ongoing maintenance.</li>
-    </ul>
-  </div>
-
-  <div class="experience" data-role="ai">
-    <p class="role">AI & Python Developer — Freelance Projects</p>
+    <p class="role" data-role="ai">AI & Python Developer — Freelance Projects</p>
     <p class="date">2021 – Present</p>
     <ul>
-      <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
-      <li>Create Python scripts for data processing, automation, and backend logic.</li>
+      <li>Developed AI tools for transcription, text processing, and automation.</li>
+      <li>Built Python scripts for data processing and backend logic.</li>
+      <li>Created lightweight Flask applications for internal tools and demos.</li>
     </ul>
-  </div>
 
-  <div class="experience" data-role="senior">
-    <p class="role">Senior Frontend Developer — Contract Projects</p>
-    <p class="date">2022 – Present</p>
+    <p class="role" data-role="junior">Junior Web Developer — Startup Projects</p>
+    <p class="date">2019 – 2020</p>
     <ul>
-      <li>Lead frontend development for large-scale web applications.</li>
-      <li>Mentor junior developers and ensure code quality standards.</li>
+      <li>Assisted with frontend development, bug fixes, and testing in agile teams.</li>
+      <li>Gained experience with collaborative workflows and version control.</li>
+    </ul>
+
+    <p class="role" data-role="freelance">Graphic Designer & Content Creator — Freelance</p>
+    <p class="date">2019 – 2023</p>
+    <ul>
+      <li>Designed logos, brand identities, and digital marketing materials.</li>
+      <li>Produced visual content to support online presence and product promotion.</li>
+    </ul>
+
+    <!-- PROJECTS -->
+    <h2>Projects</h2>
+    <ul>
+      <li>Developed responsive business websites emphasizing mobile-first layouts and cross-browser compatibility.</li>
+      <li>Built AI-powered transcription and automation tools using Python.</li>
+    </ul>
+
+    <!-- CERTIFICATIONS -->
+    <h2>Certifications</h2>
+    <ul>
+      <li>Responsive Web Design Certification – freeCodeCamp</li>
+    </ul>
+
+    <!-- EDUCATION -->
+    <h2>Education</h2>
+    <p><strong>MSc in Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2015 – 2018)</p>
+    <p><strong>BSc in Computer Mathematics</strong> — Olabisi Onabanjo University, Nigeria (2006 – 2010)</p>
+
+    <!-- LANGUAGES -->
+    <h2>Languages</h2>
+    <ul>
+      <li>English (Fluent)</li>
+      <li>Yoruba (Native)</li>
+      <li>Arabic (Basic)</li>
     </ul>
   </div>
 
-</div>
+  <script>
+    // DOM elements
+    const viewResumeBtn = document.getElementById('viewResumeBtn');
+    const downloadCVBtn = document.getElementById('downloadCVBtn');
 
-<script>
-  // Function to get query parameters
-  function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-  }
+    // Map role to resume URLs
+    const resumeMap = {
+      frontend: 'frontend-resume.html',
+      junior: 'junior-resume.html',
+      ai: 'ai-resume.html',
+      freelance: 'freelance-resume.html'
+    };
 
-  const role = getQueryParam('role') || 'frontend';
+    const pdfMap = {
+      frontend: 'frontend-cv.pdf',
+      junior: 'junior-cv.pdf',
+      ai: 'ai-cv.pdf',
+      freelance: 'freelance-cv.pdf'
+    };
 
-  // Show only selected role experience
-  document.querySelectorAll('.experience').forEach(exp => {
-    if(exp.dataset.role === role) exp.classList.remove('hidden');
-    else exp.classList.add('hidden');
-  });
+    // Highlight sections based on selected role
+    function highlightRole(role) {
+      document.querySelectorAll('[data-role]').forEach(el => {
+        if(el.dataset.role === role) {
+          el.classList.add('highlight');
+        } else {
+          el.classList.remove('highlight');
+        }
+      });
+    }
 
-  // Update main role heading
-  const mainRoleMap = {
-    frontend: 'Frontend Web Developer',
-    junior: 'Junior Web Developer',
-    ai: 'Python / AI Developer',
-    senior: 'Senior Frontend Developer'
-  };
-  document.getElementById('main-role').textContent = mainRoleMap[role] || mainRoleMap['frontend'];
-</script>
+    // Get saved role from contact form
+    document.addEventListener('DOMContentLoaded', () => {
+      const role = localStorage.getItem('contact_role') || 'frontend';
+      highlightRole(role);
 
+      // Set resume buttons
+      viewResumeBtn.href = resumeMap[role] || 'resume.html';
+      downloadCVBtn.href = pdfMap[role] || 'resume.pdf';
+    });
+  </script>
 </body>
 </html>
