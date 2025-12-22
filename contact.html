@@ -4,25 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact – Eyesightworks</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" type="button">☰</button>
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
 
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-      <li><a href="#testimonials" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="الشهادات">Testimonials</a></li>
-      <li><a href="#portfolio" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمال">Portfolio</a></li>
-      <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="اتصل بنا">Contact</a></li>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li>
         <select id="langSelect" class="lang-select" aria-label="Select language">
-          <option value="en">EN</option>
+          <option value="en" selected>EN</option>
           <option value="fr">FR</option>
           <option value="es">ES</option>
           <option value="ar">AR</option>
@@ -32,37 +31,43 @@
   </nav>
 </header>
 
-<main class="container" role="main">
-  <section class="section">
-    <h1 data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="اتصل بي">Contact Me</h1>
-    <p data-en="Fill out the form below to get in touch." data-fr="Remplissez le formulaire ci-dessous pour me contacter." data-es="Complete el formulario para ponerse en contacto." data-ar="املأ النموذج أدناه للتواصل معي.">
-      Fill out the form below to get in touch.
-    </p>
+<main class="container">
+  <h1 data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Contact Me</h1>
 
-    <form name="job-contact" autocomplete="off">
-      <label for="name" data-en="Your Name" data-fr="Votre nom" data-es="Tu nombre" data-ar="اسمك">Your Name</label>
-      <input type="text" id="name" name="name" required placeholder="John Doe" />
+  <form name="job-contact">
+    <label data-en="Name" data-fr="Nom" data-es="Nombre" data-ar="الاسم">
+      Name
+      <input type="text" name="name" required>
+    </label>
 
-      <label for="email" data-en="Your Email" data-fr="Votre email" data-es="Tu correo" data-ar="بريدك الإلكتروني">Your Email</label>
-      <input type="email" id="email" name="email" required placeholder="email@example.com" />
+    <label data-en="Email" data-fr="E-mail" data-es="Correo electrónico" data-ar="البريد الإلكتروني">
+      Email
+      <input type="email" name="email" required>
+    </label>
 
-      <label for="role" data-en="Position Interested In" data-fr="Poste souhaité" data-es="Posición deseada" data-ar="الوظيفة المطلوبة">Position Interested In</label>
-      <select id="role" name="role" required>
-        <option value="Frontend Developer">Frontend Developer</option>
-        <option value="Junior Backend Developer">Junior Backend Developer</option>
-        <option value="Python / AI Junior">Python / AI Junior</option>
-        <option value="Senior Developer">Senior Developer</option>
-        <option value="Freelance Project">Freelance Project</option>
+    <label data-en="Role" data-fr="Rôle" data-es="Rol" data-ar="الدور">
+      Role
+      <select name="role">
+        <option>Frontend Developer</option>
+        <option>Junior Backend Developer</option>
+        <option>Python / AI Junior</option>
+        <option>Senior Developer</option>
+        <option>Freelance Project</option>
       </select>
+    </label>
 
-      <label for="message" data-en="Your Message" data-fr="Votre message" data-es="Tu mensaje" data-ar="رسالتك">Your Message</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Write your message..."></textarea>
+    <label data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">
+      Message
+      <textarea name="message" required></textarea>
+    </label>
 
-      <div class="btn-box">
-        <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
-      </div>
-    </form>
-  </section>
+    <div class="btn-box">
+      <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
+      <button type="button" id="viewResumeBtn" class="btn">View Resume</button>
+      <button type="button" id="downloadCVBtn" class="btn">Download CV (PDF)</button>
+      <a href="#" id="linkedinBtn" class="btn">LinkedIn Profile</a>
+    </div>
+  </form>
 </main>
 
 <footer>
