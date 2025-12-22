@@ -104,7 +104,7 @@ nav {
   cursor: pointer;
 }
 
-/* Language switcher */
+/* Language switcher button */
 .lang-switcher-button,
 select.lang-select {
   background: #fff;
@@ -115,6 +115,26 @@ select.lang-select {
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* Language dropdown specifics */
+select.lang-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #0a2540 50%),
+    linear-gradient(135deg, #0a2540 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px);
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 .lang-switcher-button:hover,
@@ -146,7 +166,8 @@ select.lang-select:focus {
 /* Accessible focus outline */
 #hamburger:focus-visible,
 button:focus-visible,
-a:focus-visible {
+a:focus-visible,
+select:focus-visible {
   outline: 2px solid #00c9a7;
   outline-offset: 2px;
 }
@@ -244,7 +265,7 @@ form {
 label {
   display: block;
   margin-top: 1rem;
-  margin-bottom: 0.4rem; /* added for better spacing */
+  margin-bottom: 0.4rem;
   font-weight: 600;
   color: #222;
 }
@@ -420,6 +441,20 @@ footer {
   .nav-menu a {
     padding: 0.8rem 0;
     font-size: 1.1rem;
+  }
+
+  /* Ensure lang button and select stack nicely */
+  .nav-menu li:last-child {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  /* Dropdown select full width on mobile */
+  select.lang-select {
+    width: 100%;
+    max-width: 140px;
   }
 
   .hero h1 {
