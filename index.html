@@ -1,227 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alawode Adewale Afeez | Frontend & AI Web Developer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alawode Adewale Afeez | Frontend & AI Developer</title>
 
-  <!-- SEO + ATS -->
-  <meta name="description" content="Alawode Adewale Afeez is a Frontend & AI Web Developer building responsive, accessible, and high-performance websites using HTML, CSS, JavaScript, Python, and modern frontend and AI tools. Open to junior, mid-level, and senior roles, freelance, and remote opportunities." />
-  <meta name="keywords" content="Frontend Developer, AI Developer, Web Developer, HTML, CSS, JavaScript, Python, Responsive Design, Accessibility, Freelance Web Developer, Remote Developer" />
-  <meta name="robots" content="index, follow" />
+<style>
+  /* BASE & RESET */
+  *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f8fafb; color:#222; line-height:1.5; min-height:100vh; }
+  html[dir="rtl"] { direction:rtl; }
+  .container { max-width:1100px; margin:auto; padding:1rem; }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+  /* HEADER */
+  header { background:#0a2540; color:#fff; position:sticky; top:0; z-index:999; box-shadow:0 2px 8px rgba(10,37,64,0.3); }
+  nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; padding:0.75rem 1rem; }
+  .logo { font-weight:800; font-size:1.25rem; user-select:none; }
+  .nav-links { display:flex; align-items:center; gap:1.5rem; }
+  .nav-links a { color:#fff; font-weight:600; padding:0.4rem 0.6rem; border-radius:6px; transition:all 0.3s; }
+  .nav-links a:hover, .nav-links a.active { background:rgba(0,201,167,0.2); color:#00c9a7; box-shadow:0 0 8px #00c9a7aa; }
+  select.lang-select { padding:0.4rem 0.8rem; border-radius:6px; border:none; font-weight:700; cursor:pointer; transition:all 0.3s; }
+  select.lang-select:hover, select.lang-select:focus { background-color:#00c9a7; color:#fff; outline:none; }
+  button.hamburger { display:none; font-size:1.8rem; background:none; border:none; color:#fff; cursor:pointer; padding:0.25rem; border-radius:6px; transition:color 0.3s; }
 
-  <style>
-    body {
-      font-family: 'Inter', Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #222;
-      line-height: 1.5;
-    }
-    a {
-      text-decoration: none;
-      color: #007acc;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    header {
-      background: #f9f9f9;
-      padding: 20px 0;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 28px;
-      margin: 0;
-      font-weight: 800;
-    }
-    header p {
-      font-size: 14px;
-      margin: 4px 0;
-    }
-    .hero {
-      background: #e6f7ff;
-      text-align: center;
-      padding: 40px 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .hero img {
-      max-width: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    .hero h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-    .hero p {
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-    .btn-box {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .btn {
-      display: inline-block;
-      padding: 8px 16px;
-      background: #007acc;
-      color: #fff;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 13px;
-    }
-    .btn:hover {
-      background: #005f99;
-    }
-    h2.section-title {
-      font-size: 18px;
-      border-bottom: 2px solid #000;
-      padding-bottom: 4px;
-      margin-top: 28px;
-      margin-bottom: 8px;
-    }
-    ul {
-      padding-left: 20px;
-      margin-bottom: 16px;
-    }
-    li {
-      margin-bottom: 6px;
-      font-size: 13px;
-    }
-    .role {
-      font-weight: 600;
-      margin-top: 12px;
-    }
-    .date {
-      font-style: italic;
-      font-size: 12px;
-      color: #555;
-      margin-bottom: 4px;
-    }
-    footer {
-      text-align: center;
-      padding: 12px 0;
-      font-size: 12px;
-      color: #555;
-      margin-top: 40px;
-      border-top: 1px solid #ccc;
-    }
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 20px;
-      }
-      .hero p, li, header p {
-        font-size: 12.5px;
-      }
-      header h1 {
-        font-size: 24px;
-      }
-    }
-  </style>
+  /* HERO */
+  .hero { background:#e6f7ff; text-align:center; padding:40px 20px; border-radius:8px; margin:20px 0; }
+  .hero img { max-width:150px; border-radius:50%; margin-bottom:20px; }
+  .hero h1 { font-size:22px; margin-bottom:12px; font-weight:700; }
+  .hero p { font-size:14px; margin-bottom:12px; }
+  .btn-box { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px; }
+  .btn { display:inline-block; padding:8px 16px; background:#0a2540; color:#fff; border-radius:4px; font-weight:600; font-size:13px; cursor:pointer; border:none; }
+  .btn:hover { background:#004d40; }
+
+  /* ROLE CV SECTION */
+  .role-section { margin:20px 0; text-align:center; }
+  h2.section-title { font-size:18px; border-bottom:2px solid #000; padding-bottom:4px; margin-top:28px; margin-bottom:8px; }
+
+  footer { text-align:center; padding:12px 0; font-size:12px; color:#fff; background:#0a2540; margin-top:40px; box-shadow:inset 0 1px 0 rgba(255,255,255,0.1); }
+
+  @media(max-width:768px){
+    button.hamburger{display:block;}
+    .nav-links{display:none; flex-direction:column; gap:1rem; background:#0a2540; padding:1rem; border-radius:10px; width:100%;}
+    .nav-links.show{display:flex;}
+    .nav-links a{font-size:1.1rem; padding:0.6rem 0;}
+    select.lang-select{width:100%; margin-top:0.75rem;}
+  }
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Alawode Adewale Afeez</h1>
-    <p><strong>Frontend & AI Web Developer</strong></p>
-    <p>
-      <a href="mailto:eyesightconcept@gmail.com">eyesightconcept@gmail.com</a> |
-      <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a> |
-      <a href="https://github.com/alawode-adewale" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </header>
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Frontend & AI Web Developer" />
-    <h2>Frontend & AI Web Developer (Junior – Senior Level)</h2>
-    <p>I build responsive, accessible, and performance-focused web applications using modern frontend and AI technologies.</p>
-    <p>Open to junior, mid-level, and senior collaboration roles, freelance projects, and remote opportunities worldwide.</p>
-    <div class="btn-box">
-      <a href="resume.html" class="btn">View Resume</a>
-      <a href="resume.pdf" download class="btn">Download CV (PDF)</a>
-      <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener" class="btn">LinkedIn Profile</a>
+<header>
+  <nav class="container">
+    <div class="logo">Eyesightworks</div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a>
+      <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a>
+      <select id="langSelect" class="lang-select" aria-label="Select language">
+        <option value="en" selected>EN</option>
+        <option value="fr">FR</option>
+        <option value="es">ES</option>
+        <option value="ar">AR</option>
+      </select>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <div class="container">
-    <!-- PROFESSIONAL SUMMARY -->
-    <h2 class="section-title">Professional Summary</h2>
-    <p>
-      Frontend & AI Web Developer with 5 years of experience designing, developing, and maintaining responsive, accessible, and high-performance websites and AI tools using HTML5, CSS3, JavaScript (ES6+), and Python. Skilled in semantic HTML, responsive UI development, cross-browser compatibility, and automation. Experienced in freelance, startup, and collaborative project environments delivering user-centered solutions.
-    </p>
+<!-- HERO -->
+<section class="hero">
+  <img src="images/pics.jpg" alt="" id="heroImg">
+  <h1 data-en="Frontend & AI Developer (Junior – Senior)" data-fr="Développeur Frontend & IA (Junior – Senior)" data-es="Desarrollador Frontend & IA (Junior – Senior)" data-ar="مطور الواجهات الأمامية والذكاء الاصطناعي (مبتدئ – متقدم)">Frontend & AI Developer (Junior – Senior)</h1>
+  <p data-en="I build responsive, accessible, and performance-focused web applications using modern frontend and AI technologies." data-fr="Je crée des applications web responsives, accessibles et performantes utilisant des technologies frontend et IA modernes." data-es="Desarrollo aplicaciones web responsivas, accesibles y optimizadas utilizando tecnologías frontend y de IA modernas." data-ar="أقوم ببناء تطبيقات ويب سريعة، متجاوبة وسهلة الاستخدام باستخدام تقنيات الواجهة الأمامية والذكاء الاصطناعي الحديثة.">I build responsive, accessible, and performance-focused web applications using modern frontend and AI technologies.</p>
+  <p data-en="Open to junior, mid-level, and senior collaboration roles, freelance projects, and remote opportunities worldwide." data-fr="Ouvert aux postes junior, intermédiaire, senior, projets freelance et télétravail." data-es="Disponible para roles junior, intermedios, senior, proyectos freelance y trabajo remoto." data-ar="متاح لوظائف المبتدئين والمتوسطين والمتقدمين، والمشاريع الحرة والعمل عن بُعد.">Open to junior, mid-level, and senior collaboration roles, freelance projects, and remote opportunities worldwide.</p>
+  <div class="btn-box">
+    <button class="btn" id="viewResumeBtn" onclick="window.location.href='resume.html'">View Resume</button>
+    <button class="btn" id="downloadCVBtn" onclick="downloadPDF('default')">Download CV (PDF)</button>
+    <button class="btn" id="linkedinBtn" onclick="window.open('https://www.linkedin.com/in/alawode-adewale-3a033239a','_blank')">LinkedIn Profile</button>
+  </div>
+</section>
 
-    <!-- TECHNICAL SKILLS -->
-    <h2 class="section-title">Technical Skills</h2>
-    <ul>
-      <li>HTML5, CSS3, JavaScript (ES6+)</li>
-      <li>Responsive Web Design, Mobile-First Development</li>
-      <li>Web Accessibility (WCAG), Semantic HTML</li>
-      <li>User Interface (UI) Development</li>
-      <li>Cross-Browser Compatibility</li>
-      <li>Frontend Performance Optimization</li>
-      <li>Version Control: Git, GitHub</li>
-      <li>Basic React.js & AI Tool Integration</li>
-    </ul>
+<!-- ROLE-SPECIFIC PDF DOWNLOAD -->
+<section class="role-section container">
+  <h2 class="section-title" data-en="Download CV by Role" data-fr="Télécharger le CV par rôle" data-es="Descargar CV por rol" data-ar="تحميل السيرة الذاتية حسب الدور">Download CV by Role</h2>
+  <div class="btn-box">
+    <button class="btn" data-en="Frontend Developer" data-fr="Développeur Frontend" data-es="Desarrollador Frontend" data-ar="مطور الواجهات الأمامية" onclick="downloadPDF('frontend')">Frontend Developer</button>
+    <button class="btn" data-en="Junior Backend Developer" data-fr="Développeur Backend Junior" data-es="Desarrollador Backend Junior" data-ar="مطور خلفية مبتدئ" onclick="downloadPDF('junior')">Junior Backend Developer</button>
+    <button class="btn" data-en="Python / AI Junior" data-fr="Python / IA Junior" data-es="Python / IA Junior" data-ar="Python / الذكاء الاصطناعي مبتدئ" onclick="downloadPDF('ai')">Python / AI Junior</button>
+    <button class="btn" data-en="Senior Developer" data-fr="Développeur Senior" data-es="Desarrollador Senior" data-ar="مطور متقدم" onclick="downloadPDF('senior')">Senior Developer</button>
+    <button class="btn" data-en="Freelance Project" data-fr="Projet Freelance" data-es="Proyecto Freelance" data-ar="مشروع حر" onclick="downloadPDF('freelance')">Freelance Project</button>
+  </div>
+</section>
 
-    <!-- TOOLS & TECHNOLOGIES -->
-    <h2 class="section-title">Tools & Technologies</h2>
-    <ul>
-      <li>React (Foundational)</li>
-      <li>Python, Flask</li>
-      <li>WordPress</li>
-      <li>Figma, Adobe Photoshop</li>
-      <li>AI & Automation Tools (Basic)</li>
-    </ul>
+<footer>
+  © 2025 Eyesightworks — Alawode Adewale Afeez
+</footer>
 
-    <!-- PROFESSIONAL EXPERIENCE -->
-    <h2 class="section-title">Professional Experience</h2>
+<script>
+  // Hamburger toggle
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', ()=>navLinks.classList.toggle('show'));
 
-    <p class="role">Frontend Web Developer & UI Designer — Freelance</p>
-    <p class="date">2019 – Present</p>
-    <ul>
-      <li>Design, develop, and maintain responsive, mobile-first websites using HTML, CSS, and JavaScript.</li>
-      <li>Translate UI/UX designs into clean, semantic, and accessible frontend code.</li>
-      <li>Ensure cross-browser compatibility and optimize websites for performance, usability, and accessibility.</li>
-      <li>Collaborate directly with clients to deliver user-focused digital solutions.</li>
-    </ul>
+  // Language switcher
+  const langSelect = document.getElementById('langSelect');
+  const heroImg = document.getElementById('heroImg');
+  const viewResumeBtn = document.getElementById('viewResumeBtn');
+  const downloadCVBtn = document.getElementById('downloadCVBtn');
+  const linkedinBtn = document.getElementById('linkedinBtn');
 
-    <p class="role">AI & Python Developer — Freelance Projects</p>
-    <p class="date">2021 – Present</p>
-    <ul>
-      <li>Develop AI-powered tools for voice transcription, text processing, and workflow automation.</li>
-      <li>Create Python scripts for data handling, automation, and backend logic.</li>
-      <li>Build lightweight Flask applications for internal tools and demos.</li>
-    </ul>
+  function switchLanguage(lang){
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang==='ar'?'rtl':'ltr';
+    document.querySelectorAll('[data-en]').forEach(el=>{
+      el.textContent = el.dataset[lang] || el.dataset.en;
+    });
 
-    <p class="role">Graphic Designer & Content Creator — Freelance</p>
-    <p class="date">2019 – 2023</p>
-    <ul>
-      <li>Designed logos, brand identity systems, and digital marketing materials.</li>
-      <li>Produced visual content to support online presence and product promotion.</li>
-    </ul>
+    // multilingual alt for hero image
+    const altText = {
+      en: "Alawode Adewale Afeez – Frontend & AI Developer",
+      fr: "Alawode Adewale Afeez – Développeur Frontend & IA",
+      es: "Alawode Adewale Afeez – Desarrollador Frontend & IA",
+      ar: "ألاوود أديوا لي أفييز – مطور الواجهات الأمامية والذكاء الاصطناعي"
+    };
+    heroImg.alt = altText[lang] || altText.en;
 
-    <p class="role">Junior Web Developer — Startup Projects</p>
-    <p class="date">2019 – 2020</p>
-    <ul>
-      <li>Contributed to frontend development tasks within small agile teams.</li>
-      <li>Assisted with UI implementation, bug fixes, testing, and maintenance.</li>
-      <li>Gained hands-on experience with collaborative workflows and version control.</li>
-    </ul>
+    // Update hero buttons
+    const btnText = {
+      viewResume: { en:"View Resume", fr:"Voir le CV", es:"Ver CV", ar:"عرض السيرة الذاتية" },
+      downloadCV: { en:"Download CV (PDF)", fr:"Télécharger le CV (PDF)", es:"Descargar CV (PDF)", ar:"تحميل السيرة الذاتية (PDF)" },
+      linkedin: { en:"LinkedIn Profile", fr:"Profil LinkedIn", es:"Perfil de LinkedIn", ar:"حساب لينكدإن" }
+    };
+    viewResumeBtn.textContent = btnText.viewResume[lang];
+    downloadCVBtn.textContent = btnText.downloadCV[lang];
+    linkedinBtn.textContent = btnText.linkedin[lang];
+  }
+
+  langSelect.addEventListener('change', e=>{
+    switchLanguage(e.target.value);
+    localStorage.setItem('preferredLang', e.target.value);
+  });
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const savedLang = localStorage.getItem('preferredLang')||'en';
+    langSelect.value = savedLang;
+    switchLanguage(savedLang);
+  });
+
+  // Role-specific PDF download
+  function downloadPDF(role){
+    let pdfUrl='';
+    switch(role){
+      case 'frontend': pdfUrl='frontend-cv.pdf'; break;
+      case 'junior': pdfUrl='junior-cv.pdf'; break;
+      case 'ai': pdfUrl='ai-cv.pdf'; break;
+      case 'senior': pdfUrl='senior-cv.pdf'; break;
+      case 'freelance': pdfUrl='freelance-cv.pdf'; break;
+      default: pdfUrl='resume.pdf';
+    }
+    const a=document.createElement('a');
+    a.href=pdfUrl;
+    a.download=`${role}-cv.pdf`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+</body>
+</html>
