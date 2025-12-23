@@ -1,284 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alawode Adewale Afeez | Frontend & AI Developer</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
-/* ================= RESET & BASE ================= */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
-  background:#f8fafb;
-  color:#333;
-  line-height:1.6;
-  min-height:100vh;
-}
-html[dir="rtl"]{direction:rtl}
-.container{max-width:1100px;margin:auto;padding:1rem}
-body.menu-open{overflow:hidden}
+  <title>Alawode Adewale Afeez | Frontend Web Developer</title>
 
-/* ================= HEADER & NAV ================= */
-header{
-  background:#0a2540;
-  color:#fff;
-  position:sticky;
-  top:0;
-  z-index:999;
-  box-shadow:0 2px 8px rgba(10,37,64,.3);
-}
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.logo{font-weight:800;font-size:1.25rem}
+  <!-- SEO + ATS -->
+  <meta name="description" content="Alawode Adewale Afeez is a Frontend Web Developer building responsive, accessible, and high-performance websites using HTML, CSS, JavaScript, and modern frontend tools. Open to junior, mid-level, and senior collaboration roles." />
+  <meta name="keywords" content="Frontend Developer, Web Developer, HTML, CSS, JavaScript, Responsive Design, Accessibility, Freelance Web Developer, Remote Developer" />
+  <meta name="robots" content="index, follow" />
 
-.nav-menu{
-  list-style:none;
-  display:flex;
-  align-items:center;
-  gap:1.5rem;
-}
-.nav-menu a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  padding:.4rem .6rem;
-  border-radius:6px;
-  transition:.3s;
-}
-.nav-menu a:hover,
-.nav-menu a.active{
-  color:#00c9a7;
-  background:rgba(0,201,167,.2);
-}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-select.lang-select{
-  background:#fff;
-  color:#0a2540;
-  border:none;
-  padding:.45rem .8rem;
-  border-radius:6px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-#hamburger{
-  display:none;
-  background:none;
-  border:none;
-  font-size:1.8rem;
-  color:#fff;
-  cursor:pointer;
-}
-
-/* ================= HERO ================= */
-.hero{
-  text-align:center;
-  padding:3rem 1rem;
-}
-.hero img{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  border:4px solid #0a2540;
-  margin-bottom:1rem;
-}
-.hero h1{
-  font-size:2.2rem;
-  color:#0a2540;
-}
-.hero p{
-  max-width:720px;
-  margin:.75rem auto 0;
-  font-size:1.1rem;
-}
-
-/* ================= BUTTONS ================= */
-.btn-box{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:1.5rem;
-}
-.btn{
-  background:#0a2540;
-  color:#fff;
-  padding:.75rem 1.25rem;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:600;
-  border:none;
-  cursor:pointer;
-}
-.btn:hover{background:#004d40}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  #hamburger{display:block}
-  .nav-menu{
-    display:none;
-    flex-direction:column;
-    width:100%;
-    margin-top:1rem;
-    background:#0a2540;
-    padding:1rem;
-    border-radius:10px;
-  }
-  .nav-menu.show{display:flex}
-  select.lang-select{width:100%}
-  .hero h1{font-size:1.6rem}
-}
-
-/* ================= FOOTER ================= */
-footer{
-  background:#0a2540;
-  color:#fff;
-  text-align:center;
-  padding:1rem;
-  margin-top:3rem;
-}
-</style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
-  <nav class="container">
-    <div class="logo">Eyesightworks</div>
+  <div class="container">
+    <nav role="navigation" aria-label="Primary Navigation">
+      <div class="logo">Eyesightworks</div>
 
-    <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="الأعمال">Portfolio</a></li>
-      <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
-      <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
-      <li>
-        <select id="langSelect" class="lang-select">
-          <option value="en">EN</option>
-          <option value="fr">FR</option>
-          <option value="es">ES</option>
-          <option value="ar">AR</option>
-        </select>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <img src="images/pics.jpg" alt="Alawode Adewale Afeez">
-
-    <h1
-      data-en="Frontend & AI Developer"
-      data-fr="Développeur Frontend & IA"
-      data-es="Desarrollador Frontend & IA"
-      data-ar="مطور الواجهات الأمامية والذكاء الاصطناعي">
-      Frontend & AI Developer
-    </h1>
-
-    <p
-      data-en="I build responsive, accessible, and performance-focused web applications."
-      data-fr="Je crée des applications web modernes, accessibles et performantes."
-      data-es="Desarrollo aplicaciones web modernas, accesibles y optimizadas."
-      data-ar="أبني تطبيقات ويب حديثة وسريعة وسهلة الاستخدام.">
-      I build responsive, accessible, and performance-focused web applications.
-    </p>
-
-    <div class="btn-box">
-      <a href="resume.html" class="btn" id="viewResumeBtn"
-        data-en="View Resume"
-        data-fr="Voir le CV"
-        data-es="Ver CV"
-        data-ar="عرض السيرة الذاتية">
-        View Resume
-      </a>
-
-      <button class="btn" id="downloadCVBtn"
-        data-en="Download CV (PDF)"
-        data-fr="Télécharger le CV (PDF)"
-        data-es="Descargar CV (PDF)"
-        data-ar="تحميل السيرة الذاتية">
-        Download CV (PDF)
+      <button
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        type="button"
+      >
+        ☰
       </button>
 
-      <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a"
-         target="_blank"
-         class="btn"
-         id="linkedinBtn"
-         data-en="LinkedIn Profile"
-         data-fr="Profil LinkedIn"
-         data-es="Perfil de LinkedIn"
-         data-ar="حساب لينكدإن">
-        LinkedIn Profile
-      </a>
+      <ul class="nav-menu" id="nav-menu" role="menu">
+        <li>
+          <a href="index.html" class="active" role="menuitem"
+             data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="about.html" role="menuitem"
+             data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="portfolio.html" role="menuitem"
+             data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">
+            Portfolio
+          </a>
+        </li>
+        <li>
+          <a href="testimonials.html" role="menuitem"
+             data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">
+            Testimonials
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" role="menuitem"
+             data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">
+            Contact
+          </a>
+        </li>
+        <li>
+          <button id="lang-switcher" class="lang-switcher-button" type="button">
+            EN
+          </button>
+          <select id="langSelect" class="lang-select" aria-label="Select Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<main>
+  <section class="hero">
+    <div class="container">
+
+      <!-- PROFILE IMAGE -->
+      <img
+        src="images/pics.jpg"
+        alt="Alawode Adewale Afeez – Frontend Web Developer"
+        class="hero-img"
+      />
+
+      <h1
+        data-en="Frontend Web Developer (Junior–Mid Level)"
+        data-fr="Développeur Web Frontend (Junior–Intermédiaire)"
+        data-es="Desarrollador Web Frontend (Junior–Intermedio)"
+        data-ar="مطور ويب للواجهات الأمامية (مبتدئ–متوسط)"
+      >
+        Frontend Web Developer (Junior–Mid Level)
+      </h1>
+
+      <p
+        data-en="I build responsive, accessible, and performance-focused web applications using modern frontend technologies and best practices."
+        data-fr="Je développe des applications web responsives, accessibles et performantes avec des technologies frontend modernes."
+        data-es="Desarrollo aplicaciones web responsivas, accesibles y optimizadas utilizando tecnologías modernas."
+        data-ar="أقوم ببناء تطبيقات ويب سريعة، متجاوبة، وسهلة الاستخدام باستخدام أحدث تقنيات الواجهة الأمامية."
+      >
+        I build responsive, accessible, and performance-focused web applications using modern frontend technologies and best practices.
+      </p>
+
+      <p
+        data-en="Open to junior, mid-level, and senior collaboration roles, freelance projects, and remote opportunities worldwide."
+        data-fr="Ouvert aux postes junior, intermédiaire, collaborations senior, projets freelance et opportunités à distance."
+        data-es="Disponible para roles junior, intermedios, colaboración senior, proyectos freelance y trabajo remoto."
+        data-ar="متاح لوظائف المبتدئين والمتوسطين، التعاون مع الفرق المتقدمة، والعمل الحر والعمل عن بُعد."
+      >
+        Open to junior, mid-level, and senior collaboration roles, freelance projects, and remote opportunities worldwide.
+      </p>
+
+      <!-- CTA BUTTONS -->
+      <div class="btn-box">
+        <a href="resume.html" class="btn"
+           data-en="View Resume"
+           data-fr="Voir le CV"
+           data-es="Ver CV"
+           data-ar="عرض السيرة الذاتية">
+          View Resume
+        </a>
+
+        <a href="resume.pdf" class="btn" download
+           data-en="Download CV (PDF)"
+           data-fr="Télécharger le CV (PDF)"
+           data-es="Descargar CV (PDF)"
+           data-ar="تحميل السيرة الذاتية (PDF)">
+          Download CV
+        </a>
+
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a"
+           target="_blank"
+           rel="noopener"
+           class="btn"
+           data-en="LinkedIn Profile"
+           data-fr="Profil LinkedIn"
+           data-es="Perfil de LinkedIn"
+           data-ar="حساب لينكدإن">
+          LinkedIn
+        </a>
+      </div>
+
     </div>
   </section>
 
+  <!-- ================= SKILLS ================= -->
+  <section class="section">
+    <div class="container text-center">
+      <h2
+        data-en="Core Technical Skills"
+        data-fr="Compétences techniques principales"
+        data-es="Habilidades técnicas principales"
+        data-ar="المهارات التقنية الأساسية"
+      >
+        Core Technical Skills
+      </h2>
+
+      <div class="skills-list">
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript (ES6+)</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">Accessibility (WCAG)</span>
+        <span class="skill-pill">Git & GitHub</span>
+        <span class="skill-pill">Performance Optimization</span>
+      </div>
+    </div>
+  </section>
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script>
-/* ========= HAMBURGER ========= */
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-const body = document.body;
-
-hamburger.addEventListener('click',()=>{
-  navMenu.classList.toggle('show');
-  body.classList.toggle('menu-open');
-});
-
-/* ========= LANGUAGE ========= */
-const langSelect = document.getElementById('langSelect');
-const supported = ['en','fr','es','ar'];
-
-function switchLang(lang){
-  if(!supported.includes(lang)) return;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    el.textContent = el.dataset[lang];
-  });
-
-  localStorage.setItem('preferredLang',lang);
-}
-
-langSelect.addEventListener('change',e=>switchLang(e.target.value));
-
-document.addEventListener('DOMContentLoaded',()=>{
-  const saved = localStorage.getItem('preferredLang') || 'en';
-  langSelect.value = saved;
-  switchLang(saved);
-});
-
-/* ========= CV DOWNLOAD ========= */
-const pdfMap={
-  frontend:'frontend-cv.pdf',
-  junior:'junior-cv.pdf',
-  ai:'ai-cv.pdf',
-  senior:'senior-cv.pdf'
-};
-
-document.getElementById('downloadCVBtn').onclick=()=>{
-  const a=document.createElement('a');
-  a.href=pdfMap.frontend;
-  a.download='frontend-cv.pdf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-};
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
