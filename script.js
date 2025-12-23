@@ -1,15 +1,8 @@
-/* ======================================================
-   GLOBAL SITE SCRIPT — ENHANCED MOBILE-FIRST with ANIMATIONS
-   Pages: index, about, portfolio, testimonials,
-          contact, thank-you
-====================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ================== ENABLE JS ANIMATIONS ================== */
+  // Enable CSS animations for JS-enabled browsers
   document.documentElement.classList.add('js-enabled');
 
-  /* ================== DOM ELEMENTS ================== */
+  // DOM Elements
   const body = document.body;
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.querySelector('.nav-menu');
@@ -18,44 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contactForm');
   const whatsappLink = document.getElementById('whatsappLink');
 
-  /* ================== SUPPORTED LANGUAGES ================== */
+  // Supported languages
   const supportedLangs = ['en', 'fr', 'es', 'ar'];
 
-  /* ================== MOBILE MENU WITH ANIMATION ================== */
+  // Toggle mobile menu open/close
   const toggleMenu = (forceClose = false) => {
     if (!hamburger || !navMenu) return;
+
     const isOpen = navMenu.classList.contains('show');
 
     if (forceClose || isOpen) {
-      // Animate hide
-      navMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-      navMenu.style.opacity = '0';
-      navMenu.style.transform = 'translateY(-10px)';
-      // After animation, remove show and cleanup
-      setTimeout(() => {
-        navMenu.classList.remove('show');
-        navMenu.style.transition = '';
-        navMenu.style.opacity = '';
-        navMenu.style.transform = '';
-      }, 300);
+      navMenu.classList.remove('show');
       body.classList.remove('menu-open');
       hamburger.setAttribute('aria-expanded', 'false');
     } else {
-      // Show menu immediately with styles for animation
       navMenu.classList.add('show');
-      navMenu.style.opacity = '0';
-      navMenu.style.transform = 'translateY(-10px)';
       body.classList.add('menu-open');
       hamburger.setAttribute('aria-expanded', 'true');
-      // Trigger transition to visible
-      requestAnimationFrame(() => {
-        navMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        navMenu.style.opacity = '1';
-        navMenu.style.transform = 'translateY(0)';
-      });
     }
   };
 
+  // Hamburger click and keyboard interaction
   if (hamburger) {
     hamburger.addEventListener('click', () => toggleMenu());
     hamburger.addEventListener('keydown', e => {
@@ -66,35 +42,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Close menu if clicking outside
   document.addEventListener('click', e => {
-    if (navMenu && navMenu.classList.contains('show') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
+    if (
+      navMenu &&
+      navMenu.classList.contains('show') &&
+      !navMenu.contains(e.target) &&
+      !hamburger.contains(e.target)
+    ) {
       toggleMenu(true);
     }
   });
 
+  // Close menu on window resize if desktop width
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768) toggleMenu(true);
   });
 
+  // Close menu when nav link clicked (mobile)
   navMenu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => toggleMenu(true));
   });
 
-  /* ================== LANGUAGE SWITCHING ================== */
+  // Language switching logic
   const switchLanguage = lang => {
     if (!supportedLangs.includes(lang)) return;
+
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
     translatableElements.forEach(el => {
       if (el.dataset[lang]) el.textContent = el.dataset[lang];
     });
+
     if (langSelect) langSelect.value = lang;
     localStorage.setItem('preferredLang', lang);
   };
 
+  // Language selector change event
   langSelect?.addEventListener('change', e => switchLanguage(e.target.value));
 
-  /* ================== CONTACT FORM SUBMIT ANIMATION ================== */
+  // Contact form validation and micro-animation on submit
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
       e.preventDefault();
@@ -112,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('contact_email', email);
       localStorage.setItem('contact_message', message);
 
-      // Micro-animation: success checkmark on submit button
       const submitBtn = contactForm.querySelector('button[type="submit"]') || contactForm.querySelector('.btn');
       if (submitBtn) {
         submitBtn.disabled = true;
@@ -127,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ================== THANK YOU → WHATSAPP REDIRECT ================== */
+  // Setup WhatsApp redirect on thank-you page
   const setupWhatsAppRedirect = () => {
     if (!window.location.pathname.includes('thank-you')) return;
 
@@ -141,18 +128,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => window.open(waURL, '_blank'), 3000);
   };
 
-  /* ================== ACTIVE NAV LINK ================== */
+  // Highlight active nav link based on current URL
   const setActiveNavLink = () => {
     const currentPage = window.location.pathname.split('/').pop();
+
     document.querySelectorAll('.nav-menu a').forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === currentPage);
     });
   };
 
-  /* ================== INIT ================== */
+  // Initialize everything
   const savedLang = localStorage.getItem('preferredLang') || 'en';
   switchLanguage(savedLang);
   setupWhatsAppRedirect();
   setActiveNavLink();
-
 });
