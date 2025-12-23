@@ -1,68 +1,21 @@
-/* ================= GLOBAL ================= */
-*,
-*::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ====== CONTACT PAGE ONLY ====== */
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f8fafb;
-  color: #333;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-
-.container { max-width: 1100px; margin: auto; padding: 1rem; }
-
-/* ================ HEADER ================ */
-header {
-  background: #0a2540;
-  color: #fff;
-  padding: 0.75rem 1rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  display: flex; align-items: center; justify-content: space-between;
-}
-
-.logo { font-weight: 800; font-size: 1.25rem; }
-
-#hamburger { display: none; font-size: 1.8rem; background: none; border: none; color: #fff; cursor: pointer; }
-
-ul.nav-menu {
-  display: flex; gap: 1.5rem; align-items: center; list-style: none;
-}
-
-ul.nav-menu li a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 6px;
-  transition: background 0.3s;
-}
-
-ul.nav-menu li a.active,
-ul.nav-menu li a:hover { background: rgba(0,201,167,0.2); color: #00c9a7; }
-
-/* ================ MAIN ================ */
-main.section { padding: 2rem 0; }
-
-h1 { font-weight: 800; font-size: 2rem; margin-bottom: 1rem; text-align: center; }
-h2 { font-weight: 700; font-size: 1.5rem; margin-bottom: 1rem; }
-
-/* ================ CARDS ================ */
-.card {
+/* Card */
+.contact-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 2rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
 }
 
-.contact-card h2 { margin-bottom: 1.5rem; }
-
-/* ================ FORM ================ */
-form {
+/* FORM - Material UI Floating Labels */
+#contactForm {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -76,15 +29,19 @@ form {
 .input-group textarea {
   width: 100%;
   padding: 1rem 0.75rem 0.25rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
   font-size: 1rem;
   background: transparent;
   outline: none;
-  transition: border 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.input-group textarea { resize: vertical; min-height: 100px; }
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #00c9a7;
+  box-shadow: 0 0 8px rgba(0,201,167,0.3);
+}
 
 .input-group label {
   position: absolute;
@@ -93,7 +50,7 @@ form {
   color: #888;
   font-size: 1rem;
   pointer-events: none;
-  transition: 0.3s ease all;
+  transition: all 0.3s ease;
 }
 
 .input-group input:focus + label,
@@ -109,31 +66,36 @@ form {
 }
 
 /* BUTTON */
-.btn {
+#contactForm .btn {
   padding: 0.75rem 1.5rem;
-  background: #0a2540;
+  background: linear-gradient(135deg,#0a2540,#004d40);
   color: #fff;
   font-weight: 700;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s;
+}
+#contactForm .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg,#004d40,#0a2540);
 }
 
-.btn:hover { background: #004d40; }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #0a2540;
-  color: #fff;
-  font-size: 0.9rem;
+/* CONNECT INFO */
+.contact-card p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
 }
+.contact-card a {
+  color: #0a2540;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+.contact-card a:hover { color: #00c9a7; }
 
 /* RESPONSIVE */
-@media (max-width:768px) {
-  #hamburger { display: block; }
-  ul.nav-menu { flex-direction: column; display: none; width: 100%; }
-  ul.nav-menu.show { display: flex; }
+@media (max-width: 768px) {
+  .contact-card { padding: 1.5rem; }
+  #contactForm .btn { width: 100%; }
 }
