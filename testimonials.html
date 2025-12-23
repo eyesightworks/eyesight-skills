@@ -14,272 +14,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <style>
-    /* Basic Reset */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f8fafb;
-      color: #333;
-      min-height: 100vh;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    html[dir="rtl"] {
-      direction: rtl;
-    }
-    .container {
-      max-width: 1100px;
-      margin-inline: auto;
-      padding: 1rem;
-    }
-
-    /* HEADER & NAV */
-    header {
-      background-color: #0a2540;
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(10, 37, 64, 0.3);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.75rem 1rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .logo {
-      font-weight: 800;
-      font-size: 1.25rem;
-      user-select: none;
-    }
-
-    /* Hamburger */
-    #hamburger {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: #fff;
-      cursor: pointer;
-      padding: 0.25rem;
-      border-radius: 6px;
-      transition: color 0.3s ease;
-    }
-    #hamburger:hover,
-    #hamburger:focus {
-      color: #00c9a7;
-      outline: none;
-    }
-    #hamburger:focus-visible {
-      outline: 2px solid #00c9a7;
-      outline-offset: 2px;
-    }
-
-    /* Nav menu */
-    ul.nav-menu {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    ul.nav-menu li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      display: inline-block;
-    }
-    ul.nav-menu li a.active,
-    ul.nav-menu li a:hover,
-    ul.nav-menu li a:focus {
-      color: #00c9a7;
-      background-color: rgba(0, 201, 167, 0.2);
-      outline: none;
-      box-shadow: 0 0 8px #00c9a7aa;
-      cursor: pointer;
-    }
-
-    /* Language Dropdown */
-    .lang-switcher {
-      position: relative;
-    }
-    .lang-switcher-button {
-      background: none;
-      border: none;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
-    }
-    .lang-switcher-button:hover,
-    .lang-switcher-button:focus {
-      background-color: #00c9a7;
-      outline: none;
-      color: #fff;
-    }
-    .lang-dropdown {
-      position: absolute;
-      top: 110%;
-      right: 0;
-      background: #0a2540;
-      border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      display: none;
-      flex-direction: column;
-      min-width: 80px;
-      z-index: 1000;
-    }
-    .lang-dropdown.show {
-      display: flex;
-    }
-    .lang-dropdown button {
-      background: none;
-      border: none;
-      color: #fff;
-      text-align: left;
-      padding: 0.5rem 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      border-radius: 0;
-    }
-    .lang-dropdown button:hover,
-    .lang-dropdown button:focus {
-      background-color: #00c9a7;
-      outline: none;
-    }
-
-    /* MAIN */
-    main {
-      padding: 2rem 0;
-    }
-    h1 {
-      font-weight: 800;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .section-intro {
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-      color: #444;
-    }
-    .card.testimonial {
-      background: #fff;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-    .card.testimonial p {
-      font-size: 1rem;
-      margin-bottom: 0.8rem;
-    }
-    .card.testimonial strong {
-      color: #0a2540;
-      font-weight: 700;
-      font-size: 0.95rem;
-      user-select: none;
-      display: block;
-    }
-    .cta-box {
-      background: #00c9a7;
-      padding: 1.5rem;
-      border-radius: 10px;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .cta-box p {
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-    .btn {
-      background: #0a2540;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-    .btn:hover,
-    .btn:focus {
-      background-color: #004d40;
-      outline: none;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: #0a2540;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      user-select: none;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      margin-top: 3rem;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      #hamburger {
-        display: block;
-      }
-      ul.nav-menu {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        background: #0a2540;
-        padding: 1rem;
-        border-radius: 10px;
-      }
-      ul.nav-menu.show {
-        display: flex;
-      }
-      ul.nav-menu li a {
-        font-size: 1.1rem;
-        padding: 0.6rem 0;
-      }
-      .lang-switcher {
-        width: 100%;
-      }
-      .lang-switcher-button {
-        width: 100%;
-        text-align: left;
-      }
-    }
-  </style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
       <div class="logo">Eyesightworks</div>
 
-      <button 
-        id="hamburger" 
-        aria-label="Toggle navigation menu" 
-        aria-expanded="false" 
+      <button
+        id="hamburger"
+        aria-label="Toggle navigation menu"
         aria-controls="nav-menu"
+        aria-expanded="false"
         type="button"
       >
         ☰
@@ -291,219 +42,133 @@
         <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
         <li><a href="testimonials.html" class="active" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
         <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
-        <li class="lang-switcher">
-          <button 
-            id="lang-switcher-button" 
-            class="lang-switcher-button" 
-            aria-haspopup="true" 
-            aria-expanded="false" 
-            aria-controls="lang-dropdown" 
-            type="button"
-            aria-label="Switch language"
-          >
-            EN
-          </button>
-          <div class="lang-dropdown" id="lang-dropdown" role="menu" aria-label="Language options">
-            <button type="button" role="menuitem" data-lang="en">EN</button>
-            <button type="button" role="menuitem" data-lang="fr">FR</button>
-            <button type="button" role="menuitem" data-lang="es">ES</button>
-            <button type="button" role="menuitem" data-lang="ar">AR</button>
-          </div>
+        <li>
+          <select id="langSelect" class="lang-select" aria-label="Select Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
         </li>
       </ul>
     </nav>
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
-  <section class="section container">
+  <section class="section">
+    <div class="container">
 
-    <h1
-      data-en="Testimonials"
-      data-fr="Témoignages"
-      data-es="Testimonios"
-      data-ar="آراء العملاء"
-    >
-      Testimonials
-    </h1>
-
-    <p class="section-intro"
-      data-en="Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery."
-      data-fr="Voici des retours de clients et collaborateurs mettant en avant la communication et la fiabilité."
-      data-es="A continuación se muestran comentarios de clientes y colaboradores sobre mi trabajo."
-      data-ar="فيما يلي آراء مختارة من عملاء ومتعاونين حول جودة العمل والتواصل."
-    >
-      Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery.
-    </p>
-
-    <!-- Testimonial 1 -->
-    <div class="card testimonial">
-      <p
-        data-en="Adewale delivered a responsive and well-structured website that met our project needs. Communication was clear throughout."
-        data-fr="Adewale a livré un site web responsive et bien structuré répondant à nos besoins."
-        data-es="Adewale entregó un sitio web responsivo y bien estructurado."
-        data-ar="قدّم أديوالي موقعًا متجاوبًا ومنظمًا بشكل جيد يلبي احتياجات المشروع."
+      <h1
+        data-en="Testimonials"
+        data-fr="Témoignages"
+        data-es="Testimonios"
+        data-ar="آراء العملاء"
       >
-        Adewale delivered a responsive and well-structured website that met our project needs.
+        Testimonials
+      </h1>
+
+      <p class="section-intro"
+        data-en="Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery."
+        data-fr="Voici des retours de clients et collaborateurs mettant en avant la communication et la fiabilité."
+        data-es="A continuación se muestran comentarios de clientes y colaboradores sobre mi trabajo."
+        data-ar="فيما يلي آراء مختارة من عملاء ومتعاونين حول جودة العمل والتواصل."
+      >
+        Below are selected comments from clients and collaborators highlighting communication, reliability, and quality of delivery.
       </p>
-      <strong
-        data-en="— Small Business Client"
-        data-fr="— Client PME"
-        data-es="— Cliente de pequeña empresa"
-        data-ar="— عميل شركة صغيرة"
-      >
-        — Small Business Client
-      </strong>
-    </div>
 
-    <!-- Testimonial 2 -->
-    <div class="card testimonial">
-      <p
-        data-en="He has a solid understanding of frontend development and translates ideas into functional layouts."
-        data-fr="Il possède une solide compréhension du développement frontend."
-        data-es="Tiene una sólida comprensión del desarrollo frontend."
-        data-ar="يمتلك فهمًا قويًا لتطوير الواجهات الأمامية."
-      >
-        He has a solid understanding of frontend development and translates ideas into functional layouts.
-      </p>
-      <strong
-        data-en="— Creative Team Collaborator"
-        data-fr="— Collaborateur créatif"
-        data-es="— Colaborador creativo"
-        data-ar="— متعاون إبداعي"
-      >
-        — Creative Team Collaborator
-      </strong>
-    </div>
+      <!-- Testimonial 1 -->
+      <div class="card testimonial">
+        <p
+          data-en="Adewale delivered a responsive and well-structured website that met our project needs. Communication was clear throughout."
+          data-fr="Adewale a livré un site web responsive et bien structuré répondant à nos besoins."
+          data-es="Adewale entregó un sitio web responsivo y bien estructurado."
+          data-ar="قدّم أديوالي موقعًا متجاوبًا ومنظمًا بشكل جيد يلبي احتياجات المشروع."
+        >
+          Adewale delivered a responsive and well-structured website that met our project needs.
+        </p>
+        <strong
+          data-en="— Small Business Client"
+          data-fr="— Client PME"
+          data-es="— Cliente de pequeña empresa"
+          data-ar="— عميل شركة صغيرة"
+        >
+          — Small Business Client
+        </strong>
+      </div>
 
-    <!-- Testimonial 3 -->
-    <div class="card testimonial">
-      <p
-        data-en="Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling."
-        data-fr="Fiable et constant. Les tâches ont été livrées dans les délais."
-        data-es="Confiable y constante. Las tareas se entregaron a tiempo."
-        data-ar="موثوق ومتسق، تم تسليم المهام في الوقت المحدد."
-      >
-        Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling.
-      </p>
-      <strong
-        data-en="— Remote Contract Client"
-        data-fr="— Client à distance"
-        data-es="— Cliente remoto"
-        data-ar="— عميل عن بُعد"
-      >
-        — Remote Contract Client
-      </strong>
-    </div>
+      <!-- Testimonial 2 -->
+      <div class="card testimonial">
+        <p
+          data-en="He has a solid understanding of frontend development and translates ideas into functional layouts."
+          data-fr="Il possède une solide compréhension du développement frontend."
+          data-es="Tiene una sólida comprensión del desarrollo frontend."
+          data-ar="يمتلك فهمًا قويًا لتطوير الواجهات الأمامية."
+        >
+          He has a solid understanding of frontend development and translates ideas into functional layouts.
+        </p>
+        <strong
+          data-en="— Creative Team Collaborator"
+          data-fr="— Collaborateur créatif"
+          data-es="— Colaborador creativo"
+          data-ar="— متعاون إبداعي"
+        >
+          — Creative Team Collaborator
+        </strong>
+      </div>
 
-    <!-- CTA -->
-    <div class="cta-box">
-      <p
-        data-en="Interested in working together?"
-        data-fr="Intéressé par une collaboration ?"
-        data-es="¿Interesado en trabajar juntos?"
-        data-ar="هل ترغب في العمل معي؟"
-      >
-        Interested in working together?
-      </p>
-      <a href="contact.html" class="btn"
-        data-en="Contact Me"
-        data-fr="Me contacter"
-        data-es="Contáctame"
-        data-ar="تواصل معي"
-      >
-        Contact Me
-      </a>
-    </div>
+      <!-- Testimonial 3 -->
+      <div class="card testimonial">
+        <p
+          data-en="Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling."
+          data-fr="Fiable et constant. Les tâches ont été livrées dans les délais."
+          data-es="Confiable y constante. Las tareas se entregaron a tiempo."
+          data-ar="موثوق ومتسق، تم تسليم المهام في الوقت المحدد."
+        >
+          Reliable and consistent. Tasks were delivered on time with attention to responsiveness and styling.
+        </p>
+        <strong
+          data-en="— Remote Contract Client"
+          data-fr="— Client à distance"
+          data-es="— Cliente remoto"
+          data-ar="— عميل عن بُعد"
+        >
+          — Remote Contract Client
+        </strong>
+      </div>
 
+      <!-- CTA -->
+      <div class="cta-box">
+        <p
+          data-en="Interested in working together?"
+          data-fr="Intéressé par une collaboration ?"
+          data-es="¿Interesado en trabajar juntos?"
+          data-ar="هل ترغب في العمل معي؟"
+        >
+          Interested in working together?
+        </p>
+        <a href="contact.html" class="btn"
+          data-en="Contact Me"
+          data-fr="Me contacter"
+          data-es="Contáctame"
+          data-ar="تواصل معي"
+        >
+          Contact Me
+        </a>
+      </div>
+
+    </div>
   </section>
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script>
-  // Hamburger toggle
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-
-  hamburger.addEventListener('click', () => {
-    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-    hamburger.setAttribute('aria-expanded', String(!expanded));
-    navMenu.classList.toggle('show');
-  });
-
-  // Keyboard support for hamburger (Enter/Space)
-  hamburger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      hamburger.click();
-    }
-  });
-
-  // Language dropdown toggle
-  const langSwitcherBtn = document.getElementById('lang-switcher-button');
-  const langDropdown = document.getElementById('lang-dropdown');
-
-  langSwitcherBtn.addEventListener('click', () => {
-    const expanded = langSwitcherBtn.getAttribute('aria-expanded') === 'true';
-    langSwitcherBtn.setAttribute('aria-expanded', String(!expanded));
-    langDropdown.classList.toggle('show');
-  });
-
-  // Close lang dropdown if clicked outside
-  document.addEventListener('click', e => {
-    if (!langSwitcherBtn.contains(e.target) && !langDropdown.contains(e.target)) {
-      langDropdown.classList.remove('show');
-      langSwitcherBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // Language switching logic
-  const langButtons = langDropdown.querySelectorAll('button[data-lang]');
-  const allTextElements = document.querySelectorAll('[data-en]');
-
-  function switchLanguage(lang) {
-    document.documentElement.lang = lang;
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-    allTextElements.forEach(el => {
-      if (el.dataset[lang]) {
-        el.textContent = el.dataset[lang];
-      }
-    });
-
-    // Update lang button label
-    langSwitcherBtn.textContent = lang.toUpperCase();
-
-    // Save preference
-    localStorage.setItem('preferredLang', lang);
-  }
-
-  langButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const selectedLang = button.getAttribute('data-lang');
-      switchLanguage(selectedLang);
-      // Close dropdown after selection
-      langDropdown.classList.remove('show');
-      langSwitcherBtn.setAttribute('aria-expanded', 'false');
-
-      // If mobile menu is open, close it for better UX
-      if(navMenu.classList.contains('show')) {
-        navMenu.classList.remove('show');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-  // Initialize language on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLang') || 'en';
-    switchLanguage(savedLang);
-  });
-
-</script>
+<!-- ================= SCRIPT ================= -->
+<script src="script.js"></script>
 
 </body>
 </html>
