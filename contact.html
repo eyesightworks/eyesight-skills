@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact | Alawode Adewale Afeez</title>
-  <meta name="description" content="Reach out to Alawode Adewale Afeez for web development collaborations, freelance projects, or professional inquiries.">
+
+  <meta name="description" content="Contact Alawode Adewale Afeez for professional web development inquiries." />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Contact CSS -->
-  <link rel="stylesheet" href="contact.css">
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Contact-only CSS -->
+  <link rel="stylesheet" href="contact.css" />
 </head>
+
 <body>
 
 <header>
   <div class="container">
-    <nav role="navigation" aria-label="Primary Navigation">
+    <nav>
       <div class="logo">Eyesightworks</div>
-
-      <button id="hamburger" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
-
-      <ul class="nav-menu" id="nav-menu">
+      <button id="hamburger" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
+        <li>
+          <select id="langSelect" class="lang-select">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
 
-<main class="section">
+<main class="section contact-page">
   <div class="container">
 
-    <header class="text-center">
-      <h1>Contact</h1>
-      <p>Have a project, idea, or question? Fill out the form below or reach out via email or LinkedIn.</p>
-    </header>
+    <!-- Background Effects -->
+    <div class="contact-bg"></div>
+    <canvas id="particles"></canvas>
 
-    <section class="card contact-card">
-      <h2>Send a Message</h2>
+    <!-- Contact Card -->
+    <section class="contact-card">
+
+      <h1 data-en="Contact Me">Contact Me</h1>
 
       <form id="contactForm" novalidate>
-        <div class="input-group">
-          <input type="text" id="name" name="name" required>
-          <label for="name">Full Name</label>
+
+        <div class="field">
+          <input type="text" name="name" required />
+          <label>Full Name</label>
         </div>
 
-        <div class="input-group">
-          <input type="email" id="email" name="email" required>
-          <label for="email">Email Address</label>
+        <div class="field">
+          <input type="email" name="email" required />
+          <label>Email Address</label>
         </div>
 
-        <div class="input-group">
-          <textarea id="message" name="message" rows="5" required></textarea>
-          <label for="message">Your Message</label>
+        <div class="field">
+          <textarea name="message" rows="4" required></textarea>
+          <label>Message</label>
         </div>
 
-        <button type="submit" class="btn">Send Message</button>
+        <button type="submit" class="btn submit-btn">
+          <span class="btn-text">Send Message</span>
+        </button>
+
+        <!-- Success Overlay -->
+        <div class="success-overlay" aria-hidden="true">
+          <div class="checkmark">
+            <svg viewBox="0 0 52 52">
+              <circle cx="26" cy="26" r="25" fill="none"/>
+              <path fill="none" d="M14 27l7 7 17-17"/>
+            </svg>
+          </div>
+          <p>Message Sent</p>
+        </div>
+
       </form>
-    </section>
 
-    <section class="card contact-card">
-      <h2>Connect With Me</h2>
-      <p>Email: <strong>eyesightconcept@gmail.com</strong></p>
-      <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">linkedin.com/in/alawode-adewale-3a033239a</a></strong></p>
     </section>
 
   </div>
@@ -78,6 +100,11 @@
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
+<!-- Global JS -->
+<script src="script.js"></script>
+
+<!-- Contact-only JS -->
 <script src="contact.js"></script>
+
 </body>
 </html>
