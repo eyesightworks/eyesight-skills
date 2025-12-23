@@ -1,122 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Alawode Adewale Afeez</title>
-  <meta name="description" content="Get in touch with Alawode Adewale Afeez for web development collaborations, freelance projects, or professional inquiries." />
+  <meta name="description" content="Reach out to Alawode Adewale Afeez for web development collaborations, freelance projects, or professional inquiries.">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* ===================== Premium Form Styling ===================== */
-    .card form#contactForm {
-      background: #fff;
-      padding: 3rem;
-      border-radius: 16px;
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      max-width: 700px;
-      margin: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card form#contactForm:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.16);
-    }
-
-    .card form#contactForm label {
-      font-weight: 600;
-      color: #0a2540;
-      margin-bottom: 0.5rem;
-      font-size: 1rem;
-    }
-
-    .card form#contactForm input,
-    .card form#contactForm textarea {
-      width: 100%;
-      padding: 1rem 1.25rem;
-      border: 1px solid #d1d5db;
-      border-radius: 12px;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-    }
-
-    .card form#contactForm input:focus,
-    .card form#contactForm textarea:focus {
-      border-color: #00c9a7;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,201,167,0.2);
-      outline: none;
-    }
-
-    .card form#contactForm textarea {
-      resize: vertical;
-      min-height: 140px;
-    }
-
-    .card form#contactForm button.btn {
-      background-color: #0a2540;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 0.85rem 2.5rem;
-      border-radius: 12px;
-      border: none;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    }
-
-    .card form#contactForm button.btn:hover,
-    .card form#contactForm button.btn:focus {
-      background-color: #004d40;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
-      outline: none;
-    }
-
-    @media (max-width: 768px) {
-      .card form#contactForm {
-        padding: 2rem;
-        gap: 1.5rem;
-      }
-      .card form#contactForm button.btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    /* Optional: center text header */
-    .text-center {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 2rem auto;
-    }
-    .text-center h1 {
-      font-weight: 800;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .text-center p {
-      font-size: 1.1rem;
-      color: #444;
-    }
-  </style>
+  <!-- Contact CSS -->
+  <link rel="stylesheet" href="contact.css">
 </head>
-
 <body>
 
 <header>
@@ -124,30 +21,14 @@
     <nav role="navigation" aria-label="Primary Navigation">
       <div class="logo">Eyesightworks</div>
 
-      <button
-        id="hamburger"
-        aria-label="Toggle navigation menu"
-        aria-controls="nav-menu"
-        aria-expanded="false"
-        type="button"
-      >
-        ☰
-      </button>
+      <button id="hamburger" aria-label="Toggle navigation menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
-        <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
-        <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
-        <li>
-          <select id="langSelect" class="lang-select" aria-label="Select Language">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="es">ES</option>
-            <option value="ar">AR</option>
-          </select>
-        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -155,40 +36,48 @@
 
 <main class="section">
   <div class="container">
+
     <header class="text-center">
-      <h1 data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</h1>
-      <p data-en="Have a project, idea, or question? Fill out the form below and you'll be redirected to WhatsApp for faster communication."
-         data-fr="Vous avez un projet, une idée ou une question ? Remplissez le formulaire ci-dessous et vous serez redirigé vers WhatsApp pour une communication plus rapide."
-         data-es="¿Tienes un proyecto, idea o consulta? Rellena el formulario a continuación y serás redirigido a WhatsApp para una comunicación más rápida."
-         data-ar="هل لديك مشروع أو فكرة أو سؤال؟ املأ النموذج أدناه وسيتم توجيهك إلى واتساب للتواصل بشكل أسرع.">
-        Have a project, idea, or question? Fill out the form below and you'll be redirected to WhatsApp for faster communication.
-      </p>
+      <h1>Contact</h1>
+      <p>Have a project, idea, or question? Fill out the form below or reach out via email or LinkedIn.</p>
     </header>
 
-    <section class="card">
+    <section class="card contact-card">
+      <h2>Send a Message</h2>
+
       <form id="contactForm" novalidate>
-        <label for="name" data-en="Full Name" data-fr="Nom complet" data-es="Nombre completo" data-ar="الاسم الكامل">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+        <div class="input-group">
+          <input type="text" id="name" name="name" required>
+          <label for="name">Full Name</label>
+        </div>
 
-        <label for="email" data-en="Email Address" data-fr="Adresse e-mail" data-es="Correo electrónico" data-ar="البريد الإلكتروني">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+        <div class="input-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email">Email Address</label>
+        </div>
 
-        <label for="role" data-en="Role / Project" data-fr="Rôle / Projet" data-es="Rol / Proyecto" data-ar="الدور / المشروع">Role / Project</label>
-        <input type="text" id="role" name="role" placeholder="e.g. Frontend Developer / Web Project" required />
+        <div class="input-group">
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="message">Your Message</label>
+        </div>
 
-        <label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
-        <textarea id="message" name="message" rows="6" placeholder="Briefly describe your project or inquiry" required></textarea>
-
-        <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
+
+    <section class="card contact-card">
+      <h2>Connect With Me</h2>
+      <p>Email: <strong>eyesightconcept@gmail.com</strong></p>
+      <p>LinkedIn: <strong><a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">linkedin.com/in/alawode-adewale-3a033239a</a></strong></p>
+    </section>
+
   </div>
 </main>
 
-<footer class="text-center">
+<footer>
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
