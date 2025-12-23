@@ -13,11 +13,112 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===================== Premium Form Styling ===================== */
+    .card form#contactForm {
+      background: #fff;
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 700px;
+      margin: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card form#contactForm:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.16);
+    }
+
+    .card form#contactForm label {
+      font-weight: 600;
+      color: #0a2540;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .card form#contactForm input,
+    .card form#contactForm textarea {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border: 1px solid #d1d5db;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+    }
+
+    .card form#contactForm input:focus,
+    .card form#contactForm textarea:focus {
+      border-color: #00c9a7;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,201,167,0.2);
+      outline: none;
+    }
+
+    .card form#contactForm textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .card form#contactForm button.btn {
+      background-color: #0a2540;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 0.85rem 2.5rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .card form#contactForm button.btn:hover,
+    .card form#contactForm button.btn:focus {
+      background-color: #004d40;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      .card form#contactForm {
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+      .card form#contactForm button.btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Optional: center text header */
+    .text-center {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+    .text-center h1 {
+      font-weight: 800;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .text-center p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
@@ -52,53 +153,35 @@
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main class="section">
   <div class="container">
-
     <header class="text-center">
       <h1 data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</h1>
-      <p data-en="Have a project, idea, or question? Reach out directly using the form below or via email. I’m happy to discuss web development collaborations, freelance opportunities, or general inquiries."
-         data-fr="Vous avez un projet, une idée ou une question ? Contactez-moi directement via le formulaire ci-dessous ou par e-mail. Je suis heureux de discuter de collaborations, de missions freelance ou de questions générales."
-         data-es="¿Tienes un proyecto, idea o consulta? Contáctame directamente mediante el formulario a continuación o por correo electrónico. Estoy disponible para colaboraciones, proyectos freelance o consultas generales."
-         data-ar="هل لديك مشروع أو فكرة أو سؤال؟ تواصل معي مباشرة باستخدام النموذج أدناه أو عبر البريد الإلكتروني. يسعدني مناقشة التعاون في تطوير الويب أو المشاريع الحرة أو الاستفسارات العامة.">
-        Have a project, idea, or question? Reach out directly using the form below or via email. I’m happy to discuss web development collaborations, freelance opportunities, or general inquiries.
+      <p data-en="Have a project, idea, or question? Fill out the form below and you'll be redirected to WhatsApp for faster communication."
+         data-fr="Vous avez un projet, une idée ou une question ? Remplissez le formulaire ci-dessous et vous serez redirigé vers WhatsApp pour une communication plus rapide."
+         data-es="¿Tienes un proyecto, idea o consulta? Rellena el formulario a continuación y serás redirigido a WhatsApp para una comunicación más rápida."
+         data-ar="هل لديك مشروع أو فكرة أو سؤال؟ املأ النموذج أدناه وسيتم توجيهك إلى واتساب للتواصل بشكل أسرع.">
+        Have a project, idea, or question? Fill out the form below and you'll be redirected to WhatsApp for faster communication.
       </p>
     </header>
 
     <section class="card">
-      <h2 data-en="Connect With Me" data-fr="Contactez-moi" data-es="Conéctate conmigo" data-ar="تواصل معي">Connect With Me</h2>
-      <p data-en="Email me directly at:" data-fr="Envoyez-moi un e-mail à :" data-es="Envíame un correo electrónico a:" data-ar="راسلني مباشرة على البريد الإلكتروني:">
-        <strong>eyesightconcept@gmail.com</strong>
-      </p>
-      <p data-en="Or connect on LinkedIn:" data-fr="Ou connectez-vous sur LinkedIn :" data-es="O conéctate en LinkedIn:" data-ar="أو تواصل معي على لينكدإن:">
-        <strong><a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener noreferrer">linkedin.com/in/alawode-adewale-3a033239a</a></strong>
-      </p>
-    </section>
-
-    <section class="card">
-      <h2 data-en="Send a Message" data-fr="Envoyer un message" data-es="Enviar un mensaje" data-ar="إرسال رسالة">Send a Message</h2>
-      <p data-en="Fill out the form below to send a message. After submission, you'll be redirected to WhatsApp for faster communication."
-         data-fr="Remplissez le formulaire ci-dessous pour envoyer un message. Après l'envoi, vous serez redirigé vers WhatsApp pour une communication plus rapide."
-         data-es="Rellena el formulario a continuación para enviar un mensaje. Después del envío, serás redirigido a WhatsApp para una comunicación más rápida."
-         data-ar="املأ النموذج أدناه لإرسال رسالة. بعد الإرسال، سيتم توجيهك إلى واتساب للتواصل بشكل أسرع.">
-        Fill out the form below to send a message. After submission, you'll be redirected to WhatsApp for faster communication.
-      </p>
-
       <form id="contactForm" novalidate>
         <label for="name" data-en="Full Name" data-fr="Nom complet" data-es="Nombre completo" data-ar="الاسم الكامل">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required />
+        <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
 
         <label for="email" data-en="Email Address" data-fr="Adresse e-mail" data-es="Correo electrónico" data-ar="البريد الإلكتروني">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+
+        <label for="role" data-en="Role / Project" data-fr="Rôle / Projet" data-es="Rol / Proyecto" data-ar="الدور / المشروع">Role / Project</label>
+        <input type="text" id="role" name="role" placeholder="e.g. Frontend Developer / Web Project" required />
 
         <label for="message" data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Your message or inquiry" required></textarea>
+        <textarea id="message" name="message" rows="6" placeholder="Briefly describe your project or inquiry" required></textarea>
 
         <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
       </form>
     </section>
-
   </div>
 </main>
 
