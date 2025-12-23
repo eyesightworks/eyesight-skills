@@ -1,136 +1,162 @@
 /* ======================================================
    GLOBAL SITE SCRIPT
-   Works on: index, portfolio, testimonial, contact, thank-you
+   Works on: index, about, portfolio, testimonials,
+             contact, thank-you
 ====================================================== */
 
-/* ================== DOM ELEMENTS ================== */
-const body = document.body;
+document.addEventListener('DOMContentLoaded', () => {
 
-// Navigation
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.querySelector('.nav-menu');
+  /* ================== DOM ELEMENTS ================== */
+  const body = document.body;
 
-// Language
-const langSelect = document.getElementById('langSelect');
-const translatableElements = document.querySelectorAll('[data-en]');
+  // Navigation
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
 
-// Contact form (only exists on contact.html)
-const contactForm = document.querySelector('form[name="job-contact"]');
+  // Language
+  const langSelect = document.getElementById('langSelect');
+  const translatableElements = document.querySelectorAll('[data-en]');
 
-// WhatsApp link (thank-you page)
-const whatsappLink = document.getElementById('whatsappLink');
+  // Contact form
+  const contactForm = document.querySelector('form[name="job-contact"]');
 
-/* ================== SUPPORTED LANGUAGES ================== */
-const supportedLangs = ['en', 'fr', 'es', 'ar'];
+  // WhatsApp (thank-you page)
+  const whatsappLink = document.getElementById('whatsappLink');
 
-/* ================== MOBILE MENU ================== */
-function toggleMenu() {
-  if (!hamburger || !navMenu) return;
+  /* ================== SUPPORTED LANGUAGES ================== */
+  const supportedLangs = ['en', 'fr', 'es', 'ar'];
 
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  navMenu.classList.toggle('show');
-  body.classList.toggle('menu-open');
-}
+  /* ================== MOBILE MENU ================== */
+  function toggleMenu(forceClose = false) {
+    if (!hamburger || !navMenu) return;
 
-// Click
-if (hamburger) {
-  hamburger.addEventListener('click', toggleMenu);
+    const isOpen = navMenu.classList.contains('show');
 
-  // Keyboard accessibility
-  hamburger.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleMenu();
+    if (forceClose || isOpen) {
+      navMenu.classList.remove('show');
+      body.classList.remove('menu-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    } else {
+      navMenu.classList.add('show');
+      body.classList.add('menu-open');
+      hamburger.setAttribute('aria-expanded', 'true');
     }
-  });
-}
+  }
 
-// Close menu after clicking a link (mobile UX)
-if (navMenu) {
-  navMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navMenu.classList.contains('show')) {
+  // Hamburger click
+  if (hamburger) {
+    hamburger.addEventListener('click', () => toggleMenu());
+
+    // Keyboard accessibility
+    hamburger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
         toggleMenu();
       }
     });
-  });
-}
-
-/* ================== LANGUAGE SWITCHING ================== */
-function switchLanguage(lang) {
-  if (!supportedLangs.includes(lang)) return;
-
-  // Set HTML attributes
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-
-  // Translate text
-  translatableElements.forEach(el => {
-    const text = el.dataset[lang];
-    if (text) el.textContent = text;
-  });
-
-  // Sync dropdown
-  if (langSelect) langSelect.value = lang;
-
-  // Save preference
-  localStorage.setItem('preferredLang', lang);
-}
-
-// Language dropdown
-if (langSelect) {
-  langSelect.addEventListener('change', e => {
-    switchLanguage(e.target.value);
-  });
-}
-
-/* ================== CONTACT FORM ================== */
-if (contactForm) {
-  contactForm.addEventListener('submit', e => {
-    e.preventDefault();
-
-    const name = contactForm.name.value.trim();
-    const role = contactForm.role?.value || '';
-    const email = contactForm.email.value.trim();
-    const message = contactForm.message.value.trim();
-
-    // Save data for thank-you page
-    localStorage.setItem('contact_name', name);
-    localStorage.setItem('contact_role', role);
-
-    // Redirect to thank-you page
-    window.location.href = 'thank-you.html';
-  });
-}
-
-/* ================== THANK YOU → WHATSAPP ================== */
-function setupWhatsAppRedirect() {
-  if (!window.location.pathname.includes('thank-you')) return;
-
-  const name = localStorage.getItem('contact_name') || '';
-  const role = localStorage.getItem('contact_role') || '';
-  const phone = '2348083869454'; // your WhatsApp number
-
-  const message = encodeURIComponent(
-    `Hello, my name is ${name}. I am contacting you regarding: ${role}.`
-  );
-
-  const waURL = `https://wa.me/${phone}?text=${message}`;
-
-  if (whatsappLink) {
-    whatsappLink.href = waURL;
   }
 
-  // Auto open WhatsApp after 3 seconds
-  setTimeout(() => {
-    window.open(waURL, '_blank');
-  }, 3000);
-}
+  // Close menu when a nav link is clicked
+  if (navMenu) {
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(true));
+    });
+  }
 
-/* ================== INIT ================== */
-document.addEventListener('DOMContentLoaded', () => {
+  // Close menu when clicking outside
+  document.addEventListener('click', e => {
+    if (
+      navMenu &&
+      navMenu.classList.contains('show') &&
+      !navMenu.contains(e.target) &&
+      hamburger &&
+      !hamburger.contains(e.target)
+    ) {
+      toggleMenu(true);
+    }
+  });
+
+  // Close menu on resize (mobile → desktop)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      toggleMenu(true);
+    }
+  });
+
+  /* ================== LANGUAGE SWITCHING ================== */
+  function switchLanguage(lang) {
+    if (!supportedLangs.includes(lang)) return;
+
+    // Set HTML attributes
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    // Translate text
+    translatableElements.forEach(el => {
+      const text = el.dataset[lang];
+      if (text) el.textContent = text;
+    });
+
+    // Sync dropdown
+    if (langSelect) langSelect.value = lang;
+
+    // Save preference
+    localStorage.setItem('preferredLang', lang);
+  }
+
+  // Language selector
+  if (langSelect) {
+    langSelect.addEventListener('change', e => {
+      switchLanguage(e.target.value);
+    });
+  }
+
+  /* ================== CONTACT FORM ================== */
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = contactForm.name?.value.trim() || '';
+      const email = contactForm.email?.value.trim() || '';
+      const role = contactForm.role?.value || '';
+      const message = contactForm.message?.value.trim() || '';
+
+      // Store data for thank-you page
+      localStorage.setItem('contact_name', name);
+      localStorage.setItem('contact_role', role);
+
+      // Redirect
+      window.location.href = 'thank-you.html';
+    });
+  }
+
+  /* ================== THANK YOU → WHATSAPP ================== */
+  function setupWhatsAppRedirect() {
+    if (!window.location.pathname.includes('thank-you')) return;
+
+    const name = localStorage.getItem('contact_name') || '';
+    const role = localStorage.getItem('contact_role') || '';
+    const phone = '2348083869454'; // Your WhatsApp number
+
+    const message = encodeURIComponent(
+      `Hello, my name is ${name}. I am contacting you regarding: ${role}.`
+    );
+
+    const waURL = `https://wa.me/${phone}?text=${message}`;
+
+    if (whatsappLink) {
+      whatsappLink.href = waURL;
+    }
+
+    // Auto-open WhatsApp after 3 seconds
+    setTimeout(() => {
+      window.open(waURL, '_blank');
+    }, 3000);
+  }
+
+  /* ================== INIT ================== */
   const savedLang = localStorage.getItem('preferredLang') || 'en';
   switchLanguage(savedLang);
   setupWhatsAppRedirect();
+
 });
