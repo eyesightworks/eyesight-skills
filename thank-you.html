@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Thank You – Eyesightworks</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -12,15 +12,23 @@
   <nav class="container" role="navigation" aria-label="Primary Navigation">
     <div class="logo">Eyesightworks</div>
 
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <button id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
 
     <ul id="nav-menu" class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li>
-        <select id="langSelect" class="lang-select" aria-label="Select language">
+        <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية" class="active">Home</a>
+      </li>
+      <li>
+        <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a>
+      </li>
+      <li>
+        <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a>
+      </li>
+      <li>
+        <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a>
+      </li>
+      <li>
+        <select id="langSelect" class="lang-select" aria-label="Select language" title="Select Language">
           <option value="en" selected>EN</option>
           <option value="fr">FR</option>
           <option value="es">ES</option>
