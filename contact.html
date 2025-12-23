@@ -1,79 +1,115 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact – Eyesightworks</title>
-  <link rel="stylesheet" href="style.css">
+
+  <title>Contact | Alawode Adewale Afeez</title>
+
+  <meta
+    name="description"
+    content="Contact Alawode Adewale Afeez, Frontend Web Developer. Open to junior, mid-level, senior roles, freelance projects, and remote opportunities."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-  <nav class="container" role="navigation" aria-label="Primary Navigation">
-    <div class="logo">Eyesightworks</div>
+<main class="section">
+  <div class="container">
 
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    <!-- Page Heading -->
+    <header class="text-center">
+      <h1>Contact</h1>
+      <p>
+        I’m open to frontend development opportunities at junior, mid-level, or senior capacity,
+        as well as freelance and remote projects.  
+        Feel free to reach out for collaboration, hiring inquiries, or project discussions.
+      </p>
+    </header>
 
-    <ul id="nav-menu" class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li>
-        <select id="langSelect" class="lang-select" aria-label="Select language">
-          <option value="en" selected>EN</option>
-          <option value="fr">FR</option>
-          <option value="es">ES</option>
-          <option value="ar">AR</option>
-        </select>
-      </li>
-    </ul>
-  </nav>
-</header>
+    <!-- Contact Details -->
+    <section class="card">
+      <h2>Contact Information</h2>
 
-<main class="container">
-  <h1 data-en="Contact Me" data-fr="Contactez-moi" data-es="Contáctame" data-ar="تواصل معي">Contact Me</h1>
+      <p>
+        <strong>Email:</strong><br />
+        <a href="mailto:eyesightconcept@gmail.com">
+          eyesightconcept@gmail.com
+        </a>
+      </p>
 
-  <form name="job-contact">
-    <label data-en="Name" data-fr="Nom" data-es="Nombre" data-ar="الاسم">
-      Name
-      <input type="text" name="name" required>
-    </label>
+      <p>
+        <strong>LinkedIn:</strong><br />
+        <a
+          href="https://www.linkedin.com/in/alawode-adewale-3a033239a"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          linkedin.com/in/alawode-adewale-3a033239a
+        </a>
+      </p>
+    </section>
 
-    <label data-en="Email" data-fr="E-mail" data-es="Correo electrónico" data-ar="البريد الإلكتروني">
-      Email
-      <input type="email" name="email" required>
-    </label>
+    <!-- Contact Form -->
+    <section>
+      <h2>Send a Message</h2>
 
-    <label data-en="Role" data-fr="Rôle" data-es="Rol" data-ar="الدور">
-      Role
-      <select name="role">
-        <option>Frontend Developer</option>
-        <option>Junior Backend Developer</option>
-        <option>Python / AI Junior</option>
-        <option>Senior Developer</option>
-        <option>Freelance Project</option>
-      </select>
-    </label>
+      <p>
+        Use the form below to send a message.  
+        You will be redirected to WhatsApp for faster communication after submission.
+      </p>
 
-    <label data-en="Message" data-fr="Message" data-es="Mensaje" data-ar="الرسالة">
-      Message
-      <textarea name="message" required></textarea>
-    </label>
+      <form action="thank-you.html" method="GET">
 
-    <div class="btn-box">
-      <button type="submit" class="btn" data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">Send Message</button>
-      <button type="button" id="viewResumeBtn" class="btn">View Resume</button>
-      <button type="button" id="downloadCVBtn" class="btn">Download CV (PDF)</button>
-      <a href="#" id="linkedinBtn" class="btn">LinkedIn Profile</a>
-    </div>
-  </form>
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          required
+        />
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Briefly describe your role, project, or inquiry"
+          required
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+    </section>
+
+  </div>
 </main>
 
-<footer>
-  © 2025 Eyesightworks — Alawode Adewale Afeez
+<footer class="text-center">
+  <p>© 2025 Alawode Adewale Afeez — Frontend Web Developer</p>
 </footer>
 
-<script src="script.js"></script>
 </body>
 </html>
