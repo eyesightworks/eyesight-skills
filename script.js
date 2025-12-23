@@ -1,10 +1,13 @@
-/* ======================================================  
-   GLOBAL SITE SCRIPT
-   Works on: index, about, portfolio, testimonials,
-             contact, thank-you
+/* ======================================================
+   GLOBAL SITE SCRIPT — ENHANCED MOBILE-FIRST with ANIMATIONS
+   Pages: index, about, portfolio, testimonials,
+          contact, thank-you
 ====================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ================== ENABLE JS ANIMATIONS ================== */
+  document.documentElement.classList.add('js-enabled');
 
   /* ================== DOM ELEMENTS ================== */
   const body = document.body;
@@ -18,19 +21,38 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ================== SUPPORTED LANGUAGES ================== */
   const supportedLangs = ['en', 'fr', 'es', 'ar'];
 
-  /* ================== MOBILE MENU ================== */
+  /* ================== MOBILE MENU WITH ANIMATION ================== */
   const toggleMenu = (forceClose = false) => {
     if (!hamburger || !navMenu) return;
     const isOpen = navMenu.classList.contains('show');
 
     if (forceClose || isOpen) {
-      navMenu.classList.remove('show');
+      // Animate hide
+      navMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      navMenu.style.opacity = '0';
+      navMenu.style.transform = 'translateY(-10px)';
+      // After animation, remove show and cleanup
+      setTimeout(() => {
+        navMenu.classList.remove('show');
+        navMenu.style.transition = '';
+        navMenu.style.opacity = '';
+        navMenu.style.transform = '';
+      }, 300);
       body.classList.remove('menu-open');
       hamburger.setAttribute('aria-expanded', 'false');
     } else {
+      // Show menu immediately with styles for animation
       navMenu.classList.add('show');
+      navMenu.style.opacity = '0';
+      navMenu.style.transform = 'translateY(-10px)';
       body.classList.add('menu-open');
       hamburger.setAttribute('aria-expanded', 'true');
+      // Trigger transition to visible
+      requestAnimationFrame(() => {
+        navMenu.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        navMenu.style.opacity = '1';
+        navMenu.style.transform = 'translateY(0)';
+      });
     }
   };
 
@@ -72,10 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   langSelect?.addEventListener('change', e => switchLanguage(e.target.value));
 
-  /* ================== CONTACT FORM ================== */
+  /* ================== CONTACT FORM SUBMIT ANIMATION ================== */
   if (contactForm) {
     contactForm.addEventListener('submit', e => {
       e.preventDefault();
+
       const name = contactForm.name?.value.trim() || '';
       const email = contactForm.email?.value.trim() || '';
       const message = contactForm.message?.value.trim() || '';
@@ -89,13 +112,25 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('contact_email', email);
       localStorage.setItem('contact_message', message);
 
-      window.location.href = 'thank-you.html';
+      // Micro-animation: success checkmark on submit button
+      const submitBtn = contactForm.querySelector('button[type="submit"]') || contactForm.querySelector('.btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = '✔ Sent!';
+        submitBtn.style.transition = 'all 0.4s ease';
+        submitBtn.style.backgroundColor = '#00c9a7';
+      }
+
+      setTimeout(() => {
+        window.location.href = 'thank-you.html';
+      }, 800);
     });
   }
 
-  /* ================== THANK YOU → WHATSAPP ================== */
+  /* ================== THANK YOU → WHATSAPP REDIRECT ================== */
   const setupWhatsAppRedirect = () => {
     if (!window.location.pathname.includes('thank-you')) return;
+
     const name = localStorage.getItem('contact_name') || '';
     const message = localStorage.getItem('contact_message') || '';
     const phone = '2348083869454';
