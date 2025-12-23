@@ -87,24 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function switchLanguage(lang) {
     if (!supportedLangs.includes(lang)) return;
 
-    // Set HTML attributes
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-    // Translate text
     translatableElements.forEach(el => {
       const text = el.dataset[lang];
       if (text) el.textContent = text;
     });
 
-    // Sync dropdown
     if (langSelect) langSelect.value = lang;
-
-    // Save preference
     localStorage.setItem('preferredLang', lang);
   }
 
-  // Language selector
   if (langSelect) {
     langSelect.addEventListener('change', e => {
       switchLanguage(e.target.value);
@@ -117,15 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       const name = contactForm.name?.value.trim() || '';
-      const email = contactForm.email?.value.trim() || '';
       const role = contactForm.role?.value || '';
-      const message = contactForm.message?.value.trim() || '';
 
-      // Store data for thank-you page
       localStorage.setItem('contact_name', name);
       localStorage.setItem('contact_role', role);
 
-      // Redirect
       window.location.href = 'thank-you.html';
     });
   }
@@ -136,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = localStorage.getItem('contact_name') || '';
     const role = localStorage.getItem('contact_role') || '';
-    const phone = '2348083869454'; // Your WhatsApp number
+    const phone = '2348083869454'; // WhatsApp (international format)
 
     const message = encodeURIComponent(
       `Hello, my name is ${name}. I am contacting you regarding: ${role}.`
@@ -148,7 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
       whatsappLink.href = waURL;
     }
 
-    // Auto-open WhatsApp after 3 seconds
     setTimeout(() => {
       window.open(waURL, '_blank');
     }, 3000);
