@@ -20,6 +20,9 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  /* Fade in page content */
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
 }
 
 html[dir="rtl"] {
@@ -41,6 +44,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
+  /* Slide down on load */
+  transform: translateY(-100%);
+  animation: slideDown 0.5s ease forwards 0.3s;
 }
 
 nav {
@@ -56,6 +62,12 @@ nav {
   font-weight: 800;
   font-size: 1.25rem;
   user-select: none;
+  /* Slight scale up on hover */
+  transition: transform 0.3s ease;
+}
+.logo:hover,
+.logo:focus {
+  transform: scale(1.05);
 }
 
 /* HAMBURGER */
@@ -66,6 +78,12 @@ nav {
   border: none;
   color: #fff;
   cursor: pointer;
+  /* Animate fade in when shown */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#hamburger.show {
+  opacity: 1;
 }
 #hamburger:focus-visible {
   outline: 2px solid #00c9a7;
@@ -78,6 +96,9 @@ ul.nav-menu {
   gap: 1.5rem;
   align-items: center;
   list-style: none;
+  /* Animate menu fade-in when shown */
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 ul.nav-menu li a {
   color: #fff;
@@ -85,7 +106,7 @@ ul.nav-menu li a {
   text-decoration: none;
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
 }
 ul.nav-menu li a.active,
 ul.nav-menu li a:hover,
@@ -93,6 +114,7 @@ ul.nav-menu li a:focus {
   color: #00c9a7;
   background-color: rgba(0,201,167,0.2);
   box-shadow: 0 0 8px #00c9a7aa;
+  transform: scale(1.05);
 }
 
 /* LANGUAGE SELECT */
@@ -101,15 +123,23 @@ ul.nav-menu li a:focus {
   border-radius: 6px;
   border: none;
   font-weight: 600;
+  transition: box-shadow 0.3s ease;
+}
+.lang-select:focus {
+  outline: none;
+  box-shadow: 0 0 6px #00c9a7aa;
 }
 
 /* MAIN CONTENT */
 main.section {
   padding: 2rem 0;
+  animation: fadeInUp 0.6s ease forwards 0.6s;
+  opacity: 0;
 }
 
 h1, h2, h3 {
   font-weight: 800;
+  transition: color 0.3s ease;
 }
 
 h1 {
@@ -135,6 +165,10 @@ h2 {
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.7s;
 }
 
 .card.testimonial p {
@@ -157,12 +191,13 @@ h2 {
   background: #0a2540;
   border-radius: 6px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.25s ease;
 }
 .btn:hover,
 .btn:focus {
   background: #004d40;
   outline: none;
+  transform: translateY(-3px);
 }
 
 /* FOOTER */
@@ -174,6 +209,8 @@ footer {
   font-size: 0.9rem;
   margin-top: 3rem;
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards 0.8s;
 }
 
 /* HERO IMAGE (index.html) */
@@ -183,12 +220,18 @@ footer {
   width: 300px; /* Adjust this width as needed */
   display: block;
   margin: 0 auto 1.5rem auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInScale 0.7s ease forwards 0.5s;
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
   #hamburger {
     display: block;
+    opacity: 1 !important; /* Make sure hamburger is visible */
   }
 
   ul.nav-menu {
@@ -199,10 +242,13 @@ footer {
     background: #0a2540;
     padding: 1rem;
     border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
   ul.nav-menu.show {
     display: flex;
+    opacity: 1;
   }
 
   ul.nav-menu li a {
@@ -218,5 +264,32 @@ footer {
   /* Make hero image smaller on small screens */
   .hero-img {
     width: 200px;
+  }
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
