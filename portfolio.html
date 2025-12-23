@@ -23,32 +23,32 @@
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <nav role="navigation">
+    <nav role="navigation" aria-label="Primary Navigation">
       <div class="logo">Eyesightworks</div>
 
       <button
         id="hamburger"
-        aria-label="Toggle navigation"
-        aria-controls="nav-menu"
+        aria-label="Toggle navigation menu"
+        aria-controls="primary-menu"
         aria-expanded="false"
+        type="button"
       >
         ☰
       </button>
 
-      <ul class="nav-menu" id="nav-menu">
+      <ul class="nav-menu" id="primary-menu">
         <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
         <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" class="active" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
         <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
         <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
-          <button
-            id="lang-switcher"
-            class="lang-switcher-button"
-            aria-label="Switch language"
-          >
-            EN
-          </button>
+          <select id="langSelect" class="lang-select" aria-label="Select Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
         </li>
       </ul>
     </nav>
@@ -98,7 +98,6 @@
           >
             E-Commerce Website (Frontend Development)
           </h3>
-
           <p
             data-en="Responsive e-commerce interface featuring product listings, cart UI, and checkout flow with strong focus on usability and mobile performance."
             data-fr="Interface e-commerce responsive avec catalogue produits et interface panier."
@@ -107,7 +106,6 @@
           >
             Responsive e-commerce interface featuring product listings, cart UI, and checkout flow.
           </p>
-
           <p><strong>Tech:</strong> HTML, CSS, JavaScript, React</p>
           <a href="https://github.com/eyesightworks" target="_blank" rel="noopener noreferrer">View Code</a>
         </div>
@@ -122,7 +120,6 @@
           >
             AI Voice & Image Processing Demo
           </h3>
-
           <p
             data-en="Python learning project exploring speech-to-text, basic image processing, and automation workflows."
             data-fr="Projet Python explorant la reconnaissance vocale et le traitement d’images."
@@ -131,7 +128,6 @@
           >
             Python learning project exploring speech-to-text and image processing.
           </p>
-
           <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
         </div>
 
@@ -145,7 +141,6 @@
           >
             Personal Portfolio Website
           </h3>
-
           <p
             data-en="Fully responsive personal website designed to present skills, projects, and professional background."
             data-fr="Site personnel responsive pour présenter compétences et projets."
@@ -154,7 +149,6 @@
           >
             Fully responsive personal website designed to present skills and projects.
           </p>
-
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
           <a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank" rel="noopener noreferrer">Live Demo</a>
         </div>
@@ -169,7 +163,6 @@
           >
             Brand Identity & Visual Design
           </h3>
-
           <p
             data-en="Brand identity work including logo design, color systems, and visual consistency for small businesses."
             data-fr="Travaux de branding incluant logo et identité visuelle."
@@ -178,7 +171,6 @@
           >
             Brand identity work including logo design and visual systems.
           </p>
-
           <p><strong>Tools:</strong> CorelDRAW, Photoshop</p>
         </div>
 
@@ -192,7 +184,6 @@
           >
             Python & AI Learning Projects
           </h3>
-
           <p
             data-en="Small experimental projects focused on automation, data handling, and introductory AI concepts."
             data-fr="Projets expérimentaux axés sur l’automatisation et l’IA."
@@ -201,7 +192,6 @@
           >
             Small experimental projects focused on automation and AI basics.
           </p>
-
           <p><strong>Tech:</strong> Python, Pandas, AI libraries</p>
         </div>
 
@@ -215,7 +205,6 @@
           >
             Business Landing Pages
           </h3>
-
           <p
             data-en="High-conversion landing pages optimized for speed, clarity, and mobile-first experience."
             data-fr="Pages optimisées pour la conversion et la performance mobile."
@@ -224,12 +213,10 @@
           >
             High-conversion landing pages optimized for speed and mobile usability.
           </p>
-
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
         </div>
 
       </div>
-
     </div>
   </section>
 </main>
