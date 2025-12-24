@@ -1,56 +1,98 @@
 /* ======================================================
-   GLOBAL SITE JS — PREMIUM & ACCESSIBLE
+   GLOBAL SITE JS — PREMIUM, ACCESSIBLE
 ====================================================== */
 
+/* Enable JS-enhanced styles */
 document.documentElement.classList.add("js-enabled");
 
-document.addEventListener("DOMContentLoaded", () => {
-  /* ================= NAV / HAMBURGER ================= */
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.getElementById("primary-menu");
+/* ================= GLOBAL STATE ================= */
+const state = {
+  lang: localStorage.getItem("siteLang") || "en"
+};
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("show");
-      hamburger.setAttribute("aria-expanded", isOpen);
+/* ================= UTILITIES ================= */
+function setAttributes(element, attributes = {}) {
+  Object.entries(attributes).forEach(([key, value]) => {
+    element.setAttribute(key, value);
+  });
+}
+
+/* ================= NAV / HAMBURGER ================= */
+function initHamburgerMenu() {
+  const hamburger = document.querySelector("[data-hamburger]");
+  const navMenu = document.querySelector("[data-nav-menu]");
+
+  if (!hamburger || !navMenu) return;
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("show");
+    hamburger.setAttribute("aria-expanded", isOpen);
+  });
+
+  // Close menu when a link is clicked (mobile UX)
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      hamburger.setAttribute("aria-expanded", "false");
     });
+  });
+}
 
-    // Close menu after clicking a link (mobile UX)
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
-        hamburger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
+/* ================= ACTIVE NAV LINK ================= */
+function initActiveNavLink() {
+  const currentPage = location.pathname.split("/").pop() || "index.html";
 
-  /* ================= ACTIVE NAV LINK ================= */
-  const currentPage = location.pathname.split("/").pop();
-  document.querySelectorAll(".nav-menu a").forEach(link => {
+  document.querySelectorAll("[data-nav-menu] a").forEach(link => {
     if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
+}
 
-  /* ================= LANGUAGE SWITCHER ================= */
-  const langSelect = document.getElementById("langSelect");
-  const translatable = document.querySelectorAll("[data-en]");
+/* ================= LANGUAGE HANDLING ================= */
+function applyLanguage(lang) {
+  const translatableElements = document.querySelectorAll("[data-en]");
 
-  function setLanguage(lang) {
-    translatable.forEach(el => {
-      const value = el.dataset[lang];
-      if (value) el.textContent = value;
-    });
-
-    // Handle RTL for Arabic
-    if (lang === "ar") {
-      document.documentElement.setAttribute("dir", "rtl");
-      document.documentElement.setAttribute("lang", "ar");
-    } else {
-      document.documentElement.setAttribute("dir", "ltr");
-      document.documentElement.setAttribute("lang", lang);
+  translatableElements.forEach(el => {
+    const translatedText = el.dataset[lang];
+    if (typeof translatedText === "string") {
+      el.textContent = translatedText;
     }
+  });
 
-    localStorage.setItem("siteLang", lang);
+  // Handle RTL for Arabic
+  if (lang === "ar") {
+    setAttributes(document.documentElement, {
+      dir: "rtl",
+      lang: "ar"
+    });
+  } else {
+    setAttributes(document.documentElement, {
+      dir: "ltr",
+      lang
+    });
   }
 
+  state.lang = lang;
+  localStorage.setItem("siteLang", lang);
+}
+
+function initLanguageSwitcher() {
+  const langSelect = document.querySelector("[data-lang-select]");
+
+  if (!langSelect) return;
+
+  langSelect.value = state.lang;
+  applyLanguage(state.lang);
+
+  langSelect.addEventListener("change", e => {
+    applyLanguage(e.target.value);
+  });
+}
+
+/* ================= INIT APP ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  initHamburgerMenu();
+  initActiveNavLink();
+  initLanguageSwitcher();
+});
