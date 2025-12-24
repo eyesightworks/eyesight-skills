@@ -1,59 +1,82 @@
 /* ======================================================
-   GLOBAL SITE JS — PREMIUM & ACCESSIBLE
+   GLOBAL SITE JAVASCRIPT 
 ====================================================== */
 
 (function () {
-  "use strict";
+  'use strict';
 
-  /* ================= JS ENABLED FLAG ================= */
-  document.documentElement.classList.add("js-enabled");
+  /* ================= JS ENABLED ================= */
+  document.documentElement.classList.add('js-enabled');
 
   /* ================= NAV / HAMBURGER ================= */
-  const hamburger = document.getElementById("hamburger");
-  const navMenu = document.querySelector(".nav-menu");
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('primary-menu');
+  const navLinks = navMenu?.querySelectorAll('a');
 
   if (hamburger && navMenu) {
-    // Toggle menu
-    hamburger.addEventListener("click", () => {
-      const isOpen = navMenu.classList.toggle("show");
-      hamburger.setAttribute("aria-expanded", isOpen);
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('show');
+      hamburger.setAttribute('aria-expanded', isOpen.toString());
     });
 
-    // Close menu when clicking a link (mobile UX)
-    navMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
-        hamburger.setAttribute("aria-expanded", "false");
+    /* Close menu when a link is clicked (mobile UX) */
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 768) {
+          navMenu.classList.remove('show');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
       });
-    });
-
-    // Close menu when pressing ESC
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        navMenu.classList.remove("show");
-        hamburger.setAttribute("aria-expanded", "false");
-      }
     });
   }
 
-  /* ================= ACTIVE LINK HIGHLIGHT ================= */
-  const currentPath = window.location.pathname.replace("/", "");
+  /* ================= ACTIVE NAV LINK ================= */
+  const currentPage = location.pathname.split('/').pop();
 
-  document.querySelectorAll(".nav-menu a").forEach(link => {
-    const linkPath = link.getAttribute("href")?.replace("/", "");
-
-    if (
-      linkPath === currentPath ||
-      (linkPath === "index.html" && currentPath === "")
-    ) {
-      link.classList.add("active");
+  navLinks?.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('active');
     }
   });
 
-  /* ================= OPTIONAL: AUTO-SET YEAR ================= */
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
+  /* ================= LANGUAGE SWITCH ================= */
+  const langSelect = document.getElementById('langSelect');
+  const translatableEls = document.querySelectorAll('[data-en]');
+
+  function setLanguage(lang) {
+    translatableEls.forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) el.textContent = text;
+    });
+
+    /* Handle RTL for Arabic */
+    if (lang === 'ar') {
+      document.documentElement.setAttribute('dir', 'rtl');
+      document.documentElement.setAttribute('lang', 'ar');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+      document.documentElement.setAttribute('lang', lang);
+    }
+
+    localStorage.setItem('siteLanguage', lang);
   }
+
+  if (langSelect) {
+    const savedLang = localStorage.getItem('siteLanguage') || 'en';
+    langSelect.value = savedLang;
+    setLanguage(savedLang);
+
+    langSelect.addEventListener('change', e => {
+      setLanguage(e.target.value);
+    });
+  }
+
+  /* ================= CLOSE MENU ON RESIZE ================= */
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && navMenu?.classList.contains('show')) {
+      navMenu.classList.remove('show');
+      hamburger?.setAttribute('aria-expanded', 'false');
+    }
+  });
 
 })();
