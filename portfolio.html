@@ -8,6 +8,8 @@
 
   <!-- SEO -->
   <meta name="description" content="Portfolio of Alawode Adewale Afeez, frontend developer showcasing web development, UI projects, Python experiments, and applied AI learning." />
+  <meta name="keywords" content="Frontend Developer, Portfolio, Web Development, Python Projects, AI Learning, UI Design, Responsive Design" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +26,7 @@
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
-      <div class="logo">Eyesightworks</div>
+      <div class="logo" tabindex="0">Eyesightworks</div>
 
       <button
         id="hamburger"
@@ -39,11 +41,11 @@
       <ul class="nav-menu" id="primary-menu">
         <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
         <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+        <li><a href="portfolio.html" class="active" aria-current="page" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
         <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
         <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
-          <select id="langSelect" class="lang-select" aria-label="Select Language">
+          <select id="langSelect" class="lang-select" aria-label="Select Language" aria-live="polite">
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="es">ES</option>
@@ -57,10 +59,10 @@
 
 <!-- ================= PORTFOLIO ================= -->
 <main>
-  <section class="section">
+  <section class="section" role="region" aria-labelledby="portfolio-heading">
     <div class="container">
 
-      <h1
+      <h1 id="portfolio-heading" tabindex="0"
         data-en="Portfolio"
         data-fr="Portfolio"
         data-es="Portafolio"
@@ -71,25 +73,25 @@
 
       <p class="section-intro"
          data-en="A selection of projects demonstrating my experience in frontend development, web design, Python experimentation, and applied AI learning."
-         data-fr="Une sélection de projets illustrant mon expérience en développement frontend, design web et Python."
-         data-es="Una selección de proyectos que muestran mi experiencia en desarrollo frontend y Python."
-         data-ar="مجموعة من المشاريع التي توضح خبرتي في تطوير الواجهات الأمامية وتجارب بايثون والذكاء الاصطناعي."
+         data-fr="Une sélection de projets illustrant mon expérience en développement frontend, design web et projets Python."
+         data-es="Una selección de proyectos que muestran mi experiencia en desarrollo frontend, diseño web y proyectos en Python."
+         data-ar="مجموعة من المشاريع التي توضح خبرتي في تطوير الواجهات الأمامية وتصميم الويب وتجارب بايثون."
       >
         A selection of projects demonstrating my experience in frontend development, web design, Python experimentation, and applied AI learning.
       </p>
 
       <!-- Filter Buttons -->
-      <div class="portfolio-filters" style="margin-bottom: 1.5rem; text-align:center;">
-        <button data-filter="all" class="active">All</button>
-        <button data-filter="frontend">Frontend</button>
-        <button data-filter="python">Python</button>
-        <button data-filter="design">Design</button>
+      <div class="portfolio-filters" role="group" aria-label="Project category filters" style="margin-bottom: 1.5rem; text-align:center;">
+        <button data-filter="all" class="active" aria-pressed="true">All</button>
+        <button data-filter="frontend" aria-pressed="false">Frontend</button>
+        <button data-filter="python" aria-pressed="false">Python</button>
+        <button data-filter="design" aria-pressed="false">Design</button>
       </div>
 
       <div class="portfolio-grid">
 
         <!-- Project 1 -->
-        <div class="card frontend">
+        <article class="card frontend" tabindex="0" aria-label="E-Commerce Website project">
           <h3
             data-en="E-Commerce Website (Frontend Development)"
             data-fr="Site e-commerce (Frontend)"
@@ -107,11 +109,11 @@
             Responsive e-commerce interface featuring product listings, cart UI, and checkout flow.
           </p>
           <p><strong>Tech:</strong> HTML, CSS, JavaScript, React</p>
-          <a href="https://github.com/eyesightworks" target="_blank" rel="noopener noreferrer">View Code</a>
-        </div>
+          <a href="https://github.com/eyesightworks/e-commerce" target="_blank" rel="noopener noreferrer" aria-label="View E-Commerce Website code on GitHub">View Code</a>
+        </article>
 
         <!-- Project 2 -->
-        <div class="card python">
+        <article class="card python" tabindex="0" aria-label="AI Voice and Image Processing Demo project">
           <h3
             data-en="AI Voice & Image Processing Demo"
             data-fr="Démo IA voix & image"
@@ -129,10 +131,11 @@
             Python learning project exploring speech-to-text and image processing.
           </p>
           <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
-        </div>
+          <a href="https://github.com/eyesightworks/ai-voice-image-demo" target="_blank" rel="noopener noreferrer" aria-label="View AI Voice & Image Processing Demo code on GitHub">View Code</a>
+        </article>
 
         <!-- Project 3 -->
-        <div class="card frontend">
+        <article class="card frontend" tabindex="0" aria-label="Personal Portfolio Website project">
           <h3
             data-en="Personal Portfolio Website"
             data-fr="Site portfolio personnel"
@@ -150,11 +153,11 @@
             Fully responsive personal website designed to present skills and projects.
           </p>
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
+          <a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank" rel="noopener noreferrer" aria-label="View Personal Portfolio Website on GitHub">View Code</a>
+        </article>
 
         <!-- Project 4 -->
-        <div class="card design">
+        <article class="card design" tabindex="0" aria-label="Brand Identity and Visual Design project">
           <h3
             data-en="Brand Identity & Visual Design"
             data-fr="Identité visuelle et branding"
@@ -172,10 +175,10 @@
             Brand identity work including logo design and visual systems.
           </p>
           <p><strong>Tools:</strong> CorelDRAW, Photoshop</p>
-        </div>
+        </article>
 
         <!-- Project 5 -->
-        <div class="card python">
+        <article class="card python" tabindex="0" aria-label="Python and AI Learning Projects">
           <h3
             data-en="Python & AI Learning Projects"
             data-fr="Projets Python & IA"
@@ -193,10 +196,11 @@
             Small experimental projects focused on automation and AI basics.
           </p>
           <p><strong>Tech:</strong> Python, Pandas, AI libraries</p>
-        </div>
+          <a href="https://github.com/eyesightworks/python-ai-projects" target="_blank" rel="noopener noreferrer" aria-label="View Python & AI Learning Projects code on GitHub">View Code</a>
+        </article>
 
         <!-- Project 6 -->
-        <div class="card frontend">
+        <article class="card frontend" tabindex="0" aria-label="Business Landing Pages project">
           <h3
             data-en="Business Landing Pages"
             data-fr="Pages d’atterrissage business"
@@ -214,7 +218,8 @@
             High-conversion landing pages optimized for speed and mobile usability.
           </p>
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-        </div>
+          <a href="https://github.com/eyesightworks/business-landing-pages" target="_blank" rel="noopener noreferrer" aria-label="View Business Landing Pages code on GitHub">View Code</a>
+        </article>
 
       </div>
     </div>
@@ -226,6 +231,6 @@
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
