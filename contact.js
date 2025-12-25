@@ -1,10 +1,51 @@
-/* ================= CONTACT PAGE SCRIPT ================= */
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  const successOverlay = document.querySelector('.success-overlay');
+/* ======================================================
+   CONTACT PAGE SCRIPT — PREMIUM
+   Features:
+   - Contact form validation
+   - Success overlay animation
+   - 4-language support
+   - Particle background animation
+   - Redirect after submission
+====================================================== */
 
-  /* ================= FORM SUBMIT ================= */
-  form.addEventListener('submit', e => {
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const successOverlay = document.querySelector(".success-overlay");
+  const langSelect = document.getElementById("langSelect");
+  const contactPage = document.querySelector(".contact-page");
+
+  /* ================= LANGUAGE SWITCHER ================= */
+  const SUPPORTED_LANGS = ["en", "fr", "es", "ar"];
+
+  function applyLanguage(lang) {
+    if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
+
+    document.querySelectorAll("[data-en]").forEach(el => {
+      const text = el.dataset[lang];
+      if (text) el.textContent = text;
+    });
+
+    if (lang === "ar") {
+      contactPage.setAttribute("dir", "rtl");
+      contactPage.setAttribute("lang", "ar");
+    } else {
+      contactPage.setAttribute("dir", "ltr");
+      contactPage.setAttribute("lang", lang);
+    }
+
+    localStorage.setItem("siteLang", lang);
+    langSelect.value = lang;
+  }
+
+  langSelect.addEventListener("change", e => {
+    applyLanguage(e.target.value);
+  });
+
+  // Apply saved language on load
+  applyLanguage(localStorage.getItem("siteLang") || "en");
+
+  /* ================= FORM SUBMISSION ================= */
+  form.addEventListener("submit", e => {
     e.preventDefault();
 
     const name = form.name.value.trim();
@@ -12,34 +53,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const message = form.message.value.trim();
 
     if (!name || !email || !message) {
-      alert('Please fill all fields');
+      alert("Please fill all fields");
       return;
     }
 
-    // Store data in localStorage (optional)
-    localStorage.setItem('contact_name', name);
-    localStorage.setItem('contact_email', email);
-    localStorage.setItem('contact_message', message);
+    // Save data to localStorage (optional)
+    localStorage.setItem("contact_name", name);
+    localStorage.setItem("contact_message", message);
 
     // Show success overlay
-    successOverlay.classList.add('show');
+    successOverlay.classList.add("show");
 
-    // Redirect after animation
+    // Redirect after 3 seconds
     setTimeout(() => {
-      // Redirect to thank-you page
-      window.location.href = 'thank-you.html';
-    }, 1800);
+      window.location.href = "thank-you.html";
+    }, 3000);
   });
 
   /* ================= PARTICLE BACKGROUND ================= */
-  const canvas = document.getElementById('particles');
+  const canvas = document.getElementById("particles");
   if (!canvas) return;
 
-  const ctx = canvas.getContext('2d');
+  const ctx = canvas.getContext("2d");
   let w, h;
-  let mouse = { x: null, y: null };
+  const mouse = { x: null, y: null };
 
-  const particles = Array.from({ length: 40 }, () => ({
+  const particles = Array.from({ length: 50 }, () => ({
     x: Math.random(),
     y: Math.random(),
     vx: (Math.random() - 0.5) * 0.002,
@@ -54,21 +93,25 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateParticles() {
     ctx.clearRect(0, 0, w, h);
     particles.forEach(p => {
-      // Move particle
-      p.x += p.vx;
-      p.y += p.vy;
+      const px = p.x * w;
+      const py = p.y * h;
 
-      // Attract to mouse
+      // Mouse interaction
       if (mouse.x !== null) {
         p.x += (mouse.x / w - p.x) * 0.002;
         p.y += (mouse.y / h - p.y) * 0.002;
       }
 
-      const px = p.x * w;
-      const py = p.y * h;
+      p.x += p.vx;
+      p.y += p.vy;
 
-      // Draw particle
-      ctx.fillStyle = 'rgba(0,201,167,0.4)';
+      // Wrap around edges
+      if (p.x > 1) p.x = 0;
+      if (p.x < 0) p.x = 1;
+      if (p.y > 1) p.y = 0;
+      if (p.y < 0) p.y = 1;
+
+      ctx.fillStyle = "rgba(0,201,167,0.4)";
       ctx.beginPath();
       ctx.arc(px, py, 2, 0, Math.PI * 2);
       ctx.fill();
@@ -77,12 +120,12 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateParticles);
   }
 
-  window.addEventListener('mousemove', e => {
+  window.addEventListener("mousemove", e => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
   });
 
-  window.addEventListener('resize', resizeCanvas);
+  window.addEventListener("resize", resizeCanvas);
 
   resizeCanvas();
   animateParticles();
