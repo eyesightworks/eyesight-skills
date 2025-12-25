@@ -7,7 +7,9 @@
   <title>About | Alawode Adewale Afeez</title>
 
   <!-- SEO -->
-  <meta name="description" content="Learn more about Alawode Adewale Afeez, a frontend developer specializing in responsive web development, modern UI, and performance-focused websites." />
+  <meta name="description" content="Learn more about Alawode Adewale Afeez, a frontend developer learning full-stack, building accessible, responsive, and performance-focused websites." />
+  <meta name="keywords" content="Frontend Developer, Learning Full-Stack, Web Developer, HTML, CSS, JavaScript, React, WordPress, Python, AI, Remote Developer" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,10 +26,10 @@
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
-      <div class="logo">Eyesightworks</div>
+      <div class="logo" tabindex="0">Eyesightworks</div>
 
       <button
-        id="hamburger"
+        data-hamburger
         aria-label="Toggle navigation menu"
         aria-controls="primary-menu"
         aria-expanded="false"
@@ -36,14 +38,14 @@
         ☰
       </button>
 
-      <ul class="nav-menu" id="primary-menu">
+      <ul class="nav-menu" id="primary-menu" data-nav-menu>
         <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="about.html" class="active" aria-current="page" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
         <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
         <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
         <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
-          <select id="langSelect" class="lang-select" aria-label="Select Language">
+          <select data-lang-select class="lang-select" aria-label="Select Language" aria-live="polite">
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="es">ES</option>
@@ -55,12 +57,13 @@
   </div>
 </header>
 
-<!-- ================= ABOUT ================= -->
+<!-- ================= MAIN ================= -->
 <main>
-  <section class="section">
-    <div class="container">
 
-      <h1
+  <!-- ================= ABOUT ================= -->
+  <section class="section" role="region" aria-labelledby="about-me-heading">
+    <div class="container">
+      <h1 id="about-me-heading" tabindex="0"
         data-en="About Me"
         data-fr="À propos de moi"
         data-es="Sobre mí"
@@ -69,40 +72,34 @@
       </h1>
 
       <div class="card">
-
-        <p
-          data-en="I am Alawode Adewale Afeez, a frontend developer focused on building clean, responsive, and user-friendly web experiences. I enjoy transforming ideas and designs into reliable, maintainable, and scalable websites."
-          data-fr="Je suis Alawode Adewale Afeez, développeur frontend spécialisé dans la création de sites web propres, responsives et faciles à utiliser."
-          data-es="Soy Alawode Adewale Afeez, desarrollador frontend enfocado en crear experiencias web limpias, responsivas y fáciles de usar."
-          data-ar="أنا علود أديولي أفيس، مطور واجهات أمامية أركز على بناء مواقع ويب نظيفة، متجاوبة، وسهلة الاستخدام.">
-          I am Alawode Adewale Afeez, a frontend developer focused on building clean, responsive, and user-friendly web experiences.
+        <p data-en="I am Alawode Adewale Afeez, a frontend developer learning full-stack, focused on building clean, responsive, and accessible web experiences."
+           data-fr="Je suis Alawode Adewale Afeez, développeur frontend apprenant full-stack, spécialisé dans la création de sites web propres, responsives et accessibles."
+           data-es="Soy Alawode Adewale Afeez, desarrollador frontend aprendiendo full-stack, centrado en crear experiencias web limpias, responsivas y accesibles."
+           data-ar="أنا علود أديولي أفيس، مطور واجهات أمامية يتعلم التطوير الكامل، أركز على بناء مواقع ويب نظيفة ومتجاوبة وسهلة الوصول.">
+          I am Alawode Adewale Afeez, a frontend developer learning full-stack, focused on building clean, responsive, and accessible web experiences.
         </p>
 
-        <p
-          data-en="I hold a B.Sc in Computer Mathematics and an M.Sc in Mathematics. This academic background strengthens my analytical thinking, problem-solving ability, and structured approach to software development."
-          data-fr="Je suis titulaire d’une licence en mathématiques informatiques et d’un master en mathématiques."
-          data-es="Poseo una licenciatura en Matemáticas Computacionales y una maestría en Matemáticas."
-          data-ar="أحمل شهادة البكالوريوس في الرياضيات الحاسوبية والماجستير في الرياضيات، مما يعزز تفكيري التحليلي.">
-          I hold a B.Sc in Computer Mathematics and an M.Sc in Mathematics.
+        <p data-en="I hold a B.Sc in Computer Mathematics and an M.Sc in Mathematics, strengthening my analytical thinking and structured approach to software development."
+           data-fr="Je suis titulaire d’une licence en mathématiques informatiques et d’un master en mathématiques, renforçant ma pensée analytique et mon approche structurée du développement logiciel."
+           data-es="Poseo una licenciatura en Matemáticas Computacionales y una maestría en Matemáticas, lo que fortalece mi pensamiento analítico y enfoque estructurado en el desarrollo de software."
+           data-ar="أحمل شهادة البكالوريوس في الرياضيات الحاسوبية والماجستير في الرياضيات، مما يعزز تفكيري التحليلي ونهجي المنظم في تطوير البرمجيات.">
+          I hold a B.Sc in Computer Mathematics and an M.Sc in Mathematics, strengthening my analytical thinking and structured approach to software development.
         </p>
 
-        <p
-          data-en="My primary expertise is frontend development using modern web technologies. I am also expanding into backend development and applied artificial intelligence through hands-on Python projects."
-          data-fr="Mon expertise principale est le développement frontend, avec une extension vers le backend et l’intelligence artificielle."
-          data-es="Mi especialidad principal es el desarrollo frontend, con exploración del backend y la inteligencia artificial."
-          data-ar="تخصصي الأساسي هو تطوير الواجهات الأمامية، وأعمل حاليًا على التوسع في تطوير الخلفية والذكاء الاصطناعي.">
-          My primary expertise is frontend development using modern web technologies.
+        <p data-en="My expertise covers frontend development, while expanding into backend technologies and applied AI using Python and modern tools."
+           data-fr="Mon expertise couvre le développement frontend, avec une expansion vers les technologies backend et l’IA appliquée avec Python et des outils modernes."
+           data-es="Mi experiencia abarca el desarrollo frontend, mientras me expando hacia tecnologías backend y AI aplicada usando Python y herramientas modernas."
+           data-ar="تخصصي يغطي تطوير الواجهات الأمامية، بينما أوسع خبرتي في تقنيات الخلفية والذكاء الاصطناعي باستخدام بايثون وأدوات حديثة.">
+          My expertise covers frontend development, while expanding into backend technologies and applied AI using Python and modern tools.
         </p>
-
       </div>
     </div>
   </section>
 
-  <!-- ================= SUMMARY ================= -->
-  <section class="section">
+  <!-- ================= PROFESSIONAL SUMMARY ================= -->
+  <section class="section" role="region" aria-labelledby="professional-summary-heading">
     <div class="container">
-
-      <h2
+      <h2 id="professional-summary-heading" tabindex="0"
         data-en="Professional Summary"
         data-fr="Résumé professionnel"
         data-es="Resumen profesional"
@@ -111,21 +108,19 @@
       </h2>
 
       <ul class="list">
-        <li data-en="Frontend Developer / Web Developer" data-fr="Développeur Frontend" data-es="Desarrollador Frontend" data-ar="مطور واجهات أمامية">Frontend Developer / Web Developer</li>
+        <li data-en="Frontend Developer (Learning Full-Stack)" data-fr="Développeur Frontend (Apprenant Full-Stack)" data-es="Desarrollador Frontend (Aprendiendo Full-Stack)" data-ar="مطور واجهات أمامية (يتعلم التطوير الكامل)">Frontend Developer (Learning Full-Stack)</li>
         <li data-en="B.Sc Computer Mathematics • M.Sc Mathematics" data-fr="Licence et Master en Mathématiques" data-es="Licenciatura y Maestría en Matemáticas" data-ar="بكالوريوس وماجستير في الرياضيات">B.Sc Computer Mathematics • M.Sc Mathematics</li>
         <li data-en="Core: HTML, CSS, JavaScript, React, WordPress" data-fr="Compétences clés: HTML, CSS, JavaScript" data-es="Habilidades clave: HTML, CSS, JavaScript" data-ar="المهارات الأساسية: HTML، CSS، JavaScript">Core: HTML, CSS, JavaScript, React, WordPress</li>
-        <li data-en="Additional: Python, automation, AI tools" data-fr="Supplémentaire: Python, automatisation" data-es="Adicional: Python, automatización" data-ar="إضافي: بايثون، الأتمتة، أدوات الذكاء الاصطناعي">Additional: Python, automation, AI tools</li>
+        <li data-en="Additional: Python, AI, automation" data-fr="Supplémentaire: Python, IA, automatisation" data-es="Adicional: Python, IA, automatización" data-ar="إضافي: بايثون، الذكاء الاصطناعي، الأتمتة">Additional: Python, AI, automation</li>
         <li data-en="Location: Nigeria (Remote-ready)" data-fr="Localisation: Nigéria (Télétravail)" data-es="Ubicación: Nigeria (Remoto)" data-ar="الموقع: نيجيريا (العمل عن بُعد)">Location: Nigeria (Remote-ready)</li>
       </ul>
-
     </div>
   </section>
 
-  <!-- ================= WORK ================= -->
-  <section class="section">
+  <!-- ================= WHAT I WORK ON ================= -->
+  <section class="section" role="region" aria-labelledby="what-i-work-on-heading">
     <div class="container">
-
-      <h2
+      <h2 id="what-i-work-on-heading" tabindex="0"
         data-en="What I Work On"
         data-fr="Ce sur quoi je travaille"
         data-es="En qué trabajo"
@@ -139,9 +134,9 @@
         <li data-en="WordPress websites and landing pages" data-fr="Sites WordPress" data-es="Sitios WordPress" data-ar="مواقع ووردبريس">WordPress websites and landing pages</li>
         <li data-en="Performance and usability improvements" data-fr="Optimisation des performances" data-es="Optimización de rendimiento" data-ar="تحسين الأداء وتجربة المستخدم">Performance and usability improvements</li>
       </ul>
-
     </div>
   </section>
+
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -149,6 +144,6 @@
   © 2025 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
