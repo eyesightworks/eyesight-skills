@@ -7,109 +7,96 @@
   <title>Thank You | Eyesightworks</title>
   <meta name="description" content="Thank you for contacting Alawode Adewale Afeez. Your message has been received and you will be redirected to WhatsApp shortly." />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-<header>
-  <nav class="container" role="navigation" aria-label="Primary Navigation">
-    <div class="logo">Eyesightworks</div>
+  <!-- ================= HEADER / NAV ================= -->
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Primary Navigation">
+        <div class="logo" tabindex="0" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
 
-    <button
-      id="hamburger"
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
+        <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
+          ☰
+        </button>
+
+        <ul data-nav-menu id="primary-menu">
+          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+          <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+          <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
+          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+          <li>
+            <select data-lang-select aria-label="Select Language" aria-live="polite">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="es">ES</option>
+              <option value="ar">AR</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main id="main-content" class="container text-center" role="main">
+    <div class="success-icon" aria-hidden="true"></div>
+
+    <h1 tabindex="0"
+        data-en="Thank You!"
+        data-fr="Merci!"
+        data-es="¡Gracias!"
+        data-ar="شكراً!"
     >
-      ☰
-    </button>
+      Thank You!
+    </h1>
 
-    <ul id="nav-menu" class="nav-menu">
-      <li>
-        <a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">
-          Portfolio
-        </a>
-      </li>
-      <li>
-        <a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">
-          Testimonials
-        </a>
-      </li>
-      <li>
-        <a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">
-          Contact
-        </a>
-      </li>
-      <li>
-        <select
-          id="langSelect"
-          class="lang-select"
-          aria-label="Select language"
-        >
-          <option value="en" selected>EN</option>
-          <option value="fr">FR</option>
-          <option value="es">ES</option>
-          <option value="ar">AR</option>
-        </select>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main class="container text-center" role="main">
-  <div class="success-icon" aria-hidden="true"></div>
-
-  <h1
-    data-en="Thank You!"
-    data-fr="Merci!"
-    data-es="¡Gracias!"
-    data-ar="شكراً!"
-  >
-    Thank You!
-  </h1>
-
-  <p
-    data-en="Your message has been sent successfully. You will be redirected to WhatsApp shortly."
-    data-fr="Votre message a été envoyé avec succès. Vous serez redirigé vers WhatsApp sous peu."
-    data-es="Tu mensaje ha sido enviado con éxito. Serás redirigido a WhatsApp en breve."
-    data-ar="تم إرسال رسالتك بنجاح. سيتم تحويلك إلى واتساب قريبًا."
-  >
-    Your message has been sent successfully. You will be redirected to WhatsApp shortly.
-  </p>
-
-  <a
-    href="index.html"
-    class="btn"
-    data-en="Back to Home"
-    data-fr="Retour à l’accueil"
-    data-es="Volver al inicio"
-    data-ar="العودة للرئيسية"
-  >
-    Back to Home
-  </a>
-
-  <div id="whatsappContainer" style="margin-top:1rem;">
-    <a
-      href="#"
-      id="whatsappLink"
-      class="btn"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
+    <p tabindex="0"
+       data-en="Your message has been sent successfully. You will be redirected to WhatsApp shortly."
+       data-fr="Votre message a été envoyé avec succès. Vous serez redirigé vers WhatsApp sous peu."
+       data-es="Tu mensaje ha sido enviado con éxito. Serás redirigido a WhatsApp en breve."
+       data-ar="تم إرسال رسالتك بنجاح. سيتم تحويلك إلى واتساب قريبًا."
     >
-      Chat on WhatsApp
+      Your message has been sent successfully. You will be redirected to WhatsApp shortly.
+    </p>
+
+    <a href="index.html" class="btn"
+       data-en="Back to Home"
+       data-fr="Retour à l’accueil"
+       data-es="Volver al inicio"
+       data-ar="العودة للرئيسية"
+    >
+      Back to Home
     </a>
-  </div>
-</main>
 
-<footer class="text-center">
-  © 2025 Eyesightworks — Alawode Adewale Afeez
-</footer>
+    <div id="whatsappContainer" style="margin-top:1rem;">
+      <a href="https://wa.me/2348083869454" id="whatsappLink" class="btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </main>
 
-<script src="script.js"></script>
+  <!-- ================= FOOTER ================= -->
+  <footer class="text-center">
+    © 2025 Eyesightworks — Alawode Adewale Afeez
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="script.js"></script>
+  <script>
+    // Redirect to WhatsApp after 3 seconds
+    setTimeout(() => {
+      window.location.href = "https://wa.me/2348083869454";
+    }, 3000);
+  </script>
 </body>
 </html>
