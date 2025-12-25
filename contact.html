@@ -1,110 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Alawode Adewale Afeez</title>
 
-  <meta name="description" content="Contact Alawode Adewale Afeez for professional web development inquiries." />
+  <title>Contact | Eyesightworks</title>
+  <meta name="description" content="Contact Alawode Adewale Afeez, frontend developer. Send a message and get a quick response." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <!-- Global CSS -->
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Contact-only CSS -->
   <link rel="stylesheet" href="contact.css" />
 </head>
-
 <body>
+  <!-- Skip link -->
+  <a href="#main-content" class="skip-link">Skip to content</a>
 
-<header>
-  <div class="container">
-    <nav>
-      <div class="logo">Eyesightworks</div>
-      <button id="hamburger" aria-label="Toggle navigation">☰</button>
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li>
-          <select id="langSelect" class="lang-select">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="es">ES</option>
-            <option value="ar">AR</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- ================= HEADER / NAV ================= -->
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Primary Navigation">
+        <div class="logo" tabindex="0" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
 
-<main class="section contact-page">
-  <div class="container">
+        <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
+          ☰
+        </button>
 
-    <!-- Background Effects -->
+        <ul data-nav-menu id="primary-menu">
+          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+          <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
+          <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
+          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل" class="active">Contact</a></li>
+          <li>
+            <select data-lang-select aria-label="Select Language" aria-live="polite">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="es">ES</option>
+              <option value="ar">AR</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= MAIN / CONTACT FORM ================= -->
+  <main id="main-content" class="contact-page">
     <div class="contact-bg"></div>
     <canvas id="particles"></canvas>
 
-    <!-- Contact Card -->
-    <section class="contact-card">
+    <div class="contact-card">
+      <h1 tabindex="0"
+          data-en="Get in Touch"
+          data-fr="Contactez-moi"
+          data-es="Ponte en contacto"
+          data-ar="تواصل معي">
+        Get in Touch
+      </h1>
+      <p tabindex="0"
+         data-en="Fill out the form below and I will get back to you as soon as possible."
+         data-fr="Remplissez le formulaire ci-dessous et je vous répondrai dès que possible."
+         data-es="Complete el siguiente formulario y me pondré en contacto pronto."
+         data-ar="املأ النموذج أدناه وسأتواصل معك في أقرب وقت.">
+        Fill out the form below and I will get back to you as soon as possible.
+      </p>
 
-      <h1 data-en="Contact Me">Contact Me</h1>
-
-      <form id="contactForm" novalidate>
-
+      <form id="contactForm">
         <div class="field">
-          <input type="text" name="name" required />
-          <label>Full Name</label>
+          <input type="text" id="name" name="name" placeholder=" " required />
+          <label for="name" data-en="Your Name" data-fr="Votre nom" data-es="Tu nombre" data-ar="اسمك">Your Name</label>
         </div>
 
         <div class="field">
-          <input type="email" name="email" required />
-          <label>Email Address</label>
+          <input type="email" id="email" name="email" placeholder=" " required />
+          <label for="email" data-en="Your Email" data-fr="Votre email" data-es="Tu correo" data-ar="بريدك الإلكتروني">Your Email</label>
         </div>
 
         <div class="field">
-          <textarea name="message" rows="4" required></textarea>
-          <label>Message</label>
+          <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+          <label for="message" data-en="Your Message" data-fr="Votre message" data-es="Tu mensaje" data-ar="رسالتك">Your Message</label>
         </div>
 
-        <button type="submit" class="btn submit-btn">
-          <span class="btn-text">Send Message</span>
+        <button type="submit" class="submit-btn"
+                data-en="Send Message"
+                data-fr="Envoyer"
+                data-es="Enviar"
+                data-ar="إرسال">
+          Send Message
         </button>
-
-        <!-- Success Overlay -->
-        <div class="success-overlay" aria-hidden="true">
-          <div class="checkmark">
-            <svg viewBox="0 0 52 52">
-              <circle cx="26" cy="26" r="25" fill="none"/>
-              <path fill="none" d="M14 27l7 7 17-17"/>
-            </svg>
-          </div>
-          <p>Message Sent</p>
-        </div>
-
       </form>
+    </div>
 
-    </section>
+    <!-- ================= SUCCESS OVERLAY ================= -->
+    <div class="success-overlay">
+      <div class="checkmark">
+        <svg viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="25" fill="none"/>
+          <path d="M14 27l7 7 16-16" fill="none"/>
+        </svg>
+      </div>
+      <p data-en="Message Sent! Redirecting to WhatsApp..."
+         data-fr="Message envoyé ! Redirection vers WhatsApp..."
+         data-es="¡Mensaje enviado! Redirigiendo a WhatsApp..."
+         data-ar="تم إرسال الرسالة! جاري التحويل إلى واتساب...">
+        Message Sent! Redirecting to WhatsApp...
+      </p>
+    </div>
+  </main>
 
-  </div>
-</main>
+  <!-- ================= FOOTER ================= -->
+  <footer class="text-center">
+    © 2025 Eyesightworks — Alawode Adewale Afeez
+  </footer>
 
-<footer>
-  © 2025 Eyesightworks — Alawode Adewale Afeez
-</footer>
-
-<!-- Global JS -->
-<script src="script.js"></script>
-
-<!-- Contact-only JS -->
-<script src="contact.js"></script>
-
+  <!-- ================= SCRIPT ================= -->
+  <script src="contact.js"></script>
 </body>
 </html>
