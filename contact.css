@@ -1,11 +1,29 @@
-/* ================= CONTACT PAGE ================= */
+/* ======================================================
+   CONTACT PAGE CSS — PREMIUM, ACCESSIBLE
+   Features:
+   - Gradient shimmer background
+   - Particle animation
+   - Glassmorphic contact card
+   - Floating labels for inputs
+   - Shimmer button animation
+   - Success overlay animation
+   - Responsive & mobile-friendly
+====================================================== */
 
+/* ================= CONTACT PAGE STRUCTURE ================= */
 .contact-page {
   position: relative;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f5f7fa;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Gradient shimmer background */
+/* ================= GRADIENT SHIMMER BACKGROUND ================= */
 .contact-bg {
   position: absolute;
   inset: 0;
@@ -26,23 +44,24 @@
   100% { background-position: 0% 50%; }
 }
 
-/* Particles */
+/* ================= PARTICLES ================= */
 #particles {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* Card */
+/* ================= CONTACT CARD ================= */
 .contact-card {
   position: relative;
   z-index: 2;
   max-width: 520px;
+  width: 100%;
   margin: 0 auto;
+  padding: 2.5rem;
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(14px);
   border-radius: 16px;
-  padding: 2.5rem;
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
   animation: cardIn 0.8s ease forwards;
 }
@@ -52,7 +71,7 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Fields */
+/* ================= INPUT FIELDS ================= */
 .field {
   position: relative;
   margin-bottom: 1.8rem;
@@ -67,6 +86,7 @@
   font-family: inherit;
   font-size: 1rem;
   background: transparent;
+  transition: border-color 0.3s ease;
 }
 
 .field label {
@@ -96,11 +116,24 @@
   color: #00c9a7;
 }
 
-/* Button */
+/* ================= SUBMIT BUTTON ================= */
 .submit-btn {
   width: 100%;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  background-color: #00c9a7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #00b391;
 }
 
 .submit-btn::after {
@@ -119,7 +152,7 @@
   to { transform: translateX(100%); }
 }
 
-/* Success Overlay */
+/* ================= SUCCESS OVERLAY ================= */
 .success-overlay {
   position: absolute;
   inset: 0;
@@ -131,6 +164,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s ease;
+  border-radius: 16px;
 }
 
 .success-overlay.show {
@@ -156,4 +190,17 @@
   margin-top: 1rem;
   font-weight: 700;
   color: #0a2540;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .submit-btn {
+    padding: 0.9rem;
+  }
 }
