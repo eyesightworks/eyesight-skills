@@ -1,8 +1,10 @@
 /* ======================================================
-   GLOBAL SITE CSS — PREMIUM, MOBILE-FIRST (UPGRADED)
+   GLOBAL SITE CSS — PREMIUM, MOBILE-FIRST:
+index, about, portfolio, testimonials,
+          contact, thank-you
 ====================================================== */
 
-/* ================= DESIGN TOKENS / VARIABLES ================= */
+/* ================= DESIGN TOKENS ================= */
 :root {
   --color-primary: #0a2540;
   --color-accent: #00c9a7;
@@ -43,12 +45,18 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  opacity: 1;
 }
 
 /* JS-enhanced fade-in */
 .js-enabled body {
   animation: fadeInPage 0.8s ease forwards;
+}
+
+/* ================= GLOBAL IMAGE FIX ================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* ================= CONTAINER ================= */
@@ -65,7 +73,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
   transform: translateY(-100%);
   animation: slideDown 0.45s ease forwards 0.25s;
   will-change: transform;
@@ -86,6 +94,7 @@ nav {
   user-select: none;
   transition: transform 0.3s ease, color 0.3s ease;
 }
+
 .logo:hover {
   transform: scale(1.05);
   color: var(--color-accent);
@@ -100,6 +109,7 @@ nav {
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease;
 }
+
 [data-hamburger]:hover,
 [data-hamburger]:focus-visible {
   color: var(--color-accent);
@@ -107,7 +117,7 @@ nav {
   outline-offset: 3px;
 }
 
-/* ================= NAV MENU (MOBILE FIRST) ================= */
+/* ================= NAV MENU ================= */
 [data-nav-menu] {
   list-style: none;
   display: flex;
@@ -128,17 +138,22 @@ nav {
     transform 0.35s ease;
 }
 
+/* ✅ IMPROVED MOBILE SAFETY */
 [data-nav-menu].show {
-  max-height: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
   opacity: 1;
   transform: translateY(0);
 }
 
-[data-nav-menu] li a {
+[data-nav-menu] a {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
   padding: 0.55rem 0.8rem;
+  min-height: 44px; /* better tap target */
+  display: flex;
+  align-items: center;
   border-radius: var(--radius-md);
   transition:
     background-color 0.3s ease,
@@ -146,10 +161,10 @@ nav {
     transform 0.2s ease;
 }
 
-[data-nav-menu] li a:hover,
-[data-nav-menu] li a.active {
+[data-nav-menu] a:hover,
+[data-nav-menu] a.active {
   color: var(--color-accent);
-  background: rgba(0, 201, 167, 0.15);
+  background: rgba(0,201,167,0.15);
   transform: translateX(4px);
 }
 
@@ -160,12 +175,13 @@ nav {
   border: none;
   font-weight: 600;
 }
+
 [data-lang-select]:focus {
   outline: none;
   box-shadow: 0 0 8px rgba(0,201,167,0.5);
 }
 
-/* ================= MAIN CONTENT ================= */
+/* ================= SECTIONS ================= */
 .section {
   padding: 3rem 0;
 }
@@ -192,7 +208,9 @@ nav {
   object-fit: cover;
   box-shadow: var(--shadow-md);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-inline: auto;
 }
+
 .hero-img:hover {
   transform: scale(1.05);
   box-shadow: 0 14px 32px rgba(0,201,167,0.45);
@@ -207,9 +225,15 @@ nav {
   box-shadow: var(--shadow-md);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
+
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+}
+
+.card:focus-within {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 /* ================= BUTTONS ================= */
@@ -235,19 +259,15 @@ nav {
   box-shadow: 0 6px 14px rgba(0,63,92,0.45);
 }
 
-/* Additional focus styles for accessibility */
 .btn:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
-.btn:focus:not(:focus-visible) {
-  outline: none;
-}
 
-/* Primary button variant */
 .btn-primary {
   background: var(--color-accent);
 }
+
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background: #009e80;
@@ -256,21 +276,12 @@ nav {
 /* ================= PROJECT GRID ================= */
 .projects-grid {
   display: grid;
-  gap: 2rem;
   grid-template-columns: 1fr;
+  gap: 2rem;
   margin-top: 2rem;
-  padding-inline: 1rem; /* added padding for spacing */
-}
-
-@media(min-width: 1200px) {
-  .projects-grid {
-    grid-template-columns: repeat(3, 1fr);
-    padding-inline: 2rem; /* more padding on larger screens */
-  }
 }
 
 .project-card img {
-  width: 100%;
   border-radius: var(--radius-lg);
   margin-bottom: 1rem;
 }
@@ -328,15 +339,19 @@ footer {
   }
 
   .projects-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* ================= ACCESSIBILITY ================= */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  * {
     animation: none !important;
     transition: none !important;
   }
