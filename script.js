@@ -1,13 +1,25 @@
 /* ======================================================
-   GLOBAL SITE JS — PREMIUM, ACCESSIBLE
+   GLOBAL SITE JS — PREMIUM, ACCESSIBLE (FINAL CLEAN)
+   Features:
+   - Progressive enhancement
+   - Accessible mobile navigation
+   - Active nav highlighting
+   - Multi-language support (EN / FR / ES / AR)
+   - RTL handling for Arabic
+   - Language persistence via localStorage
 ====================================================== */
 
 /* Enable JS-enhanced styles */
 document.documentElement.classList.add("js-enabled");
 
+/* ================= GLOBAL CONFIG ================= */
+const SUPPORTED_LANGS = ["en", "fr", "es", "ar"];
+
 /* ================= GLOBAL STATE ================= */
 const state = {
-  lang: localStorage.getItem("siteLang") || "en"
+  lang: SUPPORTED_LANGS.includes(localStorage.getItem("siteLang"))
+    ? localStorage.getItem("siteLang")
+    : "en"
 };
 
 /* ================= UTILITIES ================= */
@@ -24,23 +36,33 @@ function initHamburgerMenu() {
 
   if (!hamburger || !navMenu) return;
 
+  function closeMenu() {
+    navMenu.classList.remove("show");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
   hamburger.addEventListener("click", () => {
     const isOpen = navMenu.classList.toggle("show");
-    hamburger.setAttribute("aria-expanded", isOpen);
+    hamburger.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // Close menu when a link is clicked (mobile UX)
+  /* Close menu when a link is clicked (mobile UX) */
   navMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("show");
-      hamburger.setAttribute("aria-expanded", "false");
-    });
+    link.addEventListener("click", closeMenu);
+  });
+
+  /* Close menu with ESC key (accessibility) */
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
   });
 }
 
 /* ================= ACTIVE NAV LINK ================= */
 function initActiveNavLink() {
-  const currentPage = location.pathname.split("/").pop() || "index.html";
+  const currentPage =
+    location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll("[data-nav-menu] a").forEach(link => {
     if (link.getAttribute("href") === currentPage) {
@@ -51,7 +73,13 @@ function initActiveNavLink() {
 
 /* ================= LANGUAGE HANDLING ================= */
 function applyLanguage(lang) {
-  const translatableElements = document.querySelectorAll("[data-en]");
+  /* Safety fallback */
+  if (!SUPPORTED_LANGS.includes(lang)) {
+    lang = "en";
+  }
+
+  const translatableElements =
+    document.querySelectorAll("[data-en]");
 
   translatableElements.forEach(el => {
     const translatedText = el.dataset[lang];
@@ -60,7 +88,7 @@ function applyLanguage(lang) {
     }
   });
 
-  // Handle RTL for Arabic
+  /* RTL handling for Arabic */
   if (lang === "ar") {
     setAttributes(document.documentElement, {
       dir: "rtl",
@@ -77,16 +105,19 @@ function applyLanguage(lang) {
   localStorage.setItem("siteLang", lang);
 }
 
+/* ================= LANGUAGE SWITCHER ================= */
 function initLanguageSwitcher() {
-  const langSelect = document.querySelector("[data-lang-select]");
+  const langSelect =
+    document.querySelector("[data-lang-select]");
 
   if (!langSelect) return;
 
+  /* Populate only supported languages */
   langSelect.value = state.lang;
   applyLanguage(state.lang);
 
-  langSelect.addEventListener("change", e => {
-    applyLanguage(e.target.value);
+  langSelect.addEventListener("change", event => {
+    applyLanguage(event.target.value);
   });
 }
 
