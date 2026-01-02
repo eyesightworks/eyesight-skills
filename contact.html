@@ -18,13 +18,16 @@
 </head>
 <body>
   <!-- Skip link -->
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <a href="#main-content" class="skip-link" data-en="Skip to content" data-fr="Aller au contenu" data-es="Saltar al contenido" data-ar="تخطي إلى المحتوى">Skip to content</a>
 
   <!-- ================= HEADER / NAV ================= -->
   <header>
     <div class="container">
       <nav role="navigation" aria-label="Primary Navigation">
-        <div class="logo" tabindex="0" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
+        <div class="logo" tabindex="0"
+             data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">
+          Eyesightworks
+        </div>
 
         <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
           ☰
@@ -33,8 +36,7 @@
         <ul data-nav-menu id="primary-menu">
           <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
           <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
-          <li><a href="testimonials.html" data-en="Testimonials" data-fr="Témoignages" data-es="Testimonios" data-ar="التوصيات">Testimonials</a></li>
-          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل" class="active">Contact</a></li>
+          <li><a href="contact.html" class="active" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
           <li>
             <select data-lang-select aria-label="Select Language" aria-live="polite">
               <option value="en">EN</option>
@@ -61,6 +63,7 @@
           data-ar="تواصل معي">
         Get in Touch
       </h1>
+
       <p tabindex="0"
          data-en="Fill out the form below and I will get back to you as soon as possible."
          data-fr="Remplissez le formulaire ci-dessous et je vous répondrai dès que possible."
@@ -86,17 +89,14 @@
         </div>
 
         <button type="submit" class="submit-btn"
-                data-en="Send Message"
-                data-fr="Envoyer"
-                data-es="Enviar"
-                data-ar="إرسال">
+                data-en="Send Message" data-fr="Envoyer" data-es="Enviar" data-ar="إرسال">
           Send Message
         </button>
       </form>
     </div>
 
     <!-- ================= SUCCESS OVERLAY ================= -->
-    <div class="success-overlay">
+    <div class="success-overlay" aria-live="polite">
       <div class="checkmark">
         <svg viewBox="0 0 52 52">
           <circle cx="26" cy="26" r="25" fill="none"/>
@@ -113,11 +113,12 @@
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="text-center">
+  <footer>
     © 2025 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
-  <!-- ================= SCRIPT ================= -->
+  <!-- ================= JS ================= -->
+  <script src="script.js"></script>
   <script src="contact.js"></script>
 </body>
 </html>
