@@ -7,190 +7,152 @@
   <title>Portfolio | Alawode Adewale Afeez</title>
 
   <!-- SEO -->
-  <meta
-    name="description"
-    content="Portfolio of Alawode Adewale Afeez, a Full-Stack Web Developer showcasing frontend, backend, PHP, WordPress REST API, database-driven, Python, and AI-powered web projects."
-  />
-  <meta
-    name="keywords"
-    content="Full-Stack Web Developer, Portfolio, Web Development, Frontend, Backend, PHP, WordPress REST API, MySQL, Python, AI, Responsive Design, Business Platforms"
-  />
+  <meta name="description" content="Portfolio of Alawode Adewale Afeez, Full-Stack Web Developer, showcasing frontend, backend, Python, AI, and web projects." />
+  <meta name="keywords" content="Full-Stack Web Developer, Portfolio, Web Development, Python, AI, Frontend, Backend, UI Design, Responsive Design" />
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Primary Navigation">
+        <div class="logo" tabindex="0"
+             data-en="Eyesightworks"
+             data-fr="Eyesightworks"
+             data-es="Eyesightworks"
+             data-ar="آيزسايت ووركس">Eyesightworks</div>
 
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="container">
-    <nav role="navigation" aria-label="Primary Navigation">
-      <div class="logo" tabindex="0"
-        data-en="Eyesightworks"
-        data-fr="Eyesightworks"
-        data-es="Eyesightworks"
-        data-ar="آيزسايت ووركس">
-        Eyesightworks
-      </div>
+        <button
+          data-hamburger
+          aria-label="Toggle navigation menu"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
-      <button
-        data-hamburger
-        aria-label="Toggle navigation menu"
-        aria-controls="primary-menu"
-        aria-expanded="false"
-        type="button"
-      >
-        ☰
-      </button>
+        <ul data-nav-menu id="primary-menu">
+          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+          <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+          <li><a href="portfolio.html" class="active" aria-current="page" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+          <li>
+            <select data-lang-select aria-label="Select Language" aria-live="polite">
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="es">ES</option>
+              <option value="ar">AR</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <ul data-nav-menu id="primary-menu">
-        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" class="active" aria-current="page"
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1 tabindex="0"
           data-en="Portfolio"
           data-fr="Portfolio"
           data-es="Portafolio"
-          data-ar="معرض الأعمال">Portfolio</a></li>
-        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
-
-        <li>
-          <select data-lang-select aria-label="Select Language" aria-live="polite">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="es">ES</option>
-            <option value="ar">AR</option>
-          </select>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero">
-  <div class="container">
-    <h1 tabindex="0"
-      data-en="Portfolio"
-      data-fr="Portfolio"
-      data-es="Portafolio"
-      data-ar="معرض الأعمال">
-      Portfolio
-    </h1>
-
-    <p
-      data-en="A selection of frontend, backend, and business-focused web applications I have built or am actively developing."
-      data-fr="Une sélection de projets frontend, backend et plateformes métiers que j’ai réalisés ou que je développe."
-      data-es="Una selección de proyectos frontend, backend y plataformas empresariales que he desarrollado."
-      data-ar="مجموعة من مشاريع الواجهات الأمامية والخلفية ومنصات الأعمال التي قمت بتطويرها.">
-      A selection of frontend, backend, and business-focused web applications I have built or am actively developing.
-    </p>
-  </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<main>
-  <section class="section">
-    <div class="container projects-grid">
-
-      <!-- Project 1 -->
-      <div class="project-card" tabindex="0" aria-label="Pharmacy Management System project">
-        <img src="images/pharmacy.jpg" alt="Pharmacy Management System Screenshot" loading="lazy" />
-        <h3
-          data-en="Pharmacy Management System"
-          data-fr="Système de gestion de pharmacie"
-          data-es="Sistema de gestión farmacéutica"
-          data-ar="نظام إدارة الصيدلية">
-          Pharmacy Management System
-        </h3>
-        <p
-          data-en="Backend-focused system with REST APIs, database-driven logic, and project data management."
-          data-fr="Système backend avec APIs REST et gestion des données."
-          data-es="Sistema backend con APIs REST y manejo de datos."
-          data-ar="نظام خلفي يعتمد على واجهات برمجة وإدارة قواعد البيانات.">
-          Backend-focused system with REST APIs, database-driven logic, and project data management.
-        </p>
-        <p><strong>Tech:</strong> PHP, WordPress REST API, MySQL</p>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-card" tabindex="0" aria-label="Business Web Platform project">
-        <img src="images/business-platform.jpg" alt="Business Web Platform Screenshot" loading="lazy" />
-        <h3
-          data-en="Business Web Platform"
-          data-fr="Plateforme web métier"
-          data-es="Plataforma web empresarial"
-          data-ar="منصة ويب للأعمال">
-          Business Web Platform
-        </h3>
-        <p
-          data-en="Responsive frontend with backend API integration for real-world business workflows."
-          data-fr="Frontend responsive avec intégration backend pour flux métiers."
-          data-es="Frontend adaptable con integración backend para flujos empresariales."
-          data-ar="واجهة أمامية متجاوبة مع تكامل خلفي لعمليات الأعمال.">
-          Responsive frontend with backend API integration for real-world business workflows.
-        </p>
-        <p><strong>Tech:</strong> HTML, CSS, JavaScript, REST APIs</p>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="project-card" tabindex="0" aria-label="AI and Python Demo project">
-        <img src="images/ai-demo.jpg" alt="AI and Python Demo Screenshot" loading="lazy" />
-        <h3
-          data-en="AI & Python Experiments"
-          data-fr="Expériences IA & Python"
-          data-es="Experimentos de IA y Python"
-          data-ar="تجارب الذكاء الاصطناعي وبايثون">
-          AI & Python Experiments
-        </h3>
-        <p
-          data-en="Exploratory projects using Python and AI APIs for automation, data handling, and intelligent workflows."
-          data-fr="Projets exploratoires utilisant Python et des APIs IA."
-          data-es="Proyectos exploratorios con Python y APIs de IA."
-          data-ar="مشاريع استكشافية باستخدام بايثون وواجهات الذكاء الاصطناعي.">
-          Exploratory projects using Python and AI APIs for automation, data handling, and intelligent workflows.
-        </p>
-        <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card" tabindex="0" aria-label="Personal Portfolio Website project">
-        <img src="images/portfolio.jpg" alt="Personal Portfolio Website Screenshot" loading="lazy" />
-        <h3
-          data-en="Personal Portfolio Website"
-          data-fr="Site portfolio personnel"
-          data-es="Sitio portfolio personal"
-          data-ar="موقع السيرة الذاتية الشخصي">
-          Personal Portfolio Website
-        </h3>
-        <p
-          data-en="Fully responsive personal website showcasing skills, projects, and professional background."
-          data-fr="Site personnel responsive présentant compétences et projets."
-          data-es="Sitio personal adaptable mostrando habilidades y proyectos."
-          data-ar="موقع شخصي متجاوب لعرض المهارات والمشاريع.">
-          Fully responsive personal website showcasing skills, projects, and professional background.
-        </p>
-        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-      </div>
-
+          data-ar="معرض الأعمال">Portfolio</h1>
+      <p data-en="Showcasing my frontend, backend, Python, AI, and web development projects."
+         data-fr="Présentation de mes projets frontend, backend, Python, IA et développement web."
+         data-es="Mostrando mis proyectos de frontend, backend, Python, IA y desarrollo web."
+         data-ar="عرض مشاريع تطوير الواجهات الأمامية والخلفية، بايثون، الذكاء الاصطناعي وتطوير الويب.">
+        Showcasing my frontend, backend, Python, AI, and web development projects.
+      </p>
     </div>
   </section>
-</main>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  © 2026 Eyesightworks — Alawode Adewale Afeez
-</footer>
+  <!-- ================= MAIN / PROJECTS ================= -->
+  <main>
+    <section class="section">
+      <div class="container projects-grid">
 
-<script src="script.js" defer></script>
+        <!-- Project 1: E-Commerce Website -->
+        <div class="project-card" tabindex="0" aria-label="E-Commerce Website project">
+          <img src="images/ecommerce.jpg" alt="E-Commerce Website Screenshot" loading="lazy" />
+          <h3 data-en="E-Commerce Website" data-fr="Site e-commerce" data-es="Sitio e-commerce" data-ar="موقع تجارة إلكترونية">
+            E-Commerce Website
+          </h3>
+          <p data-en="Responsive frontend with product listings, cart, and checkout."
+             data-fr="Frontend responsive avec catalogue, panier et paiement."
+             data-es="Frontend adaptable con catálogo, carrito y checkout."
+             data-ar="واجهة أمامية متجاوبة مع عرض المنتجات وسلة التسوق ومرحلة الدفع.">
+            Responsive frontend with product listings, cart, and checkout.
+          </p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript, React</p>
+          <a href="https://github.com/eyesightworks/e-commerce" class="btn btn-primary" target="_blank" rel="noopener" aria-label="View code for E-Commerce Website">View Code</a>
+          <a href="https://eyesightworks.github.io/e-commerce-demo/" class="btn" target="_blank" rel="noopener" aria-label="Live demo of E-Commerce Website">Live Demo</a>
+        </div>
+
+        <!-- Project 2: AI Voice & Image Processing Demo -->
+        <div class="project-card" tabindex="0" aria-label="AI Voice & Image Processing Demo project">
+          <img src="images/ai-demo.jpg" alt="AI Voice & Image Processing Demo Screenshot" loading="lazy" />
+          <h3 data-en="AI Voice & Image Processing Demo" data-fr="Démo IA voix & image" data-es="Demo IA de voz e imagen" data-ar="تجربة معالجة الصوت والصورة بالذكاء الاصطناعي">
+            AI Voice & Image Processing Demo
+          </h3>
+          <p data-en="Python project exploring speech-to-text and image processing."
+             data-fr="Projet Python explorant la reconnaissance vocale et traitement d’images."
+             data-es="Proyecto Python explorando reconocimiento de voz y procesamiento de imágenes."
+             data-ar="مشروع بايثون لاستكشاف التعرف على الصوت ومعالجة الصور.">
+            Python project exploring speech-to-text and image processing.
+          </p>
+          <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
+        </div>
+
+        <!-- Project 3: Personal Portfolio Website -->
+        <div class="project-card" tabindex="0" aria-label="Personal Portfolio Website project">
+          <img src="images/portfolio.jpg" alt="Personal Portfolio Website Screenshot" loading="lazy" />
+          <h3 data-en="Personal Portfolio Website" data-fr="Site portfolio personnel" data-es="Sitio portfolio personal" data-ar="موقع السيرة الذاتية الشخصي">
+            Personal Portfolio Website
+          </h3>
+          <p data-en="Fully responsive personal website showcasing skills and projects."
+             data-fr="Site personnel responsive présentant compétences et projets."
+             data-es="Sitio personal adaptable mostrando habilidades y proyectos."
+             data-ar="موقع شخصي متجاوب لعرض المهارات والمشاريع.">
+            Fully responsive personal website showcasing skills and projects.
+          </p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+          <a href="https://eyesightworks.github.io/eyesight-skills/" class="btn" target="_blank" rel="noopener" aria-label="Live demo of Personal Portfolio Website">Live Demo</a>
+        </div>
+
+        <!-- Project 4: Pharmacy Dashboard Demo -->
+        <div class="project-card" tabindex="0" aria-label="Pharmacy Dashboard Demo project">
+          <img src="images/pharmacy-dashboard.jpg" alt="Pharmacy Dashboard Screenshot" loading="lazy" />
+          <h3 data-en="Pharmacy Dashboard Demo" data-fr="Tableau de bord Pharmacie" data-es="Panel de Farmacia" data-ar="لوحة معلومات الصيدلية">
+            Pharmacy Dashboard Demo
+          </h3>
+          <p data-en="Dashboard demo showcasing medicine management, inventory, prescriptions, and cart UI."
+             data-fr="Démo de tableau de bord pour gestion des médicaments, inventaire, ordonnances et UI du panier."
+             data-es="Demostración de panel con gestión de medicamentos, inventario, recetas y UI de carrito."
+             data-ar="عرض لوحة الصيدلية لإدارة الأدوية والمخزون والوصفات وقائمة التسوق.">
+            Dashboard demo showcasing medicine management, inventory, prescriptions, and cart UI.
+          </p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+          <a href="https://eyesightworks.github.io/pharmacy-dashboard/" class="btn" target="_blank" rel="noopener" aria-label="Live demo of Pharmacy Dashboard">Live Demo</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    © 2026 Eyesightworks — Alawode Adewale Afeez
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
