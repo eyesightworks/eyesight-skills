@@ -7,20 +7,16 @@
   <title>Thank You | Eyesightworks</title>
 
   <!-- SEO -->
-  <meta
-    name="description"
-    content="Thank you for contacting Alawode Adewale Afeez. Your message has been received and you will be redirected to WhatsApp shortly."
-  />
+  <meta name="description" content="Thank you for contacting Alawode Adewale Afeez. Your message has been received and you will be redirected to WhatsApp shortly." />
+  <meta name="keywords" content="Full-Stack Web Developer, Contact, Thank You, WhatsApp, Eyesightworks" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <!-- Global CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -30,65 +26,23 @@
   <header>
     <div class="container">
       <nav role="navigation" aria-label="Primary Navigation">
-        <div
-          class="logo"
-          tabindex="0"
-          data-en="Eyesightworks"
-          data-fr="Eyesightworks"
-          data-es="Eyesightworks"
-          data-ar="آيزسايت ووركس"
-        >
-          Eyesightworks
-        </div>
+        <div class="logo" tabindex="0"
+             data-en="Eyesightworks"
+             data-fr="Eyesightworks"
+             data-es="Eyesightworks"
+             data-ar="آيزسايت ووركس">Eyesightworks</div>
 
-        <button
-          data-hamburger
-          aria-label="Toggle navigation menu"
-          aria-controls="primary-menu"
-          aria-expanded="false"
-        >
+        <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
           ☰
         </button>
 
         <ul data-nav-menu id="primary-menu">
+          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+          <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+          <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
           <li>
-            <a href="index.html"
-              data-en="Home"
-              data-fr="Accueil"
-              data-es="Inicio"
-              data-ar="الرئيسية">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="portfolio.html"
-              data-en="Portfolio"
-              data-fr="Portfolio"
-              data-es="Portafolio"
-              data-ar="معرض الأعمال">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="testimonials.html"
-              data-en="Testimonials"
-              data-fr="Témoignages"
-              data-es="Testimonios"
-              data-ar="التوصيات">
-              Testimonials
-            </a>
-          </li>
-          <li>
-            <a href="contact.html"
-              data-en="Contact"
-              data-fr="Contact"
-              data-es="Contacto"
-              data-ar="تواصل">
-              Contact
-            </a>
-          </li>
-          <li>
-            <select data-lang-select aria-label="Select Language">
+            <select data-lang-select aria-label="Select Language" aria-live="polite">
               <option value="en">EN</option>
               <option value="fr">FR</option>
               <option value="es">ES</option>
@@ -100,84 +54,65 @@
     </div>
   </header>
 
-  <!-- ================= MAIN ================= -->
-  <main id="main-content" class="section">
-    <div class="container" style="text-align:center; max-width:600px;">
-
-      <h1
-        data-en="Thank You!"
-        data-fr="Merci !"
-        data-es="¡Gracias!"
-        data-ar="شكراً لك!"
-      >
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container" style="max-width:600px; text-align:center;">
+      <h1 tabindex="0"
+          data-en="Thank You!"
+          data-fr="Merci !"
+          data-es="¡Gracias!"
+          data-ar="شكراً لك!">
         Thank You!
       </h1>
 
-      <p
-        data-en="Your message has been sent successfully."
-        data-fr="Votre message a été envoyé avec succès."
-        data-es="Tu mensaje ha sido enviado con éxito."
-        data-ar="تم إرسال رسالتك بنجاح."
-      >
+      <p data-en="Your message has been sent successfully."
+         data-fr="Votre message a été envoyé avec succès."
+         data-es="Tu mensaje ha sido enviado con éxito."
+         data-ar="تم إرسال رسالتك بنجاح.">
         Your message has been sent successfully.
       </p>
 
-      <p
-        data-en="You will be redirected to WhatsApp in a few seconds."
-        data-fr="Vous serez redirigé vers WhatsApp dans quelques secondes."
-        data-es="Serás redirigido a WhatsApp en unos segundos."
-        data-ar="سيتم تحويلك إلى واتساب خلال بضع ثوانٍ."
-      >
+      <p data-en="You will be redirected to WhatsApp in a few seconds."
+         data-fr="Vous serez redirigé vers WhatsApp dans quelques secondes."
+         data-es="Serás redirigido a WhatsApp en unos segundos."
+         data-ar="سيتم تحويلك إلى واتساب خلال بضع ثوانٍ.">
         You will be redirected to WhatsApp in a few seconds.
       </p>
 
       <p>
-        <strong
-          data-en="Phone:"
-          data-fr="Téléphone :"
-          data-es="Teléfono:"
-          data-ar="رقم الهاتف:"
-        >
-          Phone:
-        </strong>
+        <strong data-en="Phone:" data-fr="Téléphone :" data-es="Teléfono:" data-ar="رقم الهاتف:">Phone:</strong>
         <a href="tel:+2348083869454">+234 808 386 9454</a>
       </p>
 
       <div style="margin-top:1.5rem;">
-        <a
-          href="https://wa.me/2348083869454"
-          class="btn btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat on WhatsApp"
-          data-en="Chat on WhatsApp"
-          data-fr="Discuter sur WhatsApp"
-          data-es="Chatear en WhatsApp"
-          data-ar="الدردشة على واتساب"
-        >
+        <a href="https://wa.me/2348083869454"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener"
+           aria-label="Chat on WhatsApp"
+           data-en="Chat on WhatsApp"
+           data-fr="Discuter sur WhatsApp"
+           data-es="Chatear en WhatsApp"
+           data-ar="الدردشة على واتساب">
           Chat on WhatsApp
         </a>
       </div>
 
       <div style="margin-top:1rem;">
-        <a
-          href="index.html"
-          class="btn"
-          data-en="Back to Home"
-          data-fr="Retour à l’accueil"
-          data-es="Volver al inicio"
-          data-ar="العودة للرئيسية"
-        >
+        <a href="index.html" class="btn"
+           data-en="Back to Home"
+           data-fr="Retour à l’accueil"
+           data-es="Volver al inicio"
+           data-ar="العودة للرئيسية">
           Back to Home
         </a>
       </div>
-
     </div>
-  </main>
+  </section>
 
   <!-- ================= FOOTER ================= -->
   <footer>
-    © 2025 Eyesightworks — Alawode Adewale Afeez
+    © 2026 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
   <!-- ================= REDIRECT SCRIPT ================= -->
@@ -188,7 +123,7 @@
   </script>
 
   <!-- Global JS -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>
