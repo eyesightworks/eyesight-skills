@@ -7,8 +7,8 @@
   <title>Portfolio | Alawode Adewale Afeez</title>
 
   <!-- SEO -->
-  <meta name="description" content="Portfolio of Alawode Adewale Afeez, Full-Stack Web Developer, showcasing frontend, backend, Python, AI, and web projects." />
-  <meta name="keywords" content="Full-Stack Web Developer, Portfolio, Web Development, Python, AI, Frontend, Backend, UI Design, Responsive Design" />
+  <meta name="description" content="Portfolio of Alawode Adewale Afeez, Full-Stack Web Developer, specializing in real estate dashboards, business platforms, and scalable web applications." />
+  <meta name="keywords" content="Full-Stack Web Developer, Portfolio, Real Estate Platforms, Property Dashboards, Pharmacy Systems, Automobile Platforms, HTML, CSS, JavaScript, React, Node.js, WordPress, MySQL" />
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
@@ -26,21 +26,17 @@
   <header>
     <div class="container">
       <nav role="navigation" aria-label="Primary Navigation">
-        <div class="logo" tabindex="0"
-             data-en="Eyesightworks"
-             data-fr="Eyesightworks"
-             data-es="Eyesightworks"
-             data-ar="آيزسايت ووركس">Eyesightworks</div>
+        <div class="logo" tabindex="0">Eyesightworks</div>
 
         <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
           ☰
         </button>
 
         <ul data-nav-menu id="primary-menu">
-          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-          <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-          <li><a href="portfolio.html" class="active" aria-current="page" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
-          <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
           <li>
             <select data-lang-select aria-label="Select Language" aria-live="polite">
               <option value="en">EN</option>
@@ -57,19 +53,8 @@
   <!-- ================= HERO ================= -->
   <section class="hero">
     <div class="container">
-      <h1 tabindex="0"
-          data-en="Portfolio"
-          data-fr="Portfolio"
-          data-es="Portafolio"
-          data-ar="معرض الأعمال">
-        Portfolio
-      </h1>
-      <p data-en="Showcasing my frontend, backend, Python, AI, and web development projects."
-         data-fr="Présentation de mes projets frontend, backend, Python, IA et développement web."
-         data-es="Mostrando mis proyectos de frontend, backend, Python, IA y desarrollo web."
-         data-ar="عرض مشاريع تطوير الواجهات الأمامية والخلفية، بايثون، الذكاء الاصطناعي وتطوير الويب.">
-        Showcasing my frontend, backend, Python, AI, and web development projects.
-      </p>
+      <h1 tabindex="0">Portfolio</h1>
+      <p>Showcasing my real estate, pharmacy, automobile, and scalable backend projects, built with modern web technologies.</p>
     </div>
   </section>
 
@@ -78,99 +63,59 @@
     <section class="section">
       <div class="container projects-grid">
 
-        <!-- Project 1 -->
+        <!-- Project 1: Real Estate -->
+        <div class="project-card" tabindex="0">
+          <img src="your-project/real-estate-dashboard.png" alt="Real Estate Dashboard Screenshot" loading="lazy" />
+          <h3>Real Estate Platform & Booking Dashboard</h3>
+          <p>Full-featured platform for real estate businesses: property listings, agent dashboards, booking system, and admin-managed content. Built for scalability and easy management.</p>
+          <p><strong>Tech:</strong> React, Node.js, Tailwind CSS, MySQL</p>
+          <a href="https://eyesightworks.github.io/real-estate-demo/" class="btn btn-primary" target="_blank" rel="noopener">Explore Dashboard</a>
+          <a href="https://github.com/eyesightworks/real-estate-platform" class="btn" target="_blank" rel="noopener">View Code</a>
+        </div>
+
+        <!-- Project 2: Real Estate Booking System -->
+        <div class="project-card" tabindex="0">
+          <img src="your-project/real-estate-booking.png" alt="Property Booking System Screenshot" loading="lazy" />
+          <h3>Property Booking System</h3>
+          <p>Booking dashboard for agents and clients, with real-time availability, secure payments, and admin tools to manage listings efficiently.</p>
+          <p><strong>Tech:</strong> React, Node.js, Stripe API, Tailwind CSS</p>
+          <a href="https://eyesightworks.github.io/property-booking-demo/" class="btn btn-primary" target="_blank" rel="noopener">Try Demo</a>
+          <a href="https://github.com/eyesightworks/property-booking" class="btn" target="_blank" rel="noopener">View Code</a>
+        </div>
+
+        <!-- Project 3: Backend Microservices -->
+        <div class="project-card" tabindex="0">
+          <img src="your-project/backend.png" alt="Backend Microservices Screenshot" loading="lazy" />
+          <h3>Backend Microservices for Scalable Platforms</h3>
+          <p>Modular backend architecture powering business platforms with authentication, database management, messaging queues, and scalable APIs. Ready for real estate, e-commerce, and other industries.</p>
+          <p><strong>Tech:</strong> Node.js, Express, MongoDB, Redis, JWT</p>
+        </div>
+
+        <!-- Project 4: Pharmacy Dashboard -->
         <div class="project-card" tabindex="0">
           <img src="your-project/pharmacy-dashboard.png" alt="Pharmacy Dashboard Screenshot" loading="lazy" />
-          <h3 data-en="Pharmacy E-Commerce Dashboard" data-fr="Tableau de bord Pharmacie e-commerce" data-es="Panel de Farmacia e-commerce" data-ar="لوحة معلومات الصيدلية للتجارة الإلكترونية">
-            Pharmacy E-Commerce Dashboard
-          </h3>
-          <p data-en="Single-page pharmacy dashboard with medicine management, inventory, prescriptions, and cart UI."
-             data-fr="Tableau de bord e-commerce pharmacie avec gestion des médicaments, inventaire, ordonnances et UI du panier."
-             data-es="Panel e-commerce para farmacia con gestión de medicamentos, inventario, recetas y UI de carrito."
-             data-ar="لوحة معلومات صيدلية بنظام التجارة الإلكترونية مع إدارة الأدوية والمخزون والوصفات وقائمة التسوق.">
-            Single-page pharmacy dashboard with medicine management, inventory, prescriptions, and cart UI.
-          </p>
+          <h3>Pharmacy Management Dashboard</h3>
+          <p>Single-page dashboard for medicine management, inventory, prescriptions, and cart interface, enabling admins to manage pharmacy operations efficiently.</p>
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/pharmacy-dashboard/" class="btn btn-primary" target="_blank" rel="noopener"
-             data-en="Live Demo" data-fr="Démo" data-es="Demo" data-ar="عرض">
-            Live Demo
-          </a>
-          <a href="https://github.com/eyesightworks/pharmacy-dashboard" class="btn" target="_blank" rel="noopener"
-             data-en="View Code" data-fr="Voir le code" data-es="Ver Código" data-ar="عرض الكود">
-            View Code
-          </a>
+          <a href="https://eyesightworks.github.io/pharmacy-dashboard/" class="btn btn-primary" target="_blank" rel="noopener">Explore Dashboard</a>
+          <a href="https://github.com/eyesightworks/pharmacy-dashboard" class="btn" target="_blank" rel="noopener">View Code</a>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/ecommerce.png" alt="E-Commerce Website Screenshot" loading="lazy" />
-          <h3 data-en="E-Commerce Website" data-fr="Site e-commerce" data-es="Sitio e-commerce" data-ar="موقع تجارة إلكترونية">
-            E-Commerce Website
-          </h3>
-          <p data-en="Responsive frontend with product listings, cart, and checkout."
-             data-fr="Frontend responsive avec catalogue, panier et paiement."
-             data-es="Frontend adaptable con catálogo, carrito y checkout."
-             data-ar="واجهة أمامية متجاوبة مع عرض المنتجات وسلة التسوق ومرحلة الدفع.">
-            Responsive frontend with product listings, cart, and checkout.
-          </p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript, React</p>
-          <a href="https://github.com/eyesightworks/e-commerce" class="btn btn-primary" target="_blank" rel="noopener"
-             data-en="View Code" data-fr="Voir le code" data-es="Ver Código" data-ar="عرض الكود">
-            View Code
-          </a>
-          <a href="https://eyesightworks.github.io/e-commerce-demo/" class="btn" target="_blank" rel="noopener"
-             data-en="Live Demo" data-fr="Démo" data-es="Demo" data-ar="عرض">
-            Live Demo
-          </a>
-        </div>
-
-        <!-- Project 3 -->
+        <!-- Project 5: AI Demo -->
         <div class="project-card" tabindex="0">
           <img src="your-project/ai-demo.jpg" alt="AI Voice & Image Processing Demo Screenshot" loading="lazy" />
-          <h3 data-en="AI Voice & Image Processing Demo" data-fr="Démo IA voix & image" data-es="Demo IA de voz e imagen" data-ar="تجربة معالجة الصوت والصورة بالذكاء الاصطناعي">
-            AI Voice & Image Processing Demo
-          </h3>
-          <p data-en="Python project exploring speech-to-text and image processing."
-             data-fr="Projet Python explorant la reconnaissance vocale et traitement d’images."
-             data-es="Proyecto Python explorando reconocimiento de voz y procesamiento de imágenes."
-             data-ar="مشروع بايثون لاستكشاف التعرف على الصوت ومعالجة الصور.">
-            Python project exploring speech-to-text and image processing.
-          </p>
+          <h3>AI Voice & Image Processing Demo</h3>
+          <p>Python project demonstrating speech-to-text and image processing. Highlights AI integration in web applications.</p>
           <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
         </div>
 
-        <!-- Project 4 -->
+        <!-- Project 6: Personal Portfolio -->
         <div class="project-card" tabindex="0">
           <img src="your-project/portfolio.png" alt="Personal Portfolio Website Screenshot" loading="lazy" />
-          <h3 data-en="Personal Portfolio Website" data-fr="Site portfolio personnel" data-es="Sitio portfolio personal" data-ar="موقع السيرة الذاتية الشخصي">
-            Personal Portfolio Website
-          </h3>
-          <p data-en="Fully responsive personal website showcasing skills and projects."
-             data-fr="Site personnel responsive présentant compétences et projets."
-             data-es="Sitio personal adaptable mostrando habilidades y proyectos."
-             data-ar="موقع شخصي متجاوب لعرض المهارات والمشاريع.">
-            Fully responsive personal website showcasing skills and projects.
-          </p>
+          <h3>Personal Portfolio Website</h3>
+          <p>Fully responsive personal portfolio showcasing skills, projects, and industry experience.</p>
           <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/eyesight-skills/" class="btn" target="_blank" rel="noopener"
-             data-en="Live Demo" data-fr="Démo" data-es="Demo" data-ar="عرض">
-            Live Demo
-          </a>
-        </div>
-
-        <!-- Project 5 (BACKEND) -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/backend.png" alt="Backend Microservices Screenshot" loading="lazy" />
-          <h3 data-en="Backend Microservices APIs" data-fr="Microservices Backend APIs" data-es="APIs Backend Microservices" data-ar="خدمات خلفية مصغرة APIs">
-            Backend Microservices APIs
-          </h3>
-          <p data-en="Modular backend architecture with authentication, database, messaging queue, and scalable services."
-             data-fr="Architecture backend modulaire avec authentification, base de données, file de messages et services scalables."
-             data-es="Arquitectura backend modular con autenticación, base de datos, mensajería y servicios escalables."
-             data-ar="بنية خلفية معيارية مع مصادقة وقاعدة بيانات وطابور رسائل وخدمات قابلة للتوسع.">
-            Modular backend architecture with authentication, database, messaging queue, and scalable services.
-          </p>
-          <p><strong>Tech:</strong> Node.js, Express, MongoDB, Redis, JWT</p>
+          <a href="https://eyesightworks.github.io/eyesight-skills/" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>
         </div>
 
       </div>
