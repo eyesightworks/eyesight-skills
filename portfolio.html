@@ -54,70 +54,15 @@
   <section class="hero">
     <div class="container">
       <h1 tabindex="0">Portfolio</h1>
-      <p>Showcasing my real estate, pharmacy, automobile, and scalable backend projects, built with modern web technologies.</p>
+      <p>Showcasing my real estate, pharmacy, automobile, and backend projects, built with modern web technologies.</p>
     </div>
   </section>
 
   <!-- ================= PROJECTS ================= -->
   <main>
     <section class="section">
-      <div class="container projects-grid">
-
-        <!-- Project 1: Real Estate -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/real-estate-dashboard.png" alt="Real Estate Dashboard Screenshot" loading="lazy" />
-          <h3>Real Estate Platform & Booking Dashboard</h3>
-          <p>Full-featured platform for real estate businesses: property listings, agent dashboards, booking system, and admin-managed content. Built for scalability and easy management.</p>
-          <p><strong>Tech:</strong> React, Node.js, Tailwind CSS, MySQL</p>
-          <a href="https://eyesightworks.github.io/real-estate-demo/" class="btn btn-primary" target="_blank" rel="noopener">Explore Dashboard</a>
-          <a href="https://github.com/eyesightworks/real-estate-platform" class="btn" target="_blank" rel="noopener">View Code</a>
-        </div>
-
-        <!-- Project 2: Real Estate Booking System -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/real-estate-booking.png" alt="Property Booking System Screenshot" loading="lazy" />
-          <h3>Property Booking System</h3>
-          <p>Booking dashboard for agents and clients, with real-time availability, secure payments, and admin tools to manage listings efficiently.</p>
-          <p><strong>Tech:</strong> React, Node.js, Stripe API, Tailwind CSS</p>
-          <a href="https://eyesightworks.github.io/property-booking-demo/" class="btn btn-primary" target="_blank" rel="noopener">Try Demo</a>
-          <a href="https://github.com/eyesightworks/property-booking" class="btn" target="_blank" rel="noopener">View Code</a>
-        </div>
-
-        <!-- Project 3: Backend Microservices -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/backend.png" alt="Backend Microservices Screenshot" loading="lazy" />
-          <h3>Backend Microservices for Scalable Platforms</h3>
-          <p>Modular backend architecture powering business platforms with authentication, database management, messaging queues, and scalable APIs. Ready for real estate, e-commerce, and other industries.</p>
-          <p><strong>Tech:</strong> Node.js, Express, MongoDB, Redis, JWT</p>
-        </div>
-
-        <!-- Project 4: Pharmacy Dashboard -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/pharmacy-dashboard.png" alt="Pharmacy Dashboard Screenshot" loading="lazy" />
-          <h3>Pharmacy Management Dashboard</h3>
-          <p>Single-page dashboard for medicine management, inventory, prescriptions, and cart interface, enabling admins to manage pharmacy operations efficiently.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/pharmacy-dashboard/" class="btn btn-primary" target="_blank" rel="noopener">Explore Dashboard</a>
-          <a href="https://github.com/eyesightworks/pharmacy-dashboard" class="btn" target="_blank" rel="noopener">View Code</a>
-        </div>
-
-        <!-- Project 5: AI Demo -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/ai-demo.jpg" alt="AI Voice & Image Processing Demo Screenshot" loading="lazy" />
-          <h3>AI Voice & Image Processing Demo</h3>
-          <p>Python project demonstrating speech-to-text and image processing. Highlights AI integration in web applications.</p>
-          <p><strong>Tech:</strong> Python, Flask, AI APIs</p>
-        </div>
-
-        <!-- Project 6: Personal Portfolio -->
-        <div class="project-card" tabindex="0">
-          <img src="your-project/portfolio.png" alt="Personal Portfolio Website Screenshot" loading="lazy" />
-          <h3>Personal Portfolio Website</h3>
-          <p>Fully responsive personal portfolio showcasing skills, projects, and industry experience.</p>
-          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
-          <a href="https://eyesightworks.github.io/eyesight-skills/" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>
-        </div>
-
+      <div class="container projects-grid" id="projects-container">
+        <!-- Projects will be dynamically inserted here -->
       </div>
     </section>
   </main>
@@ -127,6 +72,89 @@
     © 2026 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
-  <script src="script.js" defer></script>
+  <!-- ================= PROJECTS DATA & SCRIPT ================= -->
+  <script>
+    const projects = [
+      {
+        title: "Real Estate Platform & Booking Dashboard",
+        description: "Full-featured platform for real estate businesses: property listings, agent dashboards, booking system, and admin-managed content. Built for scalability and easy management.",
+        image: "your-project/real-estate-dashboard.png",
+        alt: "Real Estate Dashboard Screenshot",
+        tech: "React, Node.js, Tailwind CSS, MySQL",
+        demo: "https://eyesightworks.github.io/real-estate-demo/",
+        code: "https://github.com/eyesightworks/real-estate-platform",
+        category: "Real Estate"
+      },
+      {
+        title: "Property Booking System",
+        description: "Booking dashboard for agents and clients, with real-time availability, secure payments, and admin tools to manage listings efficiently.",
+        image: "your-project/real-estate-booking.png",
+        alt: "Property Booking System Screenshot",
+        tech: "React, Node.js, Stripe API, Tailwind CSS",
+        demo: "https://eyesightworks.github.io/property-booking-demo/",
+        code: "https://github.com/eyesightworks/property-booking",
+        category: "Real Estate"
+      },
+      {
+        title: "Backend Microservices for Scalable Platforms",
+        description: "Modular backend architecture powering business platforms with authentication, database management, messaging queues, and scalable APIs. Ready for real estate, e-commerce, and other industries.",
+        image: "your-project/backend.png",
+        alt: "Backend Microservices Screenshot",
+        tech: "Node.js, Express, MongoDB, Redis, JWT",
+        demo: "",
+        code: "",
+        category: "Backend"
+      },
+      {
+        title: "Pharmacy Management Dashboard",
+        description: "Single-page dashboard for medicine management, inventory, prescriptions, and cart interface, enabling admins to manage pharmacy operations efficiently.",
+        image: "your-project/pharmacy-dashboard.png",
+        alt: "Pharmacy Dashboard Screenshot",
+        tech: "HTML, CSS, JavaScript",
+        demo: "https://eyesightworks.github.io/pharmacy-dashboard/",
+        code: "https://github.com/eyesightworks/pharmacy-dashboard",
+        category: "Pharmacy"
+      },
+      {
+        title: "AI Voice & Image Processing Demo",
+        description: "Python project demonstrating speech-to-text and image processing. Highlights AI integration in web applications.",
+        image: "your-project/ai-demo.jpg",
+        alt: "AI Voice & Image Processing Demo Screenshot",
+        tech: "Python, Flask, AI APIs",
+        demo: "",
+        code: "",
+        category: "AI"
+      },
+      {
+        title: "Personal Portfolio Website",
+        description: "Fully responsive personal portfolio showcasing skills, projects, and industry experience.",
+        image: "your-project/portfolio.png",
+        alt: "Personal Portfolio Website Screenshot",
+        tech: "HTML, CSS, JavaScript",
+        demo: "https://eyesightworks.github.io/eyesight-skills/",
+        code: "",
+        category: "Portfolio"
+      }
+    ];
+
+    const container = document.getElementById('projects-container');
+
+    projects.forEach(project => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.tabIndex = 0;
+
+      card.innerHTML = `
+        <img src="${project.image}" alt="${project.alt}" loading="lazy" />
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <p><strong>Tech:</strong> ${project.tech}</p>
+        ${project.demo ? `<a href="${project.demo}" class="btn btn-primary" target="_blank" rel="noopener">Live Demo</a>` : ''}
+        ${project.code ? `<a href="${project.code}" class="btn" target="_blank" rel="noopener">View Code</a>` : ''}
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
 </body>
 </html>
