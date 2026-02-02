@@ -14,206 +14,131 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <style>
-    /* Desktop-first navigation */
-    header {
-      background: #fff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.8rem 1rem;
-    }
-    .nav-menu {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    .nav-menu li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    .nav-menu li a.active {
-      color: var(--color-primary);
-    }
-    .btn-nav {
-      background: var(--color-primary);
-      color: #fff;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* Hamburger menu for mobile */
-    [data-hamburger] {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-    @media(max-width: 900px) {
-      .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100%;
-        width: 220px;
-        background: #fff;
-        flex-direction: column;
-        padding: 3rem 1rem;
-        gap: 1.5rem;
-        transition: right 0.3s ease;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-      }
-      .nav-menu.open {
-        right: 0;
-      }
-      [data-hamburger] {
-        display: block;
-      }
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 3rem 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-img {
-      width: 200px;
-      border-radius: 50%;
-      margin-bottom: 1.5rem;
-    }
-    .btn-box {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .btn-box .btn {
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .btn-box .btn-primary {
-      background: var(--color-primary);
-      color: #fff;
-    }
-    .btn-box .btn-fiverr { background: #1dbf73; color: #fff; }
-    .btn-box .btn-upwork { background: #6fda44; color: #fff; }
-    .btn-box .btn-linkedin { background: #0077b5; color: #fff; }
-
-    /* Skills section */
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .skill-pill {
-      background: #f0f0f0;
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
-  </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
-  <div class="nav-container">
-    <div class="logo" tabindex="0" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
+  <div class="container">
+    <nav role="navigation" aria-label="Primary Navigation">
+      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">
+        Eyesightworks
+      </div>
 
-    <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
+      <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">
+        ☰
+      </button>
 
-    <ul class="nav-menu" id="primary-menu">
-      <li><a href="index.html" class="active" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-      <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-      <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
-      <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
-      <li>
-        <select data-lang-select aria-label="Select Language" aria-live="polite">
-          <option value="en">EN</option>
-          <option value="fr">FR</option>
-          <option value="es">ES</option>
-          <option value="ar">AR</option>
-        </select>
-      </li>
-    </ul>
+      <ul class="nav-menu" id="primary-menu" data-nav-menu>
+        <li><a href="index.html" class="active" aria-current="page" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+        <li>
+          <select data-lang-select aria-label="Select Language" aria-live="polite">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
-  <section class="hero">
-    <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img" />
-    <h1 data-en="Full-Stack Developer for Real Estate & Business Platforms"
-        data-fr="Développeur Full-Stack pour plateformes immobilières et entreprises"
-        data-es="Desarrollador Full-Stack para plataformas inmobiliarias y de negocios"
-        data-ar="مطور Full-Stack لمنصات العقارات والأعمال">
-      Full-Stack Developer for Real Estate & Business Platforms
-    </h1>
-    <p data-en="I build scalable web platforms for real estate businesses — property listing systems, booking dashboards, and admin-managed apps."
-       data-fr="Je crée des plateformes web évolutives pour les entreprises immobilières."
-       data-es="Construyo plataformas web escalables para negocios inmobiliarios."
-       data-ar="أقوم ببناء منصات ويب قابلة للتوسع للأعمال العقارية.">
-      I build scalable web platforms for real estate businesses — property listing systems, booking dashboards, and admin-managed apps.
-    </p>
 
-    <div class="btn-box">
-      <a href="contact.html" class="btn btn-primary" data-en="Start a Project" data-fr="Démarrer un projet" data-es="Iniciar un proyecto" data-ar="ابدأ مشروعًا">Start a Project</a>
-      <a href="portfolio.html" class="btn" data-en="View Portfolio" data-fr="Voir Portfolio" data-es="Ver Portafolio" data-ar="عرض الأعمال">View Portfolio</a>
-      <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" class="btn btn-fiverr" target="_blank" rel="noopener">Fiverr</a>
-      <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn btn-upwork" target="_blank" rel="noopener">Upwork</a>
-      <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn btn-linkedin" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-container">
+      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img" />
+
+      <div class="hero-text">
+        <h1 data-en="Full-Stack Developer for Real Estate & Business Platforms"
+            data-fr="Développeur Full-Stack pour plateformes immobilières et entreprises"
+            data-es="Desarrollador Full-Stack para plataformas inmobiliarias y de negocios"
+            data-ar="مطور Full-Stack لمنصات العقارات والأعمال">
+          Full-Stack Developer for Real Estate & Business Platforms
+        </h1>
+
+        <p data-en="I build scalable web platforms for real estate businesses — including property listing systems, booking dashboards, and admin-managed applications. My work focuses on clean interfaces, reliable backend systems, and software that’s easy to manage and ready to grow."
+           data-fr="Je crée des plateformes web évolutives pour les entreprises immobilières — y compris systèmes de listes de propriétés, tableaux de réservation et applications gérées par l'administrateur. Mon travail se concentre sur des interfaces propres, des systèmes back-end fiables et des logiciels faciles à gérer et évolutifs."
+           data-es="Construyo plataformas web escalables para negocios inmobiliarios — incluyendo sistemas de listado de propiedades, paneles de reservas y aplicaciones administradas por admin. Mi trabajo se centra en interfaces limpias, backend confiable y software fácil de gestionar y escalar."
+           data-ar="أقوم ببناء منصات ويب قابلة للتوسع للأعمال العقارية — بما في ذلك أنظمة قوائم العقارات، لوحات الحجز، والتطبيقات المدارة بواسطة المسؤول. تركيزي على واجهات نظيفة وأنظمة خلفية موثوقة وبرمجيات سهلة الإدارة والنمو.">
+          I build scalable web platforms for real estate businesses — including property listing systems, booking dashboards, and admin-managed applications. My work focuses on clean interfaces, reliable backend systems, and software that’s easy to manage and ready to grow.
+        </p>
+
+        <p data-en="Available for freelance projects, long-term collaboration, and full-stack roles."
+           data-fr="Disponible pour projets freelance, collaborations à long terme et postes full-stack."
+           data-es="Disponible para proyectos freelance, colaboración a largo plazo y roles full-stack."
+           data-ar="متاح لمشاريع مستقلة، التعاون طويل الأمد، ووظائف Full-Stack.">
+          Available for freelance projects, long-term collaboration, and full-stack roles.
+        </p>
+
+        <!-- ================= HERO BUTTONS ================= -->
+        <div class="btn-box hero-btns">
+          <a href="contact.html" class="btn btn-primary" data-en="Start a Project" data-fr="Démarrer un projet" data-es="Iniciar un proyecto" data-ar="ابدأ مشروعًا">Start a Project</a>
+          <a href="portfolio.html" class="btn" data-en="View Portfolio" data-fr="Voir Portfolio" data-es="Ver Portafolio" data-ar="عرض الأعمال">View Portfolio</a>
+          <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" class="btn fiverr" target="_blank" rel="noopener" data-en="Fiverr" data-fr="Fiverr" data-es="Fiverr" data-ar="Fiverr">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn upwork" target="_blank" rel="noopener" data-en="Upwork" data-fr="Upwork" data-es="Upwork" data-ar="Upwork">Upwork</a>
+          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn linkedin" target="_blank" rel="noopener" data-en="LinkedIn" data-fr="LinkedIn" data-es="LinkedIn" data-ar="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- ================= WHAT I BUILD ================= -->
   <section class="section">
     <div class="container text-center">
       <h2 data-en="What I Build" data-fr="Ce que je construis" data-es="Lo que construyo" data-ar="ما أقوم ببنائه">What I Build</h2>
       <div class="skills-list">
         <span class="skill-pill" data-en="Real Estate Platforms" data-fr="Plateformes immobilières" data-es="Plataformas inmobiliarias" data-ar="منصات العقارات">Real Estate Platforms</span>
-        <span class="skill-pill" data-en="Booking & Inquiry Dashboards" data-fr="Tableaux de réservation" data-es="Paneles de reservas" data-ar="لوحات الحجز">Booking & Inquiry Dashboards</span>
-        <span class="skill-pill" data-en="Admin & Agent Panels" data-fr="Tableaux Admin & Agent" data-es="Paneles Admin & Agente" data-ar="لوحات المشرف والوكلاء">Admin & Agent Panels</span>
+        <span class="skill-pill" data-en="Property Listing Systems" data-fr="Systèmes de listes" data-es="Sistemas de listados de propiedades" data-ar="أنظمة قوائم العقارات">Property Listing Systems</span>
+        <span class="skill-pill" data-en="Booking & Inquiry Dashboards" data-fr="Tableaux de réservation & demandes" data-es="Paneles de reservas & consultas" data-ar="لوحات الحجز والاستفسارات">Booking & Inquiry Dashboards</span>
+        <span class="skill-pill" data-en="Admin & Agent Panels" data-fr="Tableaux Admin & Agent" data-es="Paneles de Admin & Agente" data-ar="لوحات المشرف والوكلاء">Admin & Agent Panels</span>
+        <span class="skill-pill" data-en="Backend APIs & Databases" data-fr="APIs & Bases de données" data-es="APIs & Bases de datos" data-ar="واجهات برمجة التطبيقات وقواعد البيانات">Backend APIs & Databases</span>
+        <span class="skill-pill" data-en="Scalable Business Applications" data-fr="Applications d'entreprise évolutives" data-es="Aplicaciones empresariales escalables" data-ar="تطبيقات أعمال قابلة للتوسع">Scalable Business Applications</span>
       </div>
     </div>
   </section>
+
+  <!-- ================= TECH STACK ================= -->
+  <section class="section">
+    <div class="container text-center">
+      <h2 data-en="Core Technologies" data-fr="Technologies principales" data-es="Tecnologías principales" data-ar="التقنيات الأساسية">Core Technologies</h2>
+      <div class="skills-list">
+        <span class="skill-pill" data-en="HTML5" data-fr="HTML5" data-es="HTML5" data-ar="HTML5">HTML5</span>
+        <span class="skill-pill" data-en="CSS3" data-fr="CSS3" data-es="CSS3" data-ar="CSS3">CSS3</span>
+        <span class="skill-pill" data-en="JavaScript (ES6+)" data-fr="JavaScript (ES6+)" data-es="JavaScript (ES6+)" data-ar="JavaScript (ES6+)">JavaScript (ES6+)</span>
+        <span class="skill-pill" data-en="React" data-fr="React" data-es="React" data-ar="React">React</span>
+        <span class="skill-pill" data-en="Node.js" data-fr="Node.js" data-es="Node.js" data-ar="Node.js">Node.js</span>
+        <span class="skill-pill" data-en="WordPress REST API" data-fr="WordPress REST API" data-es="WordPress REST API" data-ar="WordPress REST API">WordPress REST API</span>
+        <span class="skill-pill" data-en="MySQL" data-fr="MySQL" data-es="MySQL" data-ar="MySQL">MySQL</span>
+        <span class="skill-pill" data-en="REST APIs" data-fr="APIs REST" data-es="APIs REST" data-ar="APIs REST">REST APIs</span>
+      </div>
+    </div>
+  </section>
+
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
+<!-- ================= JS ================= -->
+<script src="script.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const pageRoot = document.documentElement;
   const langSelect = document.querySelector('[data-lang-select]');
   const SUPPORTED_LANGS = ["en","fr","es","ar"];
+
   function applyLang(lang) {
     if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
     document.querySelectorAll("[data-en]").forEach(el => {
@@ -223,12 +148,16 @@ document.addEventListener("DOMContentLoaded", () => {
     pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
     localStorage.setItem("siteLang", lang);
   }
+
+  // Apply saved language
   const savedLang = localStorage.getItem("siteLang") || "en";
   applyLang(savedLang);
   langSelect.value = savedLang;
+
+  // Language switch
   langSelect.addEventListener("change", () => applyLang(langSelect.value));
 
-  // Hamburger toggle for mobile
+  // Hamburger toggle
   const hamburger = document.querySelector('[data-hamburger]');
   const menu = document.getElementById('primary-menu');
   hamburger.addEventListener("click", () => {
