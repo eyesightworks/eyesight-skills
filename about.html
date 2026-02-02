@@ -4,26 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>About | Alawode Adewale Afeez – Full-Stack Web Developer</title>
+  <title>About | Alawode Adewale Afeez</title>
 
   <!-- SEO -->
-  <meta
-    name="description"
-    content="Alawode Adewale Afeez is a Full-Stack Web Developer specializing in real estate platforms, property dashboards, and business-focused web applications."
-  />
-  <meta
-    name="keywords"
-    content="Full-Stack Developer, Real Estate Web Developer, Property Dashboards, Booking Systems, Business Platforms, React, Node.js, WordPress, MySQL"
-  />
+  <meta name="description" content="Alawode Adewale Afeez is a Full-Stack Web Developer building accessible, responsive, and business-focused platforms for real estate, pharmacy, and automobile industries." />
+  <meta name="keywords" content="Full-Stack Developer, Real Estate Platforms, Property Dashboards, Booking Systems, HTML, CSS, JavaScript, React, Node.js, WordPress, MySQL" />
   <meta name="robots" content="index, follow" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css" />
@@ -34,27 +25,18 @@
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <nav aria-label="Primary Navigation">
-      <div class="logo" tabindex="0">Eyesightworks</div>
+    <nav role="navigation" aria-label="Primary Navigation">
+      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
 
-      <button
-        data-hamburger
-        aria-label="Toggle navigation menu"
-        aria-controls="primary-menu"
-        aria-expanded="false"
-        type="button"
-      >
-        ☰
-      </button>
+      <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
 
       <ul class="nav-menu" id="primary-menu" data-nav-menu>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active" aria-current="page">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
+        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" class="active" aria-current="page" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
-          <select data-lang-select class="lang-select" aria-label="Select Language">
+          <select data-lang-select aria-label="Select language" aria-live="polite">
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="es">ES</option>
@@ -67,70 +49,131 @@
 </header>
 
 <main>
-
-<!-- ================= ABOUT ================= -->
-<section class="section">
-  <div class="container">
-    <h1>About Me</h1>
-
-    <div class="card">
-      <p>
-        I’m <strong>Alawode Adewale Afeez</strong>, a Full-Stack Web Developer focused on building
-        <strong>reliable, scalable, and easy-to-manage web platforms</strong> for businesses.
-        My primary niche is <strong>real estate platforms</strong>, including property dashboards,
-        booking systems, and admin-managed applications.
-      </p>
-
-      <p>
-        I hold a B.Sc in Computer Mathematics and an M.Sc in Mathematics, which shapes my
-        structured approach to problem-solving, system design, and performance-focused development.
-      </p>
-
-      <p>
-        From clean frontend interfaces to robust backend logic and databases,
-        I help businesses turn ideas into <strong>professional, secure, and future-ready software</strong>.
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1 data-en="About Me" data-fr="À propos de moi" data-es="Sobre mí" data-ar="نبذة عني">About Me</h1>
+      <p data-en="I’m Alawode Adewale Afeez, a Full-Stack Web Developer building accessible, responsive, and scalable web platforms."
+         data-fr="Je suis Alawode Adewale Afeez, développeur Full-Stack créant des plateformes web accessibles, réactives et évolutives."
+         data-es="Soy Alawode Adewale Afeez, desarrollador Full-Stack creando plataformas web accesibles, responsivas y escalables."
+         data-ar="أنا ألواد أديوالي عفيفيز، مطور Full-Stack لبناء منصات ويب متاحة، سريعة الاستجابة، وقابلة للتوسع.">
+        I’m Alawode Adewale Afeez, a Full-Stack Web Developer building accessible, responsive, and scalable web platforms.
       </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= PROFESSIONAL SUMMARY ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Professional Summary</h2>
+  <!-- ================= PROFESSIONAL SUMMARY ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 data-en="Professional Summary" data-fr="Résumé professionnel" data-es="Resumen profesional" data-ar="الملخص المهني">Professional Summary</h2>
+      <ul class="list">
+        <li data-en="Full-Stack Developer (Frontend & Backend) for business platforms"
+            data-fr="Développeur Full-Stack (Frontend & Backend) pour plateformes professionnelles"
+            data-es="Desarrollador Full-Stack (Frontend & Backend) para plataformas empresariales"
+            data-ar="مطوّر Full-Stack (الواجهة الأمامية والخلفية) لمنصات الأعمال">
+          Full-Stack Developer (Frontend & Backend) for business platforms
+        </li>
+        <li data-en="Expertise in React, Node.js, WordPress, Tailwind CSS, PHP, MySQL"
+            data-fr="Expertise en React, Node.js, WordPress, Tailwind CSS, PHP, MySQL"
+            data-es="Experto en React, Node.js, WordPress, Tailwind CSS, PHP, MySQL"
+            data-ar="خبرة في React وNode.js وWordPress وTailwind CSS وPHP وMySQL">
+          Expertise in React, Node.js, WordPress, Tailwind CSS, PHP, MySQL
+        </li>
+        <li data-en="Experience building real estate, pharmacy, and automobile dashboards"
+            data-fr="Expérience dans la création de tableaux de bord immobiliers, pharmaceutiques et automobiles"
+            data-es="Experiencia construyendo dashboards de bienes raíces, farmacia y automóviles"
+            data-ar="خبرة في بناء لوحات تحكم العقارات والصيدلة والسيارات">
+          Experience building real estate, pharmacy, and automobile dashboards
+        </li>
+        <li data-en="Strong foundation in responsive, accessible, and mobile-first UI"
+            data-fr="Solide base en UI réactive, accessible et mobile-first"
+            data-es="Sólida base en UI responsiva, accesible y mobile-first"
+            data-ar="أساس قوي في واجهات مستخدم متجاوبة ومتاحة وتصميم أولًا للجوال">
+          Strong foundation in responsive, accessible, and mobile-first UI
+        </li>
+        <li data-en="Remote-ready, with collaborative and client-focused workflow"
+            data-fr="Prêt pour le travail à distance, avec une collaboration et un flux orienté client"
+            data-es="Listo para trabajo remoto, con flujo colaborativo y centrado en el cliente"
+            data-ar="جاهز للعمل عن بعد، مع سير عمل تعاوني ومركّز على العميل">
+          Remote-ready, with collaborative and client-focused workflow
+        </li>
+      </ul>
+    </div>
+  </section>
 
-    <ul class="list">
-      <li>Full-Stack Web Developer specializing in business and real estate platforms</li>
-      <li>Strong experience with React, Node.js, WordPress, Tailwind CSS, PHP, MySQL</li>
-      <li>Built dashboards and management systems for real estate, pharmacy, and automobile sectors</li>
-      <li>Focused on responsive, accessible, and mobile-first user interfaces</li>
-      <li>Remote-ready, communicative, and client-focused development process</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= WHAT I BUILD ================= -->
-<section class="section">
-  <div class="container">
-    <h2>What I Build</h2>
-
-    <ul class="list">
-      <li>Real estate platforms with property listings, dashboards, and booking workflows</li>
-      <li>Admin-managed systems that are easy for teams and agents to use</li>
-      <li>Business dashboards with secure authentication and database-driven logic</li>
-      <li>Frontend applications with seamless backend and API integration</li>
-      <li>Scalable systems designed to grow and support future features</li>
-    </ul>
-  </div>
-</section>
-
+  <!-- ================= WHAT I BUILD ================= -->
+  <section class="section">
+    <div class="container">
+      <h2 data-en="What I Build" data-fr="Ce que je construis" data-es="Lo que construyo" data-ar="ما أقوم ببنائه">What I Build</h2>
+      <ul class="list">
+        <li data-en="Scalable, secure web platforms for businesses and startups"
+            data-fr="Plateformes web sécurisées et évolutives pour entreprises et startups"
+            data-es="Plataformas web escalables y seguras para negocios y startups"
+            data-ar="منصات ويب آمنة وقابلة للتوسع للشركات والشركات الناشئة">
+          Scalable, secure web platforms for businesses and startups
+        </li>
+        <li data-en="Real estate dashboards, property & booking systems, CMS-driven sites"
+            data-fr="Tableaux de bord immobiliers, systèmes de réservation et sites CMS"
+            data-es="Dashboards de bienes raíces, sistemas de reservas y sitios con CMS"
+            data-ar="لوحات تحكم العقارات، وأنظمة الحجز، ومواقع مدفوعة بنظام CMS">
+          Real estate dashboards, property & booking systems, CMS-driven sites
+        </li>
+        <li data-en="Pharmacy and automobile management dashboards with modular backend"
+            data-fr="Tableaux de bord pour la gestion des pharmacies et automobiles avec backend modulaire"
+            data-es="Dashboards de gestión de farmacias y automóviles con backend modular"
+            data-ar="لوحات تحكم لإدارة الصيدلة والسيارات مع خلفية معيارية">
+          Pharmacy and automobile management dashboards with modular backend
+        </li>
+        <li data-en="Frontend interfaces with seamless backend/API integration"
+            data-fr="Interfaces frontend avec intégration backend/API fluide"
+            data-es="Interfaces frontend con integración backend/API fluida"
+            data-ar="واجهات أمامية متكاملة مع تكامل سلس للواجهة الخلفية / API">
+          Frontend interfaces with seamless backend/API integration
+        </li>
+        <li data-en="Database-backed systems optimized for performance and growth"
+            data-fr="Systèmes basés sur des bases de données optimisés pour la performance et la croissance"
+            data-es="Sistemas respaldados por bases de datos optimizados para rendimiento y crecimiento"
+            data-ar="أنظمة مدعومة بقاعدة بيانات محسّنة للأداء والنمو">
+          Database-backed systems optimized for performance and growth
+        </li>
+      </ul>
+    </div>
+  </section>
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger toggle
+  const hamburger = document.querySelector('[data-hamburger]');
+  const menu = document.getElementById('primary-menu');
+  hamburger.addEventListener("click", () => {
+    const expanded = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!expanded));
+    menu.classList.toggle("open");
+  });
+
+  // Language support
+  const pageRoot = document.documentElement;
+  const langSelect = document.querySelector('[data-lang-select]');
+  const SUPPORTED_LANGS = ["en","fr","es","ar"];
+  function applyLang(lang) {
+    if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
+    document.querySelectorAll("[data-en]").forEach(el => {
+      el.textContent = el.dataset[lang] || el.dataset.en;
+    });
+    pageRoot.setAttribute("lang", lang);
+    pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    localStorage.setItem("siteLang", lang);
+  }
+  const savedLang = localStorage.getItem("siteLang") || "en";
+  applyLang(savedLang);
+  langSelect.value = savedLang;
+  langSelect.addEventListener("change", () => applyLang(langSelect.value));
+});
+</script>
 </body>
 </html>
