@@ -8,34 +8,37 @@
   <meta name="description" content="Full-Stack Web Developer building scalable real estate platforms, property dashboards, booking systems, and admin-managed business applications." />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="js-enabled">
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
-      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">
-        Eyesightworks
+      
+      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
+
+      <!-- Desktop Freelance Links -->
+      <div class="freelance-links desktop-only">
+        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
       </div>
 
       <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
 
-      <ul data-nav-menu id="primary-menu">
-        <li><a href="index.html" class="active" aria-current="page"
-          data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html"
-          data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html"
-          data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
-        <li><a href="contact.html"
-          data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+      <ul class="nav-menu" id="primary-menu" data-nav-menu>
+        <li><a href="index.html" class="active" aria-current="page" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
           <select data-lang-select aria-label="Select language" aria-live="polite">
             <option value="en">EN</option>
@@ -44,6 +47,13 @@
             <option value="ar">AR</option>
           </select>
         </li>
+
+        <!-- Mobile Freelance Links -->
+        <li class="mobile-only freelance-links">
+          <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -51,9 +61,9 @@
 
 <!-- ================= HERO ================= -->
 <main>
-  <section class="hero section">
+  <section class="hero section" style="background-color: #111; color: #fff; padding: 6rem 0;">
     <div class="container">
-      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img">
+      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img" />
 
       <h1 data-en="Full-Stack Developer for Real Estate & Business Platforms"
           data-fr="Développeur Full-Stack pour plateformes immobilières et entreprises"
@@ -88,10 +98,10 @@
 
   <!-- ================= WHAT I BUILD ================= -->
   <section class="section">
-    <div class="container">
+    <div class="container text-center">
       <h2 data-en="What I Build" data-fr="Ce que je construis" data-es="Lo que construyo" data-ar="ما أقوم ببنائه">What I Build</h2>
 
-      <div class="skills-list">
+      <div class="skills-list" id="skills-list">
         <span class="skill-pill">Real Estate Platforms</span>
         <span class="skill-pill">Property Listing Systems</span>
         <span class="skill-pill">Booking & Inquiry Dashboards</span>
@@ -104,41 +114,11 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer>
+<footer style="background-color: #111; color: #fff; padding: 2rem 0;">
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <!-- ================= JS ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const pageRoot = document.documentElement;
-  const langSelect = document.querySelector('[data-lang-select]');
-  const navMenu = document.querySelector('[data-nav-menu]');
-  const hamburger = document.querySelector('[data-hamburger]');
-  const SUPPORTED_LANGS = ["en","fr","es","ar"];
-
-  // Language switcher
-  function applyLang(lang) {
-    if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
-    document.querySelectorAll("[data-en]").forEach(el => {
-      el.textContent = el.dataset[lang] || el.dataset.en;
-    });
-    pageRoot.setAttribute("lang", lang);
-    pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-    localStorage.setItem("siteLang", lang);
-  }
-  const savedLang = localStorage.getItem("siteLang") || "en";
-  applyLang(savedLang);
-  langSelect.value = savedLang;
-  langSelect.addEventListener("change", () => applyLang(langSelect.value));
-
-  // Hamburger toggle
-  hamburger.addEventListener("click", () => {
-    const expanded = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", String(!expanded));
-    navMenu.classList.toggle("show");
-  });
-});
-</script>
+<script src="script.js" defer></script>
 </body>
 </html>
