@@ -20,19 +20,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Highlight Featured Projects */
-    #featured-projects .project-card {
-      border: 2px solid var(--color-accent);
-      box-shadow: 0 4px 20px rgba(0,201,167,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    }
-
-    #featured-projects .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 28px rgba(0,201,167,0.35);
-      border-color: var(--color-primary);
-    }
-
+    /* ================= PROJECT GRID ================= */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -47,12 +35,18 @@
       padding: 1rem;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      border: 1px solid #eee;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 28px rgba(0,201,167,0.35);
+      border-color: var(--color-primary);
     }
 
     .project-card img {
       width: 100%;
-      height: auto;
       border-radius: 8px;
       margin-bottom: 0.8rem;
     }
@@ -67,10 +61,10 @@
     }
 
     .btn-box {
-      margin-top: 0.8rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      margin-top: 0.5rem;
     }
 
     .btn-box .btn {
@@ -79,7 +73,7 @@
       border-radius: 6px;
     }
 
-    /* Filter Buttons */
+    /* ================= FILTER BUTTONS ================= */
     #category-filters {
       display: flex;
       justify-content: center;
@@ -131,6 +125,7 @@
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
   <!-- ================= HERO ================= -->
   <section class="hero">
@@ -142,6 +137,13 @@
          data-ar="عرض مشاريعي في العقارات والصيدلة والسيارات والخلفية والذكاء الاصطناعي.">
         Showcasing my real estate, pharmacy, automobile, backend, and AI projects built with modern web technologies.
       </p>
+
+      <!-- Fiverr / Upwork / LinkedIn -->
+      <div class="btn-box">
+        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" class="btn" target="_blank" rel="noopener" data-en="Fiverr" data-fr="Fiverr" data-es="Fiverr" data-ar="Fiverr">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn" target="_blank" rel="noopener" data-en="Upwork" data-fr="Upwork" data-es="Upwork" data-ar="Upwork">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn" target="_blank" rel="noopener" data-en="LinkedIn" data-fr="LinkedIn" data-es="LinkedIn" data-ar="LinkedIn">LinkedIn</a>
+      </div>
     </div>
   </section>
 
@@ -150,7 +152,7 @@
     <div class="container">
       <h2 data-en="Featured Real Estate Projects" data-fr="Projets immobiliers en vedette" data-es="Proyectos inmobiliarios destacados" data-ar="مشاريع العقارات المميزة">Featured Real Estate Projects</h2>
       <div class="projects-grid" id="featured-projects">
-        <!-- Featured projects rendered via JS -->
+        <!-- Rendered by JS -->
       </div>
     </div>
   </section>
@@ -158,7 +160,7 @@
   <!-- ================= FILTERS ================= -->
   <section class="section">
     <div class="container" id="category-filters">
-      <button class="btn btn-primary" data-filter="all">All</button>
+      <button class="btn btn-primary" data-filter="all" data-en="All" data-fr="Tous" data-es="Todos" data-ar="الكل">All</button>
       <button class="btn" data-filter="Real Estate">Real Estate</button>
       <button class="btn" data-filter="Pharmacy">Pharmacy</button>
       <button class="btn" data-filter="Automobile">Automobile</button>
@@ -171,7 +173,7 @@
   <!-- ================= PROJECTS GRID ================= -->
   <section class="section">
     <div class="container projects-grid" id="projects-container">
-      <!-- Projects grid rendered via JS -->
+      <!-- Rendered by JS -->
     </div>
   </section>
 </main>
@@ -180,6 +182,7 @@
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
+<!-- ================= JS ================= -->
 <script>
 const projects = [
   {
@@ -291,7 +294,7 @@ filterButtons.forEach(btn => {
   });
 });
 
-// Hamburger toggle
+// Hamburger & language
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector('[data-hamburger]');
   const menu = document.getElementById('primary-menu');
@@ -301,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("open");
   });
 
-  // Language support
   const pageRoot = document.documentElement;
   const langSelect = document.querySelector('[data-lang-select]');
   const SUPPORTED_LANGS = ["en","fr","es","ar"];
