@@ -7,6 +7,7 @@
    - Multi-language support (EN / FR / ES / AR)
    - RTL handling for Arabic
    - Language persistence via localStorage
+   - Auto-close mobile menu on language change
 ====================================================== */
 
 /* Enable JS-enhanced styles */
@@ -46,23 +47,22 @@ function initHamburgerMenu() {
     hamburger.setAttribute("aria-expanded", String(isOpen));
   });
 
-  /* Close menu when a link is clicked (mobile UX) */
+  // Close menu when a nav link is clicked (mobile UX)
   navMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
 
-  /* Close menu with ESC key (accessibility) */
+  // Close menu with ESC key (accessibility)
   document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
+    if (event.key === "Escape") closeMenu();
   });
+
+  return closeMenu; // return function for external use
 }
 
 /* ================= ACTIVE NAV LINK ================= */
 function initActiveNavLink() {
-  const currentPage =
-    location.pathname.split("/").pop() || "index.html";
+  const currentPage = location.pathname.split("/").pop() || "index.html";
 
   document.querySelectorAll("[data-nav-menu] a").forEach(link => {
     if (link.getAttribute("href") === currentPage) {
@@ -73,49 +73,44 @@ function initActiveNavLink() {
 
 /* ================= LANGUAGE HANDLING ================= */
 function applyLanguage(lang) {
-  /* Safety fallback */
-  if (!SUPPORTED_LANGS.includes(lang)) {
-    lang = "en";
-  }
+  // Fallback safety
+  if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
 
-  const translatableElements =
-    document.querySelectorAll("[data-en]");
-
+  const translatableElements = document.querySelectorAll("[data-en]");
   translatableElements.forEach(el => {
     const translatedText = el.dataset[lang];
-    if (typeof translatedText === "string") {
-      el.textContent = translatedText;
-    }
+    if (typeof translatedText === "string") el.textContent = translatedText;
   });
 
-  /* RTL handling for Arabic */
+  // RTL support for Arabic
   if (lang === "ar") {
-    setAttributes(document.documentElement, {
-      dir: "rtl",
-      lang: "ar"
-    });
+    setAttributes(document.documentElement, { dir: "rtl", lang: "ar" });
   } else {
-    setAttributes(document.documentElement, {
-      dir: "ltr",
-      lang
-    });
+    setAttributes(document.documentElement, { dir: "ltr", lang });
   }
 
   state.lang = lang;
   localStorage.setItem("siteLang", lang);
+
+  // Auto-close mobile menu if open
+  const navMenu = document.querySelector("[data-nav-menu]");
+  const hamburger = document.querySelector("[data-hamburger]");
+  if (navMenu && navMenu.classList.contains("show")) {
+    navMenu.classList.remove("show");
+    if (hamburger) hamburger.setAttribute("aria-expanded", "false");
+  }
 }
 
 /* ================= LANGUAGE SWITCHER ================= */
 function initLanguageSwitcher() {
-  const langSelect =
-    document.querySelector("[data-lang-select]");
-
+  const langSelect = document.querySelector("[data-lang-select]");
   if (!langSelect) return;
 
-  /* Populate only supported languages */
+  // Set initial language
   langSelect.value = state.lang;
   applyLanguage(state.lang);
 
+  // Change language on select
   langSelect.addEventListener("change", event => {
     applyLanguage(event.target.value);
   });
@@ -123,7 +118,7 @@ function initLanguageSwitcher() {
 
 /* ================= INIT APP ================= */
 document.addEventListener("DOMContentLoaded", () => {
-  initHamburgerMenu();
-  initActiveNavLink();
-  initLanguageSwitcher();
+  const closeMenuFn = initHamburgerMenu(); // init mobile nav
+  initActiveNavLink();                     // highlight current page
+  initLanguageSwitcher();                  // init language selector
 });
