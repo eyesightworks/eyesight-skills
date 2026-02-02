@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>About | Alawode Adewale Afeez</title>
-
-  <!-- SEO -->
   <meta name="description" content="About Alawode Adewale Afeez, Full-Stack Web Developer specializing in real estate platforms, business applications, and scalable web solutions." />
   <meta name="keywords" content="Full-Stack Web Developer, About, Real Estate Platforms, Business Applications, React, Node.js, WordPress, MySQL, Portfolio" />
   <meta name="robots" content="index, follow" />
@@ -20,20 +18,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="js-enabled">
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <nav role="navigation" aria-label="Primary Navigation" class="nav-wrapper">
+    <nav role="navigation" aria-label="Primary Navigation">
       
       <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
 
       <!-- Desktop Freelance Links -->
       <div class="freelance-links desktop-only">
-        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener" data-en="Fiverr" data-fr="Fiverr" data-es="Fiverr" data-ar="Fiverr">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener" data-en="Upwork" data-fr="Upwork" data-es="Upwork" data-ar="Upwork">Upwork</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener" data-en="LinkedIn" data-fr="LinkedIn" data-es="LinkedIn" data-ar="LinkedIn">LinkedIn</a>
+        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
       </div>
 
       <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
@@ -54,9 +52,9 @@
 
         <!-- Mobile Freelance Links -->
         <li class="mobile-only freelance-links">
-          <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener" data-en="Fiverr" data-fr="Fiverr" data-es="Fiverr" data-ar="Fiverr">Fiverr</a>
-          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener" data-en="Upwork" data-fr="Upwork" data-es="Upwork" data-ar="Upwork">Upwork</a>
-          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener" data-en="LinkedIn" data-fr="LinkedIn" data-es="LinkedIn" data-ar="LinkedIn">LinkedIn</a>
+          <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
         </li>
       </ul>
     </nav>
@@ -67,7 +65,7 @@
 <main>
 
   <!-- ================= HERO ================= -->
-  <section class="hero">
+  <section class="hero section">
     <div class="container">
       <h1 data-en="About Me" data-fr="À propos de moi" data-es="Acerca de mí" data-ar="نبذة عني">About Me</h1>
       <p data-en="I am Alawode Adewale Afeez, a Full-Stack Web Developer specializing in scalable web platforms for real estate businesses, booking systems, and admin-managed business applications."
@@ -110,17 +108,22 @@
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
+<!-- ================= JS ================= -->
 <script src="script.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const pageRoot = document.documentElement;
   const langSelect = document.querySelector('[data-lang-select]');
+  const menu = document.getElementById('primary-menu');
+  const hamburger = document.querySelector('[data-hamburger]');
   const SUPPORTED_LANGS = ["en","fr","es","ar"];
 
+  // Language switcher
   function applyLang(lang) {
     if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
     document.querySelectorAll("[data-en]").forEach(el => {
@@ -130,19 +133,16 @@ document.addEventListener("DOMContentLoaded", () => {
     pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
     localStorage.setItem("siteLang", lang);
   }
-
   const savedLang = localStorage.getItem("siteLang") || "en";
   applyLang(savedLang);
   langSelect.value = savedLang;
   langSelect.addEventListener("change", () => applyLang(langSelect.value));
 
-  // Hamburger
-  const hamburger = document.querySelector('[data-hamburger]');
-  const menu = document.getElementById('primary-menu');
+  // Hamburger toggle
   hamburger.addEventListener("click", () => {
     const expanded = hamburger.getAttribute("aria-expanded") === "true";
     hamburger.setAttribute("aria-expanded", String(!expanded));
-    menu.classList.toggle("open");
+    menu.classList.toggle("show");
   });
 });
 </script>
