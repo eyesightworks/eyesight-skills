@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>About | Alawode Adewale Afeez</title>
+
+  <!-- SEO -->
   <meta name="description" content="About Alawode Adewale Afeez, Full-Stack Web Developer specializing in real estate platforms, business applications, and scalable web solutions." />
   <meta name="keywords" content="Full-Stack Web Developer, About, Real Estate Platforms, Business Applications, React, Node.js, WordPress, MySQL, Portfolio" />
   <meta name="robots" content="index, follow" />
@@ -61,13 +63,12 @@
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
+<!-- ================= HERO ================= -->
 <main>
-
-  <!-- ================= HERO ================= -->
   <section class="hero section">
     <div class="container">
       <h1 data-en="About Me" data-fr="À propos de moi" data-es="Acerca de mí" data-ar="نبذة عني">About Me</h1>
+
       <p data-en="I am Alawode Adewale Afeez, a Full-Stack Web Developer specializing in scalable web platforms for real estate businesses, booking systems, and admin-managed business applications."
          data-fr="Je suis Alawode Adewale Afeez, développeur Full-Stack spécialisé dans les plateformes web évolutives pour les entreprises immobilières, les systèmes de réservation et les applications gérées par l'administrateur."
          data-es="Soy Alawode Adewale Afeez, Desarrollador Full-Stack especializado en plataformas web escalables para negocios inmobiliarios, sistemas de reservas y aplicaciones administradas por admin."
@@ -93,6 +94,7 @@
   <section class="section">
     <div class="container text-center">
       <h2 data-en="Skills & Expertise" data-fr="Compétences & Expertise" data-es="Habilidades y experiencia" data-ar="المهارات والخبرة">Skills & Expertise</h2>
+
       <div class="skills-list">
         <span class="skill-pill" data-en="HTML5" data-fr="HTML5" data-es="HTML5" data-ar="HTML5">HTML5</span>
         <span class="skill-pill" data-en="CSS3" data-fr="CSS3" data-es="CSS3" data-ar="CSS3">CSS3</span>
@@ -108,44 +110,10 @@
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<!-- ================= JS ================= -->
 <script src="script.js" defer></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const pageRoot = document.documentElement;
-  const langSelect = document.querySelector('[data-lang-select]');
-  const menu = document.getElementById('primary-menu');
-  const hamburger = document.querySelector('[data-hamburger]');
-  const SUPPORTED_LANGS = ["en","fr","es","ar"];
-
-  // Language switcher
-  function applyLang(lang) {
-    if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
-    document.querySelectorAll("[data-en]").forEach(el => {
-      el.textContent = el.dataset[lang] || el.dataset.en;
-    });
-    pageRoot.setAttribute("lang", lang);
-    pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-    localStorage.setItem("siteLang", lang);
-  }
-  const savedLang = localStorage.getItem("siteLang") || "en";
-  applyLang(savedLang);
-  langSelect.value = savedLang;
-  langSelect.addEventListener("change", () => applyLang(langSelect.value));
-
-  // Hamburger toggle
-  hamburger.addEventListener("click", () => {
-    const expanded = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", String(!expanded));
-    menu.classList.toggle("show");
-  });
-});
-</script>
-
 </body>
 </html>
