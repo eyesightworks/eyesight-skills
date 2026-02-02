@@ -1,10 +1,9 @@
 /* ======================================================
-   CONTACT PAGE SCRIPT — FINAL & SYNCED
-   - Uses same language system as global script.js
-   - Supports EN / FR / ES / AR
+   CONTACT PAGE SCRIPT — PROFESSIONAL VERSION
+   - EN / FR / ES / AR
    - RTL support for Arabic
    - Success animation
-   - Redirects to thank-you.html
+   - Redirects to thank-you.html after 2 seconds
 ====================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentLang = lang;
   }
 
-  // Apply saved language on load
   applyLanguage(currentLang);
 
   /* ================= FORM SUBMISSION ================= */
@@ -58,17 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Save (optional)
     localStorage.setItem("contact_name", name);
     localStorage.setItem("contact_message", message);
 
-    // Show success animation
     successOverlay.classList.add("show");
 
-    // Redirect to thank-you page
+    // Redirect to thank-you.html after 2 seconds
     setTimeout(() => {
       window.location.href = "thank-you.html";
-    }, 1800);
+    }, 2000);
   });
 
   /* ================= PARTICLE BACKGROUND ================= */
