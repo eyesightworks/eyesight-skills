@@ -8,28 +8,34 @@
   <meta name="description" content="Full-Stack Web Developer building scalable real estate platforms, property dashboards, booking systems, and admin-managed business applications." />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="js-enabled">
 
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav role="navigation" aria-label="Primary Navigation">
-      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
+      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">
+        Eyesightworks
+      </div>
 
       <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
 
-      <ul class="nav-menu" id="primary-menu" data-nav-menu>
-        <li><a href="index.html" class="active" aria-current="page" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
-        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+      <ul data-nav-menu id="primary-menu">
+        <li><a href="index.html" class="active" aria-current="page"
+          data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html"
+          data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html"
+          data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+        <li><a href="contact.html"
+          data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
         <li>
           <select data-lang-select aria-label="Select language" aria-live="polite">
             <option value="en">EN</option>
@@ -45,9 +51,9 @@
 
 <!-- ================= HERO ================= -->
 <main>
-  <section class="hero">
+  <section class="hero section">
     <div class="container">
-      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img" />
+      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img">
 
       <h1 data-en="Full-Stack Developer for Real Estate & Business Platforms"
           data-fr="Développeur Full-Stack pour plateformes immobilières et entreprises"
@@ -72,7 +78,7 @@
 
       <div class="btn-box">
         <a href="contact.html" class="btn btn-primary" data-en="Start a Project" data-fr="Démarrer un projet" data-es="Iniciar un proyecto" data-ar="ابدأ مشروعًا">Start a Project</a>
-        <a href="portfolio.html" class="btn btn-secondary" data-en="View Portfolio" data-fr="Voir Portfolio" data-es="Ver Portafolio" data-ar="عرض الأعمال">View Portfolio</a>
+        <a href="portfolio.html" class="btn" data-en="View Portfolio" data-fr="Voir Portfolio" data-es="Ver Portafolio" data-ar="عرض الأعمال">View Portfolio</a>
         <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" class="btn fiverr" target="_blank" rel="noopener">Fiverr</a>
         <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn upwork" target="_blank" rel="noopener">Upwork</a>
         <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn linkedin" target="_blank" rel="noopener">LinkedIn</a>
@@ -81,11 +87,11 @@
   </section>
 
   <!-- ================= WHAT I BUILD ================= -->
-  <section class="section skills-section">
-    <div class="container text-center">
+  <section class="section">
+    <div class="container">
       <h2 data-en="What I Build" data-fr="Ce que je construis" data-es="Lo que construyo" data-ar="ما أقوم ببنائه">What I Build</h2>
 
-      <div class="skills-list" id="skills-list">
+      <div class="skills-list">
         <span class="skill-pill">Real Estate Platforms</span>
         <span class="skill-pill">Property Listing Systems</span>
         <span class="skill-pill">Booking & Inquiry Dashboards</span>
@@ -95,7 +101,6 @@
       </div>
     </div>
   </section>
-
 </main>
 
 <!-- ================= FOOTER ================= -->
@@ -104,13 +109,15 @@
 </footer>
 
 <!-- ================= JS ================= -->
-<script src="script.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const pageRoot = document.documentElement;
   const langSelect = document.querySelector('[data-lang-select]');
+  const navMenu = document.querySelector('[data-nav-menu]');
+  const hamburger = document.querySelector('[data-hamburger]');
   const SUPPORTED_LANGS = ["en","fr","es","ar"];
 
+  // Language switcher
   function applyLang(lang) {
     if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
     document.querySelectorAll("[data-en]").forEach(el => {
@@ -120,19 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
     pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
     localStorage.setItem("siteLang", lang);
   }
-
   const savedLang = localStorage.getItem("siteLang") || "en";
   applyLang(savedLang);
   langSelect.value = savedLang;
   langSelect.addEventListener("change", () => applyLang(langSelect.value));
 
   // Hamburger toggle
-  const hamburger = document.querySelector('[data-hamburger]');
-  const menu = document.getElementById('primary-menu');
   hamburger.addEventListener("click", () => {
     const expanded = hamburger.getAttribute("aria-expanded") === "true";
     hamburger.setAttribute("aria-expanded", String(!expanded));
-    menu.classList.toggle("open");
+    navMenu.classList.toggle("show");
   });
 });
 </script>
