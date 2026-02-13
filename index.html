@@ -5,15 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Alawode Adewale Afeez | Full-Stack Web Developer</title>
-  <meta name="description" content="Full-Stack Web Developer building scalable real estate platforms, property dashboards, booking systems, and admin-managed business applications." />
+  <meta name="description" content="Full-Stack Web Developer building accessible, mobile-first user interfaces with hands-on experience developing backend logic, APIs, and data-driven systems." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
 
-  <!-- Main CSS -->
+  <!-- Existing CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- LIGHT COLOR OVERRIDES -->
+  <style>
+    body{
+      background:#f8fafc;
+      color:#0f172a;
+    }
+
+    header{
+      background:#0f172a;
+    }
+
+    .nav-menu a{
+      color:#ffffff;
+    }
+
+    .nav-menu a.active{
+      background:#14b8a6;
+      color:#ffffff;
+      padding:6px 12px;
+      border-radius:6px;
+    }
+
+    .hero{
+      background:#ffffff !important;
+      color:#0f172a !important;
+    }
+
+    .skill-pill{
+      background:#e2e8f0;
+      color:#0f172a;
+    }
+
+    footer{
+      background:#0f172a;
+      color:#ffffff;
+    }
+  </style>
 </head>
 
 <body class="js-enabled">
@@ -21,104 +59,86 @@
 <!-- ================= HEADER ================= -->
 <header>
   <div class="container">
-    <nav role="navigation" aria-label="Primary Navigation">
-      
-      <div class="logo" data-en="Eyesightworks" data-fr="Eyesightworks" data-es="Eyesightworks" data-ar="آيزسايت ووركس">Eyesightworks</div>
+    <nav>
 
-      <!-- Desktop Freelance Links -->
-      <div class="freelance-links desktop-only">
-        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
+      <div class="logo">Eyesightworks</div>
 
-      <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
+      <button data-hamburger>☰</button>
 
-      <ul class="nav-menu" id="primary-menu" data-nav-menu>
-        <li><a href="index.html" class="active" aria-current="page" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
-        <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
-        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+      <ul class="nav-menu" data-nav-menu>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li>
-          <select data-lang-select aria-label="Select language" aria-live="polite">
+          <select data-lang-select>
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="es">ES</option>
             <option value="ar">AR</option>
           </select>
         </li>
-
-        <!-- Mobile Freelance Links -->
-        <li class="mobile-only freelance-links">
-          <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" target="_blank" rel="noopener">Fiverr</a>
-          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
-          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
-        </li>
       </ul>
+
     </nav>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <main>
-  <section class="hero section" style="background-color: #111; color: #fff; padding: 6rem 0;">
+  <section class="hero section">
     <div class="container">
-      <img src="images/pics.jpg" alt="Alawode Adewale Afeez – Full-Stack Web Developer" class="hero-img" />
 
-      <h1 data-en="Full-Stack Developer for Real Estate & Business Platforms"
-          data-fr="Développeur Full-Stack pour plateformes immobilières et entreprises"
-          data-es="Desarrollador Full-Stack para plataformas inmobiliarias y de negocios"
-          data-ar="مطور Full-Stack لمنصات العقارات والأعمال">
-        Full-Stack Developer for Real Estate & Business Platforms
-      </h1>
+      <img src="images/pics.jpg" alt="Alawode Adewale Afeez" class="hero-img" />
 
-      <p data-en="I build scalable web platforms for real estate businesses — including property listing systems, booking dashboards, and admin-managed applications. My work focuses on clean interfaces, reliable backend systems, and software that’s easy to manage and ready to grow."
-         data-fr="Je crée des plateformes web évolutives pour les entreprises immobilières — y compris systèmes de listes de propriétés, tableaux de réservation et applications gérées par l'administrateur. Mon travail se concentre sur des interfaces propres, des systèmes back-end fiables et des logiciels faciles à gérer et évolutifs."
-         data-es="Construyo plataformas web escalables para negocios inmobiliarios — incluyendo sistemas de listado de propiedades, paneles de reservas y aplicaciones administradas por admin. Mi trabajo se centra en interfaces limpias, backend confiable y software fácil de gestionar y escalar."
-         data-ar="أقوم ببناء منصات ويب قابلة للتوسع للأعمال العقارية — بما في ذلك أنظمة قوائم العقارات، لوحات الحجز، والتطبيقات المدارة بواسطة المسؤول. تركيزي على واجهات نظيفة وأنظمة خلفية موثوقة وبرمجيات سهلة الإدارة والنمو.">
-        I build scalable web platforms for real estate businesses — including property listing systems, booking dashboards, and admin-managed applications. My work focuses on clean interfaces, reliable backend systems, and software that’s easy to manage and ready to grow.
+      <h1>Full-Stack Web Developer</h1>
+
+      <p>
+        Full-Stack Web Developer building accessible, mobile-first user interfaces
+        with hands-on experience developing backend logic, APIs, and data-driven systems.
       </p>
 
-      <p data-en="Available for freelance projects, long-term collaboration, and full-stack roles."
-         data-fr="Disponible pour projets freelance, collaborations à long terme et postes full-stack."
-         data-es="Disponible para proyectos freelance, colaboración a largo plazo y roles full-stack."
-         data-ar="متاح لمشاريع مستقلة، التعاون طويل الأمد، ووظائف Full-Stack.">
-        Available for freelance projects, long-term collaboration, and full-stack roles.
+      <p>
+        Open to frontend, backend, and full-stack roles, freelance projects, internships,
+        and remote opportunities.
       </p>
 
       <div class="btn-box">
-        <a href="contact.html" class="btn btn-primary" data-en="Start a Project" data-fr="Démarrer un projet" data-es="Iniciar un proyecto" data-ar="ابدأ مشروعًا">Start a Project</a>
-        <a href="portfolio.html" class="btn" data-en="View Portfolio" data-fr="Voir Portfolio" data-es="Ver Portafolio" data-ar="عرض الأعمال">View Portfolio</a>
-        <a href="https://www.fiverr.com/users/eyesightwork/seller_dashboard" class="btn fiverr" target="_blank" rel="noopener">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn upwork" target="_blank" rel="noopener">Upwork</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn linkedin" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="contact.html" class="btn btn-primary">Hire Me</a>
+        <a href="https://github.com/eyesightworks" class="btn">GitHub Profile</a>
+        <a href="portfolio.html" class="btn">View Portfolio</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn">LinkedIn Profile</a>
       </div>
+
     </div>
   </section>
 
-  <!-- ================= WHAT I BUILD ================= -->
-  <section class="section">
-    <div class="container text-center">
-      <h2 data-en="What I Build" data-fr="Ce que je construis" data-es="Lo que construyo" data-ar="ما أقوم ببنائه">What I Build</h2>
+<!-- ================= SKILLS ================= -->
+<section class="section">
+  <div class="container text-center">
 
-      <div class="skills-list" id="skills-list">
-        <span class="skill-pill">Real Estate Platforms</span>
-        <span class="skill-pill">Property Listing Systems</span>
-        <span class="skill-pill">Booking & Inquiry Dashboards</span>
-        <span class="skill-pill">Admin & Agent Panels</span>
-        <span class="skill-pill">Backend APIs & Databases</span>
-        <span class="skill-pill">Scalable Business Applications</span>
-      </div>
+    <h2>What I Build</h2>
+
+    <div class="skills-list">
+      <span class="skill-pill">Real Estate Platforms</span>
+      <span class="skill-pill">Property Listing Systems</span>
+      <span class="skill-pill">Booking Dashboards</span>
+      <span class="skill-pill">Admin Panels</span>
+      <span class="skill-pill">Backend APIs</span>
+      <span class="skill-pill">Business Web Apps</span>
     </div>
-  </section>
+
+  </div>
+</section>
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer style="background-color: #111; color: #fff; padding: 2rem 0;">
+<footer>
   © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<!-- ================= JS ================= -->
+<!-- Existing JS -->
 <script src="script.js" defer></script>
+
 </body>
 </html>
