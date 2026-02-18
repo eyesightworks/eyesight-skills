@@ -9,32 +9,77 @@
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="js-enabled">
 
 <header>
 <div class="container">
-<nav>
+<nav aria-label="Primary Navigation">
 
-<div class="logo">Eyesightworks</div>
+<div class="logo"
+data-en="Eyesightworks"
+data-fr="Eyesightworks"
+data-es="Eyesightworks"
+data-ar="آيزسايت ووركس">
+Eyesightworks
+</div>
 
-<button data-hamburger>☰</button>
+<button data-hamburger
+aria-label="Toggle navigation"
+aria-controls="primary-menu"
+aria-expanded="false">☰</button>
 
-<ul class="nav-menu" data-nav-menu>
-<li><a href="index.html" data-i18n="nav_home">Home</a></li>
-<li><a href="about.html" data-i18n="nav_about">About</a></li>
-<li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
-<li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+<ul id="primary-menu" class="nav-menu" data-nav-menu>
 
 <li>
-<select data-lang-select>
+<a href="index.html" class="active" aria-current="page"
+data-en="Home"
+data-fr="Accueil"
+data-es="Inicio"
+data-ar="الرئيسية">
+Home
+</a>
+</li>
+
+<li>
+<a href="about.html"
+data-en="About"
+data-fr="À propos"
+data-es="Acerca de"
+data-ar="نبذة عني">
+About
+</a>
+</li>
+
+<li>
+<a href="portfolio.html"
+data-en="Portfolio"
+data-fr="Portfolio"
+data-es="Portafolio"
+data-ar="معرض الأعمال">
+Portfolio
+</a>
+</li>
+
+<li>
+<a href="contact.html"
+data-en="Contact"
+data-fr="Contact"
+data-es="Contacto"
+data-ar="تواصل">
+Contact
+</a>
+</li>
+
+<li>
+<select data-lang-select aria-label="Select language">
 <option value="en">EN</option>
 <option value="fr">FR</option>
 <option value="es">ES</option>
 <option value="ar">AR</option>
 </select>
 </li>
-</ul>
 
+</ul>
 </nav>
 </div>
 </header>
@@ -46,26 +91,48 @@
 
 <img src="images/pics.jpg" alt="Alawode Adewale Afeez" class="hero-img">
 
-<h1 data-i18n="hero_title">
+<h1
+data-en="Full-Stack Developer for Real Estate & Business Platforms"
+data-fr="Développeur Full-Stack pour plateformes immobilières"
+data-es="Desarrollador Full-Stack para plataformas inmobiliarias"
+data-ar="مطور متكامل لمنصات العقارات والأعمال">
 Full-Stack Developer for Real Estate & Business Platforms
 </h1>
 
-<p data-i18n="hero_desc1">
+<p
+data-en="I build scalable web platforms for real estate businesses including listing systems and dashboards."
+data-fr="Je crée des plateformes web évolutives pour l'immobilier, y compris des systèmes d'annonces et tableaux de bord."
+data-es="Construyo plataformas web escalables para inmobiliarias, incluyendo sistemas de listados y paneles."
+data-ar="أبني منصات ويب قابلة للتوسع للأعمال العقارية بما في ذلك أنظمة القوائم ولوحات التحكم.">
 I build scalable web platforms for real estate businesses including listing systems and dashboards.
 </p>
 
-<p data-i18n="hero_desc2">
+<p
+data-en="Available for freelance projects and long-term collaboration."
+data-fr="Disponible pour des projets freelance et collaborations à long terme."
+data-es="Disponible para proyectos freelance y colaboración a largo plazo."
+data-ar="متاح لمشاريع العمل الحر والتعاون طويل المدى.">
 Available for freelance projects and long-term collaboration.
 </p>
 
 <div class="btn-box">
-<a href="contact.html" class="btn btn-primary" data-i18n="start_project">
+
+<a href="contact.html" class="btn btn-primary"
+data-en="Start a Project"
+data-fr="Démarrer un projet"
+data-es="Iniciar proyecto"
+data-ar="ابدأ مشروعًا">
 Start a Project
 </a>
 
-<a href="portfolio.html" class="btn" data-i18n="view_portfolio">
+<a href="portfolio.html" class="btn"
+data-en="View Portfolio"
+data-fr="Voir portfolio"
+data-es="Ver portafolio"
+data-ar="عرض الأعمال">
 View Portfolio
 </a>
+
 </div>
 
 </div>
@@ -74,14 +141,56 @@ View Portfolio
 <section class="section">
 <div class="container text-center">
 
-<h2 data-i18n="what_i_build">What I Build</h2>
+<h2
+data-en="What I Build"
+data-fr="Ce que je construis"
+data-es="Lo que construyo"
+data-ar="ما أبنيه">
+What I Build
+</h2>
 
 <div class="skills-list">
-<span class="skill-pill" data-i18n="skill1">Real Estate Platforms</span>
-<span class="skill-pill" data-i18n="skill2">Property Listing Systems</span>
-<span class="skill-pill" data-i18n="skill3">Booking Dashboards</span>
-<span class="skill-pill" data-i18n="skill4">Admin Panels</span>
-<span class="skill-pill" data-i18n="skill5">APIs & Databases</span>
+
+<span class="skill-pill"
+data-en="Real Estate Platforms"
+data-fr="Plateformes immobilières"
+data-es="Plataformas inmobiliarias"
+data-ar="منصات عقارية">
+Real Estate Platforms
+</span>
+
+<span class="skill-pill"
+data-en="Property Listing Systems"
+data-fr="Systèmes d'annonces immobilières"
+data-es="Sistemas de listados inmobiliarios"
+data-ar="أنظمة عرض العقارات">
+Property Listing Systems
+</span>
+
+<span class="skill-pill"
+data-en="Booking Dashboards"
+data-fr="Tableaux de réservation"
+data-es="Paneles de reservas"
+data-ar="لوحات الحجز">
+Booking Dashboards
+</span>
+
+<span class="skill-pill"
+data-en="Admin Panels"
+data-fr="Panneaux administrateur"
+data-es="Paneles de administración"
+data-ar="لوحات الإدارة">
+Admin Panels
+</span>
+
+<span class="skill-pill"
+data-en="APIs & Databases"
+data-fr="APIs et bases de données"
+data-es="APIs y bases de datos"
+data-ar="واجهات وقواعد بيانات">
+APIs & Databases
+</span>
+
 </div>
 
 </div>
@@ -89,10 +198,15 @@ View Portfolio
 
 </main>
 
-<footer data-i18n="footer_text">
+<footer
+data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-ar="© 2026 Eyesightworks — Alawode Adewale Afeez">
 © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
+
 </body>
 </html>
