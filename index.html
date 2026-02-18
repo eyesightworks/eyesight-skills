@@ -6,79 +6,11 @@
 
 <title>Alawode Adewale Afeez | Full-Stack Web Developer</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
-
-<!-- ✅ COLOR OVERRIDE ONLY -->
-<style>
-
-body{
-  background:#f8fafc;
-  color:#0f172a;
-}
-
-header{
-  background:#0f172a;
-}
-
-.logo{
-  color:#ffffff;
-}
-
-.nav-menu a{
-  color:#ffffff;
-}
-
-.nav-menu a.active{
-  background:#14b8a6;
-  color:#ffffff;
-  padding:6px 12px;
-  border-radius:6px;
-}
-
-.hero{
-  background:#ffffff !important;
-  color:#0f172a !important;
-}
-
-.hero h1{
-  color:#0f172a;
-}
-
-.hero p{
-  color:#334155;
-}
-
-.skill-pill{
-  background:#e2e8f0;
-  color:#0f172a;
-}
-
-.btn{
-  background:#0f172a;
-  color:#ffffff;
-}
-
-.btn-primary{
-  background:#14b8a6;
-  color:#ffffff;
-}
-
-footer{
-  background:#0f172a;
-  color:#ffffff;
-}
-
-</style>
-
 </head>
 
-<body class="js-enabled">
+<body>
 
-<!-- ================= HEADER ================= -->
 <header>
 <div class="container">
 <nav>
@@ -88,10 +20,10 @@ footer{
 <button data-hamburger>☰</button>
 
 <ul class="nav-menu" data-nav-menu>
-<li><a href="index.html" class="active">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="portfolio.html">Portfolio</a></li>
-<li><a href="contact.html">Contact</a></li>
+<li><a href="index.html" data-i18n="nav_home">Home</a></li>
+<li><a href="about.html" data-i18n="nav_about">About</a></li>
+<li><a href="portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
+<li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
 
 <li>
 <select data-lang-select>
@@ -107,7 +39,6 @@ footer{
 </div>
 </header>
 
-<!-- ================= HERO ================= -->
 <main>
 
 <section class="hero section">
@@ -115,44 +46,42 @@ footer{
 
 <img src="images/pics.jpg" alt="Alawode Adewale Afeez" class="hero-img">
 
-<h1>Full-Stack Developer for Real Estate & Business Platforms</h1>
+<h1 data-i18n="hero_title">
+Full-Stack Developer for Real Estate & Business Platforms
+</h1>
 
-<p>
-I build scalable web platforms for real estate businesses — including property listing systems,
-booking dashboards, and admin-managed applications. My work focuses on clean interfaces,
-reliable backend systems, and software that’s easy to manage and ready to grow.
+<p data-i18n="hero_desc1">
+I build scalable web platforms for real estate businesses including listing systems and dashboards.
 </p>
 
-<p>
-Available for freelance projects, long-term collaboration, and full-stack roles.
+<p data-i18n="hero_desc2">
+Available for freelance projects and long-term collaboration.
 </p>
 
 <div class="btn-box">
-<a href="contact.html" class="btn btn-primary">Start a Project</a>
-<a href="portfolio.html" class="btn">View Portfolio</a>
-<a href="https://www.fiverr.com/eyesightwork" class="btn">Fiverr</a>
-<a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" class="btn">Upwork</a>
-<a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" class="btn">LinkedIn</a>
+<a href="contact.html" class="btn btn-primary" data-i18n="start_project">
+Start a Project
+</a>
+
+<a href="portfolio.html" class="btn" data-i18n="view_portfolio">
+View Portfolio
+</a>
 </div>
 
 </div>
 </section>
 
-<!-- ================= WHAT I BUILD ================= -->
 <section class="section">
 <div class="container text-center">
 
-<h2>What I Build</h2>
+<h2 data-i18n="what_i_build">What I Build</h2>
 
 <div class="skills-list">
-
-<span class="skill-pill">Real Estate Platforms</span>
-<span class="skill-pill">Property Listing Systems</span>
-<span class="skill-pill">Booking & Inquiry Dashboards</span>
-<span class="skill-pill">Admin & Agent Panels</span>
-<span class="skill-pill">Backend APIs & Databases</span>
-<span class="skill-pill">Scalable Business Applications</span>
-
+<span class="skill-pill" data-i18n="skill1">Real Estate Platforms</span>
+<span class="skill-pill" data-i18n="skill2">Property Listing Systems</span>
+<span class="skill-pill" data-i18n="skill3">Booking Dashboards</span>
+<span class="skill-pill" data-i18n="skill4">Admin Panels</span>
+<span class="skill-pill" data-i18n="skill5">APIs & Databases</span>
 </div>
 
 </div>
@@ -160,12 +89,10 @@ Available for freelance projects, long-term collaboration, and full-stack roles.
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer>
+<footer data-i18n="footer_text">
 © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script src="script.js" defer></script>
-
+<script src="script.js"></script>
 </body>
 </html>
