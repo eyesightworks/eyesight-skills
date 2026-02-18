@@ -5,210 +5,175 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Portfolio | Alawode Adewale Afeez</title>
-
 <meta name="description" content="Portfolio of Alawode Adewale Afeez, Full-Stack Web Developer.">
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="style.css">
-
-<style>
-.projects-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:1.8rem;
-margin-top:1.5rem;
-}
-.project-card{
-background:#fff;
-border-radius:12px;
-padding:1rem;
-border:1px solid #eee;
-transition:.3s;
-}
-.project-card:hover{
-transform:translateY(-6px);
-box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-.project-card img{
-width:100%;
-border-radius:8px;
-margin-bottom:10px;
-}
-.btn-box{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-}
-.btn{
-padding:6px 14px;
-border-radius:6px;
-background:#0b5ed7;
-color:#fff;
-text-decoration:none;
-font-size:14px;
-}
-.btn-secondary{
-background:#333;
-}
-#category-filters{
-display:flex;
-justify-content:center;
-gap:10px;
-flex-wrap:wrap;
-margin-bottom:25px;
-}
-#category-filters button{
-padding:7px 14px;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-.active-filter{
-background:#0b5ed7;
-color:#fff;
-}
-</style>
 </head>
 
-<body>
+<body class="js-enabled">
 
+<!-- ================= HEADER ================= -->
 <header>
-<div class="container">
-<h2>Eyesightworks</h2>
-</div>
+  <div class="container">
+    <nav aria-label="Primary Navigation">
+
+      <div class="logo" 
+        data-en="Eyesightworks" 
+        data-fr="Eyesightworks" 
+        data-es="Eyesightworks" 
+        data-ar="آيزسايت ووركس">
+        Eyesightworks
+      </div>
+
+      <!-- Desktop freelance links -->
+      <div class="freelance-links desktop-only">
+        <a href="https://www.fiverr.com/eyesightwork" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
+
+      <ul id="primary-menu" class="nav-menu" data-nav-menu>
+        <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
+        <li><a href="about.html" data-en="About" data-fr="À propos" data-es="Acerca de" data-ar="نبذة عني">About</a></li>
+        <li><a href="portfolio.html" class="active" aria-current="page" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</a></li>
+        <li><a href="contact.html" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+
+        <li>
+          <select data-lang-select aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
+        </li>
+
+        <!-- Mobile freelance links -->
+        <li class="mobile-only freelance-links">
+          <a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
+          <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
+          <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
+        </li>
+      </ul>
+
+    </nav>
+  </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
 
-<section>
-<div class="container">
-<h1>Portfolio</h1>
-<p>Showcasing my real estate, pharmacy, automobile, backend and AI projects.</p>
-</div>
+<section class="section">
+  <div class="container text-center">
+    <h1 data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</h1>
+    <p data-en="Showcasing my real estate, pharmacy, automobile, backend, and AI projects."
+       data-fr="Présentation de mes projets immobiliers, pharmacie, automobile, backend et IA."
+       data-es="Mostrando mis proyectos de inmobiliaria, farmacia, automóviles, backend y IA."
+       data-ar="عرض مشاريعي في العقارات والصيدلة والسيارات والخلفية والذكاء الاصطناعي.">
+      Showcasing my real estate, pharmacy, automobile, backend, and AI projects.
+    </p>
+  </div>
 </section>
 
-<section>
-<div id="category-filters">
-<button class="active-filter" data-filter="all">All</button>
-<button data-filter="Real Estate">Real Estate</button>
-<button data-filter="Pharmacy">Pharmacy</button>
-<button data-filter="Automobile">Automobile</button>
-<button data-filter="Backend">Backend</button>
-<button data-filter="AI">AI</button>
-<button data-filter="Portfolio">Portfolio</button>
-</div>
+<section class="section">
+  <div class="container text-center" id="category-filters">
+    <button class="active-filter" data-filter="all" data-en="All" data-fr="Tous" data-es="Todos" data-ar="الكل">All</button>
+    <button data-filter="Real Estate">Real Estate</button>
+    <button data-filter="Pharmacy">Pharmacy</button>
+    <button data-filter="Automobile">Automobile</button>
+    <button data-filter="Backend">Backend</button>
+    <button data-filter="AI">AI</button>
+    <button data-filter="Portfolio">Portfolio</button>
+  </div>
 </section>
 
-<section>
-<div class="container projects-grid" id="projects-container"></div>
+<section class="section">
+  <div class="container projects-grid" id="projects-container"></div>
 </section>
 
 </main>
 
-<footer>
-<p>© 2026 Eyesightworks — Alawode Adewale Afeez</p>
+<!-- ================= FOOTER ================= -->
+<footer data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
+        data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
+        data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
+        data-ar="© 2026 آيزسايت ووركس — Alawode Adewale Afeez">
+  © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script>
-
+// ================= PROJECT DATA =================
 const projects = [
-
-{
-title:"Real Estate Platform Dashboard",
-image:"your-project/real-estate-dashboard.png",
-tech:"React, Node.js, MySQL",
-demo:"https://eyesightworks.github.io/real-estate-demo/",
-code:"https://github.com/eyesightworks/real-estate-platform",
-category:"Real Estate"
-},
-
-{
-title:"Property Booking System",
-image:"your-project/real-estate-booking.png",
-tech:"React, Stripe API",
-demo:"https://eyesightworks.github.io/property-booking-demo/",
-code:"https://github.com/eyesightworks/property-booking",
-category:"Real Estate"
-},
-
-{
-title:"Pharmacy Management Dashboard",
-image:"your-project/pharmacy-dashboard.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
-code:"https://github.com/eyesightworks/pharmacy-dashboard",
-category:"Pharmacy"
-},
-
-{
-title:"Automobile Sales Dashboard",
-image:"your-project/automobile-dashboard.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/automobile-dashboard/",
-code:"https://github.com/eyesightworks/automobile-dashboard",
-category:"Automobile"
-},
-
-{
-title:"Backend Microservices",
-image:"your-project/backend.png",
-tech:"Node.js, Express",
-demo:"",
-code:"",
-category:"Backend"
-},
-
-{
-title:"AI Voice & Image Demo",
-image:"images/ai-demo.jpg",
-tech:"Python, Flask",
-demo:"",
-code:"",
-category:"AI"
-},
-
-{
-title:"Personal Portfolio",
-image:"your-project/portfolio.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/eyesight-skills/",
-code:"https://github.com/eyesightworks/eyesight-skills",
-category:"Portfolio"
-}
-
+  {title:"Real Estate Platform Dashboard", image:"your-project/real-estate-dashboard.png", tech:"React, Node.js, MySQL", demo:"https://eyesightworks.github.io/real-estate-demo/", code:"https://github.com/eyesightworks/real-estate-platform", category:"Real Estate"},
+  {title:"Property Booking System", image:"your-project/real-estate-booking.png", tech:"React, Stripe API", demo:"https://eyesightworks.github.io/property-booking-demo/", code:"https://github.com/eyesightworks/property-booking", category:"Real Estate"},
+  {title:"Pharmacy Management Dashboard", image:"your-project/pharmacy-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/pharmacy-dashboard/", code:"https://github.com/eyesightworks/pharmacy-dashboard", category:"Pharmacy"},
+  {title:"Automobile Sales Dashboard", image:"your-project/automobile-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/automobile-dashboard/", code:"https://github.com/eyesightworks/automobile-dashboard", category:"Automobile"},
+  {title:"Backend Microservices", image:"your-project/backend.png", tech:"Node.js, Express", demo:"", code:"", category:"Backend"},
+  {title:"AI Voice & Image Demo", image:"images/ai-demo.jpg", tech:"Python, Flask", demo:"", code:"", category:"AI"},
+  {title:"Personal Portfolio", image:"your-project/portfolio.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/eyesight-skills/", code:"https://github.com/eyesightworks/eyesight-skills", category:"Portfolio"}
 ];
 
-const container=document.getElementById("projects-container");
+const container = document.getElementById("projects-container");
 
 function render(filter="all"){
-container.innerHTML="";
-projects.forEach(p=>{
-if(filter==="all"||p.category===filter){
-container.innerHTML+=`
-<div class="project-card">
-<img src="${p.image}">
-<h3>${p.title}</h3>
-<p><b>Tech:</b> ${p.tech}</p>
-<div class="btn-box">
-${p.demo?`<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>`:""}
-${p.code?`<a class="btn btn-secondary" href="${p.code}" target="_blank">View Code</a>`:""}
-</div>
-</div>`;
-}
-});
+  container.innerHTML="";
+  projects.forEach(p=>{
+    if(filter==="all"||p.category===filter){
+      container.innerHTML+=`
+      <div class="project-card">
+        <img src="${p.image}" alt="${p.title}">
+        <h3>${p.title}</h3>
+        <p><b>Tech:</b> ${p.tech}</p>
+        <div class="btn-box">
+          ${p.demo?`<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>`:""}
+          ${p.code?`<a class="btn btn-secondary" href="${p.code}" target="_blank">View Code</a>`:""}
+        </div>
+      </div>`;
+    }
+  });
 }
 
 render();
 
+// ================= FILTER BUTTONS =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll("#category-filters button").forEach(b=>b.classList.remove("active-filter"));
-btn.classList.add("active-filter");
-render(btn.dataset.filter);
-}
+  btn.onclick=()=>{
+    document.querySelectorAll("#category-filters button").forEach(b=>b.classList.remove("active-filter"));
+    btn.classList.add("active-filter");
+    render(btn.dataset.filter);
+  }
 });
 
-</script>
+// ================= HAMBURGER MENU =================
+document.documentElement.classList.add("js-enabled");
+const hamburger = document.querySelector("[data-hamburger]");
+const navMenu = document.querySelector("[data-nav-menu]");
+if(hamburger && navMenu){
+  hamburger.addEventListener("click", ()=> {
+    const isOpen = navMenu.classList.toggle("show");
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+  });
+  navMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", ()=> navMenu.classList.remove("show")));
+  document.addEventListener("keydown", e=>{if(e.key==="Escape") navMenu.classList.remove("show")});
+}
 
+// ================= LANGUAGE SWITCHER =================
+const SUPPORTED_LANGS = ["en","fr","es","ar"];
+const state={lang:SUPPORTED_LANGS.includes(localStorage.getItem("siteLang"))?localStorage.getItem("siteLang"):"en"};
+function setAttributes(element, attributes={}){Object.entries(attributes).forEach(([k,v])=>element.setAttribute(k,v));}
+function applyLanguage(lang){
+  if(!SUPPORTED_LANGS.includes(lang)) lang="en";
+  document.querySelectorAll("[data-en]").forEach(el=>{const t=el.dataset[lang];if(t) el.textContent=t;});
+  document.documentElement.dir = lang==="ar"?"rtl":"ltr";
+  localStorage.setItem("siteLang",lang);
+  if(navMenu.classList.contains("show")){navMenu.classList.remove("show"); hamburger.setAttribute("aria-expanded","false");}
+}
+document.querySelector("[data-lang-select]").value=state.lang;
+applyLanguage(state.lang);
+document.querySelector("[data-lang-select]").addEventListener("change", e=>applyLanguage(e.target.value));
+
+</script>
 </body>
 </html>
