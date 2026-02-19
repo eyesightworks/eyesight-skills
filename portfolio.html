@@ -26,7 +26,6 @@
         Eyesightworks
       </div>
 
-      <!-- Desktop freelance links -->
       <div class="freelance-links desktop-only">
         <a href="https://www.fiverr.com/eyesightwork" target="_blank" rel="noopener">Fiverr</a>
         <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
@@ -50,7 +49,6 @@
           </select>
         </li>
 
-        <!-- Mobile freelance links -->
         <li class="mobile-only freelance-links">
           <a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
           <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
@@ -68,11 +66,11 @@
 <section class="section">
   <div class="container text-center">
     <h1 data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="معرض الأعمال">Portfolio</h1>
-    <p data-en="Showcasing my real estate, pharmacy, automobile, backend, and AI projects."
+    <p data-en="Showcasing my real estate and business systems including inventory and sales management platforms, backend, and AI projects."
        data-fr="Présentation de mes projets immobiliers, pharmacie, automobile, backend et IA."
        data-es="Mostrando mis proyectos de inmobiliaria, farmacia, automóviles, backend y IA."
        data-ar="عرض مشاريعي في العقارات والصيدلة والسيارات والخلفية والذكاء الاصطناعي.">
-      Showcasing my real estate, pharmacy, automobile, backend, and AI projects.
+      Showcasing my real estate and business systems including inventory and sales management platforms, backend, and AI projects.
     </p>
   </div>
 </section>
@@ -95,7 +93,6 @@
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
         data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
         data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
@@ -108,8 +105,8 @@
 const projects = [
   {title:"Real Estate Platform Dashboard", image:"your-project/real-estate-dashboard.png", tech:"React, Node.js, MySQL", demo:"https://eyesightworks.github.io/real-estate-demo/", code:"https://github.com/eyesightworks/real-estate-platform", category:"Real Estate"},
   {title:"Property Booking System", image:"your-project/real-estate-booking.png", tech:"React, Stripe API", demo:"https://eyesightworks.github.io/property-booking-demo/", code:"https://github.com/eyesightworks/property-booking", category:"Real Estate"},
-  {title:"Pharmacy Management Dashboard", image:"your-project/pharmacy-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/pharmacy-dashboard/", code:"https://github.com/eyesightworks/pharmacy-dashboard", category:"Pharmacy"},
-  {title:"Automobile Sales Dashboard", image:"your-project/automobile-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/automobile-dashboard/", code:"https://github.com/eyesightworks/automobile-dashboard", category:"Automobile"},
+  {title:"Inventory Management Dashboard (Business Platform)", image:"your-project/pharmacy-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/pharmacy-dashboard/", code:"https://github.com/eyesightworks/pharmacy-dashboard", category:"Pharmacy"},
+  {title:"Sales Management Platform (Business Dashboard)", image:"your-project/automobile-dashboard.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/automobile-dashboard/", code:"https://github.com/eyesightworks/automobile-dashboard", category:"Automobile"},
   {title:"Backend Microservices", image:"your-project/backend.png", tech:"Node.js, Express", demo:"", code:"", category:"Backend"},
   {title:"AI Voice & Image Demo", image:"images/ai-demo.jpg", tech:"Python, Flask", demo:"", code:"", category:"AI"},
   {title:"Personal Portfolio", image:"your-project/portfolio.png", tech:"HTML, CSS, JavaScript", demo:"https://eyesightworks.github.io/eyesight-skills/", code:"https://github.com/eyesightworks/eyesight-skills", category:"Portfolio"}
@@ -137,7 +134,7 @@ function render(filter="all"){
 
 render();
 
-// ================= FILTER BUTTONS =================
+// FILTERS
 document.querySelectorAll("#category-filters button").forEach(btn=>{
   btn.onclick=()=>{
     document.querySelectorAll("#category-filters button").forEach(b=>b.classList.remove("active-filter"));
@@ -146,7 +143,7 @@ document.querySelectorAll("#category-filters button").forEach(btn=>{
   }
 });
 
-// ================= HAMBURGER MENU =================
+// HAMBURGER
 document.documentElement.classList.add("js-enabled");
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
@@ -159,16 +156,14 @@ if(hamburger && navMenu){
   document.addEventListener("keydown", e=>{if(e.key==="Escape") navMenu.classList.remove("show")});
 }
 
-// ================= LANGUAGE SWITCHER =================
+// LANGUAGE SWITCHER
 const SUPPORTED_LANGS = ["en","fr","es","ar"];
 const state={lang:SUPPORTED_LANGS.includes(localStorage.getItem("siteLang"))?localStorage.getItem("siteLang"):"en"};
-function setAttributes(element, attributes={}){Object.entries(attributes).forEach(([k,v])=>element.setAttribute(k,v));}
 function applyLanguage(lang){
   if(!SUPPORTED_LANGS.includes(lang)) lang="en";
   document.querySelectorAll("[data-en]").forEach(el=>{const t=el.dataset[lang];if(t) el.textContent=t;});
   document.documentElement.dir = lang==="ar"?"rtl":"ltr";
   localStorage.setItem("siteLang",lang);
-  if(navMenu.classList.contains("show")){navMenu.classList.remove("show"); hamburger.setAttribute("aria-expanded","false");}
 }
 document.querySelector("[data-lang-select]").value=state.lang;
 applyLanguage(state.lang);
