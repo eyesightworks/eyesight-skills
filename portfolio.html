@@ -1,6 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Portfolio | Alawode Adewale Afeez</title>
+<meta name="description" content="Portfolio of Alawode Adewale Afeez — Full-Stack Developer specializing in Real Estate Platforms, Property Dashboards, Business Systems, and Scalable Web Applications.">
+<meta name="robots" content="index, follow">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="js-enabled">
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav aria-label="Primary Navigation">
+
+      <div class="logo"
+        data-en="Eyesightworks"
+        data-fr="Eyesightworks"
+        data-es="Eyesightworks"
+        data-ar="آيزسايت ووركس">
+        Eyesightworks
+      </div>
+
+      <div class="freelance-links desktop-only">
+        <a href="https://www.fiverr.com/eyesightwork" target="_blank" rel="noopener">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <button data-hamburger aria-label="Toggle navigation menu"
+              aria-controls="primary-menu"
+              aria-expanded="false">☰</button>
+
+      <ul id="primary-menu" class="nav-menu" data-nav-menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html" class="active" aria-current="page">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <li>
+          <select data-lang-select aria-label="Select language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+            <option value="es">ES</option>
+            <option value="ar">AR</option>
+          </select>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+<section class="section">
+  <div class="container text-center">
+    <h1>Portfolio</h1>
+    <p>
+      Showcasing my real estate platforms, property dashboards,
+      business systems including inventory and sales management solutions,
+      scalable NestJS backend architectures, and AI integrations.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container text-center" id="category-filters">
+    <button class="active-filter" data-filter="all">All</button>
+    <button data-filter="Real Estate">Real Estate</button>
+    <button data-filter="Pharmacy">Business Systems</button>
+    <button data-filter="Automobile">Sales Systems</button>
+    <button data-filter="Backend">Backend</button>
+    <button data-filter="AI">AI</button>
+    <button data-filter="Portfolio">Portfolio</button>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container projects-grid" id="projects-container"></div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 Eyesightworks — Alawode Adewale Afeez
+</footer>
+
 <script>
 // ================= PROJECT DATA =================
 const projects = [
+
   {
     title:"Real Estate Platform Dashboard",
     image:"your-project/real-estate-dashboard.png",
@@ -9,6 +103,7 @@ const projects = [
     code:"https://github.com/eyesightworks/real-estate-platform",
     category:"Real Estate"
   },
+
   {
     title:"Property Booking System",
     image:"your-project/real-estate-booking.png",
@@ -17,6 +112,7 @@ const projects = [
     code:"https://github.com/eyesightworks/property-booking",
     category:"Real Estate"
   },
+
   {
     title:"Inventory Management Dashboard (Business Platform)",
     image:"your-project/pharmacy-dashboard.png",
@@ -25,6 +121,7 @@ const projects = [
     code:"https://github.com/eyesightworks/pharmacy-dashboard",
     category:"Pharmacy"
   },
+
   {
     title:"Sales Management Platform (Business Dashboard)",
     image:"your-project/automobile-dashboard.png",
@@ -33,23 +130,22 @@ const projects = [
     code:"https://github.com/eyesightworks/automobile-dashboard",
     category:"Automobile"
   },
+
   {
     title:"Scalable Backend Architecture (NestJS Microservices)",
     image:"your-project/backend.png",
     tech:"NestJS, Prisma ORM, PostgreSQL, JWT Authentication, Paystack Integration",
-    demo:"",
-    code:"",
     category:"Backend",
     description:"Modular multi-domain backend built with NestJS. Implements JWT-based RBAC, payment gateway abstraction, wallet services, transaction management, notification services, and scalable architecture patterns designed for enterprise-grade applications."
   },
+
   {
     title:"AI Voice & Image Demo",
     image:"images/ai-demo.jpg",
     tech:"Python, Flask",
-    demo:"",
-    code:"",
     category:"AI"
   },
+
   {
     title:"Personal Portfolio",
     image:"your-project/portfolio.png",
@@ -58,8 +154,10 @@ const projects = [
     code:"https://github.com/eyesightworks/eyesight-skills",
     category:"Portfolio"
   }
+
 ];
 
+// ================= RENDER =================
 const container = document.getElementById("projects-container");
 
 function render(filter="all"){
@@ -70,7 +168,7 @@ function render(filter="all"){
       <div class="project-card">
         <img src="${p.image}" alt="${p.title}">
         <h3>${p.title}</h3>
-        <p><b>Tech:</b> ${p.tech}</p>
+        <p><strong>Tech:</strong> ${p.tech}</p>
         ${p.description ? `<p>${p.description}</p>` : ""}
         <div class="btn-box">
           ${p.demo?`<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>`:""}
@@ -83,52 +181,27 @@ function render(filter="all"){
 
 render();
 
-// FILTERS
+// ================= FILTERS =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
   btn.onclick=()=>{
-    document.querySelectorAll("#category-filters button").forEach(b=>b.classList.remove("active-filter"));
+    document.querySelectorAll("#category-filters button")
+      .forEach(b=>b.classList.remove("active-filter"));
     btn.classList.add("active-filter");
     render(btn.dataset.filter);
-  }
+  };
 });
 
-// HAMBURGER
-document.documentElement.classList.add("js-enabled");
+// ================= HAMBURGER =================
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
+
 if(hamburger && navMenu){
-  hamburger.addEventListener("click", ()=> {
+  hamburger.addEventListener("click", ()=>{
     const isOpen = navMenu.classList.toggle("show");
     hamburger.setAttribute("aria-expanded", String(isOpen));
   });
-  navMenu.querySelectorAll("a").forEach(link => 
-    link.addEventListener("click", ()=> navMenu.classList.remove("show"))
-  );
-  document.addEventListener("keydown", e=>{
-    if(e.key==="Escape") navMenu.classList.remove("show")
-  });
 }
 
-// LANGUAGE SWITCHER
-const SUPPORTED_LANGS = ["en","fr","es","ar"];
-const state={
-  lang:SUPPORTED_LANGS.includes(localStorage.getItem("siteLang"))
-  ? localStorage.getItem("siteLang")
-  : "en"
-};
-
-function applyLanguage(lang){
-  if(!SUPPORTED_LANGS.includes(lang)) lang="en";
-  document.querySelectorAll("[data-en]").forEach(el=>{
-    const t=el.dataset[lang];
-    if(t) el.textContent=t;
-  });
-  document.documentElement.dir = lang==="ar"?"rtl":"ltr";
-  localStorage.setItem("siteLang",lang);
-}
-
-document.querySelector("[data-lang-select]").value=state.lang;
-applyLanguage(state.lang);
-document.querySelector("[data-lang-select]")
-  .addEventListener("change", e=>applyLanguage(e.target.value));
 </script>
+</body>
+</html>
