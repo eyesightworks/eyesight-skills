@@ -13,16 +13,11 @@
 
 <body class="js-enabled">
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav aria-label="Primary Navigation">
 
-      <div class="logo"
-        data-en="Eyesightworks"
-        data-fr="Eyesightworks"
-        data-es="Eyesightworks"
-        data-ar="آيزسايت ووركس">
+      <div class="logo">
         Eyesightworks
       </div>
 
@@ -55,7 +50,6 @@
   </div>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main>
 
 <section class="section">
@@ -64,7 +58,7 @@
     <p>
       Showcasing my real estate platforms, property dashboards,
       business systems including inventory and sales management solutions,
-      scalable NestJS backend architectures, and AI integrations.
+      and scalable NestJS backend architectures.
     </p>
   </div>
 </section>
@@ -76,7 +70,6 @@
     <button data-filter="Pharmacy">Business Systems</button>
     <button data-filter="Automobile">Sales Systems</button>
     <button data-filter="Backend">Backend</button>
-    <button data-filter="AI">AI</button>
     <button data-filter="Portfolio">Portfolio</button>
   </div>
 </section>
@@ -92,7 +85,6 @@
 </footer>
 
 <script>
-// ================= PROJECT DATA =================
 const projects = [
 
   {
@@ -140,13 +132,6 @@ const projects = [
   },
 
   {
-    title:"AI Voice & Image Demo",
-    image:"images/ai-demo.jpg",
-    tech:"Python, Flask",
-    category:"AI"
-  },
-
-  {
     title:"Personal Portfolio",
     image:"your-project/portfolio.png",
     tech:"HTML, CSS, JavaScript",
@@ -157,7 +142,6 @@ const projects = [
 
 ];
 
-// ================= RENDER =================
 const container = document.getElementById("projects-container");
 
 function render(filter="all"){
@@ -181,7 +165,6 @@ function render(filter="all"){
 
 render();
 
-// ================= FILTERS =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
   btn.onclick=()=>{
     document.querySelectorAll("#category-filters button")
@@ -191,7 +174,6 @@ document.querySelectorAll("#category-filters button").forEach(btn=>{
   };
 });
 
-// ================= HAMBURGER =================
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
