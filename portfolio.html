@@ -13,11 +13,16 @@
 
 <body class="js-enabled">
 
+<!-- ================= HEADER ================= -->
 <header>
   <div class="container">
     <nav aria-label="Primary Navigation">
 
-      <div class="logo">
+      <div class="logo"
+        data-en="Eyesightworks"
+        data-fr="Eyesightworks"
+        data-es="Eyesightworks"
+        data-ar="آيزسايت ووركس">
         Eyesightworks
       </div>
 
@@ -50,6 +55,7 @@
   </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
 
 <section class="section">
@@ -85,6 +91,7 @@
 </footer>
 
 <script>
+// ================= PROJECT DATA =================
 const projects = [
 
   {
@@ -142,6 +149,7 @@ const projects = [
 
 ];
 
+// ================= RENDER =================
 const container = document.getElementById("projects-container");
 
 function render(filter="all"){
@@ -165,6 +173,7 @@ function render(filter="all"){
 
 render();
 
+// ================= FILTERS =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
   btn.onclick=()=>{
     document.querySelectorAll("#category-filters button")
@@ -174,6 +183,7 @@ document.querySelectorAll("#category-filters button").forEach(btn=>{
   };
 });
 
+// ================= HAMBURGER =================
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
