@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Portfolio | Alawode Adewale Afeez</title>
-<meta name="description" content="Portfolio of Alawode Adewale Afeez — Full-Stack Developer specializing in Real Estate Platforms, Property Dashboards, Business Systems, and Scalable Web Applications.">
+<meta name="description" content="Portfolio of Alawode Adewale Afeez — Full-Stack Developer specializing in Real Estate Platforms, Backend Systems, and Scalable Web Applications.">
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="style.css">
@@ -27,14 +27,12 @@
       </div>
 
       <div class="freelance-links desktop-only">
-        <a href="https://www.fiverr.com/eyesightwork" target="_blank" rel="noopener">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank" rel="noopener">Upwork</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
+        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
+        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
       </div>
 
-      <button data-hamburger aria-label="Toggle navigation menu"
-              aria-controls="primary-menu"
-              aria-expanded="false">☰</button>
+      <button data-hamburger aria-label="Toggle navigation">☰</button>
 
       <ul id="primary-menu" class="nav-menu" data-nav-menu>
         <li><a href="index.html"
@@ -49,7 +47,7 @@
           data-es="Acerca de"
           data-ar="نبذة عني">About</a></li>
 
-        <li><a href="portfolio.html" class="active" aria-current="page"
+        <li><a href="portfolio.html" class="active"
           data-en="Portfolio"
           data-fr="Portfolio"
           data-es="Portafolio"
@@ -62,7 +60,7 @@
           data-ar="تواصل">Contact</a></li>
 
         <li>
-          <select data-lang-select aria-label="Select language">
+          <select data-lang-select>
             <option value="en">EN</option>
             <option value="fr">FR</option>
             <option value="es">ES</option>
@@ -70,6 +68,7 @@
           </select>
         </li>
       </ul>
+
     </nav>
   </div>
 </header>
@@ -88,25 +87,24 @@
     </h1>
 
     <p
-      data-en="Showcasing my real estate platforms, property dashboards, business systems including inventory and sales management solutions, and scalable NestJS backend architectures."
-      data-fr="Présentation de mes plateformes immobilières, tableaux de bord, systèmes d’entreprise et architectures backend NestJS évolutives."
-      data-es="Mostrando mis plataformas inmobiliarias, paneles de control, sistemas empresariales y arquitecturas backend NestJS escalables."
-      data-ar="عرض منصاتي العقارية ولوحات التحكم وأنظمة الأعمال وبنى NestJS الخلفية القابلة للتوسع.">
-      Showcasing my real estate platforms, property dashboards,
-      business systems including inventory and sales management solutions,
-      and scalable NestJS backend architectures.
+      data-en="Showcasing my backend systems, real estate platforms, and business applications."
+      data-fr="Présentation de mes systèmes backend et plateformes."
+      data-es="Mostrando mis sistemas backend y plataformas."
+      data-ar="عرض أنظمة الخلفية ومنصاتي.">
+      Showcasing my backend systems, real estate platforms, and business applications.
     </p>
   </div>
 </section>
 
+<!-- FILTERS -->
 <section class="section">
   <div class="container text-center" id="category-filters">
     <button class="active-filter" data-filter="all">All</button>
+    <button data-filter="Backend">Featured</button>
     <button data-filter="Real Estate">Real Estate</button>
     <button data-filter="Pharmacy">Business Systems</button>
     <button data-filter="Automobile">Sales Systems</button>
-    <button data-filter="Backend">Backend</button>
-    <button data-filter="Portfolio">Portfolio</button>
+    <button data-filter="Portfolio">Frontend</button>
   </div>
 </section>
 
@@ -116,17 +114,35 @@
 
 </main>
 
-<footer
-  data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
-  data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
-  data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
-  data-ar="© 2026 Eyesightworks — Alawode Adewale Afeez">
-  © 2026 Eyesightworks — Alawode Adewale Afeez
+<footer>
+© 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script>
 // ================= PROJECT DATA =================
 const projects = [
+
+  // ⭐ FEATURED BACKEND FIRST
+  {
+    title:"⭐ EyesightWorks Real Estate System (Full-Stack)",
+    image:"your-project/backend.png",
+    tech:"NestJS, Prisma ORM, PostgreSQL, Cloudinary, JWT",
+    demo:"https://eyesight-realestate.vercel.app",
+    code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
+    category:"Backend",
+    description:`
+Admin Panel: https://frontend-eight-mocha-89.vercel.app
+
+Full-stack system with:
+• JWT Authentication & Role-based access
+• Cloudinary image upload
+• PostgreSQL database (Prisma ORM)
+• Properties, Vehicles, Products management
+
+Flow:
+Admin Upload → Cloudinary → Backend → Database → Frontend
+`
+  },
 
   {
     title:"Real Estate Platform Dashboard",
@@ -147,7 +163,7 @@ const projects = [
   },
 
   {
-    title:"Inventory Management Dashboard (Business Platform)",
+    title:"Inventory Management Dashboard",
     image:"your-project/pharmacy-dashboard.png",
     tech:"HTML, CSS, JavaScript",
     demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
@@ -156,20 +172,12 @@ const projects = [
   },
 
   {
-    title:"Sales Management Platform (Business Dashboard)",
+    title:"Sales Management Platform",
     image:"your-project/automobile-dashboard.png",
     tech:"HTML, CSS, JavaScript",
     demo:"https://eyesightworks.github.io/cars/",
     code:"https://github.com/eyesightworks/cars",
     category:"Automobile"
-  },
-
-  {
-    title:"Scalable Backend Architecture (NestJS Microservices)",
-    image:"your-project/backend.png",
-    tech:"NestJS, Prisma ORM, PostgreSQL, JWT Authentication, Paystack Integration",
-    category:"Backend",
-    description:"Modular multi-domain backend built with NestJS. Implements JWT-based RBAC, payment gateway abstraction, wallet services, transaction management, notification services, and scalable architecture patterns designed for enterprise-grade applications."
   },
 
   {
@@ -207,7 +215,7 @@ function render(filter="all"){
 
 render();
 
-// ================= FILTERS =================
+// FILTER
 document.querySelectorAll("#category-filters button").forEach(btn=>{
   btn.onclick=()=>{
     document.querySelectorAll("#category-filters button")
@@ -217,7 +225,7 @@ document.querySelectorAll("#category-filters button").forEach(btn=>{
   };
 });
 
-// ================= HAMBURGER =================
+// HAMBURGER (UNCHANGED)
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
@@ -229,5 +237,6 @@ if(hamburger && navMenu){
 }
 
 </script>
+
 </body>
 </html>
