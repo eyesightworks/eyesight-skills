@@ -4,13 +4,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Portfolio | Alawode Adewale Afeez</title>
+<title
+data-en="Portfolio | Alawode Adewale Afeez"
+data-fr="Portfolio | Alawode Adewale Afeez"
+data-es="Portafolio | Alawode Adewale Afeez"
+data-ar="معرض الأعمال | علاء الدين">
+Portfolio | Alawode Adewale Afeez
+</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="js-enabled">
 
+<!-- ================= HEADER (SAME AS INDEX STYLE) ================= -->
 <header>
 <div class="container">
 <nav aria-label="Primary Navigation">
@@ -25,31 +32,48 @@ Eyesightworks
 
 <button data-hamburger aria-label="Toggle navigation">☰</button>
 
-<ul id="primary-menu" class="nav-menu" data-nav-menu>
+<ul class="nav-menu" data-nav-menu>
 
-<li><a href="index.html"
+<li>
+<a href="index.html"
 data-en="Home"
 data-fr="Accueil"
 data-es="Inicio"
-data-ar="الرئيسية">Home</a></li>
+data-ar="الرئيسية">
+Home
+</a>
+</li>
 
-<li><a href="about.html"
+<li>
+<a href="about.html"
 data-en="About"
 data-fr="À propos"
 data-es="Acerca de"
-data-ar="نبذة عني">About</a></li>
+data-ar="نبذة عني">
+About
+</a>
+</li>
 
-<li><a href="portfolio.html" class="active"
+<li>
+<a href="portfolio.html"
+class="active"
 data-en="Portfolio"
 data-fr="Portfolio"
 data-es="Portafolio"
-data-ar="معرض الأعمال">Portfolio</a></li>
+data-ar="معرض الأعمال">
+Portfolio
+</a>
+</li>
 
-<li><a href="contact.html"
+<li>
+<a href="contact.html"
 data-en="Contact"
 data-fr="Contact"
 data-es="Contacto"
-data-ar="تواصل">Contact</a></li>
+data-ar="تواصل">
+Contact
+</a>
+</li>
 
 <li>
 <select data-lang-select>
@@ -72,225 +96,171 @@ data-ar="تواصل">Contact</a></li>
 <div class="container text-center">
 
 <h1
-data-en="Portfolio"
-data-fr="Portfolio"
-data-es="Portafolio"
-data-ar="معرض الأعمال">
-Portfolio
+data-en="My Projects & Work"
+data-fr="Mes projets et travaux"
+data-es="Mis proyectos"
+data-ar="مشاريعي وأعمالي">
+My Projects & Work
 </h1>
 
 <p
-data-en="Showcasing scalable backend systems, real estate platforms, and production-ready applications."
-data-fr="Présentation de systèmes backend et plateformes web."
-data-es="Muestra de sistemas backend y plataformas web."
-data-ar="عرض أنظمة ومنصات ويب متكاملة.">
-Showcasing scalable backend systems, real estate platforms, and production-ready applications.
+data-en="A collection of scalable backend systems, dashboards, and real-world applications."
+data-fr="Une collection de systèmes backend et applications réelles."
+data-es="Colección de sistemas backend y aplicaciones reales."
+data-ar="مجموعة من الأنظمة والتطبيقات الحقيقية القابلة للتطوير.">
+A collection of scalable backend systems, dashboards, and real-world applications.
 </p>
 
 </div>
 </section>
 
-<!-- ================= PROJECTS ================= -->
-
+<!-- ================= PROJECT GRID ================= -->
 <section class="section">
 <div class="container projects-grid">
 
 <!-- PROJECT 1 -->
 <div class="project-card">
-
-<img src="your-project/backend.png" alt="Real Estate System">
+<img src="your-project/backend.png" alt="Real Estate Backend System">
 
 <h3
 data-en="EyesightWorks Real Estate System (Full-Stack)"
 data-fr="Système immobilier EyesightWorks"
 data-es="Sistema inmobiliario EyesightWorks"
-data-ar="نظام عقارات EyesightWorks">
+data-ar="نظام العقارات EyesightWorks">
 EyesightWorks Real Estate System (Full-Stack)
 </h3>
 
+<p>
+<strong>Tech:</strong> NestJS, Prisma, PostgreSQL, Cloudinary, JWT
+</p>
+
 <p
-data-en="Built a scalable backend system for managing real estate listings and products."
-data-fr="Système backend pour gestion immobilière."
-data-es="Sistema backend para gestión inmobiliaria."
-data-ar="نظام إدارة عقارات متكامل.">
-Built a scalable backend system for managing real estate listings and products.
+data-en="Scalable backend system for real estate management."
+data-fr="Système backend évolutif pour l'immobilier."
+data-es="Sistema backend escalable para bienes raíces."
+data-ar="نظام خلفي قابل للتطوير لإدارة العقارات.">
+Scalable backend system for real estate management.
 </p>
 
-<p>
-<strong>Demo:</strong>
-<a href="https://eyesight-realestate.vercel.app" target="_blank">Live Site</a>
-</p>
+<div class="btn-box">
+<a class="btn btn-primary"
+href="https://eyesight-realestate.vercel.app"
+target="_blank"
+data-en="Live Demo"
+data-fr="Démo"
+data-es="Demo"
+data-ar="عرض مباشر">
+Live Demo
+</a>
 
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/pharmacy-auto-realestate-backend" target="_blank">GitHub</a>
-</p>
-
+<a class="btn"
+href="https://github.com/eyesightworks/pharmacy-auto-realestate-backend"
+target="_blank"
+data-en="View Code"
+data-fr="Voir code"
+data-es="Ver código"
+data-ar="عرض الكود">
+View Code
+</a>
+</div>
 </div>
 
 <!-- PROJECT 2 -->
 <div class="project-card">
-
 <img src="your-project/real-estate-dashboard.png" alt="Dashboard">
 
 <h3
 data-en="Real Estate Platform Dashboard"
 data-fr="Tableau de bord immobilier"
 data-es="Panel inmobiliario"
-data-ar="لوحة تحكم عقارية">
+data-ar="لوحة العقارات">
 Real Estate Platform Dashboard
 </h3>
 
-<p
-data-en="Dashboard to manage and filter property listings efficiently."
-data-fr="Tableau de gestion immobilière."
-data-es="Panel de gestión inmobiliaria."
-data-ar="لوحة إدارة العقارات.">
-Dashboard to manage and filter property listings efficiently.
-</p>
-
 <p>
-<strong>Demo:</strong>
-<a href="https://eyesightworks.github.io/real-estate/" target="_blank">Live Site</a>
+<strong>Tech:</strong> React, Node.js
 </p>
 
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/real-estate" target="_blank">GitHub</a>
-</p>
-
+<div class="btn-box">
+<a class="btn btn-primary" href="https://eyesightworks.github.io/real-estate/" target="_blank">Live Demo</a>
+<a class="btn" href="https://github.com/eyesightworks/real-estate" target="_blank">View Code</a>
+</div>
 </div>
 
 <!-- PROJECT 3 -->
 <div class="project-card">
-
 <img src="your-project/real-estate-booking.png" alt="Booking System">
 
 <h3
 data-en="Property Booking System"
 data-fr="Système de réservation"
 data-es="Sistema de reservas"
-data-ar="نظام حجز عقارات">
+data-ar="نظام الحجز">
 Property Booking System
 </h3>
 
-<p
-data-en="Booking platform with integrated payment processing."
-data-fr="Plateforme de réservation sécurisée."
-data-es="Plataforma de reservas segura."
-data-ar="نظام حجز مدفوعات آمن.">
-Booking platform with integrated payment processing.
-</p>
-
 <p>
-<strong>Demo:</strong>
-<a href="https://eyesightworks.github.io/property-finder/" target="_blank">Live Site</a>
+<strong>Tech:</strong> React, Stripe API
 </p>
 
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/property-finder" target="_blank">GitHub</a>
-</p>
-
+<div class="btn-box">
+<a class="btn btn-primary" href="https://eyesightworks.github.io/property-finder/" target="_blank">Live Demo</a>
+<a class="btn" href="https://github.com/eyesightworks/property-finder" target="_blank">View Code</a>
+</div>
 </div>
 
 <!-- PROJECT 4 -->
 <div class="project-card">
-
-<img src="your-project/pharmacy-dashboard.png" alt="Inventory">
+<img src="your-project/pharmacy-dashboard.png" alt="Inventory System">
 
 <h3
 data-en="Inventory Management Dashboard"
-data-fr="Gestion des stocks"
+data-fr="Gestion de stock"
 data-es="Gestión de inventario"
-data-ar="نظام المخزون">
+data-ar="إدارة المخزون">
 Inventory Management Dashboard
 </h3>
 
-<p
-data-en="Inventory system for tracking products and stock levels."
-data-fr="Système de gestion des stocks."
-data-es="Sistema de inventario."
-data-ar="نظام تتبع المخزون.">
-Inventory system for tracking products and stock levels.
-</p>
-
-<p>
-<strong>Demo:</strong>
-<a href="https://eyesightworks.github.io/pharmacy-dashboard/" target="_blank">Live Site</a>
-</p>
-
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/pharmacy-dashboard" target="_blank">GitHub</a>
-</p>
-
+<div class="btn-box">
+<a class="btn btn-primary" href="https://eyesightworks.github.io/pharmacy-dashboard/" target="_blank">Live Demo</a>
+<a class="btn" href="https://github.com/eyesightworks/pharmacy-dashboard" target="_blank">View Code</a>
+</div>
 </div>
 
 <!-- PROJECT 5 -->
 <div class="project-card">
-
-<img src="your-project/automobile-dashboard.png" alt="Sales">
+<img src="your-project/automobile-dashboard.png" alt="Sales System">
 
 <h3
 data-en="Sales Management Platform"
-data-fr="Plateforme de ventes"
+data-fr="Plateforme de vente"
 data-es="Plataforma de ventas"
-data-ar="نظام مبيعات">
+data-ar="منصة المبيعات">
 Sales Management Platform
 </h3>
 
-<p
-data-en="Vehicle sales platform for managing listings and pricing."
-data-fr="Gestion des ventes de véhicules."
-data-es="Gestión de ventas de vehículos."
-data-ar="إدارة مبيعات السيارات.">
-Vehicle sales platform for managing listings and pricing.
-</p>
-
-<p>
-<strong>Demo:</strong>
-<a href="https://eyesightworks.github.io/cars/" target="_blank">Live Site</a>
-</p>
-
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/cars" target="_blank">GitHub</a>
-</p>
-
+<div class="btn-box">
+<a class="btn btn-primary" href="https://eyesightworks.github.io/cars/" target="_blank">Live Demo</a>
+<a class="btn" href="https://github.com/eyesightworks/cars" target="_blank">View Code</a>
+</div>
 </div>
 
 <!-- PROJECT 6 -->
 <div class="project-card">
-
 <img src="your-project/portfolio.png" alt="Portfolio">
 
 <h3
 data-en="Personal Portfolio"
 data-fr="Portfolio personnel"
 data-es="Portafolio personal"
-data-ar="موقع شخصي">
+data-ar="المعرض الشخصي">
 Personal Portfolio
 </h3>
 
-<p
-data-en="Responsive portfolio website showcasing skills and projects."
-data-fr="Portfolio personnel responsive."
-data-es="Portafolio personal responsivo."
-data-ar="موقع شخصي لعرض الأعمال.">
-Responsive portfolio website showcasing skills and projects.
-</p>
-
-<p>
-<strong>Demo:</strong>
-<a href="https://eyesightworks.github.io/eyesight-skills/" target="_blank">Live Site</a>
-</p>
-
-<p>
-<strong>Code:</strong>
-<a href="https://github.com/eyesightworks/eyesight-skills" target="_blank">GitHub</a>
-</p>
-
+<div class="btn-box">
+<a class="btn btn-primary" href="https://eyesightworks.github.io/eyesight-skills/" target="_blank">Live Demo</a>
+<a class="btn" href="https://github.com/eyesightworks/eyesight-skills" target="_blank">View Code</a>
+</div>
 </div>
 
 </div>
@@ -298,15 +268,15 @@ Responsive portfolio website showcasing skills and projects.
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer
 data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
 data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
 data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
-data-ar="© 2026 Eyesightworks — Alawode Adewale Afeez">
+data-ar="© 2026 Eyesightworks — علاء الدين">
 © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script src="script.js" defer></script>
-
 </body>
 </html>
