@@ -19,7 +19,7 @@ Portfolio | Eyesightworks
 <!-- ================= HEADER ================= -->
 <header>
 <div class="container">
-<nav>
+<nav aria-label="Primary Navigation">
 
 <div class="logo"
 data-en="Eyesightworks"
@@ -31,7 +31,7 @@ Eyesightworks
 
 <button data-hamburger aria-label="Toggle navigation">☰</button>
 
-<ul class="nav-menu" data-nav-menu>
+<ul id="primary-menu" class="nav-menu" data-nav-menu>
 
 <li>
 <a href="index.html"
@@ -75,7 +75,6 @@ data-ar="تواصل">Contact</a>
 </li>
 
 </ul>
-
 </nav>
 </div>
 </header>
@@ -84,6 +83,7 @@ data-ar="تواصل">Contact</a>
 <main>
 
 <section class="section text-center">
+
 <h1
 data-en="Portfolio"
 data-fr="Portfolio"
@@ -99,28 +99,101 @@ data-es="Sistemas backend escalables, plataformas inmobiliarias y aplicaciones l
 data-ar="أنظمة خلفية قابلة للتوسع ومنصات عقارية وتطبيقات جاهزة للإنتاج.">
 Scalable backend systems, real estate platforms, and production-ready applications.
 </p>
-</section>
-
-<!-- ================= FILTERS ================= -->
-<section class="section text-center" id="category-filters">
-
-<button class="active-filter" data-filter="all"
-data-en="All"
-data-fr="Tous"
-data-es="Todos"
-data-ar="الكل">All</button>
-
-<button data-filter="Backend">Backend</button>
-<button data-filter="Real Estate">Real Estate</button>
-<button data-filter="Business">Business</button>
-<button data-filter="Sales">Sales</button>
-<button data-filter="Frontend">Frontend</button>
 
 </section>
 
-<!-- ================= PROJECTS ================= -->
+<!-- ================= PROJECTS (STATIC LIKE INDEX STYLE) ================= -->
 <section class="section">
-<div class="container projects-grid" id="projects-container"></div>
+<div class="container">
+
+<!-- PROJECT 1 -->
+<div class="card">
+
+<h3
+data-en="⭐ EyesightWorks Real Estate System"
+data-fr="⭐ Système immobilier EyesightWorks"
+data-es="⭐ Sistema inmobiliario EyesightWorks"
+data-ar="⭐ نظام عقاري EyesightWorks">
+⭐ EyesightWorks Real Estate System
+</h3>
+
+<p
+data-en="Full-stack backend system with authentication, cloud uploads, and scalable architecture."
+data-fr="Système backend complet avec authentification et stockage cloud."
+data-es="Sistema backend completo con autenticación y almacenamiento en la nube."
+data-ar="نظام خلفي متكامل مع المصادقة والتخزين السحابي.">
+Full-stack backend system with authentication, cloud uploads, and scalable architecture.
+</p>
+
+<a class="btn" href="https://eyesight-realestate.vercel.app" target="_blank"
+data-en="Live Demo"
+data-fr="Démo"
+data-es="Demo"
+data-ar="عرض مباشر">Live Demo</a>
+
+<a class="btn btn-primary" href="https://github.com/eyesightworks/pharmacy-auto-realestate-backend" target="_blank"
+data-en="View Code"
+data-fr="Voir code"
+data-es="Ver código"
+data-ar="عرض الكود">View Code</a>
+
+</div>
+
+<!-- PROJECT 2 -->
+<div class="card">
+
+<h3
+data-en="Real Estate Dashboard"
+data-fr="Tableau immobilier"
+data-es="Panel inmobiliario"
+data-ar="لوحة العقارات">
+Real Estate Dashboard
+</h3>
+
+<p
+data-en="Dashboard for managing and filtering real estate listings."
+data-fr="Tableau de bord pour gérer les annonces immobilières."
+data-es="Panel para gestionar listados inmobiliarios."
+data-ar="لوحة إدارة العقارات.">
+Dashboard for managing and filtering real estate listings.
+</p>
+
+<a class="btn" href="https://eyesightworks.github.io/real-estate/" target="_blank"
+data-en="Live Demo"
+data-fr="Démo"
+data-es="Demo"
+data-ar="عرض مباشر">Live Demo</a>
+
+</div>
+
+<!-- PROJECT 3 -->
+<div class="card">
+
+<h3
+data-en="Property Booking System"
+data-fr="Système de réservation"
+data-es="Sistema de reservas"
+data-ar="نظام الحجز">
+Property Booking System
+</h3>
+
+<p
+data-en="Booking system with Stripe payment integration."
+data-fr="Système de réservation avec paiement Stripe."
+data-es="Sistema de reservas con Stripe."
+data-ar="نظام حجز مع الدفع الإلكتروني.">
+Booking system with Stripe payment integration.
+</p>
+
+<a class="btn" href="https://eyesightworks.github.io/property-finder/" target="_blank"
+data-en="Live Demo"
+data-fr="Démo"
+data-es="Demo"
+data-ar="عرض مباشر">Live Demo</a>
+
+</div>
+
+</div>
 </section>
 
 </main>
@@ -134,123 +207,7 @@ data-ar="© 2026 Eyesightworks — آلاووود أدوالي أفيس">
 © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
-<script>
-
-/* ================= PROJECT DATA ================= */
-const projects = [
-{
-title:"⭐ EyesightWorks Real Estate System",
-image:"your-project/backend.png",
-tech:"NestJS, Prisma, PostgreSQL, Cloudinary, JWT",
-demo:"https://eyesight-realestate.vercel.app",
-code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
-category:"Backend",
-description:{
-en:"Full-stack backend system with authentication, cloud media, and scalable architecture.",
-fr:"Système backend complet avec authentification et stockage cloud.",
-es:"Sistema backend completo con autenticación y almacenamiento en la nube.",
-ar:"نظام خلفي متكامل مع المصادقة والتخزين السحابي."
-}
-},
-
-{
-title:"Real Estate Dashboard",
-image:"your-project/real-estate-dashboard.png",
-tech:"React, Node.js",
-demo:"https://eyesightworks.github.io/real-estate/",
-code:"https://github.com/eyesightworks/real-estate",
-category:"Real Estate",
-description:{
-en:"Dashboard for managing and filtering real estate listings.",
-fr:"Tableau de bord pour gérer les annonces immobilières.",
-es:"Panel para gestionar listados inmobiliarios.",
-ar:"لوحة إدارة للعقارات."
-}
-},
-
-{
-title:"Property Booking System",
-image:"your-project/real-estate-booking.png",
-tech:"React, Stripe API",
-demo:"https://eyesightworks.github.io/property-finder/",
-code:"https://github.com/eyesightworks/property-finder",
-category:"Real Estate",
-description:{
-en:"Property booking system with payment integration.",
-fr:"Système de réservation avec paiement.",
-es:"Sistema de reservas con pagos.",
-ar:"نظام حجز مع الدفع الإلكتروني."
-}
-}
-];
-
-/* ================= RENDER ================= */
-const container = document.getElementById("projects-container");
-const langSelect = document.querySelector("[data-lang-select]");
-
-function getLang(){
-  return langSelect ? langSelect.value : "en";
-}
-
-function render(filter="all"){
-const lang = getLang();
-container.innerHTML = "";
-
-projects.forEach(p => {
-if(filter === "all" || p.category === filter){
-
-container.innerHTML += `
-<div class="project-card">
-
-<img src="${p.image}" alt="${p.title}">
-
-<h3>${p.title}</h3>
-
-<p><strong data-en="Tech:" data-fr="Tech :" data-es="Tecnología:" data-ar="التقنيات:">Tech:</strong> ${p.tech}</p>
-
-<p>${p.description[lang]}</p>
-
-<div class="btn-box">
-${p.demo ? `<a class="btn" href="${p.demo}" target="_blank"
-data-en="Live Demo" data-fr="Démo" data-es="Demo" data-ar="عرض مباشر">
-Live Demo</a>` : ""}
-
-${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank"
-data-en="View Code" data-fr="Code" data-es="Código" data-ar="الكود">
-View Code</a>` : ""}
-</div>
-
-</div>`;
-}
-});
-}
-
-render();
-
-/* ================= FILTER ================= */
-document.querySelectorAll("#category-filters button").forEach(btn=>{
-btn.onclick=()=>{
-document.querySelectorAll("#category-filters button")
-.forEach(b=>b.classList.remove("active-filter"));
-btn.classList.add("active-filter");
-render(btn.dataset.filter);
-};
-});
-
-/* ================= LANGUAGE SWITCH ================= */
-langSelect.addEventListener("change", ()=>{
-render();
-});
-
-/* ================= HAMBURGER ================= */
-const hamburger = document.querySelector("[data-hamburger]");
-const navMenu = document.querySelector("[data-nav-menu]");
-
-hamburger.addEventListener("click", ()=>{
-navMenu.classList.toggle("show");
-});
-
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
