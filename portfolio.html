@@ -1,114 +1,171 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Portfolio | Alawode Adewale Afeez</title>
-
-<meta name="description" content="Full-Stack Developer specializing in scalable backend systems, real estate platforms, and production-ready applications.">
-<meta name="robots" content="index, follow">
+<title data-en="Portfolio | Eyesightworks"
+        data-fr="Portfolio | Eyesightworks"
+        data-es="Portafolio | Eyesightworks"
+        data-ar="معرض الأعمال | آيزسايت ووركس">
+Portfolio | Eyesightworks
+</title>
 
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="js-enabled">
 
+<!-- ================= HEADER ================= -->
 <header>
 <div class="container">
 <nav>
 
-<div class="logo">Eyesightworks</div>
-
-<div class="freelance-links desktop-only">
-<a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
-<a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
-<a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
+<div class="logo"
+data-en="Eyesightworks"
+data-fr="Eyesightworks"
+data-es="Eyesightworks"
+data-ar="آيزسايت ووركس">
+Eyesightworks
 </div>
 
 <button data-hamburger aria-label="Toggle navigation">☰</button>
 
 <ul class="nav-menu" data-nav-menu>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="portfolio.html" class="active">Portfolio</a></li>
-<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="index.html"
+data-en="Home"
+data-fr="Accueil"
+data-es="Inicio"
+data-ar="الرئيسية">Home</a>
+</li>
+
+<li>
+<a href="about.html"
+data-en="About"
+data-fr="À propos"
+data-es="Acerca de"
+data-ar="نبذة عني">About</a>
+</li>
+
+<li>
+<a href="portfolio.html" class="active"
+data-en="Portfolio"
+data-fr="Portfolio"
+data-es="Portafolio"
+data-ar="معرض الأعمال">Portfolio</a>
+</li>
+
+<li>
+<a href="contact.html"
+data-en="Contact"
+data-fr="Contact"
+data-es="Contacto"
+data-ar="تواصل">Contact</a>
+</li>
+
+<li>
+<select data-lang-select aria-label="Select language">
+<option value="en">EN</option>
+<option value="fr">FR</option>
+<option value="es">ES</option>
+<option value="ar">AR</option>
+</select>
+</li>
+
 </ul>
 
 </nav>
 </div>
 </header>
 
+<!-- ================= MAIN ================= -->
 <main>
 
 <section class="section text-center">
-<h1>Portfolio</h1>
-<p>Scalable backend systems, real estate platforms, and production-ready applications.</p>
+<h1
+data-en="Portfolio"
+data-fr="Portfolio"
+data-es="Portafolio"
+data-ar="معرض الأعمال">
+Portfolio
+</h1>
+
+<p
+data-en="Scalable backend systems, real estate platforms, and production-ready applications."
+data-fr="Systèmes backend évolutifs, plateformes immobilières et applications prêtes pour la production."
+data-es="Sistemas backend escalables, plataformas inmobiliarias y aplicaciones listas para producción."
+data-ar="أنظمة خلفية قابلة للتوسع ومنصات عقارية وتطبيقات جاهزة للإنتاج.">
+Scalable backend systems, real estate platforms, and production-ready applications.
+</p>
 </section>
 
+<!-- ================= FILTERS ================= -->
 <section class="section text-center" id="category-filters">
-<button class="active-filter" data-filter="all">All</button>
+
+<button class="active-filter" data-filter="all"
+data-en="All"
+data-fr="Tous"
+data-es="Todos"
+data-ar="الكل">All</button>
+
 <button data-filter="Backend">Backend</button>
 <button data-filter="Real Estate">Real Estate</button>
 <button data-filter="Business">Business</button>
 <button data-filter="Sales">Sales</button>
 <button data-filter="Frontend">Frontend</button>
+
 </section>
 
+<!-- ================= PROJECTS ================= -->
 <section class="section">
 <div class="container projects-grid" id="projects-container"></div>
 </section>
 
 </main>
 
-<footer>
+<!-- ================= FOOTER ================= -->
+<footer
+data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
+data-ar="© 2026 Eyesightworks — آلاووود أدوالي أفيس">
 © 2026 Eyesightworks — Alawode Adewale Afeez
 </footer>
 
 <script>
 
+/* ================= PROJECT DATA ================= */
 const projects = [
-
 {
-title:"⭐ EyesightWorks Real Estate System (Full-Stack)",
+title:"⭐ EyesightWorks Real Estate System",
 image:"your-project/backend.png",
 tech:"NestJS, Prisma, PostgreSQL, Cloudinary, JWT",
 demo:"https://eyesight-realestate.vercel.app",
 code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
 category:"Backend",
-description:`
-<strong>Problem:</strong> Manual property management was slow and unscalable.<br>
-<strong>Solution:</strong> Built a full-stack backend system with authentication, media handling, and structured APIs.<br>
-<strong>Result:</strong> Improved scalability, security, and automation of listings.
-
-<br><br>
-
-<strong>Architecture Flow:</strong><br>
-Admin Login → JWT Auth → Cloudinary Upload → API Layer → PostgreSQL DB → Frontend Display
-
-<br><br>
-
-<strong>Features:</strong><br>
-• Role-based authentication system<br>
-• Cloud image upload (Cloudinary)<br>
-• REST API (NestJS)<br>
-• PostgreSQL + Prisma ORM<br>
-• Multi-entity management system
-`
+description:{
+en:"Full-stack backend system with authentication, cloud media, and scalable architecture.",
+fr:"Système backend complet avec authentification et stockage cloud.",
+es:"Sistema backend completo con autenticación y almacenamiento en la nube.",
+ar:"نظام خلفي متكامل مع المصادقة والتخزين السحابي."
+}
 },
 
 {
-title:"Real Estate Platform Dashboard",
+title:"Real Estate Dashboard",
 image:"your-project/real-estate-dashboard.png",
 tech:"React, Node.js",
 demo:"https://eyesightworks.github.io/real-estate/",
 code:"https://github.com/eyesightworks/real-estate",
 category:"Real Estate",
-description:`
-<strong>Problem:</strong> Users struggled with browsing large property datasets.<br>
-<strong>Solution:</strong> Built a responsive dashboard with filtering and structured UI.<br>
-<strong>Result:</strong> Improved property discovery speed and UX.
-`
+description:{
+en:"Dashboard for managing and filtering real estate listings.",
+fr:"Tableau de bord pour gérer les annonces immobilières.",
+es:"Panel para gestionar listados inmobiliarios.",
+ar:"لوحة إدارة للعقارات."
+}
 },
 
 {
@@ -118,74 +175,49 @@ tech:"React, Stripe API",
 demo:"https://eyesightworks.github.io/property-finder/",
 code:"https://github.com/eyesightworks/property-finder",
 category:"Real Estate",
-description:`
-<strong>Problem:</strong> Manual booking lacked trust and automation.<br>
-<strong>Solution:</strong> Integrated Stripe payment system for secure transactions.<br>
-<strong>Result:</strong> Enabled fast and secure property booking.
-`
-},
-
-{
-title:"Inventory Management Dashboard",
-image:"your-project/pharmacy-dashboard.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
-code:"https://github.com/eyesightworks/pharmacy-dashboard",
-category:"Business",
-description:`
-<strong>Problem:</strong> Poor inventory tracking caused inefficiencies.<br>
-<strong>Solution:</strong> Built a structured dashboard for stock monitoring.<br>
-<strong>Result:</strong> Improved inventory visibility and control.
-`
-},
-
-{
-title:"Sales Management Platform",
-image:"your-project/automobile-dashboard.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/cars/",
-code:"https://github.com/eyesightworks/cars",
-category:"Sales",
-description:`
-<strong>Problem:</strong> Vehicle listings were unorganized.<br>
-<strong>Solution:</strong> Created a structured sales dashboard.<br>
-<strong>Result:</strong> Simplified sales workflow.
-`
-},
-
-{
-title:"Personal Portfolio",
-image:"your-project/portfolio.png",
-tech:"HTML, CSS, JavaScript",
-demo:"https://eyesightworks.github.io/eyesight-skills/",
-code:"https://github.com/eyesightworks/eyesight-skills",
-category:"Frontend",
-description:`
-<strong>Problem:</strong> Needed a professional online presence.<br>
-<strong>Solution:</strong> Designed a responsive portfolio website.<br>
-<strong>Result:</strong> Improved visibility and personal branding.
-`
+description:{
+en:"Property booking system with payment integration.",
+fr:"Système de réservation avec paiement.",
+es:"Sistema de reservas con pagos.",
+ar:"نظام حجز مع الدفع الإلكتروني."
 }
-
+}
 ];
 
-// render logic unchanged
+/* ================= RENDER ================= */
 const container = document.getElementById("projects-container");
+const langSelect = document.querySelector("[data-lang-select]");
+
+function getLang(){
+  return langSelect ? langSelect.value : "en";
+}
 
 function render(filter="all"){
-container.innerHTML="";
-projects.forEach(p=>{
-if(filter==="all"||p.category===filter){
-container.innerHTML+=`
+const lang = getLang();
+container.innerHTML = "";
+
+projects.forEach(p => {
+if(filter === "all" || p.category === filter){
+
+container.innerHTML += `
 <div class="project-card">
+
 <img src="${p.image}" alt="${p.title}">
+
 <h3>${p.title}</h3>
-<p><strong>Tech:</strong> ${p.tech}</p>
-<p>${p.description}</p>
+
+<p><strong data-en="Tech:" data-fr="Tech :" data-es="Tecnología:" data-ar="التقنيات:">Tech:</strong> ${p.tech}</p>
+
+<p>${p.description[lang]}</p>
 
 <div class="btn-box">
-${p.demo ? `<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>` : ""}
-${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank">View Code</a>` : ""}
+${p.demo ? `<a class="btn" href="${p.demo}" target="_blank"
+data-en="Live Demo" data-fr="Démo" data-es="Demo" data-ar="عرض مباشر">
+Live Demo</a>` : ""}
+
+${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank"
+data-en="View Code" data-fr="Code" data-es="Código" data-ar="الكود">
+View Code</a>` : ""}
 </div>
 
 </div>`;
@@ -195,6 +227,7 @@ ${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank">View C
 
 render();
 
+/* ================= FILTER ================= */
 document.querySelectorAll("#category-filters button").forEach(btn=>{
 btn.onclick=()=>{
 document.querySelectorAll("#category-filters button")
@@ -204,6 +237,12 @@ render(btn.dataset.filter);
 };
 });
 
+/* ================= LANGUAGE SWITCH ================= */
+langSelect.addEventListener("change", ()=>{
+render();
+});
+
+/* ================= HAMBURGER ================= */
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
