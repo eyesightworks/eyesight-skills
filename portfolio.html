@@ -14,7 +14,6 @@
 
 <body class="js-enabled">
 
-<!-- ================= HEADER ================= -->
 <header>
 <div class="container">
 <nav>
@@ -34,39 +33,25 @@
 <li><a href="about.html">About</a></li>
 <li><a href="portfolio.html" class="active">Portfolio</a></li>
 <li><a href="contact.html">Contact</a></li>
-
-<li>
-<select data-lang-select>
-<option value="en">EN</option>
-<option value="fr">FR</option>
-<option value="es">ES</option>
-<option value="ar">AR</option>
-</select>
-</li>
-
 </ul>
 
 </nav>
 </div>
 </header>
 
-<!-- ================= MAIN ================= -->
 <main>
 
 <section class="section text-center">
 <h1>Portfolio</h1>
-<p>
-Showcasing scalable backend systems, real estate platforms, and production-ready applications.
-</p>
+<p>Scalable backend systems, real estate platforms, and production-ready applications.</p>
 </section>
 
-<!-- FILTERS -->
 <section class="section text-center" id="category-filters">
 <button class="active-filter" data-filter="all">All</button>
-<button data-filter="Backend">Featured</button>
+<button data-filter="Backend">Backend</button>
 <button data-filter="Real Estate">Real Estate</button>
-<button data-filter="Business">Business Systems</button>
-<button data-filter="Sales">Sales Systems</button>
+<button data-filter="Business">Business</button>
+<button data-filter="Sales">Sales</button>
 <button data-filter="Frontend">Frontend</button>
 </section>
 
@@ -82,28 +67,33 @@ Showcasing scalable backend systems, real estate platforms, and production-ready
 
 <script>
 
-// ================= PROJECT DATA =================
 const projects = [
 
 {
 title:"⭐ EyesightWorks Real Estate System (Full-Stack)",
 image:"your-project/backend.png",
-tech:"NestJS, Prisma ORM, PostgreSQL, Cloudinary, JWT",
+tech:"NestJS, Prisma, PostgreSQL, Cloudinary, JWT",
 demo:"https://eyesight-realestate.vercel.app",
 code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
 category:"Backend",
 description:`
-Admin Panel: https://frontend-eight-mocha-89.vercel.app
+<strong>Problem:</strong> Manual property management was slow and unscalable.<br>
+<strong>Solution:</strong> Built a full-stack backend system with authentication, media handling, and structured APIs.<br>
+<strong>Result:</strong> Improved scalability, security, and automation of listings.
 
-End-to-end system flow:
-Admin authentication → Image upload via Cloudinary → Backend API → PostgreSQL → Frontend display
+<br><br>
 
-Core Features:
-• JWT Authentication & Role-Based Access
-• Cloudinary Image Upload Integration
-• REST API with NestJS
-• PostgreSQL database using Prisma ORM
-• Management of Properties, Vehicles, and Products
+<strong>Architecture Flow:</strong><br>
+Admin Login → JWT Auth → Cloudinary Upload → API Layer → PostgreSQL DB → Frontend Display
+
+<br><br>
+
+<strong>Features:</strong><br>
+• Role-based authentication system<br>
+• Cloud image upload (Cloudinary)<br>
+• REST API (NestJS)<br>
+• PostgreSQL + Prisma ORM<br>
+• Multi-entity management system
 `
 },
 
@@ -114,7 +104,11 @@ tech:"React, Node.js",
 demo:"https://eyesightworks.github.io/real-estate/",
 code:"https://github.com/eyesightworks/real-estate",
 category:"Real Estate",
-description:"Real estate dashboard with property listing and filtering."
+description:`
+<strong>Problem:</strong> Users struggled with browsing large property datasets.<br>
+<strong>Solution:</strong> Built a responsive dashboard with filtering and structured UI.<br>
+<strong>Result:</strong> Improved property discovery speed and UX.
+`
 },
 
 {
@@ -124,7 +118,11 @@ tech:"React, Stripe API",
 demo:"https://eyesightworks.github.io/property-finder/",
 code:"https://github.com/eyesightworks/property-finder",
 category:"Real Estate",
-description:"Property booking system with payment integration."
+description:`
+<strong>Problem:</strong> Manual booking lacked trust and automation.<br>
+<strong>Solution:</strong> Integrated Stripe payment system for secure transactions.<br>
+<strong>Result:</strong> Enabled fast and secure property booking.
+`
 },
 
 {
@@ -134,7 +132,11 @@ tech:"HTML, CSS, JavaScript",
 demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
 code:"https://github.com/eyesightworks/pharmacy-dashboard",
 category:"Business",
-description:"Inventory management system for product and stock tracking."
+description:`
+<strong>Problem:</strong> Poor inventory tracking caused inefficiencies.<br>
+<strong>Solution:</strong> Built a structured dashboard for stock monitoring.<br>
+<strong>Result:</strong> Improved inventory visibility and control.
+`
 },
 
 {
@@ -144,7 +146,11 @@ tech:"HTML, CSS, JavaScript",
 demo:"https://eyesightworks.github.io/cars/",
 code:"https://github.com/eyesightworks/cars",
 category:"Sales",
-description:"Vehicle sales platform for managing listings and pricing."
+description:`
+<strong>Problem:</strong> Vehicle listings were unorganized.<br>
+<strong>Solution:</strong> Created a structured sales dashboard.<br>
+<strong>Result:</strong> Simplified sales workflow.
+`
 },
 
 {
@@ -154,12 +160,16 @@ tech:"HTML, CSS, JavaScript",
 demo:"https://eyesightworks.github.io/eyesight-skills/",
 code:"https://github.com/eyesightworks/eyesight-skills",
 category:"Frontend",
-description:"Responsive personal portfolio website."
+description:`
+<strong>Problem:</strong> Needed a professional online presence.<br>
+<strong>Solution:</strong> Designed a responsive portfolio website.<br>
+<strong>Result:</strong> Improved visibility and personal branding.
+`
 }
 
 ];
 
-// ================= RENDER =================
+// render logic unchanged
 const container = document.getElementById("projects-container");
 
 function render(filter="all"){
@@ -185,7 +195,6 @@ ${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank">View C
 
 render();
 
-// ================= FILTER =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
 btn.onclick=()=>{
 document.querySelectorAll("#category-filters button")
@@ -195,7 +204,6 @@ render(btn.dataset.filter);
 };
 });
 
-// ================= HAMBURGER =================
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
