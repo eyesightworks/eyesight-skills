@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Portfolio | Alawode Adewale Afeez</title>
-<meta name="description" content="Portfolio of Alawode Adewale Afeez — Full-Stack Developer specializing in Real Estate Platforms, Backend Systems, and Scalable Web Applications.">
+
+<meta name="description" content="Full-Stack Developer specializing in scalable backend systems, real estate platforms, and production-ready applications.">
 <meta name="robots" content="index, follow">
 
 <link rel="stylesheet" href="style.css">
@@ -15,101 +16,62 @@
 
 <!-- ================= HEADER ================= -->
 <header>
-  <div class="container">
-    <nav aria-label="Primary Navigation">
+<div class="container">
+<nav>
 
-      <div class="logo"
-        data-en="Eyesightworks"
-        data-fr="Eyesightworks"
-        data-es="Eyesightworks"
-        data-ar="آيزسايت ووركس">
-        Eyesightworks
-      </div>
+<div class="logo">Eyesightworks</div>
 
-      <div class="freelance-links desktop-only">
-        <a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
-        <a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
-        <a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
-      </div>
+<div class="freelance-links desktop-only">
+<a href="https://www.fiverr.com/eyesightwork" target="_blank">Fiverr</a>
+<a href="https://www.upwork.com/freelancers/~014f0564b2b6075c42" target="_blank">Upwork</a>
+<a href="https://www.linkedin.com/in/alawode-adewale-3a033239a" target="_blank">LinkedIn</a>
+</div>
 
-      <button data-hamburger aria-label="Toggle navigation">☰</button>
+<button data-hamburger aria-label="Toggle navigation">☰</button>
 
-      <ul id="primary-menu" class="nav-menu" data-nav-menu>
-        <li><a href="index.html"
-          data-en="Home"
-          data-fr="Accueil"
-          data-es="Inicio"
-          data-ar="الرئيسية">Home</a></li>
+<ul class="nav-menu" data-nav-menu>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="portfolio.html" class="active">Portfolio</a></li>
+<li><a href="contact.html">Contact</a></li>
 
-        <li><a href="about.html"
-          data-en="About"
-          data-fr="À propos"
-          data-es="Acerca de"
-          data-ar="نبذة عني">About</a></li>
+<li>
+<select data-lang-select>
+<option value="en">EN</option>
+<option value="fr">FR</option>
+<option value="es">ES</option>
+<option value="ar">AR</option>
+</select>
+</li>
 
-        <li><a href="portfolio.html" class="active"
-          data-en="Portfolio"
-          data-fr="Portfolio"
-          data-es="Portafolio"
-          data-ar="معرض الأعمال">Portfolio</a></li>
+</ul>
 
-        <li><a href="contact.html"
-          data-en="Contact"
-          data-fr="Contact"
-          data-es="Contacto"
-          data-ar="تواصل">Contact</a></li>
-
-        <li>
-          <select data-lang-select>
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-            <option value="es">ES</option>
-            <option value="ar">AR</option>
-          </select>
-        </li>
-      </ul>
-
-    </nav>
-  </div>
+</nav>
+</div>
 </header>
 
 <!-- ================= MAIN ================= -->
 <main>
 
-<section class="section">
-  <div class="container text-center">
-    <h1
-      data-en="Portfolio"
-      data-fr="Portfolio"
-      data-es="Portafolio"
-      data-ar="معرض الأعمال">
-      Portfolio
-    </h1>
-
-    <p
-      data-en="Showcasing my backend systems, real estate platforms, and business applications."
-      data-fr="Présentation de mes systèmes backend et plateformes."
-      data-es="Mostrando mis sistemas backend y plataformas."
-      data-ar="عرض أنظمة الخلفية ومنصاتي.">
-      Showcasing my backend systems, real estate platforms, and business applications.
-    </p>
-  </div>
+<section class="section text-center">
+<h1>Portfolio</h1>
+<p>
+Showcasing scalable backend systems, real estate platforms, and production-ready applications.
+</p>
 </section>
 
 <!-- FILTERS -->
-<section class="section">
-  <div class="container text-center" id="category-filters">
-    <button class="active-filter" data-filter="all">All</button>
-    <button data-filter="Backend">Featured</button>
-    <button data-filter="Real Estate">Real Estate</button>
-    <button data-filter="Pharmacy">Business Systems</button>
-    <button data-filter="Automobile">Sales Systems</button>
-    <button data-filter="Portfolio">Frontend</button>
-  </div>
+<section class="section text-center" id="category-filters">
+<button class="active-filter" data-filter="all">All</button>
+<button data-filter="Backend">Featured</button>
+<button data-filter="Real Estate">Real Estate</button>
+<button data-filter="Business">Business Systems</button>
+<button data-filter="Sales">Sales Systems</button>
+<button data-filter="Frontend">Frontend</button>
 </section>
 
 <section class="section">
-  <div class="container projects-grid" id="projects-container"></div>
+<div class="container projects-grid" id="projects-container"></div>
 </section>
 
 </main>
@@ -119,75 +81,81 @@
 </footer>
 
 <script>
+
 // ================= PROJECT DATA =================
 const projects = [
 
-  // ⭐ FEATURED BACKEND FIRST
-  {
-    title:"⭐ EyesightWorks Real Estate System (Full-Stack)",
-    image:"images/real-estate-admin-upload.png",
-    tech:"NestJS, Prisma ORM, PostgreSQL, Cloudinary, JWT",
-    demo:"https://eyesight-realestate.vercel.app",
-    code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
-    category:"Backend",
-    description:`
+{
+title:"⭐ EyesightWorks Real Estate System (Full-Stack)",
+image:"your-project/backend.png",
+tech:"NestJS, Prisma ORM, PostgreSQL, Cloudinary, JWT",
+demo:"https://eyesight-realestate.vercel.app",
+code:"https://github.com/eyesightworks/pharmacy-auto-realestate-backend",
+category:"Backend",
+description:`
 Admin Panel: https://frontend-eight-mocha-89.vercel.app
 
-Full-stack system with:
-• JWT Authentication & Role-based access
-• Cloudinary image upload
-• PostgreSQL database (Prisma ORM)
-• Properties, Vehicles, Products management
+End-to-end system flow:
+Admin authentication → Image upload via Cloudinary → Backend API → PostgreSQL → Frontend display
 
-Flow:
-Admin Upload → Cloudinary → Backend → Database → Frontend
+Core Features:
+• JWT Authentication & Role-Based Access
+• Cloudinary Image Upload Integration
+• REST API with NestJS
+• PostgreSQL database using Prisma ORM
+• Management of Properties, Vehicles, and Products
 `
-  },
+},
 
-  {
-    title:"Real Estate Platform Dashboard",
-    image:"your-project/real-estate-dashboard.png",
-    tech:"React, Node.js, MySQL",
-    demo:"https://eyesightworks.github.io/real-estate/",
-    code:"https://github.com/eyesightworks/real-estate",
-    category:"Real Estate"
-  },
+{
+title:"Real Estate Platform Dashboard",
+image:"your-project/real-estate-dashboard.png",
+tech:"React, Node.js",
+demo:"https://eyesightworks.github.io/real-estate/",
+code:"https://github.com/eyesightworks/real-estate",
+category:"Real Estate",
+description:"Real estate dashboard with property listing and filtering."
+},
 
-  {
-    title:"Property Booking System",
-    image:"your-project/real-estate-booking.png",
-    tech:"React, Stripe API",
-    demo:"https://eyesightworks.github.io/property-finder/",
-    code:"https://github.com/eyesightworks/property-finder",
-    category:"Real Estate"
-  },
+{
+title:"Property Booking System",
+image:"your-project/real-estate-booking.png",
+tech:"React, Stripe API",
+demo:"https://eyesightworks.github.io/property-finder/",
+code:"https://github.com/eyesightworks/property-finder",
+category:"Real Estate",
+description:"Property booking system with payment integration."
+},
 
-  {
-    title:"Inventory Management Dashboard",
-    image:"your-project/pharmacy-dashboard.png",
-    tech:"HTML, CSS, JavaScript",
-    demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
-    code:"https://github.com/eyesightworks/pharmacy-dashboard",
-    category:"Pharmacy"
-  },
+{
+title:"Inventory Management Dashboard",
+image:"your-project/pharmacy-dashboard.png",
+tech:"HTML, CSS, JavaScript",
+demo:"https://eyesightworks.github.io/pharmacy-dashboard/",
+code:"https://github.com/eyesightworks/pharmacy-dashboard",
+category:"Business",
+description:"Inventory management system for product and stock tracking."
+},
 
-  {
-    title:"Sales Management Platform",
-    image:"your-project/automobile-dashboard.png",
-    tech:"HTML, CSS, JavaScript",
-    demo:"https://eyesightworks.github.io/cars/",
-    code:"https://github.com/eyesightworks/cars",
-    category:"Automobile"
-  },
+{
+title:"Sales Management Platform",
+image:"your-project/automobile-dashboard.png",
+tech:"HTML, CSS, JavaScript",
+demo:"https://eyesightworks.github.io/cars/",
+code:"https://github.com/eyesightworks/cars",
+category:"Sales",
+description:"Vehicle sales platform for managing listings and pricing."
+},
 
-  {
-    title:"Personal Portfolio",
-    image:"your-project/portfolio.png",
-    tech:"HTML, CSS, JavaScript",
-    demo:"https://eyesightworks.github.io/eyesight-skills/",
-    code:"https://github.com/eyesightworks/eyesight-skills",
-    category:"Portfolio"
-  }
+{
+title:"Personal Portfolio",
+image:"your-project/portfolio.png",
+tech:"HTML, CSS, JavaScript",
+demo:"https://eyesightworks.github.io/eyesight-skills/",
+code:"https://github.com/eyesightworks/eyesight-skills",
+category:"Frontend",
+description:"Responsive personal portfolio website."
+}
 
 ];
 
@@ -195,46 +163,45 @@ Admin Upload → Cloudinary → Backend → Database → Frontend
 const container = document.getElementById("projects-container");
 
 function render(filter="all"){
-  container.innerHTML="";
-  projects.forEach(p=>{
-    if(filter==="all"||p.category===filter){
-      container.innerHTML+=`
-      <div class="project-card">
-        <img src="${p.image}" alt="${p.title}">
-        <h3>${p.title}</h3>
-        <p><strong>Tech:</strong> ${p.tech}</p>
-        ${p.description ? `<p>${p.description}</p>` : ""}
-        <div class="btn-box">
-          ${p.demo?`<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>`:""}
-          ${p.code?`<a class="btn btn-secondary" href="${p.code}" target="_blank">View Code</a>`:""}
-        </div>
-      </div>`;
-    }
-  });
+container.innerHTML="";
+projects.forEach(p=>{
+if(filter==="all"||p.category===filter){
+container.innerHTML+=`
+<div class="project-card">
+<img src="${p.image}" alt="${p.title}">
+<h3>${p.title}</h3>
+<p><strong>Tech:</strong> ${p.tech}</p>
+<p>${p.description}</p>
+
+<div class="btn-box">
+${p.demo ? `<a class="btn" href="${p.demo}" target="_blank">Live Demo</a>` : ""}
+${p.code ? `<a class="btn btn-secondary" href="${p.code}" target="_blank">View Code</a>` : ""}
+</div>
+
+</div>`;
+}
+});
 }
 
 render();
 
-// FILTER
+// ================= FILTER =================
 document.querySelectorAll("#category-filters button").forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll("#category-filters button")
-      .forEach(b=>b.classList.remove("active-filter"));
-    btn.classList.add("active-filter");
-    render(btn.dataset.filter);
-  };
+btn.onclick=()=>{
+document.querySelectorAll("#category-filters button")
+.forEach(b=>b.classList.remove("active-filter"));
+btn.classList.add("active-filter");
+render(btn.dataset.filter);
+};
 });
 
-// HAMBURGER (UNCHANGED)
+// ================= HAMBURGER =================
 const hamburger = document.querySelector("[data-hamburger]");
 const navMenu = document.querySelector("[data-nav-menu]");
 
-if(hamburger && navMenu){
-  hamburger.addEventListener("click", ()=>{
-    const isOpen = navMenu.classList.toggle("show");
-    hamburger.setAttribute("aria-expanded", String(isOpen));
-  });
-}
+hamburger.addEventListener("click", ()=>{
+navMenu.classList.toggle("show");
+});
 
 </script>
 
