@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
   <!-- Skip link -->
   <a href="#main-content" class="skip-link"
      data-en="Skip to content"
@@ -31,26 +32,76 @@
   <header>
     <div class="container">
       <nav role="navigation" aria-label="Primary Navigation">
+
         <div class="logo" tabindex="0"
              data-en="Eyesightworks"
              data-fr="Eyesightworks"
              data-es="Eyesightworks"
-             data-ar="آيزسايت ووركس">Eyesightworks</div>
+             data-ar="آيزسايت ووركس">
+          Eyesightworks
+        </div>
 
-        <button data-hamburger aria-label="Toggle navigation menu" aria-controls="primary-menu" aria-expanded="false">☰</button>
+        <button
+          data-hamburger
+          aria-label="Toggle navigation menu"
+          aria-controls="primary-menu"
+          aria-expanded="false">
+          ☰
+        </button>
 
-        <ul data-nav-menu id="primary-menu">
-          <li><a href="index.html" data-en="Home" data-fr="Accueil" data-es="Inicio" data-ar="الرئيسية">Home</a></li>
-          <li><a href="portfolio.html" data-en="Portfolio" data-fr="Portfolio" data-es="Portafolio" data-ar="أعمالي">Portfolio</a></li>
-          <li><a href="contact.html" class="active" aria-current="page" data-en="Contact" data-fr="Contact" data-es="Contacto" data-ar="تواصل">Contact</a></li>
+        <ul id="primary-menu" class="nav-menu" data-nav-menu>
+
           <li>
-            <select data-lang-select aria-label="Select Language" aria-live="polite">
+            <a href="index.html"
+               data-en="Home"
+               data-fr="Accueil"
+               data-es="Inicio"
+               data-ar="الرئيسية">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html"
+               data-en="About"
+               data-fr="À propos"
+               data-es="Acerca de"
+               data-ar="نبذة عني">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="portfolio.html"
+               data-en="Portfolio"
+               data-fr="Portfolio"
+               data-es="Portafolio"
+               data-ar="معرض الأعمال">
+              Portfolio
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html"
+               class="active"
+               aria-current="page"
+               data-en="Contact"
+               data-fr="Contact"
+               data-es="Contacto"
+               data-ar="تواصل">
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <select data-lang-select aria-label="Select Language">
               <option value="en">EN</option>
               <option value="fr">FR</option>
               <option value="es">ES</option>
               <option value="ar">AR</option>
             </select>
           </li>
+
         </ul>
       </nav>
     </div>
@@ -58,10 +109,13 @@
 
   <!-- ================= MAIN / CONTACT ================= -->
   <main id="main-content" class="contact-page">
+
     <div class="contact-bg"></div>
+
     <canvas id="particles"></canvas>
 
     <div class="contact-card">
+
       <h1 tabindex="0"
           data-en="Start Your Project"
           data-fr="Démarrer votre projet"
@@ -74,32 +128,60 @@
          data-en="Tell me about your project — whether it’s a real estate platform, property dashboard, booking system, or business website. I typically respond within 24 hours."
          data-fr="Parlez-moi de votre projet — plateforme immobilière, tableau de bord, système de réservation ou site professionnel. Je réponds généralement sous 24 heures."
          data-es="Cuéntame sobre tu proyecto — plataforma inmobiliaria, panel administrativo, sistema de reservas o sitio web empresarial. Normalmente respondo en 24 horas."
-         data-ar="أخبرني عن مشروعك — منصة عقارية، لوحة تحكم، نظام حجز، أو موقع أعمال. عادةً أرد خلال 24 ساعة.">
+         data-ar="أخبرني عن مشروعك — منصة عقارية أو لوحة تحكم أو نظام حجز أو موقع أعمال. عادةً أرد خلال 24 ساعة.">
         Tell me about your project — whether it’s a real estate platform, property dashboard, booking system, or business website. I typically respond within 24 hours.
       </p>
 
       <form id="contactForm">
+
         <div class="field">
           <input type="text" id="name" name="name" placeholder=" " required />
-          <label for="name" data-en="Your Name" data-fr="Votre nom" data-es="Tu nombre" data-ar="اسمك">Your Name</label>
+          <label for="name"
+                 data-en="Your Name"
+                 data-fr="Votre nom"
+                 data-es="Tu nombre"
+                 data-ar="اسمك">
+            Your Name
+          </label>
         </div>
 
         <div class="field">
           <input type="email" id="email" name="email" placeholder=" " required />
-          <label for="email" data-en="Your Email" data-fr="Votre email" data-es="Tu correo" data-ar="بريدك الإلكتروني">Your Email</label>
+          <label for="email"
+                 data-en="Your Email"
+                 data-fr="Votre email"
+                 data-es="Tu correo"
+                 data-ar="بريدك الإلكتروني">
+            Your Email
+          </label>
         </div>
 
         <div class="field">
           <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
-          <label for="message" data-en="Project Details" data-fr="Détails du projet" data-es="Detalles del proyecto" data-ar="تفاصيل المشروع">Project Details</label>
+          <label for="message"
+                 data-en="Project Details"
+                 data-fr="Détails du projet"
+                 data-es="Detalles del proyecto"
+                 data-ar="تفاصيل المشروع">
+            Project Details
+          </label>
         </div>
 
-        <button type="submit" class="submit-btn" data-en="Start Project" data-fr="Démarrer" data-es="Comenzar" data-ar="ابدأ">Start Project</button>
+        <button type="submit"
+                class="submit-btn"
+                data-en="Start Project"
+                data-fr="Démarrer"
+                data-es="Comenzar"
+                data-ar="ابدأ">
+          Start Project
+        </button>
+
       </form>
     </div>
 
     <!-- ================= SUCCESS OVERLAY ================= -->
     <div class="success-overlay" aria-live="polite">
+
       <div class="checkmark">
         <svg viewBox="0 0 52 52">
           <circle cx="26" cy="26" r="25" fill="none"/>
@@ -107,53 +189,30 @@
         </svg>
       </div>
 
-      <p data-en="Message sent! Redirecting to WhatsApp..."
-         data-fr="Message envoyé ! Redirection vers WhatsApp..."
-         data-es="¡Mensaje enviado! Redirigiendo a WhatsApp..."
-         data-ar="تم إرسال الرسالة! جارٍ التحويل إلى واتساب...">
+      <p
+        data-en="Message sent! Redirecting to WhatsApp..."
+        data-fr="Message envoyé ! Redirection vers WhatsApp..."
+        data-es="¡Mensaje enviado! Redirigiendo a WhatsApp..."
+        data-ar="تم إرسال الرسالة! جارٍ التحويل إلى واتساب...">
         Message sent! Redirecting to WhatsApp...
       </p>
+
     </div>
+
   </main>
 
   <!-- ================= FOOTER ================= -->
-  <footer>
+  <footer
+    data-en="© 2026 Eyesightworks — Alawode Adewale Afeez"
+    data-fr="© 2026 Eyesightworks — Alawode Adewale Afeez"
+    data-es="© 2026 Eyesightworks — Alawode Adewale Afeez"
+    data-ar="© 2026 Eyesightworks — Alawode Adewale Afeez">
     © 2026 Eyesightworks — Alawode Adewale Afeez
   </footer>
 
   <!-- ================= JS ================= -->
   <script src="script.js" defer></script>
   <script src="contact.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const pageRoot = document.documentElement;
-      const langSelect = document.querySelector('[data-lang-select]');
-      const SUPPORTED_LANGS = ["en","fr","es","ar"];
 
-      function applyLang(lang) {
-        if (!SUPPORTED_LANGS.includes(lang)) lang = "en";
-        document.querySelectorAll("[data-en]").forEach(el => {
-          el.textContent = el.dataset[lang] || el.dataset.en;
-        });
-        pageRoot.setAttribute("lang", lang);
-        pageRoot.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-        localStorage.setItem("siteLang", lang);
-      }
-
-      const savedLang = localStorage.getItem("siteLang") || "en";
-      applyLang(savedLang);
-      langSelect.value = savedLang;
-      langSelect.addEventListener("change", () => applyLang(langSelect.value));
-
-      // Hamburger menu
-      const hamburger = document.querySelector('[data-hamburger]');
-      const menu = document.getElementById('primary-menu');
-      hamburger.addEventListener("click", () => {
-        const expanded = hamburger.getAttribute("aria-expanded") === "true";
-        hamburger.setAttribute("aria-expanded", String(!expanded));
-        menu.classList.toggle("open");
-      });
-    });
-  </script>
 </body>
 </html>
