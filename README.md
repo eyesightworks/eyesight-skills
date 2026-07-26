@@ -2,7 +2,7 @@
 
 A modern responsive developer portfolio showcasing full-stack engineering projects, scalable backend systems, admin dashboards, and real-world business applications.
 
-This portfolio highlights production-focused applications built using NestJS, PostgreSQL, Prisma ORM, JavaScript, Cloudinary, JWT authentication, and responsive frontend technologies.
+This portfolio highlights production-focused applications built with React, TypeScript, NestJS, PostgreSQL, Prisma ORM, OpenRouter AI, Cloudinary, JWT authentication, and responsive frontend technologies.
 
 ---
 
@@ -16,6 +16,7 @@ https://eyesightworks.github.io/eyesight-skills/
 
 The portfolio was designed to present:
 
+- AI-powered Applications
 - Full-Stack Development Projects
 - Backend API Systems
 - Real Estate Platforms
@@ -30,6 +31,37 @@ The platform includes multilingual support, responsive layouts, project showcase
 ---
 
 # Featured Projects
+
+## AI Property Assistant (Full Stack + AI)
+
+Features
+
+- React frontend
+- NestJS backend
+- OpenRouter AI integration
+- AI-generated property descriptions
+- REST API communication
+- Responsive UI
+
+Tech
+
+- React
+- TypeScript
+- Vite
+- NestJS
+- OpenRouter API
+- Axios
+
+### Links
+
+Frontend:
+https://ai-property-assistant-frontend.vercel.app
+
+Frontend Repository:
+https://github.com/eyesightworks/ai-property-assistant-frontend
+
+Backend Repository:
+https://github.com/eyesightworks/ai-property-assistant-backend
 
 ## EyesightWorks Real Estate System (Full-Stack)
 
@@ -135,9 +167,12 @@ https://eyesightworks.github.io/cars/
 # Technologies Used
 
 ## Frontend
+- React
+- TypeScript
+- JavaScript
 - HTML5
 - CSS3
-- JavaScript
+- Vite
 - Responsive Design
 
 ## Backend Technologies Featured
@@ -147,6 +182,8 @@ https://eyesightworks.github.io/cars/
 - Prisma ORM
 - JWT Authentication
 - Cloudinary
+- REST APIs
+- OpenRouter API
 
 ---
 
@@ -169,11 +206,12 @@ https://eyesightworks.github.io/cars/
 
 This portfolio was created to showcase:
 
-- Backend Engineering Skills
-- Full-Stack Development Experience
+- AI Application Development
+- Full-Stack Engineering
+- Backend Engineering
 - Scalable System Architecture
-- Real-World Application Development
-- Business Platform Engineering
+- Real-World Business Applications
+- REST API Development
 - UI/UX Implementation
 - Production-Oriented Development Workflow
 
@@ -183,7 +221,7 @@ This portfolio was created to showcase:
 
 ## Alawode Adewale Afeez
 
-Full-Stack Engineer | NestJS | PostgreSQL | Prisma ORM | Cloudinary | Scalable Backend Systems
+Full-Stack Software Engineer | React • TypeScript • NestJS • PostgreSQL • Prisma ORM • AI Integration
 
 GitHub:
 https://github.com/eyesightworks
