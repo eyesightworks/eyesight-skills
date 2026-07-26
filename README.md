@@ -1,6 +1,6 @@
 # EyesightWorks Developer Portfolio
 
-A modern responsive developer portfolio showcasing full-stack engineering projects, scalable backend systems, admin dashboards, and real-world business applications.
+A modern, responsive developer portfolio showcasing full-stack applications, AI-powered solutions, scalable backend systems, admin dashboards, and real-world business platforms.
 
 This portfolio highlights production-focused applications built with React, TypeScript, NestJS, PostgreSQL, Prisma ORM, OpenRouter AI, Cloudinary, JWT authentication, and responsive frontend technologies.
 
@@ -34,7 +34,9 @@ The platform includes multilingual support, responsive layouts, project showcase
 
 ## AI Property Assistant (Full Stack + AI)
 
-Features
+An AI-powered web application that generates professional real estate property descriptions through a React frontend, NestJS backend, and OpenRouter AI integration.
+
+### Features
 
 - React frontend
 - NestJS backend
@@ -64,6 +66,8 @@ Backend Repository:
 https://github.com/eyesightworks/ai-property-assistant-backend
 
 ## EyesightWorks Real Estate System (Full-Stack)
+
+A production-ready full-stack real estate platform featuring secure authentication, media management, and scalable backend architecture.
 
 Production-ready backend architecture featuring:
 
@@ -175,7 +179,8 @@ https://eyesightworks.github.io/cars/
 - Vite
 - Responsive Design
 
-## Backend Technologies Featured
+## Backend Technologies
+
 - NestJS
 - Node.js
 - PostgreSQL
